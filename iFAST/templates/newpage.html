@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIST</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .navbar-custom {
+            background-color: #283db4;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+            font-size: 13px;
+            font-weight: bold;
+            padding: 2px 2px;
+        }
+        .nav-link {
+            color: white;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: white;
+        }
+        .select2-container--bootstrap5 {
+    z-index: 1060 !important; /* Use !important to override any inline styles */
+}
+
+.select2-container--bootstrap5 .select2-dropdown {
+    z-index: 1060 !important; /* Ensure dropdown has correct z-index */
+}
+                .modal-dialog {
+            max-width: 40%;
+        }
+
+        .nav-item .dropdown-menu {
+            background-color: #283db4;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px; /* Adjust width as needed */
+        }
+        .nav-item .dropdown-menu a {
+            color: white;
+        }
+        .nav-item .dropdown-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+            width: 150px; /* Adjust width as needed */
+        }
+        .user-profile {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link {
+            color: white;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link .profile-text {
+            margin-left: 5px;
+            font-size: 10px;
+        }
+        .content-section {
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            width: 100%; /* Ensure width is 100% */
+        }
+        .content-section h2 {
+            color: #283db4;
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            margin-bottom: 15px;
+        }
+        .dataTables_wrapper {
+            padding: 0;
+        }
+        table.dataTable {
+            border: 1px solid #ddd; /* Ensure border is visible */
+        }
+        .dataTables_filter {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+        .navbar-brand {
+            font-family: 'Arial', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #283db4, 0 0 5px #283db4;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #ffeb3b, 0 0 5px #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="#">&nbsp;&nbsp;iFAST<i class="fa fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="knowledge-base-tab" data-bs-toggle="tab" href="#knowledge-base" role="tab" aria-controls="knowledge-base" aria-selected="true">&nbsp;|&nbsp;&nbsp;KNOWLEDGE BASE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="lookup-issue-tab" data-bs-toggle="tab" href="#lookup-issue" role="tab" aria-controls="lookup-issue" aria-selected="false">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;CONFIGURATION MANAGEMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>
+<!--                    <a class="nav-link" id="user-pane-tab" data-bs-toggle="tab" href="#user-pane" role="tab" aria-controls="user-pane" aria-selected="false">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>-->
+                </li>
+            </ul>
+        </div>
+        <div class="question-dropdown">
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="questionDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="questionDropdown">
+                    <li><a class="dropdown-item" href="#">Help</a></li>
+                    <li><a class="dropdown-item" href="#">Support</a></li>
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <div class="dropdown">
+
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-lg"></i><span class="profile-text">{{session['user_name']}}<br> Superadmin</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="tab-content">
+            <!-- Knowledge Base Section -->
+            <div id="knowledge-base" class="tab-pane fade show active content-section" role="tabpanel" aria-labelledby="knowledge-base-tab">
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="{{url_for('kb_hit')}}" title="Input and Save Data here" class="btn btn-success btn-md text-white"><i class="bi bi-lightbulb-fill"></i>&nbsp; Create Single Issue</a>
+                            <a class="btn btn-secondary btn-md text-white ml-3">Import Bulk Issues</a>
+                        </div>
+                    </div>
+                    <hr style="min-width:100%">
+                    <br>
+                    <form class="form">
+                        <table class="table table-bordered table-striped" id="issueTable">
+                            <thead>
+                                <tr>
+                                    <th>Issue</th>
+                                    <th>SW</th>
+                                    <th>Status</th>
+                                    <th>Area</th>
+                                    <th>Technology</th>
+                                    <th>Visibility</th>
+                                    <th>Major KPI Degradation</th>
+                                    <th>Issue Category</th>
+                                    <th>Description</th>
+                                    <th>Impact</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for record in res %}
+                                <tr>
+                                    <td>{{ record.issue }}</td>
+                                    <td>{{ record.SW }}</td>
+                                    <td>{{ record.Status }}</td>
+                                    <td>{{ record.Area }}</td>
+                                    <td>{{record.Technology}}</td>
+                                    <td>{{record.Visibility}}</td>
+                                    <td>{{record.Major_KPI_Degradation}}</td>
+                                    <td>{{record.Issue_Category}}</td>
+                                    <td>{{ record.Description }}</td>
+                                    <td>{{ record.Impact }}</td>
+                                    <td><a href="/kb/{{ record.issue }}">View More...</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Lookup Issue Section -->
+            <div id="lookup-issue" class="tab-pane fade content-section" role="tabpanel" aria-labelledby="lookup-issue-tab">
+    <div class="container-fluid mt-5">
+        <form class="form">
+            <table class="table table-bordered table-striped" id="issueTable2">
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>SW</th>
+                        <th>Status</th>
+                        <th>Area</th>
+                        <th>Technology</th>
+                        <th>Visibility</th>
+                        <th>Major KPI Degradation</th>
+                        <th>Issue Category</th>
+                        <th>Description</th>
+                        <th>Impact</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic rows go here -->
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+            </div>
+                 <div id="user-pane" class="tab-pane fade content-section" role="tabpanel" aria-labelledby="user-pane-tab">
+            <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>User <b>Management</b></h2>
+                    </div>
+                    <div class="col-sm-7">
+                        <a href="#modalCreateUser" class="btn btn-secondary" data-toggle="modal" data-target="#modalCreateUser">
+    <i class="material-icons">&#xE147;</i> <span>Add New User</span>
+</a>
+                        <a href="/download_user" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover table-bordered" id="usertable">
+                <thead>
+                    <tr>
+                        <th>Knox ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Team</th>
+                        <th>Status</th>
+                        <th>Mode</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for u in users[(page_number-1)*10:page_number*10] %}
+                    <tr>
+                        <td>{{u['knox_id']}}</td>
+                        <td>{{u['fullname']}}</td>
+                        <td>{{u['email']}}</td>
+                        <td>{{u['role']}}</td>
+                        <td>{{u['team']}}</td>
+                        {% if u['status'] == 'active' %}
+                            <td name="statusval"><span class="status text-success">&bull;</span>{{u['status']}}</td>
+                        {% else %}
+                            <td name="statusval"><span class="status text-danger">&bull;</span>{{u['status']}}</td>
+                        {% endif %}
+                        <td>
+                            <div class="d-flex justify-content-between align-items-center">
+                                {% if u['mode'] == "edit" %}
+                                    <label class="view-label" style="margin-right:-10px">View</label>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" name="csbtn" id="toggleSwitch{{ loop.index }}" checked disabled>
+                                        <label class="custom-control-label" for="toggleSwitch{{ loop.index }}"></label>
+                                    </div>
+                                    <label class="edit-label" style="margin-left:-10px">Edit</label>
+                                {% elif u['mode'] == "view" %}
+                                    <label class="view-label">View</label>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" name="csbtn" id="toggleSwitch{{ loop.index }}" disabled>
+                                        <label class="custom-control-label" for="toggleSwitch{{ loop.index }}"></label>
+                                    </div>
+                                    <label class="edit-label">Edit</label>
+                                {% endif %}
+                            </div>
+                        </td>
+
+                        <td>
+                            <a href="#" class="edit_user" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="#" class="save_user" title="Save" data-toggle="tooltip"><i class="fa fa-save"></i></a>
+                            <a href="#" class="delete_user" title="Delete" data-toggle="modal" data-target="#deleteEmployeeModal"><i class="material-icons">&#xE5C9;</i></a>
+                        </td>
+                        <td style="display:none">
+                            {{u['user_id']}}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b>{{ total_entries }}</b> out of <b>{{ total_entries }}</b> entries</div>
+                <ul class="pagination">
+                    {% if total_pages > 1 %}
+                        <li class="page-item {% if page_number == 1 %}disabled{% endif %}">
+                            <a class="page-link" href="?page={{ page_number - 1 }}">Previous</a>
+                        </li>
+                        {% set start_page = page_number - 1 if page_number > 1 else 1 %}
+                        {% set end_page = page_number + 1 if page_number < total_pages else total_pages %}
+                        {% if end_page - start_page < 2 %}
+                            {% if start_page > 1 %}
+                                {% set start_page = start_page - 1 %}
+                            {% elif end_page < total_pages %}
+                                {% set end_page = end_page + 1 %}
+                            {% endif %}
+                        {% endif %}
+                        {% for page in range(start_page, end_page) %}
+                            <li class="page-item {% if page == page_number %}active{% endif %}">
+                                <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                            </li>
+                        {% endfor %}
+                        <li class="page-item {% if page_number == total_pages %}disabled{% endif %}">
+                            <a class="page-link" href="{% if page_number < total_pages %}?page={{ page_number}}{% endif %}">Next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+        </div>
+    </div>
+    <div class="modal fade" id="advanceSearchModal" tabindex="-1" aria-labelledby="advanceSearchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="advanceSearchModalLabel">Advanced Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="container-fluid" id="search">
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label for="select_SW" class="form-label">Select SW</label>
+                                    <select name="select_SW" id="select_SW" class="form-control">
+                                        <option value="nothing_sw">Select SW</option>
+                                        <option>21B</option>
+                                        <option>AU/IAU 22A</option>
+                                        <option>NA</option>
+                                        <option>vDU 22A</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="select_Tech" class="form-label">Select Technology</label>
+                                    <select name="select_Tech" id="select_Tech" class="form-control" style="width:120px">
+                                        <option value="nothing_tech">Select Technology</option>
+                                        <option>C-Band</option>
+                                        <option>C-Band(64T64R)</option>
+                                        <option>C-Band(8T8R)</option>
+                                        <option>C-Band/DSS</option>
+                                        <option>C-Band/DSS/FR2</option>
+                                        <option>DSS/Cband</option>
+                                        <option>mmWave</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="select_kpi" class="form-label">Select KPI</label>
+                                    <select name="select_kpi" id="select_kpi" class="form-control">
+                                        <option value="nothing_kpi">Select KPI</option>
+                                        <option>Accessibility</option>
+                                        <option>Accessibility & Retainability</option>
+                                        <option>HO</option>
+                                        <option>Retainability</option>
+                                        <option>Retainability & Accessibility</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="select_Area" class="form-label">Select Area</label>
+                                    <select name="select_Area" id="select_Area" class="form-control">
+                                        <option value="nothing_area">Select Area</option>
+                                        <option>SNAP/BAU</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script src="/static/assets/js/usermgmgt.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#issueTable').DataTable({
+                searching: true,
+            });
+                        var table = $('#issueTable2').DataTable({
+                dom: '<"d-flex justify-content-between"f<"ml-2"l>>tip',
+                language: {
+                    emptyTable: "No Issues Found"
+                }
+            });
+             $('.dropdown').hover(function() {
+                $(this).find('.dropdown-menu').show();
+             }, function() {
+                $(this).find('.dropdown-menu').hide();
+            });
+            $('#issueTable2_filter').append('&nbsp;&nbsp;<a href="#" id="searchLink" class="btn btn-primary btn-sm">GO</a>');
+            $('#issueTable2_filter').append('&nbsp;<a href="#" id="advanceSearchLink" class="btn btn-link ml-2" data-bs-toggle="modal" data-bs-target="#advanceSearchModal"><u>Advanced Search</u></a>');
+
+            $('#searchLink').on('click', function(e) {
+                e.preventDefault();
+                performSearch();
+            });
+            $('#advanceSearchButton').on('click', function(e) {
+                alert();
+                e.preventDefault();
+                performSearch();
+                $('#advanceSearchModal').modal('hide');
+            });
+                $('select').select2({
+        dropdownParent: $('#advanceSearchModal') // Ensure dropdown is attached to modal
+    });
+
+            $('#saveissue').hide();
+            $('#editissue').click(function() {
+                $('input[type="text"], textarea').removeAttr('readonly');
+                $('#editissue').hide();
+                $('#saveissue').show();
+            });
+            function performSearch() {
+                        var searchText = $('#issueTable2_filter input[type="search"]').val();
+                        var advancedSearch = false;
+                        var select_SW = $('#select_SW').val();
+                        var select_Tech = $('#select_Tech').val();
+                        var select_kpi = $('#select_kpi').val();
+                        var select_Area = $('#select_Area').val();
+
+
+                        if (select_SW !== "nothing_sw" || select_Tech !== "nothing_tech" || select_kpi !== "nothing_kpi" || select_Area !== "nothing_area") {
+                            advancedSearch = true;
+                        }
+
+                        var data = {
+                            searchValue: searchText,
+                            select_SW: select_SW,
+                            select_Tech: select_Tech,
+                            select_kpi: select_kpi,
+                            select_Area: select_Area
+                        };
+
+                        $.ajax({
+                            url: '/fetch_issues',
+                            type: 'POST',
+                            data: data,
+                            success: function(data) {
+                                table.clear();
+                                data.forEach(function(record) {
+                                    table.row.add([
+                                        record.issue,
+                                        record.SW,
+                                        record.Status,
+                                        record.Area,
+                                        record.Technology,
+                                        record.Visibility,
+                                        record.Major_KPI_Degradation,
+                                        record.Issue_Category,
+                                        record.Description,
+                                        record.Impact,
+                                        `<a href="/act_srch/${record.issue}">&#x1F441;</a>`
+                                    ]).draw();
+                                });
+                            },
+                            error: function(xhr, status, error) {
+                                console.error('Error fetching data:', error);
+                            }
+                        });
+            }
+        });
+    </script>
+
+</body>
+</html>

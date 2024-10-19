@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>iFAST</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="/static/assets/js/issues/single_issue.js" defer></script> -->
+        <style>
+       .custom-modal {
+            display: none;
+            position: absolute;
+            z-index: 1000; /* Ensure it is on top of other elements */
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            width: 350px;
+            height: 300px;
+            overflow-y:auto;
+            top: 0;
+        }
+.custom-modal .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px;
+        }
+        .custom-modal .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            border-top: 1px solid #dee2e6;
+        }
+        .custom-modal .modal-body {
+            padding: 10px;
+            max-height: calc(100% - 80px); /* Adjust based on header and footer height */
+            overflow-y: auto;
+        }
+
+             .nav-item.right-align {
+            margin-left: auto;
+            }
+            #sticky-footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            height: 58px;
+            //background: grey;
+            }
+            .checkbox-group {
+            display: flex;
+            align-items: center;
+            }
+            .checkbox-group label {
+            margin-left: 5px;
+            margin-right: 15px;
+            }
+            body, html {
+            height: 100%;
+            background-color: #f4f4f4;
+            font-size: 12px !important;
+            width: 100%;
+            margin: 0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #292b2c;
+            display: flex;
+            flex-direction: column;
+            overflow-x: auto;
+            }
+            fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            }
+            fieldset.label{
+            font-weight:bold;
+            }
+            .the-fieldset {
+            border: 1px groove #1428A0;
+            border-color: #5161ac;
+            background: #fff !important;
+            padding: 15px;
+            border-radius: 5px;
+            width:100%;
+            }
+            /* Full height image header */
+            .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("/w3images/mac.jpg");
+            min-height: 100%;
+            }
+            .w3-bar .w3-button {
+            padding: 16px;
+            }
+            .footer {
+            font-size:12px;
+            font-family:arial;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            }
+            input.formInvalid::-webkit-input-placeholder {
+            color: red;
+            }
+            .star:after {
+            content: " *";
+            color: red;
+            }
+            .nohover {
+            pointer-events: none;
+            }
+            .hrefButton {
+            padding: 3px 10px;
+            text-decoration: none;
+            }
+            .button {
+            background-color: Teal;
+            border: none;
+            color: white;
+            padding: 8px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+            }
+            #advsrch {
+            display: none;
+            /* Hide the advsrch div by default */
+            }
+            .button:hover {
+            background-color: #ddd;
+            color: black;
+            }
+            label.required::after {
+            content: " *";
+            color: red; /* Customize the color if needed */
+            }
+            .swal2-popup {
+            width: 300px; /* Change the width as per your requirement */
+            }
+            .swal2-popup {
+            font-size: 8px; /* Change the font size as per your requirement */
+            }
+            .error {
+            color: red;
+            }
+            .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            margin-top: 0 !important;
+            }
+            .btn-transparent-on-hover {
+            transition: background-color 0.3s;
+            }
+            .btn-transparent-on-hover:hover {
+            background-color: transparent !important;
+            }
+            .container {
+            max-width: 1400px;
+            border: 2px groove ThreeDFace;
+            margin: 0 auto;
+            padding-top: 20px;
+            background: #fff !important;
+            margin-top: 20px;
+            //overflow:auto;
+            }
+            .progressbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            counter-reset: step;
+            margin: 2rem 0;
+            width: 130px;
+            }
+            .step {
+            width: 2.1875rem;
+            height: 1.9rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            background-color: lightgray;
+            color: white;
+            position: relative;
+            z-index: 1;
+            }
+            .step.active {
+            background-color: blue;
+            }
+            .step.completed {
+            background-color: blue;
+            }
+            .step:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -105%;
+            right: -50%;
+            height: 2px;
+            width: calc(100% + 50%);
+            background-color: lightgray;
+            z-index: -1;
+            }
+            .step:first-child:before {
+            display: none;
+            }
+            .step.active:before, .step.completed:before {
+            background-color: blue;
+            }
+            .progress {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            background-color: #dcdcdc;
+            z-index: -1;
+            }
+            .progressbar::before,
+            .progress {
+            width: calc(100% - 2.1875rem * 4); /* Adjust the number of steps accordingly */
+            height: 0.2rem; /* Adjust the height as needed */
+            background-color: var(--primary-color);
+            border-radius: 0.1rem; /* Adjust the border radius as needed */
+            margin: auto;
+            }
+            .nav-tabs .nav-link.active {
+            color: white;
+            background-color: blue;
+            border-color: blue;
+            }
+            .nav-tabs .nav-link {
+            color: grey;
+            background-color: lightgrey;
+            border-color: lightgrey;
+            }
+            .the-fieldset label{
+            font-weight:bold;
+            }
+
+
+            .navbar-custom {
+            background-color: #283db4;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+            font-size: 13px;
+            font-weight: bold;
+            padding: 2px 2px;
+        }
+        .nav-link {
+            color: white;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: white;
+        }
+        .select2-container--bootstrap5 {
+    z-index: 1060 !important; /* Use !important to override any inline styles */
+}
+
+.select2-container--bootstrap5 .select2-dropdown {
+    z-index: 1060 !important; /* Ensure dropdown has correct z-index */
+}
+                .modal-dialog {
+            max-width: 40%;
+        }
+
+        .nav-item .dropdown-menu {
+            background-color: #283db4;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px; /* Adjust width as needed */
+        }
+        .nav-item .dropdown-menu a {
+            color: white;
+        }
+        .nav-item .dropdown-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+            width: 150px; /* Adjust width as needed */
+        }
+        .user-profile {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link {
+            color: white;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link .profile-text {
+            margin-left: 5px;
+            font-size: 10px;
+        }
+        .content-section {
+            padding: 50px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            width: 100%; /* Ensure width is 100% */
+        }
+        .content-section h2 {
+            color: #283db4;
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            margin-bottom: 15px;
+        }
+        .dataTables_wrapper {
+            padding: 0;
+        }
+        table.dataTable {
+            border: 1px solid #ddd; /* Ensure border is visible */
+        }
+        .dataTables_filter {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+.navbar-custom {
+    background-color: #283db4 !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0) !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    padding: 2px 2px !important;
+    width: 100% !important;
+}
+            .navbar-brand {
+            font-family: 'Arial', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #283db4, 0 0 5px #283db4;
+            position: relative;
+            transition: all 0.3s ease;
+            }
+            .navbar-brand:hover {
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #ffeb3b, 0 0 5px #ffeb3b;
+            }
+            .nav-tabs .nav-link.active {
+            color: white;
+            background-color: blue;
+            border-color: blue;
+            }
+            .nav-tabs .nav-link {
+            color: grey;
+            background-color: lightgrey;
+            border-color: lightgrey;
+            }
+    .card-header {
+      position: relative;
+    }
+    .icon-container {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+    .icon-container .icon {
+      cursor: pointer;
+
+    }
+        </style>
+        <script>
+        function isHTML(str) {
+    const doc = new DOMParser().parseFromString(str, 'text/html');
+    return Array.from(doc.body.childNodes).some(node => node.nodeType === 1); // Check for elements
+}
+
+        function toggle(source) {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i] != source)
+                    checkboxes[i].checked = source.checked;
+            }
+        }
+function startSSE() {
+    const eventSource = new EventSource('/stream-logs'); // Make sure this matches the route used to stream logs
+
+    eventSource.onmessage = function(event) {
+        const logContent = document.getElementById('logContent');
+        if (logContent) {
+            logContent.innerHTML += event.data + '<br>';
+            logContent.scrollTop = logContent.scrollHeight;  // Scroll to the bottom
+        }
+
+        if (event.data.includes('[END OF STREAM]')) {
+            eventSource.close();
+            
+            // Update the execTable status for completion
+            $('#execTable tbody tr').each(function() {
+                const $row = $(this);
+                // Assuming there is some identifier or logic to match the row with the completed process
+                // For example, based on the issue ID or other unique information
+                const isCompleted = $row.find('td').eq(4).text().includes('In-progress');
+                if (isCompleted) {
+                    $row.find('td').eq(4).css({
+                        'background-color': 'green',
+                        'color': 'white'
+                    }).text('Completed');
+                }
+            });
+        }
+    };
+
+    eventSource.onerror = function(event) {
+        const logContent = document.getElementById('logContent');
+        if (logContent) {
+            logContent.innerHTML += 'Error occurred: ' + (event.message || 'Unknown error') + '<br>';
+        }
+        eventSource.close();
+    };
+}
+
+
+function testSSE() {
+    const eventSource = new EventSource('/execute-multi');
+
+    eventSource.onmessage = function(event) {
+        console.log("Received data:", event.data);
+        const logContainer = document.getElementById('log-container');
+        if (logContainer) {
+            logContainer.innerHTML += event.data + '<br>';
+            logContainer.scrollTop = logContainer.scrollHeight;  // Scroll to the bottom
+        } else {
+            console.error("Element with id 'log-container' not found.");
+        }
+
+        if (event.data.includes('[END OF STREAM]')) {
+            console.log("Stream ended.");
+            eventSource.close();
+        }
+    };
+
+    eventSource.onerror = function(event) {
+        console.error("Error occurred:", event);
+        const logContainer = document.getElementById('log-container');
+        if (logContainer) {
+            logContainer.innerHTML += 'Error occurred: ' + (event.message || 'Unknown error') + '<br>';
+        } else {
+            console.error("Element with id 'log-container' not found.");
+        }
+        eventSource.close();
+    };
+
+    eventSource.onopen = function() {
+        console.log("Connection opened.");
+        const logContainer = document.getElementById('log-container');
+        if (logContainer) {
+            logContainer.innerHTML += 'Connection opened.<br>';
+        } else {
+            console.error("Element with id 'log-container' not found.");
+        }
+    };
+
+    // Handle custom 'end' event
+    eventSource.addEventListener('end', function(event) {
+        console.log("Custom 'end' event received.");
+        const logContainer = document.getElementById('log-container');
+        if (logContainer) {
+            logContainer.innerHTML += 'Stream ended.<br>';
+        } else {
+            console.error("Element with id 'log-container' not found.");
+        }
+        eventSource.close();
+    });
+}
+
+
+
+        function toggle(source) {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i] != source)
+                    checkboxes[i].checked = source.checked;
+            }
+        }
+        function switch_tab(){
+            $('#nav-exec-tab').tab('show');
+        }
+        $(document).ready(function() {
+
+
+
+         $('#customModal').css('display', 'none');
+    $('#closeModalBtn').on('click', function() {
+        $('#customModal').css('display', 'none');
+    });
+    $(document).on('click', '.log-link', function(e) {
+        e.preventDefault(); // Prevent the default link behavior
+
+        const $link = $(this);
+        const message = $link.data('message'); // Fetch message from data attribute
+        const $row = $link.closest('tr');
+        const issueSequence = $row.find('td').eq(0).text();
+        const actionType = $row.find('td').eq(1).text();
+        const sequenceCondition = $row.find('td').eq(2).text();
+        const executionStatus = $row.find('td').eq(3).text().trim();
+
+        // Format log content
+        const logContent = `Issue Action ID: ${issueSequence}\n\nAction Type: ${actionType}\n\nAction Condition: ${sequenceCondition}\n\nExecution Status: ${executionStatus}\n\n${message}`;
+
+        // Populate modal content
+        const $logContent = $('#logContent');
+        if (isHTML(message)) {
+            $logContent.html(logContent);
+        } else {
+            $logContent.text(logContent);
+        }
+
+
+        const offset = $link.offset();
+        const $modal = $('#customModal');
+        const modalWidth = $modal.outerWidth();
+        const rightMargin = 20;
+
+        $modal.css({
+            top: offset.top + $link.outerHeight(),
+            left: offset.left + $link.outerWidth() - modalWidth - rightMargin,
+
+            display: 'block'
+        });
+    });
+$(document).on('click', '.log-link-live', function(e) {
+    e.preventDefault();
+
+    const $link = $(this);
+    const $row = $link.closest('tr');
+    const issueSequence = $row.find('td').eq(0).text();
+    const actionType = $row.find('td').eq(1).text();
+    const sequenceCondition = $row.find('td').eq(2).text();
+    const executionStatus = $row.find('td').eq(3).text().trim();
+
+    const initialContent = `SESSION ID: ${issueSequence}\n\nUSERNAME : ${actionType}\n\nISSUE ID: ${sequenceCondition}\n\nExecution Status:\n\nLoading logs...`;
+
+    // Show modal and set initial content
+    const $logContent = $('#logContent');
+    $logContent.text(initialContent);
+
+        const offset = $link.offset();
+        const $modal = $('#customModal');
+        const modalWidth = $modal.outerWidth();
+        const rightMargin = 20;
+
+        $modal.css({
+            top: offset.top + $link.outerHeight(),
+            left: offset.left + $link.outerWidth() - modalWidth - rightMargin,
+
+            display: 'block'
+        });
+
+    testSSE();
+});
+
+    // Close modal when clicking the close button
+    $(document).on('click', '.close', function() {
+        $('#customModal').css('display', 'none');
+    });
+
+    // Close modal when clicking outside the modal content
+    $(window).on('click', function(event) {
+        if ($(event.target).is('#customModal')) {
+            $('#customModal').css('display', 'none');
+        }
+    });
+
+
+            //$('.exec_class').hide();
+    $('#execute_selected').click(function(event) {
+                if ($('#regex').val().trim() === '' && $('#email_id').val().trim() === '') {
+                    alert('NE Id and Email fields are Empty.');
+                    return false;
+                }else{
+                    var selectedIds = [];
+                    $('.result_checkbox:checked').each(function() {
+                        selectedIds.push($(this).attr('id').split('_')[1]);
+                    });
+                   if (selectedIds.length > 0){
+                    $('#singleissueForm').attr('action', "{{url_for('execute_selected')}}")
+                    $('#selected_issue_ids').val(selectedIds)
+
+                   }
+
+                }
+            $('#issueTable .result_checkbox:checked').each(function() {
+        var row = $(this).closest('tr');
+        var execCell = row.find('td.exec_class');
+        execCell.html('<a href="#" onclick="switch_tab()"> <u>In-progress</u><img src="/static/assets/img/preloader.gif" height="10px" width="20px"></a>'); // Update the text
+        execCell.css('background-color', 'orange'); // Update the background color
+        execCell.show(); // Make sure it is visible
+
+    });
+    var selectedRows = [];
+$('#issueTable .result_checkbox:checked').each(function() {
+        var row = $(this).closest('tr');
+        var rowData = {
+            'session_id': row.find('td').eq(0).text(), // Assuming session_id is in the first <td>
+            'issue': row.find('td').eq(1).text(),
+            'sw': row.find('td').eq(2).text(),
+            'status': row.find('td').eq(3).text(),
+            'area': row.find('td').eq(4).text(),
+            'technology': row.find('td').eq(5).text(),
+            'visibility': row.find('td').eq(6).text(),
+            'major_kpi_degradation': row.find('td').eq(7).text(),
+            'issue_category': row.find('td').eq(8).text(),
+            'description': row.find('td').eq(9).text(),
+            'sites': $('#regex').val()
+        };
+
+        // Update the cell for the selected row
+        row.find('td.exec_class').html('<a href="#" onclick="switch_tab()"> <u>In-progress</u><img src="/static/assets/img/preloader.gif" height="10px" width="20px"></a>');
+        row.find('td.exec_class').css('background-color', 'orange');
+        row.find('td.exec_class').show();
+
+        selectedRows.push(rowData);
+    });
+
+$.ajax({
+        url: '/execute-multi',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ issues: selectedRows }),
+        success: function(response) {
+
+            $('#execTable tbody').empty();
+            $.each(response.results, function(index, record) {
+                var rowHtml = `
+                    <tr class="${index % 2 === 0 ? 'even' : 'odd'}">
+                        <td>${record.session_id}</td>
+                        <td>${record.user_name}</td>
+                        <td>${record.issue}</td>
+                        <td>${record.issue_category}</td>
+                        <td style="background-color: orange;">In-progress<img src="/static/assets/img/preloader.gif" height="10px" width="20px"></td>
+                        <td style="width:10%">${record.curr_action_no}</td>
+                        <td>${record.timestamp_start}</td>
+                        <td>${record.timestamp_end}</td>
+                        <td class="result-column" style="width:10%">
+                            <a href="#" class="log-link-matches" title="Matches log">
+                                <i class="fa fa-file-text"></i>
+                            </a>
+                            <span id="matches"></span>
+                        </td>
+                        <td class="result-column" style="width:10%">
+                            <a href="#" class="log-link-live" title="Live Log">
+                                <i class="fa fa-file" style="color:#95A5A6 ;"></i>
+                            </a> &nbsp; &nbsp; &nbsp;
+                            <a href="#" class="log-link" title="Summary">
+                                <i class="fa fa-file-text-o" style="color:#95A5A6 ;"></i>
+                            </a>
+                        </td>
+                    </tr>
+                `;
+                $('#execTable tbody').append(rowHtml);
+            });
+        },
+        error: function(xhr, status, error) {
+            console.error('Error:', error);
+        }
+    });
+            });
+          
+                
+
+
+
+
+        });
+
+
+
+
+
+        </script>
+    </head>
+    <body>
+
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" style="min-width:100%;width:100% !important;">
+                <a class="navbar-brand" href="{{url_for('newpage')}}">&nbsp;&nbsp;iFAST<i class="fa fa-home"></i></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav" role="tablist">
+                    <li class="nav-item">
+                <!--                    <a class="nav-link " id="knowledge-base-tab" data-bs-toggle="tab" href="#knowledge-base" role="tab" aria-controls="knowledge-base" aria-selected="true">&nbsp;|&nbsp;&nbsp;KNOWLEDGE BASE</a>-->
+                                       <a class="nav-link " id="knowledge-base-tab"  href="{{url_for('newpage')}}#knowledge-base" >&nbsp;|&nbsp;&nbsp;KNOWLEDGE BASE</a>
+
+                    </li>
+                    <li class="nav-item">
+                <!--                    <a class="nav-link" id="lookup-issue-tab" data-bs-toggle="tab" href="{{url_for('lookup_onload')}}" role="tab" aria-controls="lookup-issue" aria-selected="false">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>-->
+                        <a class="nav-link active" id="lookup-issue-tab" href="{{url_for('lookup_onload')}}">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;CONFIGURATION MANAGEMENT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>
+                <!--                    <a class="nav-link" id="user-pane-tab" data-bs-toggle="tab" href="#user-pane" role="tab" aria-controls="user-pane" aria-selected="false">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>-->
+                    </li>
+                </ul>
+                </div>
+                <div class="question-dropdown">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="questionDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="questionDropdown">
+                        <li><a class="dropdown-item" href="#">Help</a></li>
+                        <li><a class="dropdown-item" href="#">Support</a></li>
+                        <li><a class="dropdown-item" href="#">About</a></li>
+                    </ul>
+                </div>
+                </div>
+
+                <div class="user-profile">
+                <div class="dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-circle fa-lg"></i><span class="profile-text">{{session['user_name']}}<br> Superadmin</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                        <li><a class="dropdown-item" href="#">Change Password</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                    </ul>
+                </div>
+                </div>
+        </nav>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }} mt-3 text-center" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <div class="container mt-1">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">LOOK UP BY ISSUE</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">LOOK UP BY SESSION</a>
+                    <a class="nav-item nav-link" id="nav-exec-tab" data-toggle="tab" href="#nav-exec" role="tab" aria-controls="nav-exec" aria-selected="false">CURRENT EXECUTIONS</a>
+                </div>
+            </nav>
+			<div class="tab-content" id="nav-tabContent">
+                <br>
+				<div class="tab-pane show fade active w-100" id="nav-home" role="tabpanel" style="margin-left:10px;margin-right:50px" aria-labelledby="nav-home-tab">
+				 <div>
+                        <p id="update_ret" class="text-danger"></p>
+                    </div>
+                <!-- <div class="tab-pane w-100" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="width:60%"> -->
+                    <form class="form" name="singleissueForm" id="singleissueForm" method="POST" action="{{url_for('lookup_onload')}}" style="width:100%">
+                        <fieldset class="the-fieldset">
+                            <legend class="w-auto px-2" style="text-decoration: underline;">Search</legend>
+
+                            <div class="form-row mt-1">
+                                <div class="col-md-2 mt-3 ml-3">
+                                    <div class="form-group">
+                                        <label for="issue_cat" class="star">Issue Category:</label>&nbsp;<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="right" title="Can be used to search multiple issue category by entering either full or partial keyword "></i><br>
+ <select name="issue_cat" id="issue_cat" class="form-control" style="width:100%;" multiple>
+                                           <option value="">&#45;&#45;select&#45;&#45;</option>
+                                           {% for cat in categories %}
+                                         <option {% if category_val and category_val == cat %} selected {% endif %} value="{{cat}}" > {{cat}}</option>-->
+                                           {% endfor %}
+                                        </select>
+                                        {#                                        <
+input type="text" class="form-control" id="issue_cat" name="issue_cat" placeholder="Enter Issue Category" style="width:100%;">#}
+<!--                                        <select name="issue_cat" id="issue_cat" class="form-control" style="width:100%;" multiple>-->
+<!--                                            <option value="">&#45;&#45;select&#45;&#45;</option>-->
+<!--                                            {% for cat in categories %}-->
+<!--                                            <option {% if category_val and category_val == cat %} selected {% endif %} value="{{cat}}" > {{cat}}</option>-->
+<!--                                            {% endfor %}-->
+<!--                                        </select>-->
+                                        <script>
+                                          $(document).ready(function () {
+                                                    $('#issue_cat').select2({
+                                                    placeholder: "--select--",
+                                                    allowClear: true,
+                                                    width: 'resolve'
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mt-3 ml-2">
+                                    <div class="form-group">
+
+                                        <label for="select_SW" >Software:</label>
+                                        <select name="select_SW" id="select_SW" class="form-select" style="width:100%;">
+                                            <option value="">--select--</option>
+                                             {% for sw in softwares %}
+                                            <option {% if software_val and software_val == sw %} selected {% endif %} value="{{sw}}">{{sw}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                        <script>
+                                              $(document).ready(function () {
+                                            //change selectboxes to selectize mode to be searchable
+                                               $("select_SW").select2();
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+<div class="col-md-2 mt-3 ml-2">
+                                    <div class="form-group">
+									<label for="select_Tech" class="star">Technology:</label>
+                                        <select name="select_Tech" id="select_Tech" class="form-control" style="width:100%;">
+                                            <option value="">--select--</option>
+                                            {% for tech in technologies %}
+                                            <option  {% if technology_val and technology_val == tech %} selected {% endif %} value="{{tech}}"> {{tech}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                        <script>
+                                              $(document).ready(function () {
+                                            //change selectboxes to selectize mode to be searchable
+                                               $("select_Tech").select2();
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mt-3 ml-2">
+                                    <div class="form-group">
+                                        <label for="select_kpi" >KPI:</label><br>
+                                        <select name="select_kpi" id="select_kpi" class="form-select" style="width:100%;">
+                                            <option value="">--select--</option>
+                                             {% for kpi in kpis %}
+                                            <option   {% if kpi_val and kpi_val == kpi %} selected {% endif %} value="{{kpi}}" >{{kpi}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                        <script>
+                                          $(document).ready(function () {
+                                            //change selectboxes to selectize mode to be searchable
+                                               $("select_kpi").select2();
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 mt-3 ml-2">
+                                    <div class="form-group">
+
+                                        <label for="select_Area" >Area:</label><br>
+                                        <select name="select_Area" id="select_Area" class="form-select" style="width:100%;">
+                                            <option value="">--select--</option>
+
+                                             {% for area in areas %}
+                                            <option  {% if area_val and area_val == area %} selected  {% endif %} value="{{area}}">{{area}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                          <script>
+                                              $(document).ready(function () {
+                                            //change selectboxes to selectize mode to be searchable
+                                               $("select").select2();
+                                            });
+                                        </script>
+                                    </div>
+								</div>
+                            </div>
+                            <div class="form-row mt-5">
+                                <div class="form-group col-md-3 mb-3 ml-3 ">
+                                    <label for="regex" class="form-label star">NE ID's:</label>
+                                    <textarea  id="regex" name="regex" class="form-control" rows="3" cols="2" style="width:250px;" placeholder="Enter NE ID's seperated by comma or newline"></textarea>
+                                </div>
+								<div class="form-group col-md-3 mb-3 ">
+                                    <label for="email_id" class="form-label star"> Email ID:</label>
+									<textarea id="email_id" name="email_id" class="form-control" rows="3" cols="2" style="width:250px;"placeholder="Enter one or more email ID's seperated by comma"></textarea>
+                                </div>
+                            </div>
+                            <input type="hidden" name="selected_issue_ids" id="selected_issue_ids"></input>
+                        </fieldset>
+                        <div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+							<button type="submit" class="w3-button w3-black w3-round">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="w3-button w3-black w3-round" id="execute_selected">Execute Selected</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <br>
+						<fieldset class="the-fieldset" style="width:100%">
+                        <legend class="w-auto px-2" style="text-decoration: underline;">Details</legend>
+						<div class="container-fluid mt-1">
+						<table class="table table-bordered table-striped" id="issueTable">
+						<thead>
+							<tr>
+                                <th><input type="checkbox" name="select all" onclick="toggle(this);"></th>
+								<th>Issue</th>
+								<th>SW</th>
+								<th>Status</th>
+								<th>Area</th>
+								<th>Technology</th>
+								<th>Visibility</th>
+								<th>Major KPI Degradation</th>
+								<th>Issue Category</th>
+								<th>Description</th>
+<!--								<th>Impact</th>-->
+								<th>Actions</th>
+                                <th class="exec_class">Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- Dynamic rows go here -->
+                            {% if not results %}
+							<tr class="odd"><td valign="top" colspan="12" class="dataTables_empty" align="center">No Issues Found</td></tr>
+                            {% else %}
+                            {% for result in results %}
+                            <tr class="{% if loop.index % 2 == 0 %} even {% else %} odd {% endif %}">
+                                <td><input type="checkbox" id="checkbox_{{result.issue}}" class="result_checkbox" name="select"></td>
+                                <td class="sorting_1">{{result.issue}}</td>
+                                <td>{{result.SW}}</td>
+                                <td>{{result.Status}}</td>
+                                <td>{{result.Area}}</td>
+                                <td>{{result.Technology}}</td>
+                                <td>{{result.Visibility}}</td>
+                                <td>{{result.Major_KPI_Degradation}}</td>
+                                <td>{{result.Issue_Category}}</td>
+                                <td>{{result.Description}}</td>
+<!--                                <td>{{result.Impact}}</td>-->
+                                <td><a href="/action_exe/{{result.issue}}">👁</a></td>
+                                <td style="background-color:grey;color:white" class="exec_class"><a href="#" onclick="switch_tab()" style="color:white">Pending</a></td>
+                            </tr>
+                            {% endfor %}
+                            {% endif %}
+						</tbody>
+					</table>
+					</div>
+					</fieldset>
+					</br>
+
+                    </form>
+                </div>
+
+				 <div class="tab-pane w-100" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="width:60%" >
+                    <form name="IssueSequenceForm" id="IssueSequenceForm" style="margin-left:100px;margin-right:100px">
+                        <fieldset class="the-fieldset">
+                            <legend class="w-auto px-2" style="text-decoration: underline;">Search</legend>
+                            <div class="form-row mt-1">
+								<div class="form-group col-md-2">
+                                    <label for="session_id"> Session ID:</label>
+                                    <input type="text" id="session_id" class="form-control" name="session_id" value="">
+                                    <input type="hidden" id="status_val" name="status_val">
+                                </div>
+								<div class="form-group col-md-2">
+                                    <label for="user_name"> User Name:</label>
+                                    <input type="text" id="user_name" class="form-control" name="user_name" value="">
+                                    <input type="hidden" id="status_val" name="status_val">
+                                </div>
+								<div class="form-group col-md-2">
+									<label for="select_Tech">Technology:</label>
+                                    <select name="select_Tech" id="select_Tech" class="form-control" style="width:120px;">
+                                        <option value="nothing_tech">--select--</option>
+                                        <option>C-Band</option>
+                                        <option>C-Band(64T64R)</option>
+                                        <option>C-Band(8T8R)</option>
+                                        <option>C-Band/DSS</option>
+                                        <option>C-Band/DSS/FR2</option>
+                                        <option>DSS/Cband</option>
+                                        <option>mmWave</option>
+                                    </select>
+									<script>
+										  $(document).ready(function () {
+										//change selectboxes to selectize mode to be searchable
+										   $("select_Tech").select2();
+										});
+									</script>
+                                </div>
+								<div class="form-group col-md-2">
+                                    <label for="select_SW" >Software Version:</label>
+                                    <select name="select_SW1" id="select_SW1" class="form-control" style="width:120px;">
+                                        <option value="nothing_sw">--select--</option>
+                                        <option>21B</option>
+                                        <option>AU/IAU 22A</option>
+                                        <option>NA</option>
+                                        <option>vDU 22A</option>
+                                    </select>
+									<script>
+										  $(document).ready(function () {
+										//change selectboxes to selectize mode to be searchable
+										   $("select_SW").select2();
+										});
+									</script>
+                                </div>
+
+		                    </div>
+                        </fieldset>
+                        <div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+							<a type="button" class="w3-button w3-black w3-round"
+                               href=""
+                               id="action5">Search</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <br>
+						<fieldset class="the-fieldset">
+                            <legend class="w-auto px-2" style="text-decoration: underline;">Details</legend>
+						<div class="container-fluid mt-1">
+						<table class="table table-bordered table-striped" id="issueTable22">
+						<thead>
+							<tr>
+								<th>Session ID</th>
+								<th>User Name</th>
+								<th>Issue Category</th>
+								<th>Technology</th>
+								<th>Issue ID</th>
+								<th>Actions Executed</th>
+								<th>Status</th>
+								<th>TimeStamp</th>
+								<th>View Logs</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- Dynamic rows go here -->
+							<tr class="odd"><td valign="top" colspan="11" class="dataTables_empty" align="center">No Issues Found</td></tr>
+						</tbody>
+					</table>
+					</div>
+
+					</fieldset>
+
+					</br>
+                    </form>
+
+                </div><br>
+                <div class="tab-pane w-100" id="nav-exec" role="tabpanel" aria-labelledby="nav-exec-tab" style="width:60%">
+               <form style="width:100%" id="exec_form">
+               <fieldset class="the-fieldset">
+                                    <legend class="w-auto px-2" style="text-decoration: underline;">EXECUTIONS</legend>
+                                                <div class="card mb-3 text-white">
+                      <div class="card-header bg-primary">
+                        <div class="icon-container">
+                          <i class="fas fa-plus icon" id="iconCard2" data-bs-toggle="collapse" data-bs-target="#collapseCard2" aria-expanded="true" aria-controls="collapseCard2"></i>
+                          <i class="fas fa-minus icon d-none" id="iconCard2Minus" data-bs-toggle="collapse" data-bs-target="#collapseCard2" aria-expanded="false" aria-controls="collapseCard2"></i>
+                        </div>
+                      </div>
+                      <div id="collapseCard2" class="collapse show">
+                        <div class="card-body" style="color:black">
+
+                            <table class="table table-bordered table-striped" id="execTable">
+					<thead>
+						<tr>
+							<th>Session ID</th>
+							<th>User Name</th>
+							<th>Issue</th>
+							<th>Issue Category</th>
+							<th>Execution Status</th>
+							<th style="width:10%">Curr Action no.</th>
+							<th>TimeStamp Start</th>
+							<th>TimeStamp End</th>
+							<th>NE Matches</th>
+							<th>View Logs</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Dynamic rows go here -->
+                        {% if not results %}
+						 <tr class="odd" align="center"><td valign="top" colspan="11" class="dataTables_empty">No Executions Found</td></tr>
+						{% else %}
+                        {% for record in results %}
+						<tr class="odd">
+							<td>12345</td>
+							<td>shruti.sagar</td>
+							<td class="sorting_1">{{record.issue}}</td>
+							<td>{{record.Issue_Category}}</td>
+							<td style="background-color: orange ;">In-progress<img src="/static/assets/img/preloader.gif" height="10px" width="20px"></td>
+							<td style="width:10%">2/2</td>
+							<td>2024-06-03-09:15:42</td>
+							<td>2024-06-03-09:30:42</td>
+							<td class="result-column" style="width:10%"><a href="#" id="show-log" class="log-link-matches" title="Matches log"><i class="fa fa-file-text"></i></a><span id="matches"></span></td>
+							<td class="result-column" style="width:10%"><a href="#" class="log-link-live" title="Live Log"><i class="fa fa-file" style="color:#95A5A6 ;"></i></a> &nbsp; &nbsp; &nbsp;<a href="#" class="log-link" title="Summary"><i class="	fa fa-file-text-o" style="color:#95A5A6 ;"></i></a></td>
+						</tr>
+						{% endfor %}
+                        {% endif %}
+<!--						<tr class="odd"><td>13246</td><td>john.doe</td><td class="sorting_1">7</td><td>CA Req Band and ENDC Band Config</td><td style="background-color: #CD6155 ;">Failure</td><td style="width:10%">2/3</td><td>2024-06-03-09:22:40</td><td>2024-06-03-09:30:40</td><td>-</td><td class="result-column" style="width:10%"><a href="#" class="log-link" title="Error Log"><i class="fa fa-file-text" style="color:#CD6155;"></i></a></td></tr>-->
+<!--						-->
+<!--						<tr class="even"><td>13347</td><td>john.doe</td><td class="sorting_1">9</td><td>High ENDC Drop Rate due to Sync Reconfig Fails</td><td style="background-color: #FAD7A0;">InProgress</td><td style="width:10%">1/5</td><td>2024-06-03-09:25:31</td><td>-</td><td>-</td><td>-</td></tr>-->
+<!--						-->
+<!--						<tr class="odd"><td>13545</td><td>john.doe</td><td class="sorting_1">10</td><td>High ENDC Drop Rate due to Sync Reconfig Fails</td><td style="background-color: grey;">Pending</td><td style="width:10%">-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>-->
+					</tbody>
+				</table>
+                        </div>
+                      </div>
+
+                    </div>
+</fieldset><br><br>
+                                </form>
+                </div>
+
+                </div>
+
+        </div>
+    </body>
+<div class="custom-modal" id="customModal">
+    <div class="modal-header">
+        <h5 class="modal-title">Log Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeModalBtn">&times;</button>
+    </div>
+    <div class="modal-body">
+        <pre id="logContent">Loading logs...</pre>
+    </div>
+
+</div>
+<!-- Modal Structure -->
+<div id="logModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Live Logs</h2>
+        <div id="log-container" style="max-height: 400px; overflow-y: auto;"></div>
+    </div>
+</div>
+
+
+</html>

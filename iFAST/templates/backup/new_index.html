@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>iFAST</title>
+
+   <meta charset="UTF-8">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- MDBootstrap CSS -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+   <!-- FontAwesome for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+   <script src="/static/assets/vendor/animsition/js/animsition.min.js"></script>
+   <script src="/static/assets/vendor/bootstrap/js/popper.js"></script>
+   <script src="/static/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+   <script src="/static/assets/vendor/select2/select2.min.js"></script>
+   <style>
+      body {
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         font-family: myriadpro-regular;
+      }
+
+      .gradient-custom-2 {
+         background: linear-gradient(to right, #0951C1, #0951C1, #0951C1, #0951C1);
+      }
+
+      @media (min-width: 768px) {
+         .gradient-form {
+            height: 90vh !important;
+         }
+      }
+
+      @media (min-width: 769px) {
+         .gradient-custom-2 {
+            border-top-right-radius: .3rem;
+            border-bottom-right-radius: .3rem;
+         }
+      }
+
+      .loginInputBlock {
+         position: relative;
+         margin-bottom: 1.5rem;
+         width: 60%;
+      }
+
+      .loginInputIcon {
+         position: absolute;
+         left: 10px;
+         top: 50%;
+         transform: translateY(-50%);
+         color: #495057;
+      }
+
+      .form-control {
+         padding-left: 40px;
+      }
+
+      .module-list {
+         list-style: none;
+         padding-left: 0;
+      }
+
+      .module-list > li {
+         margin-bottom: 1rem;
+      }
+
+      .module-list > li > span {
+         font-weight: bold;
+         margin-right: .5rem;
+      }
+
+      .module-list ul {
+         list-style: none;
+         padding-left: 1.5rem;
+      }
+
+      .module-list ul li {
+         display: flex;
+         align-items: flex-start;
+         margin-bottom: .5rem;
+      }
+
+      .module-list ul li i {
+         margin-right: .5rem;
+         color: #28a745;
+      }
+
+      .btn-primary {
+         background-color: #12279e;
+         border-color: #12279e;
+      }
+
+      .btn-outline-danger {
+         border-color: #dc3545;
+         color: #dc3545;
+      }
+
+      .btn-outline-danger:hover {
+         background-color: #dc3545;
+         color: #fff;
+      }
+
+      .samsung {
+         text-align: right;
+      }
+   </style>
+</head>
+<body>
+<div class="samsung">
+   <img src="/static/assets/img/logo-removebg-preview.png" width="180px" height="50px" style="background-color: transparent;">
+</div>
+<section class="h-60 gradient-form p-1" style="background-color: rgba(238, 238, 238, 0.7);">
+   <div class="container py-3 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+         <div class="col-auto">
+            <div class="card rounded-3 text-black">
+               <div class="row g-0">
+                  <div class="col-lg-6 d-flex align-items-start gradient-custom-2">
+                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                        <h3 class="mb-3" style="font-size:24px"> iFAST(Issue Fast Automated Identification Tool)</h3>
+                        <h5 style="font-weight:normal;font-size:15px">iFAST is an application built with the intention of automating the process of executing combination of backend scripts to aid multiple teams.<br>
+                           Basically its built with three modules for Phase1 with below mentioned features:</h5>
+                        <ul class="module-list" style="font-size:12px">
+                           <li>
+                              <span>&#8544; )</span> Knowledge Base:
+                              <ul>
+                                 <li>
+                                    <i class="fas fa-check"></i> Module is intended for creating/contributing to Knowledge.
+                                 </li>
+                                 <li>
+                                    <i class="fas fa-check"></i> User can walk through all the issues. Can edit/update the issues if required.
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <span>&#8545; )</span> Issue Look Up:
+                              <ul>
+                                 <li>
+                                    <i class="fas fa-check"></i> This Module Helps users to search particular issue/ set of issues.
+                                 </li>
+                                 <li>
+                                    <i class="fas fa-check"></i> User can then execute individually or can execute all the issues.
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <span>&#8546; )</span> Configuration Management(Future Releases):
+                              <ul>
+                                 <li>
+                                    <i class="fas fa-check"></i> This Module Helps users to configure the different set of configuration to aid the executions.
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <span>&#8547; )</span> User Management(Future Releases):
+                              <ul>
+                                 <li>
+                                    <i class="fas fa-check"></i> This Module Helps superadmin to manage the users of the tool.
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="card-body p-md-5 mx-md-4">
+                        <div class="text-center">
+                           <h1 class="mt-1 mb-3 pb-1" style="font-weight: bold; color: #12279e; font-size:24px">
+                              <span style="font-weight: bold; color: #12279e; font-size:30px">iFAST</span><br>
+                              <span style="font-weight: bold; color: #12279e; font-size:16px">issue Fast Automated Identification Tool</span>
+                           </h1>
+                        </div>
+
+                        <form class="form pt-2" method="post" action="/login_succ" novalidate>
+                           {% with messages = get_flashed_messages() %}
+                           {% if messages %}
+                           {% for message in messages %}
+                           <div class="container">
+                              <div class="alert alert-danger alert-dismissable" role="alert">
+                                 {{message}}
+                                 <button type="button" class="close float-end" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                              </div>
+                           </div>
+                           {% endfor %}
+                           {% endif %}
+                           {% endwith %}
+                           <div class="loginInputBlock" style="margin-left:100px">
+                              <i class="loginInputIcon fas fa-user"></i>
+                              <input type="text" autofocus class="form-control myriadproRegular selector noshadow" id="username" name="username" placeholder="ENTER USER NAME" required>
+                              <div class="invalid-feedback">Please enter your username.</div>
+                           </div>
+                           <div class="loginInputBlock" style="margin-left:100px">
+                              <i class="loginInputIcon fas fa-key"></i>
+                              <input type="password" class="form-control myriadproRegular selector noshadow" id="passwd" name="passwd" placeholder="PASSWORD" required>
+                              <div class="invalid-feedback">Please enter your password.</div>
+                           </div>
+                           <div class="loginInputBlock" style="margin-left:100px; width:100px">
+                              <button class="btn btn-primary btn-block" type="submit">Log in</button>
+                           </div>
+                           <div class="d-flex align-items-center justify-content-center pb-4">
+                              <p class="mb-0 me-2">Don't have an account?</p>
+                              <a class="btn btn-outline-danger" href="https://jira-na.sec.samsung.net/secure/CreateIssue.jspa?issuetype=10302&pid=11951" target="_blank">Request here!</a>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- MDBootstrap JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+}
+
+.box {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.box1 {
+    background-color: #ff6b6b;
+    width: 20%;
+}
+
+.box2 {
+    background-color: #6bc1ff;
+    width: 25%;
+}
+
+.box3 {
+    background-color: #6bff8b;
+    width: 30%;
+}
+
+.box4 {
+    background-color: #d86bff;
+    width: 25%;
+}

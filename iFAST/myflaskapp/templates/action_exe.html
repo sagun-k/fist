@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>iFAST</title>
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="/static/assets/js/script.js" defer></script>
+<script src="/static/assets/js/actions/action_exe.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<link href="/static/assets/css/actions/action_exe.css" rel="stylesheet" />
+<style>
+
+</style>
+</head>
+<body>
+ <div id="preloader">
+     <img src="/static/assets/img/please-wait1.gif" alt="Loading...">
+ </div>
+
+        <div class="row">
+            <div class="col d-flex justify-content-start">
+                <p style="text-align:left;">
+                    <a href="{{url_for('landing_page')}}" class="btn btn-sm  custom-btn text-dark"><span><i class="fa fa-home" style="font-size: 1.2em;"></i><u class="text-dark">iFAST</u></span></a>
+                    &nbsp;&nbsp;&nbsp;<a href="{{url_for('fetch_issues')}}" class="btn btn-sm  custom-btn text-dark">
+                        <u>LOOK UP ISSUE</u>
+                    </a>
+                </p>
+            </div>
+            <div class="col d-flex justify-content-end text-end">
+                <div class="dropdown" id="dropdownWrapper">
+                    <button class="btn dropdown-toggle text-dark btn-transparent-on-hover" type="button" id="dropdownMenuButton" aria-expanded="false">
+                        <i class="fa fa-user-circle-o" style="font-size:12px"></i>&nbsp;&nbsp;{{session['user_name']}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#">Change Password</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+<div class="container-fluid">
+    <div class="bg-light">
+        <h2 class="display-5 text-center"><b>Issue Fast Automated Identification Tool</b></h2>
+    </div>
+</div>
+    <div class="sidebar">
+        <div class="progressbar">
+            <div class="step active">
+                <span>
+                     1
+                </span>
+            </div>
+            <div class="step">
+                <span> 2
+                </span>
+            </div>
+            <div class="step">
+                <span>
+                    3
+                </span>
+            </div>
+<!--            <div class="step">-->
+<!--                <span>-->
+<!--                   4-->
+<!--                </span>-->
+<!--            </div>-->
+<!--            <div class="step">-->
+<!--                <span>-->
+<!--                    5-->
+<!--                </span>-->
+<!--            </div>-->
+        </div>
+
+    </div>
+
+
+ <div class="container">
+     <div class="row justify-content-center" style="font-size:16px">
+            <p id="replysave" style="color:green"></p>
+     </div>
+     <form class="form-step" id="saveaction">
+        <div class="row">
+            <!-- General Fieldset -->
+            <div class="col-3">
+                <fieldset class="the-fieldset border p-3">
+                    <legend class="w-auto px-2" style="text-decoration: underline;">Pre-Requisites</legend>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="issue_id" class="form-label">Issue ID:</label>
+                            <input type="text" value="{{issue}}" class="form-control" id="issue_id" name="issue_id" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="sw" class="form-label">SOFTWARE:</label>
+                            <input type="text" id="sw" name="issue_sw" class="form-control" value="{{record.SW}}" readonly>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="status" class="form-label">STATUS:</label>
+                            <input type="text" id="status" name="issue_st" class="form-control" value="{{record.Status}}" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row mt-1">
+
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="issueCat" class="form-label">ISSUE CATEGORY:</label>
+                            <textarea type="" id="issueCat" name="issuecat" class="form-control"  cols="3" rows="3"  readonly>{{ record.Issue_Category }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="POC" class="form-label">POC:</label>
+                            <input type="text" id="POC" name="POC" class="form-control" value="{{record.PoC}}" readonly/>
+                        </div>
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="sequence_id" class="form-label">Action ID:</label>
+                            <input type="text" id="sequence_id" name="sequence_id" value="1" class="form-control"  readonly/>
+                        </div>
+
+
+                    </div>
+                </fieldset>
+            </div>
+            <!-- New Fieldset -->
+            <div class="col-4">
+                <fieldset class="the-fieldset border p-3">
+                    <legend class="w-auto px-2" style="text-decoration: underline;">Execution</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="action_type"> Action Type:</label>
+                            <select class="form-control" id="action_type" name="action_type" disabled>
+                            {% if record.action_type == "RUN OM SCRIPT" %}
+                                <option value="RUN OM SCRIPT" selected>RUN OM SCRIPT</option>
+                                <option value="RUN CLI SCRIPT">RUN CLI SCRIPT</option>
+                                <option value="GREP">GREP</option>
+                            {% elif record.action_type == "RUN CLI SCRIPT" %}
+                                <option value="RUN OM SCRIPT">RUN OM SCRIPT</option>
+                                <option value="RUN CLI SCRIPT" selected>RUN CLI SCRIPT</option>
+                                <option value="GREP">GREP</option>
+                            {% elif record.action_type == "GREP" %}
+                                <option value="RUN OM SCRIPT">RUN OM SCRIPT</option>
+                                <option value="RUN CLI SCRIPT">RUN CLI SCRIPT</option>
+                                <option value="GREP" selected>GREP</option>
+                            {% else %}
+                                <option value="RUN ADHOC SCRIPT">RUN SCRIPT</option>
+                                <option value="GET FILE">GET FILE</option>
+                                <option value="GREP">GREP</option>
+                            {% endif %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="uid" class="form-label">SSH USER ID:</label>
+                            <input type="text" id="uid" class="form-control" name="uid" value="{{ record.server_Login }}" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="pwd" class="form-label">SSH PASSWORD:</label>
+
+                            <input type="password" id="pwd" class="form-control" name="pwd" value="{{ record.server_password if record.server_password is not none else ''  }}" readonly >
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="ip" class="form-label">SERVER IP:</label>
+                            <input type="text" id="ip" class="form-control" name="ip" value="{{ record.Server_IP if record.Server_IP is not none else '' }}" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-row mt-2">
+
+                        <div class="checkbox-group">
+<!--                            <div class="form-check">-->
+<!--                                <label class="form-check-label" for="proceed_yes" style="font-weight:bold">Check ?</label>-->
+<!--                            </div>-->
+<!--                            <div class="form-check">-->
+<!--                                <input disabled class="form-check-input" type="radio" id="OM" name="check_type" value="OM"-->
+<!--                                {% if record.check_type == "OM" %} checked {% endif %} >-->
+<!--                                <label class="form-check-label" for="OM">OM</label>-->
+<!--                            </div>-->
+<!--                            <div class="form-check">-->
+<!--                                <input disabled class="form-check-input" type="radio" id="CLI" name="check_type" value="CLI"-->
+<!--                                {% if record.check_type == 'CLI' %} checked {% endif %}>-->
+<!--                                <label class="form-check-label" for="CLI">CLI</label>-->
+<!--                            </div>-->
+                            <div class="form-check">
+                                <label class="form-check-label" for="proceed_yes" style="font-weight:bold">Proceed ?</label>
+                            </div>
+                            <div class="form-check">
+                                <input disabled class="form-check-input" type="radio" id="proceed_yes" name="proceed" value="yes"
+                                {% if record.proceed == 'Yes' %} checked {% endif %}>
+                                <label class="form-check-label" for="proceed_yes"> Yes</label>
+                                <input disabled class="form-check-input" type="radio" id="proceed_no" name="proceed" value="no"
+                                {% if record.proceed == 'No' %} checked {% endif %}>
+                                <label class="form-check-label" for="proceed_no"> No</label>
+                            </div>
+					</div>
+
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="check_condition" class="form-label">Counter Information:</label>
+                            <textarea disabled id="counter_info" name="counter_info" class="form-control" rows="2" cols="4" >{{  record.counter_info if record.counter_info else ''}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="check_condition" class="form-label">Check Condition:</label>
+                            <textarea disabled id="check_condition" name="check_condition" class="form-control" rows="2" cols="4" >{{record.check_condition}}</textarea>
+                        </div>
+                    </div>
+                </fieldset><br>
+            </div>
+            <div class="col-3">
+                <fieldset class="the-fieldset border p-3">
+                    <legend class="w-auto px-3" style="text-decoration: underline;">Specifics</legend>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="email" class="form-label">EMAIL TO:</label>
+                            <input type="text" id="email" class="form-control" name="email" value="{{ record.email_to if record.email_to is not none else '' }}" >
+                        </div>
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="regex" class="form-label" >NE IDs:</label>
+                            <textarea id="regex" class="form-control" name="regex" value="" cols="2" rows="3">{{record.args}}</textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                        <div class="row mt-5">
+                            <div class="col-2 mx-4">
+                                <input type="button" class="btn btn-lg btn-primary btn-next" value=">" id="next2" onclick="formStepsNum++;"><br><br>
+                            </div>
+                            <div class="col-2">
+                                <input type="button" class="btn btn-lg btn-primary btn-prev" value="<" id="prev5" onclick=""><br><br>
+                            </div>
+                        </div>
+                        <div class="row mt-2 mx-4">
+                            <div class="col-20">
+                                <a class="btn btn-lg btn-secondary" href="#" id="execute_all" onclick="scrollToBottom();">Execute all actions</a>
+                            </div>
+                        </div>
+                        <div class="row mt-5 mx-4">
+                            <div class="col-2">
+                                <a class="btn btn-lg btn-primary" href="/action_exe/{{ record.issue }}" id="reload">reload</a><br><br>
+                            </div>
+                        </div>
+
+            </div>
+
+        </div>
+<!--                     <div class="form-row mt-1">-->
+<!--                    <div class="col-auto">-->
+
+<!--                    </div>-->
+
+<!--&lt;!&ndash;                    <legend class="w-auto px-2" style="text-decoration: underline;">EXECUTE</legend>&ndash;&gt;-->
+
+<!--                    <div class="col-auto">-->
+
+<!--                    </div>-->
+<!--                    <div class="col-auto">-->
+<!--                        <div class="">-->
+<!--                            <a  class="btn btn-lg btn-primary" href="#" id="save_btn">Save</a><br><br>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--&lt;!&ndash;                    <div class="col-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a  class="btn btn-lg btn-secondary" href="#" id="execute_btn" style="width:100%">Execute Individually</a><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="col-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="d-flex justify-content-center w-100">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a  class="btn btn-lg btn-secondary" href="#" id="execute_all">Execute All</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="form-row mt-1 mx-5">-->
+<!--                <div class="col-2">-->
+<!--                    <a  class="btn btn-lg btn-success" href="#" id="send_email">send email</a><br><br>-->
+<!--                </div>-->
+<!--            </div>-->
+     </form>
+    </div>
+  <div class="container" >
+    <table class="table table-responsive table-bordered table-striped w-100" >
+        <thead>
+        <tr >
+            <th>Issue Action ID</th>
+            <th>Action Type</th>
+            <th>Action Condition</th>
+            <th>Execution Status</th>
+            <th>Results</th>
+        </tr>
+        </thead>
+        <tbody id="status-table-body">
+        </tbody>
+<!--        <tr>-->
+<!--            <td style="width:30%">1</td>-->
+<!--            <td style="width:40%">Check1</td>-->
+<!--            <td style="width:30%;background-color:green;">Completed &nbsp;&nbsp;&nbsp;-->
+<!--&lt;!&ndash;                <span style="color:red">&ndash;&gt;-->
+<!--&lt;!&ndash;                <i class="fa-solid fa-xmark fa-lg" data-toggle="tooltip" title="Error"></i></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="/static/assets/img/preloader.gif" height="20px" width="30px">&ndash;&gt;-->
+<!--            </td>-->
+<!--                        <td style="width:30%" nowrap>-->
+<!--                <a href="#" class="log-link">-->
+<!--                <i class="fas fa-file fa-lg"></i>-->
+<!--                </a>-->
+<!--                <span style="color:green"><i class="fa-solid fa-check fa-lg" data-toggle="tooltip" title="Success"></i></span>-->
+<!--&lt;!&ndash;                <span style="color:red"><i class="fa-solid fa-xmark fa-lg" data-toggle="tooltip" title="Error"></i></span>&ndash;&gt;-->
+
+<!--            </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td style="width:30%">2</td>-->
+<!--            <td style="width:40%">Check2</td>-->
+<!--            <td style="width:30%;background-color:green;">Completed &nbsp;&nbsp;&nbsp;-->
+<!--&lt;!&ndash;                <img src="/static/assets/img/preloader.gif" height="20px" width="30px">&ndash;&gt;-->
+<!--            </td>-->
+<!--            <td style="width:30%" nowrap>-->
+<!--                <a href="#" class="log-link">-->
+<!--                <i class="fas fa-file fa-lg"></i>-->
+<!--                </a>-->
+<!--                <span style="color:green"><i class="fa-solid fa-check fa-lg" data-toggle="tooltip" title="Success"></i></span>-->
+<!--&lt;!&ndash;                <span style="color:red"> <i class="fa-solid fa-xmark fa-lg" data-toggle="tooltip" title="Error"></i></span>&ndash;&gt;-->
+
+<!--            </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td style="width:30%">3</td>-->
+<!--            <td style="width:40%">Check3</td>-->
+<!--            <td style="width:30%;background-color:Red;">Error &nbsp;&nbsp;&nbsp;-->
+<!--&lt;!&ndash;                <img src="/static/assets/img/preloader.gif" height="20px" width="30px"/>&ndash;&gt;-->
+<!--            </td>-->
+<!--            <td style="width:30%">-->
+<!--                <a href="#" class="log-link"><i class="fas fa-file fa-lg"></i></a>-->
+<!--&lt;!&ndash;                <span style="color:green"><i class="fa-solid fa-check fa-lg" data-toggle="tooltip" title="Success"></i></span>&ndash;&gt;-->
+<!--                <span style="color:red"><i class="fa-solid fa-xmark fa-lg" data-toggle="tooltip" title="Error"></i></span>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td style="width:30%">4</td>-->
+<!--            <td style="width:40%">Check4</td>-->
+<!--            <td style="width:30%;background-color:Red;">Error &nbsp;&nbsp;&nbsp;-->
+<!--&lt;!&ndash;                <img src="/static/assets/img/preloader.gif" height="20px" width="30px">&ndash;&gt;-->
+<!--            </td>-->
+<!--                        <td style="width:30%" nowrap>-->
+<!--                <a href="#" class="log-link">-->
+<!--                <i class="fas fa-file fa-lg"></i>-->
+<!--                </a>-->
+<!--&lt;!&ndash;                <span style="color:green"><i class="fa-solid fa-check fa-lg" data-toggle="tooltip" title="Success"></i></span>&ndash;&gt;-->
+<!--                <span style="color:red"><i class="fa-solid fa-xmark fa-lg" data-toggle="tooltip" title="Error"></i></span>-->
+
+<!--            </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td style="width:30%">5</td>-->
+<!--            <td style="width:40%">Check5</td>-->
+<!--            <td style="width:30%;background-color:orange;">In Progress &nbsp;&nbsp;&nbsp;-->
+<!--                <img src="/static/assets/img/preloader.gif" height="20px" width="30px">-->
+<!--            </td>-->
+<!--            <td style="width:30%" nowrap>-->
+<!--                <a href="#" class="log-link">-->
+<!--                <i class="fas fa-file fa-lg"></i>-->
+<!--                </a>-->
+<!--&lt;!&ndash;                <span style="color:green"><i class="fa-solid fa-check fa-lg" data-toggle="tooltip" title="Success"></i></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                <span style="color:red"><i class="fa-solid fa-xmark fa-lg" data-toggle="tooltip" title="Error"></i></span>&ndash;&gt;-->
+
+<!--            </td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+    </table>
+    </div>
+    <footer id="sticky-footer" class="bg-dark text-white-50 py-2">
+        <div class="foot-container text-center" style="font-size:12px">
+            <small style="color:white">Created by GSC Tools and Automation Team</small><br>
+            <small style="color:white">&copy; Samsung Electronics 2023. All Rights Reserved. Confidential and Proprietary.</small>
+        </div>
+    </footer>
+<!-- Bootstrap JS and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script>
+
+</script>
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+        <div class="modal-header text-danger"> <!-- Add 'text-danger' class to change header text color to red -->
+        <h5 class="modal-title" id="errorModalLabel"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Error</h5> <!-- Add error icon -->
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"> <!-- Change 'btn-close' to 'close' -->
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+            <p id="errmsg" style="color:red"></p>
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <!-- Additional action buttons can be added here -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="flashModal" tabindex="-1" role="dialog" aria-labelledby="flashModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="flashModalLabel"></h5>
+            </div>
+            <div class="modal-body">
+               <p id="sucmsg"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add modal for success message -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Success</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Email has been sent successfully.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="custom-modal" id="customModal">
+    <div class="modal-header">
+        <h5 class="modal-title">Log Details</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" id="closeModalBtn">&times;</button>
+    </div>
+    <div class="modal-body">
+        <pre id="logContent">Loading logs...</pre>
+    </div>
+
+</div>
+
+
+</body>
+</html>

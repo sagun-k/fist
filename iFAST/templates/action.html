@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iFAST</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif;
+        }
+        body, html {
+            height: 100%;
+            line-height: 1.8;
+            overflow-y: auto;
+        }
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("/w3images/mac.jpg");
+            min-height: 100%;
+        }
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+        .footer {
+            font-size: 12px;
+            font-family: arial;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        input.formInvalid::-webkit-input-placeholder {
+            color: red;
+        }
+        .star:after {
+            content: " *";
+            color: red;
+        }
+        .nohover {
+            pointer-events: none;
+        }
+        .hrefButton {
+            padding: 3px 10px;
+            text-decoration: none;
+        }
+        .button {
+            background-color: Teal;
+            border: none;
+            color: white;
+            padding: 8px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+        }
+        #advsrch {
+            display: none;
+        }
+        .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown-menu {
+            z-index: 2000;
+        }
+        .btn-transparent {
+    background-color: transparent !important;
+}
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#select_SW").select2();
+            $("#select").select2();
+            $("#select_Tech").select2();
+            $("#select_kpi").select2();
+            $('#resetBtn').on('click', function () {
+                $('#searchID').val("");
+                $('#select_SW, #select_Tech, #select_kpi, #select_Area').each(function(){
+                    var firstOption = $(this).find('option:first');
+                    $(this).val(firstOption.val()).trigger('change');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="row">
+    <div class="col" style="margin-left: 20px;">
+        <p style="text-align:left;margin-left:10px"><a href="{{url_for('index')}}"><span><i class="fa fa-home" style="font-size: 1.2em;"></i><u>iFAST</u></span></a></p>
+    </div>
+    <div class="col text-right">
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle btn-transparent" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fa fa-user-circle-o" style="font-size:24px"></i>&nbsp;&nbsp; {{session['user_name']}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{{url_for('logout')}}">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron p-2">
+    <div class="well text-container" style="text-align:center;">
+        <h2 style="font-size:24px;font-family:arial"><b>issue Fast Automated identification Tool</b></h2>
+    </div>
+</div>
+<form name="SearchForm" method="post" action="/fetch_issues">
+    <div class="w3-row-padding w3-grayscale w3-center" style="margin-top:20px; margin-bottom:10px; ">
+        <div class="w3-center">
+            <img src="/static/assets/img/search.png" alt="Search" style="width:3%">
+            <label style="font-size:large;">LOOK UP ISSUE</label>
+        </div>
+    </div>
+    <div class="w3-container w3-center" style="padding:10px 200px" id="search">
+        <div class="w3-container w3-card" style="padding:50px 16px">
+            <label class="star" style="font-size:large;">Search :</label>
+            <input type="text" id="searchID" name="searchID" style="width: 230px; height: 29px" placeholder="enter issue category" required/>&nbsp;&nbsp;
+            <br>
+            <a href="#" id="advsrch-link"><u>ADVANCE SEARCH</u></a>
+        </div>
+    </div>
+    <div class="container-lg" id="advsrch">
+
+        <div class="w3-container w3-card" style="padding:8px 50px">
+            <div class="w3-center">
+                <h4>Advance Search or <a href="#" id="srch-link"><u>Normal search</u></a></h4>
+                <select name="select_SW" id="select_SW" style="width:200px;" class="operator">
+                    <option value="nothing_sw">Select SW </option>
+                    <option>21B</option>
+                    <option>AU/IAU 22A</option>
+                    <option>NA</option>
+                    <option>vDU 22A</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="select_Tech" id="select_Tech" style="width:200px;" class="operator">
+                    <option value="nothing_tech">Select Technology</option>
+                    <option>C-Band</option>
+                    <option>C-Band(64T64R)</option>
+                    <option>C-Band(8T8R)</option>
+                    <option>C-Band/DSS</option>
+                    <option>C-Band/DSS/FR2</option>
+                    <option>DSS/Cband</option>
+                    <option>mmWave</option>
+                </select>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="select_kpi" id="select_kpi" style="width:200px;" class="operator">
+                    <option value="nothing_kpi">Select KPI</option>
+                    <option>Accessibility</option>
+                    <option>Accessibility & Retainability</option>
+                    <option>HO</option>
+                    <option>Retainability</option>
+                    <option>Retainability & Accessibility</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="select_Area" id="select_Area" style="width:200px;" class="operator">
+                    <option value="nothing_area">Select Area</option>
+                    <option>SNAP/BAU</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br></br>
+    <div class="w3-container w3-center">
+        <input type="button" name="resetBtn" class="button" value="Clear" id="resetBtn" >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="sub" class="button" value="Search" id="searchbtn">
+    </div>
+</form>
+<!-- Footer -->
+<footer class="footer">
+    <p>Created by GSC Tools and Automation<br>&copy; Samsung Electronics 2023. All Rights Reserved. Confidential and Proprietary </p>
+</footer>
+
+<div class="modal fade" id="noIssuesModal" tabindex="-1" role="dialog" aria-labelledby="noIssuesModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noIssuesModalLabel">Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>No issues were found for the provided search criteria.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="noIssuesModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel" style="color:red;"><i class="fa fa-times"></i> Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="errormsg"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        {% if show_no_issues_modal %}
+        $('#noIssuesModal').modal('show');
+        {% endif %}
+        $("select").select2();
+        $("#advsrch-link").on("click", function () {
+            $("#advsrch").toggle();
+        });
+    });
+</script>
+</body>
+</html>

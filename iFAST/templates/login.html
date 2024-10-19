@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!--	<link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+	<link rel="stylesheet" type="text/css" href="/static/assets/vendor/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/vendor/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/vendor/animate.css/animate.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/css/login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/css/login/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/static/assets/css/login/css/new.css">
+	<script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/static/assets/vendor/animsition/js/animsition.min.js"></script>
+	<script src="/static/assets/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/static/assets/vendor/select2/select2.min.js"></script>
+	<script src="/static/assets/js/index.js"></script>
+<style>
+#sticky-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 50px;
+    color: white;
+    background-color: black;
+}
+.bg-light {
+    background-color: #f8f9fa !important; /* Your desired background color */
+}
+</style>
+	<script>
+    {% if inactive_modal == "true" %}
+        $(document).ready(function() {
+            $('#inactiveAccountModal').modal('show');
+        });
+    {% endif %}
+	</script>
+</head>
+<body>
+
+<div class="container-fluid p-1" style="background-color: #f8f9fa!important;">
+    <div class="bg-light">
+        <p class="display-6 text-center"><b>issue Fast Automated Identification Tool</b></p>
+    </div>
+</div>
+	<div class="limiter">
+
+		<div class="container-login100" style="background-image: url(static/assets/img/hero-carousel/SEA.jpg);">
+			<div class="wrap-login100 p-t-2 p-b-10" style="background-color: rgba(255, 255, 255, 0.5);">
+				       {% with messages = get_flashed_messages() %}
+						{% if messages %}
+						{% for message in messages %}
+							<div class="container">
+									<div class="alert alert-danger alert-dismissable" role="alert">
+									{{message}}
+									<button type="button" class="close float-end" data-bs-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									</div>
+							</div>
+						{% endfor %}
+						{% endif %}
+						{% endwith %}
+				<form class="login100-form validate-form p-b-10 p-t-1" method="post" action="/login_succ">
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter Knox ID">
+						<input class="input100" type="text" name="username" placeholder="User ID" required>
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="passwd" placeholder="Password" required>
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+<!--					<div class="wrap-input100 validate-input" data-validate="Select Mode">-->
+<!--						<label class="mr-3" style="margin-left:30px;font-family: Arial, sans-serif; font-size: 12px;font-weight:bold;">Select Mode:</label>-->
+<!--						<div class="form-check form-check-inline" style="margin-left:30px;font-family: Arial, sans-serif; font-size: 12px;">-->
+<!--							<input class="form-check-input" type="radio" name="mode" id="view" value="view" checked>-->
+<!--							<label class="form-check-label" for="view" style="font-weight:normal;">View</label>-->
+<!--						</div>-->
+<!--						<div class="form-check form-check-inline" style="font-family: Arial, sans-serif; font-size: 12px;">-->
+<!--							<input class="form-check-input" type="radio" name="mode" id="edit" value="edit" required>-->
+<!--							<label class="form-check-label" for="edit">Edit</label>-->
+<!--						</div>-->
+<!--					</div>-->
+					<br>
+					<div class="remember-me">
+					<p class="loginhere">
+                  Remember Me? &nbsp; <input type="checkbox" >
+                 </p>
+                 <p class="pass" >
+                  <a href="#">Forgot Password?</a>
+             </div>
+
+
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+					<br>
+					<p class="login" style="text-align: center;">
+        Don't have account?  &nbsp;<a href="https://seanetworksnewthing.atlassian.net/jira/secure/CreateIssue.jspa?issuetype=10500&pid=11005">Request here!</a>
+      </p>
+
+
+				</form>
+			</div>
+		</div>
+
+		    <footer id="sticky-footer" class="bg-dark text-white-50">
+        		<div class="container text-center" style="font-size:12px">
+            		<small style="color:white">Created by GSC Tools and Automation Team</small><br>
+          			<small style="color:white">&copy; Samsung Electronics 2023. All Rights Reserved. Confidential and Proprietary.</small>
+
+        		</div>
+      		</footer>
+	</div>
+<!-- Add this modal to your index.html file -->
+<div class="modal fade" id="inactiveAccountModal" tabindex="-1" role="dialog" aria-labelledby="inactiveAccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="inactiveAccountModalLabel">Inactive Account</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Your account is currently inactive. Please contact the administrator.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+
+</body>
+</html>

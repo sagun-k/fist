@@ -1,0 +1,44 @@
+Connection established to iFast Server
+New directory 20240813 created
+Topolgy files copied from Gather server
+
+
+The following table displays the elements with more than one entry in the combined toplogy files
+NE_NAME
+03100010001_5GDU_ROCKLIN_5G_TOY_CELL-RCKL                         [ColoradoSprings5, Sacramento]
+03100010002_5GDU_ROCKLIN_5G_TOY_CELL-RCKL                         [ColoradoSprings5, Sacramento]
+03100010401_5GDU_ROCKLIN_MSC_INBLD39-SNVA                         [ColoradoSprings5, Sacramento]
+03100010402_5GDU_ROCKLIN_MSC_INBLD39-SNVA                         [ColoradoSprings5, Sacramento]
+0310001_5GNB_SNVA_ACPFP_031000100                                 [ColoradoSprings5, Sacramento]
+                                                                               ...              
+2020846_5GNB_NWBL_AUPFP_202084610                                 [ColoradoSprings5, Sacramento]
+3600520085_5GDU_CA_SAC_CENTRALSAC_160-RCKL                        [ColoradoSprings5, Sacramento]
+3600520086_5GDU_CA_SAC_CENTRALSAC_160-RCKL                        [ColoradoSprings5, Sacramento]
+3600520087_5GDU_CA_SAC_CENTRALSAC_160-RCKL                        [ColoradoSprings5, Sacramento]
+GROW_03600060037_5GDU_CA_SAC_LAGUNA_034-RCKL-CA_SAC_LAGUNA_034    [ColoradoSprings5, Sacramento]
+Name: USM, Length: 2890, dtype: object
+====================================
+
+
+The following table displays the elements with more than one entry (NE_ID + USM) in the combined toplogy files
+Empty DataFrame
+Columns: [NE_UNIQUE_ID, NE_NAME, NE_TYPE, NE_VERSION, ENB_TYPE, CHANNEL_CARD, GNB_ID, REL_VERSION, Market, Region, Modified_Time]
+Index: []
+
+
+Combined Topolgy file created
+Updating data beloging to {'Sacramento', 'Westborough3', 'ColoradoSprings', 'Southlake20', 'Southlake5', 'Twinsburg', 'Southlake', 'Southlake2', 'Westborough2', 'Twinsburg4', 'Southlake6', 'Twinsburg5', 'Twinsburg3', 'ColoradoSprings4', 'Twinsburg6', 'Branchburg3', 'Southlake4', 'Johnstown', 'Twinsburg2', 'Branchburg2A', 'ColoradoSprings5', 'Branchburg6', 'ColoradoSprings3', 'Branchburg5', 'Southlake3', 'Branchburg4', 'Branchburg2', 'ColoradoSprings2'}
+
+
+Deleting {'Sacramento', 'Westborough3', 'ColoradoSprings', 'Southlake20', 'Southlake5', 'Twinsburg', 'Southlake', 'Southlake2', 'Westborough2', 'Twinsburg4', 'Southlake6', 'Twinsburg5', 'Twinsburg3', 'ColoradoSprings4', 'Twinsburg6', 'Branchburg3', 'Southlake4', 'Johnstown', 'Twinsburg2', 'Branchburg2A', 'ColoradoSprings5', 'Branchburg6', 'ColoradoSprings3', 'Branchburg5', 'Southlake3', 'Branchburg4', 'Branchburg2', 'ColoradoSprings2'} from network_topology table
+
+Updating network_topology table with {'Sacramento', 'Westborough3', 'ColoradoSprings', 'Southlake20', 'Southlake5', 'Twinsburg', 'Southlake', 'Southlake2', 'Westborough2', 'Twinsburg4', 'Southlake6', 'Twinsburg5', 'Twinsburg3', 'ColoradoSprings4', 'Twinsburg6', 'Branchburg3', 'Southlake4', 'Johnstown', 'Twinsburg2', 'Branchburg2A', 'ColoradoSprings5', 'Branchburg6', 'ColoradoSprings3', 'Branchburg5', 'Southlake3', 'Branchburg4', 'Branchburg2', 'ColoradoSprings2'} data
+
+
+set() not available in old data; adding new data
+
+set() data untouched
+iFast network_topology table updated with latest data
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+

@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIST</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <!--<script src="static/assets/js/main_script.js"></script> -->
+    <style>
+        #issuetable.th,
+        td {
+            width: auto;
+        }
+
+        .custom-modal {
+            display: none;
+            position: absolute;
+            z-index: 1000;
+            /* Ensure it is on top of other elements */
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            width: 350px;
+            height: 300px;
+            overflow-y: auto;
+            top: 0;
+        }
+
+        .custom-modal .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px;
+        }
+
+        .custom-modal .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .custom-modal .modal-body {
+            padding: 10px;
+            max-height: calc(100% - 80px);
+            /* Adjust based on header and footer height */
+            overflow-y: auto;
+        }
+
+        .nav-item.right-align {
+            margin-left: auto;
+        }
+
+        #sticky-footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            height: 58px;
+            //background: grey;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group label {
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+
+        body,
+        html {
+            height: 100%;
+            background-color: #f4f4f4;
+            font-size: 12px !important;
+            width: 100%;
+            margin: 0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #292b2c;
+            display: flex;
+            flex-direction: column;
+            overflow-x: auto;
+        }
+
+        fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .the-fieldset {
+            border: 2px groove ThreeDFace;
+            border-color: #5161ac;
+            //background: #fff !important;
+            padding: 15px;
+            border-radius: 5px;
+            width: 100%;
+            position: relative;
+            margin-top: 20px;
+            padding-top: 25px;
+            /* Adjust padding to make space for legend */
+        }
+
+        .the-fieldset legend {
+            font-weight: bold;
+            color: #1428A0;
+            text-decoration: underline;
+            padding: 0 10px;
+            background-color: #f4f4f4;
+            position: absolute;
+            top: -15px;
+            /* Position legend at the top, overlapping border */
+            left: 40px;
+            /* Align legend with fieldset padding */
+        }
+
+        /* Full height image header */
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("/w3images/mac.jpg");
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        .footer {
+            font-size: 12px;
+            font-family: arial;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        input.formInvalid::-webkit-input-placeholder {
+            color: red;
+        }
+
+        .star:after {
+            content: " *";
+            color: red;
+        }
+
+        .nohover {
+            pointer-events: none;
+        }
+
+        .hrefButton {
+            padding: 3px 10px;
+            text-decoration: none;
+        }
+
+        .button {
+            background-color: Teal;
+            border: none;
+            color: white;
+            padding: 8px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+        }
+
+        #advsrch {
+            display: none;
+            /* Hide the advsrch div by default */
+        }
+
+        .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        label.required::after {
+            content: " *";
+            color: red;
+            /* Customize the color if needed */
+        }
+
+        .swal2-popup {
+            width: 300px;
+            /* Change the width as per your requirement */
+        }
+
+        .swal2-popup {
+            font-size: 8px;
+            /* Change the font size as per your requirement */
+        }
+
+        .error {
+            color: red;
+        }
+
+        .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        .btn-transparent-on-hover {
+            transition: background-color 0.3s;
+        }
+
+        .btn-transparent-on-hover:hover {
+            background-color: transparent !important;
+        }
+
+        .progressbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            counter-reset: step;
+            margin: 2rem 0;
+            width: 130px;
+        }
+
+        .step {
+            width: 2.1875rem;
+            height: 1.9rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            background-color: lightgray;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step.active {
+            background-color: blue;
+        }
+
+        .step.completed {
+            background-color: blue;
+        }
+
+        .step:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -105%;
+            right: -50%;
+            height: 2px;
+            width: calc(100% + 50%);
+            background-color: lightgray;
+            z-index: -1;
+        }
+
+        .step:first-child:before {
+            display: none;
+        }
+
+        .step.active:before,
+        .step.completed:before {
+            background-color: blue;
+        }
+
+        .progress {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            background-color: #dcdcdc;
+            z-index: -1;
+        }
+
+        .progressbar::before,
+        .progress {
+            width: calc(100% - 2.1875rem * 4);
+            /* Adjust the number of steps accordingly */
+            height: 0.2rem;
+            /* Adjust the height as needed */
+            background-color: var(--primary-color);
+            border-radius: 0.1rem;
+            /* Adjust the border radius as needed */
+            margin: auto;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: white;
+            background-color: blue;
+            border-color: blue;
+        }
+
+        .nav-tabs .nav-link {
+            color: grey;
+            background-color: lightgrey;
+            border-color: lightgrey;
+        }
+
+        .the-fieldset label {
+            font-weight: bold;
+        }
+
+        .navbar-custom {
+            background-color: #283db4;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+            font-size: 13px;
+            font-weight: bold;
+            padding: 2px 2px;
+        }
+
+        .nav-link {
+            color: white;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .select2-container--bootstrap5 {
+            z-index: 1060 !important;
+            /* Use !important to override any inline styles */
+        }
+
+        .select2-container--bootstrap5 .select2-dropdown {
+            z-index: 1060 !important;
+            /* Ensure dropdown has correct z-index */
+        }
+
+        .modal-dialog {
+            max-width: 40%;
+        }
+
+        .nav-item .dropdown-menu {
+            background-color: #283db4;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            /* Adjust width as needed */
+        }
+
+        .nav-item .dropdown-menu a {
+            color: white;
+        }
+
+        .nav-item .dropdown-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+            width: 150px;
+            /* Adjust width as needed */
+        }
+
+        .user-profile {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-profile .nav-link {
+            color: white;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-profile .nav-link .profile-text {
+            margin-left: 5px;
+            font-size: 10px;
+        }
+
+        .tab-content {
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+
+        .content-section {
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            width: 100%;
+            min-width: 100% !important;
+        }
+
+        .content-section h2 {
+            color: #283db4;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+        }
+
+        .dataTables_wrapper {
+            padding: 0;
+        }
+
+        table.dataTable {
+            border: 1px solid #ddd;
+            /* Ensure border is visible */
+        }
+
+        .dataTables_filter {
+            margin-bottom: 5px;
+            /* Adjust the value as needed */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            /* Ensure the navbar stays on top of other content */
+        }
+
+        body {
+            padding-top: 50px;
+            /* Adjust based on the navbar height */
+        }
+
+        .navbar-brand {
+            font-family: 'Arial', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #283db4, 0 0 5px #283db4;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #ffeb3b, 0 0 5px #ffeb3b;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: white;
+            background-color: blue;
+            border-color: blue;
+        }
+
+        .nav-tabs .nav-link {
+            color: grey;
+            background-color: lightgrey;
+            border-color: lightgrey;
+        }
+
+        .card-header {
+            position: relative;
+        }
+
+        .icon-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+        }
+
+        .icon-container .icon {
+            cursor: pointer;
+        }
+
+        .create_bulk_import:hover{
+            background-color: #283db4;
+            color: white !important;
+        }
+    </style>
+    <script>
+
+        $(document).ready(function () {
+
+            $('#issueTable').DataTable({
+                searching: true,
+                order: [[0, "desc"]],
+                ordering: true,
+                "columnDefs": [
+                    {
+                        "targets": "_all",
+                        "width": "auto"
+                    }
+                ],
+                autoWidth: false,
+            });
+
+
+            var hash = window.location.hash;
+            if (hash) {
+                $('.nav-link[href="' + hash + '"]').tab('show');
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+            }
+
+
+            $('#execute_selected').click(function (event) {
+                if ($('#regex').val().trim() === '' && $('#email_id').val().trim() === '') {
+                    alert('NE Id and Email fields are Empty.');
+                    return false;
+                } else {
+                    var selectedIds = [];
+                    var invalid_emails = [];
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    email_list = $('#email_id').val().split(",")
+                    console.log('email_list', email_list)
+                    email_list.forEach(function (email) {
+                        if (!emailRegex.test(email.trim())) {
+                            invalid_emails.push(email)
+                        }
+                    });
+                    console.log('invalid_logs', invalid_emails)
+
+                    //validate email address
+                    if (invalid_emails.length > 0) {
+                        event.preventDefault();
+                        alert(`These email address are invalid:${invalid_emails}`);
+                        return false;
+                    }
+                    $('.result_checkbox:checked').each(function () {
+                        selectedIds.push($(this).attr('id').split('_')[1]);
+                    });
+
+                    if (selectedIds.length > 0) {
+                        $('#selected_issue_ids').val(selectedIds)
+
+                        var formData = $("#singleissueForm").serialize();
+                        $.ajax({
+                            url: "{{url_for('newpage')}}",
+                            type: "post",
+                            data: formData,
+                            success: function (data) {
+                                if (data) {
+                                    console.log('data.message', data.message)
+
+                                    $("#nav-home-tab").removeClass("active")
+                                    $("#nav-home").removeClass("fade show active")
+                                    $("#nav-exec-tab").addClass("active")
+                                    $("#nav-exec").addClass("fade show active")
+
+                                    //  $("#execTable").innerHTML(data.execution_results)
+                                    data.execution_results.forEach(function (item) {
+                                        $('#execTable tbody').append(
+                                            `<tr>
+                                      <td>1</td>
+                                      <td>Test Username</td>
+                                      <td>${item.issue}</td>
+                                      <td>${item.Issue_Category}</td>
+                                      <td>Completed</td>
+                                      <td>1</td>
+                                      <td>2023-09-12</td>
+                                      <td>2023-12-12</td>
+                                      <td>None</td>
+                                      <td>-</td>
+                                  </tr>`
+                                        );
+                                    });
+
+
+
+
+                                }
+
+
+
+                            },
+                        });
+
+
+
+
+
+                    }
+
+
+
+
+                }
+            });
+
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="{{url_for('newpage')}}">&nbsp;&nbsp;FIST<i class="fa fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="lookup-issue-tab" data-bs-toggle="tab"
+                        href="#lookup-issue">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#knowledge-base" id="knowledge_base_nav" data-bs-toggle="tab" role="tab"
+                        aria-controls="knowledge-base" aria-selected="true">&nbsp;|&nbsp;&nbsp;KNOWLEDGE BASE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;CONFIGURATION MANAGEMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="question-dropdown">
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="questionDropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="questionDropdown">
+                    <li><a class="dropdown-item" href="#">Help</a></li>
+                    <li><a class="dropdown-item" href="#">Support</a></li>
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="user-profile">
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="settingsDropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-lg"></i><span class="profile-text">{{ session['user_name'] }}<br>
+                        Superadmin</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }} mt-3" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="container">
+        <div class="tab-content">
+            <!-- Knowledge Base Section -->
+            <div id="knowledge-base" class="tab-pane fade show content-section" role="tabpanel"
+                aria-labelledby="knowledge-base-tab">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="{{url_for('kb_hit')}}" title="Input and Save Data here" 
+                                class="btn btn-md btn-light create_bulk_import"
+                                style="color:#283db4;border: 2px solid #283db4;border-radius: 5px;"><i
+                                    class="bi bi-lightbulb-fill"></i>&nbsp;
+                                Create Issue</a>
+                            <a data-toggle="modal" data-target="#bulk_modal" class="btn btn-md btn-light create_bulk_import"
+                                style="color:#283db4;border: 2px solid #283db4;border-radius: 5px;">Import Bulk
+                                Issues</a>
+                        </div>
+                    </div>
+                    <hr style="min-width:100%">
+                    <br>
+                    <div class="modal fade" id="bulk_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="myModalLabel"> Import Bulk Issues </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+                                            aria-hidden="true">&times;</span> </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <form action="{{url_for('bulk_upload')}}" method="post"
+                                            enctype="multipart/form-data">
+                                            <label for="formFileSm" class="form-label">Upload file </label>
+                                            <input class="form-control form-control-sm" id="formFileSm" type="file"
+                                                name="file" required>
+                                            <button type="submit" class="btn btn-sm btn-success mt-2"
+                                                style="position:relative; top:20px; left:200px;"
+                                                id="upload_btn">Upload</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                    <div class="modal-footer">-->
+                            <!--                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                            <!--                        <button type="button" class="btn btn-primary">Save changes</button>-->
+                            <!--                    </div>-->
+                        </div>
+                    </div>
+                </div>
+                {% if users %}
+                <form class="form">
+                    <table class="table table-bordered table-striped" id="issueTable">
+                        <thead>
+                            <tr>
+                                <th>Issue</th>
+                                <th>SW</th>
+                                <th>Status</th>
+                                <th>Area</th>
+                                <th>Technology</th>
+                                <th>Visibility</th>
+                                <th>Major KPI Degradation</th>
+                                <th>Issue Name</th>
+                                <th>Description</th>
+                                <!--<th>Impact</th>-->
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for record in records %}
+                            <tr>
+                                <td>{{ record.issue }}</td>
+                                <td>{{ record.SW }}</td>
+                                <td>{{ record.Status }}</td>
+                                <td>{{ record.Area }}</td>
+                                <td>{{record.Technology}}</td>
+                                <td>{{record.Visibility}}</td>
+                                <td>{{record.Major_KPI_Degradation}}</td>
+                                <td>{{record.Issue_Category}}</td>
+                                <td>{{ record.Description }}</td>
+                                <!--<td>{{ record.Impact }}</td>-->
+                                <td><a href="/kb/{{ record.issue }}">View More...</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </form>
+                {% else %}
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <p>No records found.</p>
+                    </div>
+                </div>
+                <hr>
+                {% endif %}
+            </div>
+            <!-- Lookup Issue Section -->
+            <div id="lookup-issue" class="tab-pane fade show active content-section" role="tabpanel"
+                aria-labelledby="lookup-issue-tab">
+                <div class="container">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home"
+                                role="tab" aria-controls="nav-home" aria-selected="true">LOOK UP BY ISSUE</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile"
+                                role="tab" aria-controls="nav-profile" aria-selected="false">LOOK UP BY SESSION</a>
+                            <a class="nav-item nav-link" id="nav-exec-tab" data-bs-toggle="tab" href="#nav-exec"
+                                role="tab" aria-controls="nav-exec" aria-selected="false">CURRENT EXECUTIONS</a>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <br>
+                        <div class="tab-pane show fade active w-100" id="nav-home" role="tabpanel"
+                            style="margin-left:10px;margin-right:50px" aria-labelledby="nav-home-tab">
+                            <form class="form" name="singleissueForm" id="singleissueForm" method="POST"
+                                action="{{url_for('newpage')}}" style="width:100%">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <fieldset class="the-fieldset">
+                                            <legend class="w-auto px-2" style="text-decoration: underline;">SEARCH
+                                            </legend>
+                                            <div class="row mt-3">
+                                                <div class="form-group">
+                                                    <label for="issue_cat" class="form-label">Issue Category:</label>
+                                                    <i class="fas fa-info-circle" data-bs-toggle="tooltip"
+                                                        data-bs-placement="right"
+                                                        title="Please enter issue category or partial keyword"></i>
+                                                    <select name="issue_cat" id="issue_cat" multiple style="width:100%"
+                                                        class="form-select">
+                                                        {% for cat in categories %}
+                                                        <option value="{{ cat }}" {% if cat in category_val %} selected
+                                                            {% endif %}>{{ cat }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('#issue_cat').select2({
+                                                                placeholder: "Enter the keyword/s for issue category",
+                                                                allowClear: false,
+                                                                width: 'resolve'
+                                                            });
+
+                                                            // Initialize Bootstrap tooltips
+                                                            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                                                            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                                                                return new bootstrap.Tooltip(tooltipTriggerEl)
+                                                            });
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="form-group">
+                                                    <label for="select_SW" class="form-label">Software:</label>
+                                                    <select name="select_SW" id="select_SW" class="form-select">
+                                                        <option value="">--select--</option>
+                                                        {% for sw in softwares %}
+                                                        <option {% if software_val and software_val==sw %} selected {%
+                                                            endif %} value="{{sw}}">{{sw}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('#select_SW').select2();
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="form-group">
+                                                    <label for="select_Tech" class="form-label">Technology:</label>
+                                                    <select name="select_Tech" id="select_Tech" class="form-select">
+                                                        <option value="">--select--</option>
+                                                        {% for tech in technologies %}
+                                                        <option {% if technology_val and technology_val==tech %}
+                                                            selected {% endif %} value="{{tech}}">{{tech}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('#select_Tech').select2();
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="form-group">
+                                                    <label for="select_kpi" class="form-label">KPI:</label>
+                                                    <select name="select_kpi" id="select_kpi" class="form-select">
+                                                        <option value="">--select--</option>
+                                                        {% for kpi in kpis %}
+                                                        <option {% if kpi_val and kpi_val==kpi %} selected {% endif %}
+                                                            value="{{kpi}}">{{kpi}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('#select_kpi').select2();
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="form-group">
+                                                    <label for="select_Area" class="form-label">Area:</label>
+                                                    <select name="select_Area" id="select_Area" class="form-select">
+                                                        <option value="">--select--</option>
+                                                        {% for area in areas %}
+                                                        <option {% if area_val and area_val==area %} selected {% endif
+                                                            %} value="{{area}}">{{area}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('#select_Area').select2();
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="form-row  mt-3 mx-5 d-flex justify-content-center"
+                                                style="margin-top:30px">
+                                                <button type="submit"
+                                                    class="w3-button w3-black w3-round">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-5" style="margin-left:30px">
+                                        <fieldset class="the-fieldset">
+                                            <legend class="w-auto px-2" style="text-decoration: underline;">EXECUTE
+                                            </legend>
+                                            <div class="row mt-3">
+                                                <div class="form-group">
+                                                    <label for="select_Area" class="form-label">NE Type:</label>
+                                                    <select name="select_Area" id="ne_type" class="form-select">
+                                                        <option value="">--select--</option>
+                                                        {% for nes in ne_type %}
+                                                        <option {% if ne_type and ne_type==nes %} selected {% endif %}
+                                                            value="{{nes}}">{{nes}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('#ne_type').select2();
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="form-group">
+                                                    <label for="regex" class="form-label">NE ID's:</label>
+                                                    <textarea id="regex" name="regex" class="form-control" rows="3"
+                                                        placeholder="Enter NE ID's separated by comma or newline"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="form-group">
+                                                    <label for="email_id" class="form-label">Email ID/s:</label>
+                                                    <textarea id="email_id" name="email_id" class="form-control"
+                                                        rows="3"
+                                                        placeholder="Enter one or more email ID's separated by comma"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-5">
+                                                <div class="d-flex justify-content-center">
+                                                    <button type="button" class="w3-button w3-black w3-round"
+                                                        id="execute_selected" style="width:36%">Execute
+                                                        Selected</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <!--                                    <fieldset class="the-fieldset">-->
+                                <!--                                        <legend class="w-auto px-2" style="text-decoration: underline;">Search</legend>-->
+                                <!--                                        <div class="container mt-5">-->
+                                <!--                                            <div class="row mb-3">-->
+                                <!--                                                <div class="col-md-3">-->
+                                <!--                                                    <div class="form-group">-->
+                                <!--                                                       <label for="issue_cat" class="form-label">Issue Category:</label>-->
+                                <!--                                                        <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="right" title="Please enter issue category or partial keyword"></i>-->
+                                <!--                                                        <select name="issue_cat" id="issue_cat" multiple style="width:100%" class="form-select">-->
+                                <!--                                                        {% for cat in categories %}-->
+                                <!--                                                        <option value="{{ cat }}" {% if cat in category_val %} selected {% endif %}>{{ cat }}</option>-->
+                                <!--                                                        {% endfor %}-->
+                                <!--                                                        </select>-->
+                                <!--                                                        <script>-->
+                                <!--                                                            $(document).ready(function() {-->
+                                <!--                                                                $('#issue_cat').select2({-->
+                                <!--                                                                    placeholder: "Enter the keyword/s for issue category",-->
+                                <!--                                                                    allowClear: false,-->
+                                <!--                                                                    width: 'resolve'-->
+                                <!--                                                                });-->
+                                <!--                                                                // Initialize Bootstrap tooltips-->
+                                <!--                                                                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))-->
+                                <!--                                                                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {-->
+                                <!--                                                                    return new bootstrap.Tooltip(tooltipTriggerEl)-->
+                                <!--                                                                });-->
+                                <!--                                                            });-->
+                                <!--                                                        </script>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </div>-->
+                                <!--                                                <div class="col-md-2 mb-3">-->
+                                <!--                                                    <div class="form-group">-->
+                                <!--                                                        <label for="select_SW" class="form-label">Software:</label>-->
+                                <!--                                                        <select name="select_SW" id="select_SW" class="form-select">-->
+                                <!--                                                            <option value="">&#45;&#45;select&#45;&#45;</option>-->
+                                <!--                                                            {% for sw in softwares %}-->
+                                <!--                                                            <option {% if software_val and software_val == sw %} selected {% endif %} value="{{sw}}">{{sw}}</option>-->
+                                <!--                                                            {% endfor %}-->
+                                <!--                                                        </select>-->
+                                <!--                                                        <script>-->
+                                <!--                                                            $(document).ready(function () {-->
+                                <!--                                                                $('#select_SW').select2();-->
+                                <!--                                                            });-->
+                                <!--                                                        </script>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </div>-->
+                                <!--                                                <div class="col-md-2">-->
+                                <!--                                                    <div class="form-group">-->
+                                <!--                                                        <label for="select_Tech" class="form-label">Technology:</label>-->
+                                <!--                                                        <select name="select_Tech" id="select_Tech" class="form-select">-->
+                                <!--                                                            <option value="">&#45;&#45;select&#45;&#45;</option>-->
+                                <!--                                                            {% for tech in technologies %}-->
+                                <!--                                                            <option {% if technology_val and technology_val == tech %} selected {% endif %} value="{{tech}}">{{tech}}</option>-->
+                                <!--                                                            {% endfor %}-->
+                                <!--                                                        </select>-->
+                                <!--                                                        <script>-->
+                                <!--                                                            $(document).ready(function () {-->
+                                <!--                                                                $('#select_Tech').select2();-->
+                                <!--                                                            });-->
+                                <!--                                                        </script>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </div>-->
+                                <!--                                                <div class="col-md-2">-->
+                                <!--                                                    <div class="form-group">-->
+                                <!--                                                        <label for="select_kpi" class="form-label">KPI:</label>-->
+                                <!--                                                        <select name="select_kpi" id="select_kpi" class="form-select">-->
+                                <!--                                                            <option value="">&#45;&#45;select&#45;&#45;</option>-->
+                                <!--                                                            {% for kpi in kpis %}-->
+                                <!--                                                            <option {% if kpi_val and kpi_val == kpi %} selected {% endif %} value="{{kpi}}">{{kpi}}</option>-->
+                                <!--                                                            {% endfor %}-->
+                                <!--                                                        </select>-->
+                                <!--                                                        <script>-->
+                                <!--                                                            $(document).ready(function () {-->
+                                <!--                                                                $('#select_kpi').select2();-->
+                                <!--                                                            });-->
+                                <!--                                                        </script>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </div>-->
+                                <!--                                                <div class="col-md-2">-->
+                                <!--                                                    <div class="form-group">-->
+                                <!--                                                        <label for="select_Area" class="form-label">Area:</label>-->
+                                <!--                                                        <select name="select_Area" id="select_Area" class="form-select">-->
+                                <!--                                                            <option value="">&#45;&#45;select&#45;&#45;</option>-->
+                                <!--                                                            {% for area in areas %}-->
+                                <!--                                                            <option {% if area_val and area_val == area %} selected {% endif %} value="{{area}}">{{area}}</option>-->
+                                <!--                                                            {% endfor %}-->
+                                <!--                                                        </select>-->
+                                <!--                                                        <script>-->
+                                <!--                                                            $(document).ready(function () {-->
+                                <!--                                                                $('#select_Area').select2();-->
+                                <!--                                                            });-->
+                                <!--                                                        </script>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </div>-->
+                                <!--                                            </div>-->
+                                <!--                                            <div class="row mb-3">-->
+                                <!--                                                <div class="col-md-3">-->
+                                <!--                                                    <div class="form-group">-->
+                                <!--                                                        <label for="regex" class="form-label">NE ID's:</label>-->
+                                <!--                                                        <textarea id="regex" name="regex" class="form-control" rows="3" placeholder="Enter NE ID's separated by comma or newline"></textarea>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </div>-->
+                                <!--                                                <div class="col-md-3">-->
+                                <!--                                                    <div class="form-group">-->
+                                <!--                                                        <label for="email_id" class="form-label">Email ID:</label>-->
+                                <!--                                                        <textarea id="email_id" name="email_id" class="form-control" rows="3" placeholder="Enter one or more email ID's separated by comma"></textarea>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </div>-->
+                                <!--                                            </div>-->
+                                <!--                                            <input type="hidden" name="selected_issue_ids" id="selected_issue_ids">-->
+                                <!--                                            <br>-->
+                                <!--                                            <div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">-->
+                                <!--                                                <button type="submit" class="w3-button w3-black w3-round">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                <!--                                                <button type="button" class="w3-button w3-black w3-round" id="execute_selected">Execute Selected</button>&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                <!--                                            </div>-->
+                                <!--                                        </div>-->
+                                <!--                                    </fieldset>-->
+                                <br />
+                                <fieldset class="the-fieldset" style="width:100%">
+                                    <legend class="w-auto px-2" style="text-decoration: underline;">DETAILS</legend>
+                                    <div class="container-fluid mt-1">
+                                        <table class="table table-bordered table-striped" id="issueTable">
+                                            <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" name="select all"
+                                                            onclick="toggle(this);"></th>
+                                                    <th>Issue</th>
+                                                    <th>SW</th>
+                                                    <th>Status</th>
+                                                    <th>Area</th>
+                                                    <th>Technology</th>
+                                                    <th>Visibility</th>
+                                                    <th>Major KPI Degradation</th>
+                                                    <th>Issue Category</th>
+                                                    <th>Description</th>
+                                                    <!--                        <th>Impact</th>-->
+                                                    <th>Actions</th>
+                                                    <th class="exec_class">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Dynamic rows go here -->
+                                                {% if not results %}
+                                                <tr class="odd">
+                                                    <td valign="top" colspan="12" class="dataTables_empty"
+                                                        align="center">No Issues Found</td>
+                                                </tr>
+                                                {% else %}
+                                                {% for result in results %}
+                                                <tr
+                                                    class="{% if loop.index % 2 == 0 %} even {% else %} odd {% endif %}">
+                                                    <td><input type="checkbox" id="checkbox_{{result.issue}}"
+                                                            class="result_checkbox" name="select"></td>
+                                                    <td class="sorting_1">{{result.issue}}</td>
+                                                    <td>{{result.SW}}</td>
+                                                    <td>{{result.Status}}</td>
+                                                    <td>{{result.Area}}</td>
+                                                    <td>{{result.Technology}}</td>
+                                                    <td>{{result.Visibility}}</td>
+                                                    <td>{{result.Major_KPI_Degradation}}</td>
+                                                    <td>{{result.Issue_Category}}</td>
+                                                    <td>{{result.Description}}</td>
+                                                    <!--                                <td>{{result.Impact}}</td>-->
+                                                    <td><a href="/action_exe/{{result.issue}}">ðŸ‘</a></td>
+                                                    <td style="background-color:grey;color:white" class="exec_class"><a
+                                                            href="#" onclick="switch_tab()"
+                                                            style="color:white">Pending</a></td>
+                                                </tr>
+                                                {% endfor %}
+                                                {% endif %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </fieldset>
+                                </br>
+                            </form>
+                        </div>
+                        <div class="tab-pane w-100" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                            style="width:60%">
+                            <form name="SessionIDForm" id="SessionIDForm" style="margin-left:100px;margin-right:100px">
+                                <fieldset class="the-fieldset">
+                                    <legend class="w-auto px-2" style="text-decoration: underline;">Search</legend>
+                                    <div class="row mt-1">
+                                        <div class="col-md-2">
+                                            <label for="session_id" class="form-label">Session ID:</label>
+                                            <input type="text" id="session_id" class="form-control" name="session_id"
+                                                value="">
+                                            <input type="hidden" id="status_val" name="status_val">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="user_name" class="form-label">User Name:</label>
+                                            <input type="text" id="user_name" class="form-control" name="user_name"
+                                                value="">
+                                            <input type="hidden" id="status_val" name="status_val">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="select_Tech" class="form-label">Technology:</label><br>
+                                            <select name="select_Tech" id="select_Tech_session" class="form-select"
+                                                style="width:100%">
+                                                <option value="nothing_tech">--select--</option>
+                                                <option>C-Band</option>
+                                                <option>C-Band(64T64R)</option>
+                                                <option>C-Band(8T8R)</option>
+                                                <option>C-Band/DSS</option>
+                                                <option>C-Band/DSS/FR2</option>
+                                                <option>DSS/Cband</option>
+                                                <option>mmWave</option>
+                                            </select>
+                                            <script>
+                                                $(document).ready(function () {
+                                                    // Change selectboxes to selectize mode to be searchable
+                                                    $('#select_Tech_session').select2();
+                                                });
+                                            </script>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="select_SW1" class="form-label">Software Version:</label>
+                                            <select name="select_SW1" id="select_SW1" class="form-select"
+                                                style="width:100%">
+                                                <option value="nothing_sw">--select--</option>
+                                                <option>21B</option>
+                                                <option>AU/IAU 22A</option>
+                                                <option>NA</option>
+                                                <option>vDU 22A</option>
+                                            </select>
+                                            <script>
+                                                $(document).ready(function () {
+                                                    // Change selectboxes to selectize mode to be searchable
+                                                    $('#select_SW1').select2();
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </fieldset>
+                                <br>
+                                <div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+                                    <a type="button" class="w3-button w3-black w3-round" href=""
+                                        id="action5">Search</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                                <br>
+                                <fieldset class="the-fieldset">
+                                    <legend class="w-auto px-2" style="text-decoration: underline;">Details</legend>
+                                    <div class="container-fluid mt-1">
+                                        <table class="table table-bordered table-striped" id="issueTable22">
+                                            <thead>
+                                                <tr>
+                                                    <th>Session ID</th>
+                                                    <th>User Name</th>
+                                                    <th>Issue Category</th>
+                                                    <th>Technology</th>
+                                                    <th>Issue ID</th>
+                                                    <th>Actions Executed</th>
+                                                    <th>Status</th>
+                                                    <th>TimeStamp</th>
+                                                    <th>View Logs</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Dynamic rows go here -->
+                                                <tr class="odd">
+                                                    <td valign="top" colspan="11" class="dataTables_empty"
+                                                        align="center">No Issues Found</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </fieldset>
+                                </br>
+                            </form>
+                        </div>
+                        <br>
+                        <div class="tab-pane w-100" id="nav-exec" role="tabpanel" aria-labelledby="nav-exec-tab"
+                            style="width:60%">
+                            <form style="width:100%" id="exec_form">
+                                <fieldset class="the-fieldset">
+                                    <legend class="w-auto px-2" style="text-decoration: underline;">EXECUTIONS</legend>
+                                    <div class="card mb-3 text-white">
+                                        <div
+                                            class="card-header bg-primary d-flex justify-content-between align-items-center">
+                                            CURRENT EXECUTIONS
+                                            <div class="icon-container">
+                                                <i class="fas fa-minus icon" id="iconCard2" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseCard2" aria-expanded="true"
+                                                    aria-controls="collapseCard2"></i>
+                                                <i class="fas fa-plus icon d-none" id="iconCard2Minus"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseCard2"
+                                                    aria-expanded="false" aria-controls="collapseCard2"></i>
+                                            </div>
+                                        </div>
+                                        <div id="collapseCard2" class="collapse show">
+                                            <div class="card-body text-dark">
+                                                <table class="table table-bordered table-striped" id="execTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Session ID</th>
+                                                            <th>User Name</th>
+                                                            <th>Issue</th>
+                                                            <th>Issue Category</th>
+                                                            <th>Execution Status</th>
+                                                            <th style="width:10%">Curr Action no.</th>
+                                                            <th>TimeStamp Start</th>
+                                                            <th>TimeStamp End</th>
+                                                            <th>NE Matches</th>
+                                                            <th>View Logs</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- Dynamic rows go here -->
+                                                        {% if not execution_results %}
+                                                        <tr class="odd text-center">
+                                                            <td colspan="10">No Executions Found</td>
+                                                        </tr>
+                                                        {% else %}
+                                                        {% for record in execution_results %}
+                                                        <tr class="odd">
+                                                            <td>{{record.session}}</td>
+                                                            <td>{{record.user}}</td>
+                                                            <td class="sorting_1">{{record.issue}}</td>
+                                                            <td>{{record.Issue_Category}}</td>
+                                                            <td style="background-color: orange;">
+                                                                In-progress<img src="/static/assets/img/preloader.gif"
+                                                                    height="10px" width="20px">
+                                                            </td>
+                                                            <td style="width:10%">2/2</td>
+                                                            <td>2024-06-03-09:15:42</td>
+                                                            <td>2024-06-03-09:30:42</td>
+                                                            <td class="result-column" style="width:10%">
+                                                                <a href="#" id="show-log" class="log-link-matches"
+                                                                    title="Matches log">
+                                                                    <i class="fa fa-file-text"></i>
+                                                                </a>
+                                                                <span id="matches"></span>
+                                                            </td>
+                                                            <td class="result-column" style="width:10%">
+                                                                <a href="#" class="log-link-live" title="Live Log">
+                                                                    <i class="fa fa-file" style="color:#95A5A6;"></i>
+                                                                </a>
+                                                                &nbsp; &nbsp; &nbsp;
+                                                                <a href="#" class="log-link" title="Summary">
+                                                                    <i class="fa fa-file-text-o"
+                                                                        style="color:#95A5A6;"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        {% endfor %}
+                                                        {% endif %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <br><br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script></script>
+</body>
+<div class="custom-modal" id="customModal">
+    <div class="modal-header">
+        <h5 class="modal-title">Log Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" id="closeModalBtn">&times;</button>
+    </div>
+    <div class="modal-body">
+        <pre id="logContent">Loading logs...</pre>
+    </div>
+</div>
+
+</html>

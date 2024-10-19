@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Flask App</title>
+</head>
+<body>
+    <h1>Welcome to My Flask App!</h1>
+    {{data}}
+    <div id="output"></div>
+    <button onclick="startExecution()">Execute SSH Command</button>
+    <script>
+        function startExecution() {
+            var source = new EventSource('/send_message');
+
+            source.onmessage = function(event) {
+                document.getElementById('output').innerHTML += event.data + '<br>';
+            };
+
+            source.onerror = function(event) {
+                console.error('Error occurred:', event);
+                source.close();
+            };
+        }
+    </script>
+</body>
+</html>
+

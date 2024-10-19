@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execute SSH Command</title>
+</head>
+<body>
+    <div id="output"></div>
+    <button onclick="startExecution()">Execute SSH Command</button>
+
+    <script>
+        function startExecution() {
+            var command = 'your_ssh_command_here';  // Replace with your actual SSH command
+            var source = new EventSource('/sendmsg', { withCredentials: true });
+
+            source.onmessage = function(event) {
+                document.getElementById('output').innerHTML += event.data + '<br>';
+            };
+
+            source.onerror = function(event) {
+                console.error('Error occurred:', event);
+                source.close();
+            };
+
+            // Send the SSH command to the server
+            fetch('/sendmsg', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'command=' + encodeURIComponent(command),
+            }).then(response => {
+                if (!response.ok) {
+                    console.error('Failed to start execution:', response.statusText);
+                    source.close();
+                }
+            }).catch(error => {
+                console.error('Error sending command:', error);
+                source.close();
+            });
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,173 @@
+Output:
+Split sites into: [['eNB_131307', 'eNB_59209'], ['eNB_135571', 'eNB_73321'], ['eNB_250743', 'eNB_136668']]
+Before multiprocess site_list is [['eNB_131307', 'eNB_59209'], ['eNB_135571', 'eNB_73321'], ['eNB_250743', 'eNB_136668']]
+ARGS: gca NE_ID,vendgrp, 21_2, ['eNB_250743', 'eNB_136668']
+Exec_Start,NE_ID:250743
+Response: gca 131307
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 131307
+NE_ID       : 131307
+NE_NAME     : 131307_WHITEWING_TRAILS
+NE_TYPE     : macro_indoor_dist
+SYS_ALIAS   : eNB_131307
+SYS_ID      : 131307
+NE_IP       : 2001:4888:2a41:47c6:406:401:0:0
+SW_VERSION  : ENB.24A.P2.1 | v24_A_0 | r_0210
+USM         : Colorado-OP-01
+CFMA        : CFMA3
+CFMA_IP     : 2607:f160:8a05:a100:e0:292:0:1207
+CDP         : CDPA2
+CDPA_IP     : 2607:f160:8a05:a100:e0:292:0:1705
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+No current Alarm on :  131307_WHITEWING_TRAILS
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] 
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] gca 135571
+
+
+Exec_End,NE_ID:250743, Time_Taken:2.00 seconds
+Exec_Start,NE_ID:136668
+Response: 
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 135571
+NE_ID       : 135571
+NE_NAME     : 135571_ATHENS_SOUTHWEST
+NE_TYPE     : macro_indoor_dist
+SYS_ALIAS   : eNB_135571
+SYS_ID      : 135571
+NE_IP       : 2001:4888:2a41:23ea:405:401:0:1
+SW_VERSION  : ENB.24A.P1.10 | v24_A_0 | r_0110
+USM         : Colorado-OP-01
+CFMA        : CFMA3
+CFMA_IP     : 2607:f160:8a05:a100:e0:292:0:1207
+CDP         : CDPA0
+CDPA_IP     : 2607:f160:8a05:a100:e0:292:0:1701
+═══════════════════════════════════════════════════════════════════════════════════════════════
+gca 136668
+
+
+No current Alarm on :  135571_ATHENS_SOUTHWEST
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] 
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] gca 250743
+
+
+Exec_End,NE_ID:136668, Time_Taken:2.00 seconds
+Closing connection from client
+ARGS: gca NE_ID,vendgrp, 21_2, ['eNB_135571', 'eNB_73321']
+Exec_Start,NE_ID:135571
+Response: OP-02
+CFMA        : CFMA4
+CFMA_IP     : 2607:f160:8a09:a0ea:b1:292:0:1209
+CDP         : CDPA2
+CDPA_IP     : 2607:f160:8a09:a0ea:b1:292:0:1705
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+No current Alarm on :  059209_SUTTON_2_MA
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] 
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] 
+
+Exec_End,NE_ID:135571, Time_Taken:2.00 seconds
+Exec_Start,NE_ID:73321
+Response: gca 73321
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 250743
+NE_ID       : 250743
+NE_NAME     : 250743_CRESTVIEW_HILLS
+NE_TYPE     : macro_indoor_dist
+SYS_ALIAS   : eNB_250743
+SYS_ID      : 250743
+NE_IP       : 2001:4888:2a3f:e1b6:3a7:401:0:1
+SW_VERSION  : ENB.24A.P1.10 | v24_A_0 | r_0110
+USM         : Southlake-OP-04
+CFMA        : CFMA0
+CFMA_IP     : 2607:f160:8a03:a22e:c0:292:0:1201
+CDP         : CDPA2
+CDPA_IP     : 2607:f160:8a03:a22e:c0:292:0:1705
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+No current Alarm on :  250743_CRESTVIEW_HILLS
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] 
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] gca 136668
+
+
+Exec_End,NE_ID:73321, Time_Taken:2.00 seconds
+Closing connection from client
+ARGS: gca NE_ID,vendgrp, 21_2, ['eNB_131307', 'eNB_59209']
+Exec_Start,NE_ID:131307
+Response: 
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 136668
+NE_ID       : 136668
+NE_NAME     : 136668_GARZA_RANCH_STX
+NE_TYPE     : macro_indoor_dist
+SYS_ALIAS   : eNB_136668
+SYS_ID      : 136668
+NE_IP       : 2001:4888:2a40:2877:404:401:0:0
+SW_VERSION  : ENB.24A.P1.10 | v24_A_0 | r_0110
+USM         : Southlake-OP-01
+CFMA        : CFMA1
+CFMA_IP     : 2607:f160:8a03:a1a9:c0:292:0:1203
+CDP         : CDPA2
+CDPA_IP     : 2607:f160:8a03:a1a9:c0:292:0:1705
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+No current Alarm on :  136668_GARZA_RANCH_STX
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] 
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] gca 59209
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 59209
+NE_ID       : 59209
+NE_NAME     : 059209_SUTTON_2_MA
+NE_TYPE     : macro_indoor_dist
+SYS_ALIAS   : eNB_59209
+SYS_ID      : 59209
+NE_IP       : 2001:4888:2a10:10f0:106:401:0:1
+SW_VERSION  : ENB.24A.P1.10 | v24_A_0 | r_0110
+USM         : Twinsburg-
+
+Exec_End,NE_ID:131307, Time_Taken:2.00 seconds
+Exec_Start,NE_ID:59209
+Response: gca 59209
+
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 136668
+NE_ID       : 136668
+NE_NAME     : 136668_GARZA_RANCH_STX
+NE_TYPE     : macro_indoor_dist
+SYS_ALIAS   : eNB_136668
+SYS_ID      : 136668
+NE_IP       : 2001:4888:2a40:2877:404:401:0:0
+SW_VERSION  : ENB.24A.P1.10 | v24_A_0 | r_0110
+USM         : Southlake-OP-01
+CFMA        : CFMA1
+CFMA_IP     : 2607:f160:8a03:a1a9:c0:292:0:1203
+CDP         : CDPA2
+CDPA_IP     : 2607:f160:8a03:a1a9:c0:292:0:1705
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+No current Alarm on :  136668_GARZA_RANCH_STX
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] 
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] gca 73321
+
+
+Exec_End,NE_ID:59209, Time_Taken:2.16 seconds
+Closing connection from client
+[('gca NE_ID,vendgrp', '21_2', ['eNB_131307', 'eNB_59209']), ('gca NE_ID,vendgrp', '21_2', ['eNB_135571', 'eNB_73321']), ('gca NE_ID,vendgrp', '21_2', ['eNB_250743', 'eNB_136668'])]
+

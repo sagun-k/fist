@@ -1,0 +1,173 @@
+diff --git a/unix/configure.in b/unix/configure.in
+index b606b74..46dec02 100755
+--- a/unix/configure.in
++++ b/unix/configure.in
+@@ -491,6 +491,12 @@ SC_ENABLE_LANGINFO
+ AC_CHECK_FUNCS(chflags)
+ 
+ #--------------------------------------------------------------------
++# Check for support of pthread_atfork function
++#--------------------------------------------------------------------
++
++AC_CHECK_FUNCS(pthread_atfork)
++
++#--------------------------------------------------------------------
+ # Check for support of isnan() function or macro
+ #--------------------------------------------------------------------
+ 
+@@ -513,7 +519,6 @@ if test "`uname -s`" = "Darwin" ; then
+     if test $tcl_corefoundation = yes; then
+ 	AC_CHECK_HEADERS(libkern/OSAtomic.h)
+ 	AC_CHECK_FUNCS(OSSpinLockLock)
+-	AC_CHECK_FUNCS(pthread_atfork)
+     fi
+     AC_DEFINE(USE_VFORK, 1, [Should we use vfork() instead of fork()?])
+     AC_DEFINE(TCL_DEFAULT_ENCODING, "utf-8",
+diff --git a/unix/tclUnixNotfy.c b/unix/tclUnixNotfy.c
+index 51f0b1f..9006906 100644
+--- a/unix/tclUnixNotfy.c
++++ b/unix/tclUnixNotfy.c
+@@ -128,6 +128,15 @@ static Tcl_ThreadDataKey dataKey;
+ static int notifierCount = 0;
+ 
+ /*
++ * The following static stores the process ID of the initialized notifier
++ * thread. If it changes, we have passed a fork and we should start a new
++ * notifier thread.
++ *
++ * You must hold the notifierMutex lock before accessing this variable.
++ */
++static pid_t processIDInitialized = 0;
++
++/*
+  * The following variable points to the head of a doubly-linked list of
+  * ThreadSpecificData structures for all threads that are currently waiting on
+  * an event.
+@@ -193,7 +202,13 @@ static Tcl_ThreadId notifierThread;
+ 
+ #ifdef TCL_THREADS
+ static void	NotifierThreadProc(ClientData clientData);
+-#endif
++#ifdef HAVE_PTHREAD_ATFORK
++static int	atForkInit = 0;
++static void	AtForkPrepare(void);
++static void	AtForkParent(void);
++static void	AtForkChild(void);
++#endif /* HAVE_PTHREAD_ATFORK */
++#endif /* TCL_THREADS */
+ static int	FileHandlerEventProc(Tcl_Event *evPtr, int flags);
+ 
+ /*
+@@ -267,11 +282,38 @@ Tcl_InitNotifier(void)
+      */
+ 
+     Tcl_MutexLock(&notifierMutex);
++#ifdef HAVE_PTHREAD_ATFORK
++    /*
++     * Install pthread_atfork handlers to reinitialize the notifier in the
++     * child of a fork.
++     */
++
++    if (!atForkInit) {
++	int result = pthread_atfork(AtForkPrepare, AtForkParent, AtForkChild);
++
++	if (result) {
++	    Tcl_Panic("Tcl_InitNotifier: pthread_atfork failed");
++	}
++	atForkInit = 1;
++    }
++#endif
++    /*
++     * Check if my process id changed, e.g. I was forked
++     * In this case, restart the notifier thread and close the
++     * pipe to the original notifier thread
++     */
++    if (notifierCount > 0 && processIDInitialized != getpid()) {
++        notifierCount = 0;
++        processIDInitialized = 0;
++        close(triggerPipe);
++        triggerPipe = -1;
++    }
+     if (notifierCount == 0) {
+ 	if (TclpThreadCreate(&notifierThread, NotifierThreadProc, NULL,
+ 		TCL_THREAD_STACK_DEFAULT, TCL_THREAD_JOINABLE) != TCL_OK) {
+ 	    Tcl_Panic("Tcl_InitNotifier: unable to start notifier thread");
+ 	}
++	processIDInitialized = getpid();
+     }
+     notifierCount++;
+ 
+@@ -1230,6 +1272,73 @@ NotifierThreadProc(
+ 
+     TclpThreadExit (0);
+ }
++
++#ifdef HAVE_PTHREAD_ATFORK
++/*
++ *----------------------------------------------------------------------
++ *
++ * AtForkPrepare --
++ *
++ *	Lock the notifier in preparation for a fork.
++ *
++ * Results:
++ *	None.
++ *
++ * Side effects:
++ *	None.
++ *
++ *----------------------------------------------------------------------
++ */
++
++static void
++AtForkPrepare(void)
++{
++}
++
++/*
++ *----------------------------------------------------------------------
++ *
++ * AtForkParent --
++ *
++ *	Unlock the notifier in the parent after a fork.
++ *
++ * Results:
++ *	None.
++ *
++ * Side effects:
++ *	None.
++ *
++ *----------------------------------------------------------------------
++ */
++
++static void
++AtForkParent(void)
++{
++}
++
++/*
++ *----------------------------------------------------------------------
++ *
++ * AtForkChild --
++ *
++ *	Unlock and reinstall the notifier in the child after a fork.
++ *
++ * Results:
++ *	None.
++ *
++ * Side effects:
++ *	None.
++ *
++ *----------------------------------------------------------------------
++ */
++
++static void
++AtForkChild(void)
++{
++    Tcl_InitNotifier();
++}
++#endif /* HAVE_PTHREAD_ATFORK */
++
+ #endif /* TCL_THREADS */
+ 
+ #endif /* HAVE_COREFOUNDATION */

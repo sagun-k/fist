@@ -1,0 +1,42 @@
+from flask import current_app
+from flask_mysqldb import MySQL
+import MySQLdb.cursors
+
+class Database:
+    def __init__(self, app=None):
+        if app is not None:
+            self.mysql = MySQL(app)
+
+    def check_connection(self):
+        if hasattr(self, 'mysql') and self.mysql:
+            try:
+                self.mysql.connection.ping()
+                return True
+            except MySQLdb.Error as e:
+                print("Error connecting to the database:", str(e))
+                return False
+        else:
+            print("MySQL connection not initialized.")
+            return False
+
+    def get_cursor(self):
+        if self.check_connection():
+            return self.mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        else:
+            return None
+
+    def execute_query(self, query, params=None, fetch_all=True, commit=False):
+        cursor = self.get_cursor()
+        if cursor:
+            cursor.execute(query, params)
+            if commit:
+                self.mysql.connection.commit()
+            if fetch_all:
+                result = cursor.fetchall()
+            else:
+                result = cursor.fetchone()
+            cursor.close()
+            return result
+        else:
+            return None
+

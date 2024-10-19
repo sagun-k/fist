@@ -1,0 +1,177 @@
+spawn ssh venpr8r@198.226.62.123
+The authenticity of host '198.226.62.123 (198.226.62.123)' can't be established.
+ECDSA key fingerprint is SHA256:Ti/8pv4fQx/9dXbsfAU8ylr68efoggRG48fLTxPJPvU.
+ECDSA key fingerprint is MD5:1b:54:c2:87:7b:50:c6:fb:6d:8f:22:9e:09:4b:06:3c.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '198.226.62.123' (ECDSA) to the list of known hosts.
+TX10v
+
+   +-------------------------------------------------------------------------+
+   |                     * * *   W A R N I N G   * * *                       |
+   |                                                                         |
+   | THIS SYSTEM IS INTENDED TO BE USED SOLELY BY AUTHORIZED USERS IN THE    |
+   | COURSE OF LEGITIMATE CORPORATE BUSINESS.  UNAUTHORIZED USE OF THIS      |
+   | COMPUTER SYSTEM, NETWORK OR DATA IS A VIOLATION OF LAW.  USERS ARE      |
+   | MONITORED TO THE EXTENT NECESSARY TO PROPERLY ADMINISTER THE SYSTEM, TO |
+   | IDENTIFY UNAUTHORIZED USERS, AND TO INVESTIGATE IMPROPER ACCESS OR USE. |
+   | BY ACCESSING THIS SYSTEM, YOU ARE CONSENTING TO THIS MONITORING.        |
+   +-------------------------------------------------------------------------+
+
+   ***************************************************************************
+   * Secure Access to Network Elements (SANE) is a non-directional tool for  *
+   * Network Security IAM and the business. It is officially in              *
+   *                                                                         *
+   *                    ---> MAINTENANCE MODE <---                           *
+   *                                                                         *
+   * Any new element/device requests will need to go through HQ and Security *
+   * Planning to be directed to the appropriate directional tool(s).   TX10v *
+   ***************************************************************************
+(sane)Password:
+Last login: Fri Aug 23 11:17:16 2024 from 10.134.223.68
+
+venpr8r connected to txslsanepa10v: 
+
+Welcome to SANE, now connecting...
+[3J[H[2J              [1m *** S A N E (Secure Access to Network Elements) ***[0m
+
+               1 ) Network Element Selection by Market 
+
+               2 ) Network Element Selection by Vendor 
+
+               3 ) Network Element Selection by NE Type 
+
+               4 ) Network Element Selection by [ Praseeda's ] List
+
+               5 ) Direct Network Element Connection by NEID Number
+
+               6 ) Direct Network Element Connection by IP Address
+
+
+               t ) Toggle Network Element Display Mode [ NE_Name   ] 
+
+               a ) About SANE
+
+               x ) Exit 
+               
+[1m[32mSecure Access to Network Elements (SANE) is a non-directional tool for Network Security IAM and the business.  It is officially in MAINTENANCE MODE.  Any new element/device requests will need to go through HQ and Security Planning to be directed to the appropriate directional tool(s).[0m 
+
+
+
+                   Please Enter Selection: > [3J[H[2J
+ Please enter NEID Number: > 75332
+[3J[H[2J[3J[H[2J
+
+ Now Connecting to Network Element: [ Roch_LSM_MS4 ] 
+
+ Please wait... 
+
+
+[01;41m           You are now Logged in!          [0m
+]0;vendgrp@HNRTNYCRLSM-MS04:~[?1034h[HNRTNYCRLSM-MS04:/home/vendgrp] 
+Sane login successful
+
+Exec_Start,NE_ID:6000090001
+gca 6000090001
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 6000090001
+NE_ID       : 6000090001
+NE_NAME     : 06000090001_5GDU_PVD_ELMW_072_RI-WNDS
+NE_TYPE     : gnb_au
+SYS_ALIAS   : DU_90001
+SYS_ID      : 90001
+NE_IP       : 2001:4888:2a10:45ec:102:403:9:1
+SW_VERSION  : AU.23B.P2.00 | v23_B_0 | r_0200
+USM         : Twinsburg-OP-02
+CFMA        : CFMA1
+CFMA_IP     : 2607:f160:8a09:a0ea:b1:292:0:1203
+CDP         : N/A
+CDPA_IP     : 
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] gah 6000090001
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 6000090001
+NE_ID       : 6000090001
+NE_NAME     : 06000090001_5GDU_PVD_ELMW_072_RI-WNDS
+NE_TYPE     : gnb_au
+SYS_ALIAS   : DU_90001
+USM         : Twinsburg-OP-02
+CFM         : CFMA1
+IP          : 2001:4888:2a10:45ec:102:403:9:1
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+----END OF ALARM LIST----
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] 
+Exec_End,NE_ID:6000090001
+
+Exec_Start,NE_ID:7901640052
+
+Exec_End,NE_ID:7901640052
+
+Exec_Start,NE_ID:6000090003
+gca 7901640052
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 7901640052
+NE_ID       : 7901640052
+NE_NAME     : 07901640052_5GDU_79108_RT9_AND_184TH-YNKR
+NE_TYPE     : gnb_au
+SYS_ALIAS   : DU_1640052
+SYS_ID      : 1640052
+NE_IP       : 2001:4888:2a11:2a2a:165:403:0:d
+SW_VERSION  : AU.23B.P2.00 | v23_B_0 | r_0200
+USM         : Branchburg-OP-04
+CFMA        : CFMA3
+CFMA_IP     : 2607:f160:8a02:a292:a0:292:0:1207
+CDP         : N/A
+CDPA_IP     : 
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] gah 7901640052
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 7901640052
+NE_ID       : 7901640052
+NE_NAME     : 07901640052_5GDU_79108_RT9_AND_184TH-YNKR
+NE_TYPE     : gnb_au
+SYS_ALIAS   : DU_1640052
+USM         : Branchburg-OP-04
+CFM         : CFMA3
+IP          : 2001:4888:2a11:2a2a:165:403:0:d
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+----END OF ALARM LIST----
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] gca 6000090003
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry  : 6000090003
+NE_ID       : 6000090003
+NE_NAME     : 06000090003_5GDU_PROVIDENCE_9_RI-WNDS
+NE_TYPE     : gnb_au
+SYS_ALIAS   : DU_90003
+SYS_ID      : 90003
+NE_IP       : 2001:4888:2a10:45ec:102:403:9:3
+SW_VERSION  : AU.23B.P2.00 | v23_B_0 | r_0200
+USM         : Twinsburg-OP-02
+CFMA        : CFMA3
+CFMA_IP     : 2607:f160:8a09:a0ea:b1:292:0:1207
+CDP         : N/A
+CDPA_IP     : 
+═══════════════════════════════════════════════════════════════════════════════════════════════
+
+No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+]0;vendgrp@HNRTNYCRLSM-MS04:~[HNRTNYCRLSM-MS04:/home/vendgrp] gah 6000090003
+
+═══════════════════════════════════════════════════════════════════════════════════════════════
+Your Entry
+Exec_End,NE_ID:6000090003

@@ -1,0 +1,89 @@
+#!/usr/bin/python3
+###################################################################################
+# Author: SHRUTISAGAR M K
+# Purpose: To release ports if held and run SSH commands in parallel
+# DOI: 18-07-2024
+###################################################################################
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module='cryptography')
+warnings.filterwarnings("ignore", category=UserWarning, module='paramiko')
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+import socket
+import paramiko
+import multiprocessing
+import logging
+import time
+import subprocess
+import pexpect
+
+info_logger = logging.getLogger('info_logger')
+info_logger.setLevel(logging.INFO)
+info_handler = logging.FileHandler('/home/sieluser/myflaskapp/Logs/multi_socket_info.log')
+info_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+info_logger.addHandler(info_handler)
+
+debug_logger = logging.getLogger('debug_logger')
+debug_logger.setLevel(logging.DEBUG)
+debug_handler = logging.FileHandler('/home/sieluser/myflaskapp/Logs/multi_socket_debug.log')
+debug_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+debug_logger.addHandler(debug_handler)
+
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+
+ssh_configurations = {
+    8002: {"host": "10.100.1.79", "username": "toolsuser", "password": "Tools@123", "command": "pwd"},
+    8003: {"host": "10.100.1.241", "username": "toolsuser", "password": "Tools@123", "command": "whoami"},
+    8004: {"host": "10.100.1.241", "username": "toolsuser", "password": "Tools@123", "command": "cd Scripts/iFAST;pwd"},
+    8006: {"host": "10.100.1.241", "username": "toolsuser", "password": "Tools@123", "command": "uptime"},
+    8007: {"host": "10.100.1.241", "username": "toolsuser", "password": "Tools@123", "command": "hostname"}
+}
+
+def execute_command_via_ssh(config, command):
+    ssh_client = paramiko.SSHClient()
+    ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    try:
+        ssh_client.connect(hostname=config["host"], username=config["username"], password=config["password"])
+        stdin, stdout, stderr = ssh_client.exec_command(command)
+        output = stdout.read().decode()
+        info_logger.info(f"OUTPUT :{output}")
+        error = stderr.read().decode()
+        ssh_client.close()
+        if error:
+            return f"Error: {error}"
+        return output
+    except Exception as e:
+        debug_logger.error(f"SSH connection error: {e}")
+        return f"SSH connection error: {e}"
+
+def release_port(port):
+    try:
+        command = f"sudo netstat -tulnp | grep :{port} | awk '{{print $7}}' | cut -d/ -f1"
+        pid = subprocess.check_output(command, shell=True).decode().strip()
+        info_logger.info(f"PID:{pid}") 
+        if pid:
+            kill_command = f"sudo kill -9 {pid}"
+            subprocess.run(kill_command, shell=True)
+            info_logger.info(f"Released port {port} by killing PID {pid}")
+        else:
+            info_logger.info(f"No process found using port {port}")
+    except Exception as e:
+        debug_logger.error(f"Error while releasing port {port}: {e}")
+
+
+if __name__ == "__main__":
+    ports = [8002, 8003, 8004, 8006, 8007]
+    for port in ports:
+        info_logger.info(f"Releasing port {port} if it is in use.")
+        release_port(port)
+    time.sleep(1)
+    processes = []
+    for port in ports:
+        config = ssh_configurations.get(port)
+        if config:
+            p = multiprocessing.Process(target=execute_command_via_ssh, args=(config, config['command']))
+            p.start()
+            processes.append(p)
+    for p in processes:
+        p.join()
+

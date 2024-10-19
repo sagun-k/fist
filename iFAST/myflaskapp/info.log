@@ -1,0 +1,1289 @@
+2024-08-16 08:52:16,921 Starting parallel script execution
+2024-08-16 08:52:16,922 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']]
+2024-08-16 08:52:16,931 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-16 08:52:16,933 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-16 08:52:16,934 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-16 08:52:16,937 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-16 08:52:16,938 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-16 08:52:16,941 Process process_1: Subprocess started with PID 29853
+2024-08-16 08:52:16,944 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-16 08:52:16,947 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-16 08:52:16,948 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-16 08:52:16,953 Process process_2: Subprocess started with PID 29857
+2024-08-16 08:52:16,958 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-16 08:52:16,963 Process process_4: Subprocess started with PID 29860
+2024-08-16 08:52:16,963 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-16 08:52:16,986 Process process_5: Subprocess started with PID 29862
+2024-08-16 08:52:16,992 Process process_3: Subprocess started with PID 29861
+2024-08-16 08:52:17,623 Process process_4 stderr: Traceback (most recent call last):
+2024-08-16 08:52:17,623 Process process_4 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 18, in <module>
+2024-08-16 08:52:17,624 Process process_4 stderr: df = pd.read_csv(output_file_path)
+2024-08-16 08:52:17,624 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+2024-08-16 08:52:17,624 Process process_4 stderr: return _read(filepath_or_buffer, kwds)
+2024-08-16 08:52:17,624 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+2024-08-16 08:52:17,624 Process process_4 stderr: parser = TextFileReader(fp_or_buf, **kwds)
+2024-08-16 08:52:17,624 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+2024-08-16 08:52:17,624 Process process_4 stderr: self._make_engine(self.engine)
+2024-08-16 08:52:17,624 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+2024-08-16 08:52:17,624 Process process_4 stderr: self._engine = CParserWrapper(self.f, **self.options)
+2024-08-16 08:52:17,624 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+2024-08-16 08:52:17,624 Process process_4 stderr: self._reader = parsers.TextReader(src, **kwds)
+2024-08-16 08:52:17,624 Process process_4 stderr: File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+2024-08-16 08:52:17,624 Process process_4 stderr: File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+2024-08-16 08:52:17,624 Process process_4 stderr: FileNotFoundError: [Errno 2] No such file or directory: 'No matches Found'
+2024-08-16 08:52:17,624 Process process_4: Subprocess exited with return code 1
+2024-08-16 08:52:17,790 Process process_2 stdout: NE_ID
+2024-08-16 08:52:17,791 Process process_2 stdout: An error occurred: Command '['bash', 'cli_exec.sh', 'NE_ID']' returned non-zero exit status 127.
+2024-08-16 08:52:17,791 Process process_2 stdout: Output:
+2024-08-16 08:52:17,791 Process process_2 stdout: 
+2024-08-16 08:52:17,791 Process process_2 stdout: Errors:
+2024-08-16 08:52:17,791 Process process_2 stdout: bash: cli_exec.sh: No such file or directory
+2024-08-16 08:52:17,791 Process process_2 stdout: 
+2024-08-16 08:52:17,823 Process process_5 stdout: NE_ID
+2024-08-16 08:52:17,827 Process process_5 stdout: An error occurred: Command '['bash', 'cli_exec.sh', 'NE_ID']' returned non-zero exit status 127.
+2024-08-16 08:52:17,827 Process process_5 stdout: Output:
+2024-08-16 08:52:17,827 Process process_5 stdout: 
+2024-08-16 08:52:17,827 Process process_5 stdout: Errors:
+2024-08-16 08:52:17,827 Process process_5 stdout: bash: cli_exec.sh: No such file or directory
+2024-08-16 08:52:17,827 Process process_5 stdout: 
+2024-08-16 08:52:17,853 Process process_1 stdout: NE_ID
+2024-08-16 08:52:17,857 Process process_1 stdout: An error occurred: Command '['bash', 'cli_exec.sh', 'NE_ID']' returned non-zero exit status 127.
+2024-08-16 08:52:17,857 Process process_1 stdout: Output:
+2024-08-16 08:52:17,857 Process process_1 stdout: 
+2024-08-16 08:52:17,857 Process process_1 stdout: Errors:
+2024-08-16 08:52:17,857 Process process_1 stdout: bash: cli_exec.sh: No such file or directory
+2024-08-16 08:52:17,857 Process process_1 stdout: 
+2024-08-16 08:52:17,890 Process process_3 stdout: NE_ID
+2024-08-16 08:52:17,894 Process process_3 stdout: An error occurred: Command '['bash', 'cli_exec.sh', 'NE_ID']' returned non-zero exit status 127.
+2024-08-16 08:52:17,894 Process process_3 stdout: Output:
+2024-08-16 08:52:17,894 Process process_3 stdout: 
+2024-08-16 08:52:17,895 Process process_3 stdout: Errors:
+2024-08-16 08:52:17,895 Process process_3 stdout: bash: cli_exec.sh: No such file or directory
+2024-08-16 08:52:17,895 Process process_3 stdout: 
+2024-08-16 08:52:18,828 Process process_2 stdout: GREP Script Output:
+2024-08-16 08:52:18,828 Process process_2 stdout: /home/sieluser/iFAST_GREP_Executer/Logs//output_21_2_08162024_085217.csv
+2024-08-16 08:52:18,836 Process process_2 stdout: <table border="1" class="dataframe">
+2024-08-16 08:52:18,836 Process process_2 stdout: <thead>
+2024-08-16 08:52:18,836 Process process_2 stdout: <tr style="text-align: right;">
+2024-08-16 08:52:18,836 Process process_2 stdout: <th></th>
+2024-08-16 08:52:18,836 Process process_2 stdout: <th>NE_ID</th>
+2024-08-16 08:52:18,837 Process process_2 stdout: <th>MATCH</th>
+2024-08-16 08:52:18,837 Process process_2 stdout: </tr>
+2024-08-16 08:52:18,837 Process process_2 stdout: </thead>
+2024-08-16 08:52:18,837 Process process_2 stdout: <tbody>
+2024-08-16 08:52:18,837 Process process_2 stdout: <tr>
+2024-08-16 08:52:18,837 Process process_2 stdout: <th>0</th>
+2024-08-16 08:52:18,837 Process process_2 stdout: <td>07901640052</td>
+2024-08-16 08:52:18,837 Process process_2 stdout: <td>06000090001</td>
+2024-08-16 08:52:18,837 Process process_2 stdout: </tr>
+2024-08-16 08:52:18,837 Process process_2 stdout: <tr>
+2024-08-16 08:52:18,838 Process process_2 stdout: <th>1</th>
+2024-08-16 08:52:18,838 Process process_2 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-16 08:52:18,838 Process process_2 stdout: <td>NaN</td>
+2024-08-16 08:52:18,838 Process process_2 stdout: </tr>
+2024-08-16 08:52:18,838 Process process_2 stdout: <tr>
+2024-08-16 08:52:18,838 Process process_2 stdout: <th>2</th>
+2024-08-16 08:52:18,839 Process process_2 stdout: <td>NaN</td>
+2024-08-16 08:52:18,839 Process process_2 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-16 08:52:18,839 Process process_2 stdout: </tr>
+2024-08-16 08:52:18,839 Process process_2 stdout: </tbody>
+2024-08-16 08:52:18,839 Process process_2 stdout: </table>
+2024-08-16 08:52:18,852 Process process_5 stdout: GREP Script Output:
+2024-08-16 08:52:18,852 Process process_5 stdout: /home/sieluser/iFAST_GREP_Executer/Logs//output_21_2_08162024_085217.csv
+2024-08-16 08:52:18,860 Process process_5 stdout: <table border="1" class="dataframe">
+2024-08-16 08:52:18,860 Process process_5 stdout: <thead>
+2024-08-16 08:52:18,860 Process process_5 stdout: <tr style="text-align: right;">
+2024-08-16 08:52:18,860 Process process_5 stdout: <th></th>
+2024-08-16 08:52:18,860 Process process_5 stdout: <th>NE_ID</th>
+2024-08-16 08:52:18,860 Process process_5 stdout: <th>MATCH</th>
+2024-08-16 08:52:18,860 Process process_5 stdout: </tr>
+2024-08-16 08:52:18,861 Process process_5 stdout: </thead>
+2024-08-16 08:52:18,861 Process process_5 stdout: <tbody>
+2024-08-16 08:52:18,861 Process process_5 stdout: <tr>
+2024-08-16 08:52:18,861 Process process_5 stdout: <th>0</th>
+2024-08-16 08:52:18,861 Process process_5 stdout: <td>07901640052</td>
+2024-08-16 08:52:18,861 Process process_5 stdout: <td>06000090001</td>
+2024-08-16 08:52:18,861 Process process_5 stdout: </tr>
+2024-08-16 08:52:18,861 Process process_5 stdout: <tr>
+2024-08-16 08:52:18,861 Process process_5 stdout: <th>1</th>
+2024-08-16 08:52:18,861 Process process_5 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-16 08:52:18,861 Process process_5 stdout: <td>NaN</td>
+2024-08-16 08:52:18,861 Process process_5 stdout: </tr>
+2024-08-16 08:52:18,861 Process process_5 stdout: <tr>
+2024-08-16 08:52:18,861 Process process_5 stdout: <th>2</th>
+2024-08-16 08:52:18,861 Process process_5 stdout: <td>NaN</td>
+2024-08-16 08:52:18,861 Process process_5 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-16 08:52:18,862 Process process_5 stdout: </tr>
+2024-08-16 08:52:18,862 Process process_5 stdout: </tbody>
+2024-08-16 08:52:18,862 Process process_5 stdout: </table>
+2024-08-16 08:52:18,882 Process process_1 stdout: GREP Script Output:
+2024-08-16 08:52:18,882 Process process_1 stdout: /home/sieluser/iFAST_GREP_Executer/Logs//output_21_2_08162024_085217.csv
+2024-08-16 08:52:18,882 Process process_1 stdout: <table border="1" class="dataframe">
+2024-08-16 08:52:18,882 Process process_1 stdout: <thead>
+2024-08-16 08:52:18,882 Process process_1 stdout: <tr style="text-align: right;">
+2024-08-16 08:52:18,882 Process process_1 stdout: <th></th>
+2024-08-16 08:52:18,882 Process process_1 stdout: <th>NE_ID</th>
+2024-08-16 08:52:18,882 Process process_1 stdout: <th>MATCH</th>
+2024-08-16 08:52:18,882 Process process_1 stdout: </tr>
+2024-08-16 08:52:18,883 Process process_1 stdout: </thead>
+2024-08-16 08:52:18,883 Process process_1 stdout: <tbody>
+2024-08-16 08:52:18,883 Process process_1 stdout: <tr>
+2024-08-16 08:52:18,883 Process process_1 stdout: <th>0</th>
+2024-08-16 08:52:18,883 Process process_1 stdout: <td>07901640052</td>
+2024-08-16 08:52:18,883 Process process_1 stdout: <td>06000090001</td>
+2024-08-16 08:52:18,883 Process process_1 stdout: </tr>
+2024-08-16 08:52:18,883 Process process_1 stdout: <tr>
+2024-08-16 08:52:18,883 Process process_1 stdout: <th>1</th>
+2024-08-16 08:52:18,883 Process process_1 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-16 08:52:18,883 Process process_1 stdout: <td>NaN</td>
+2024-08-16 08:52:18,883 Process process_1 stdout: </tr>
+2024-08-16 08:52:18,883 Process process_1 stdout: <tr>
+2024-08-16 08:52:18,883 Process process_1 stdout: <th>2</th>
+2024-08-16 08:52:18,883 Process process_1 stdout: <td>NaN</td>
+2024-08-16 08:52:18,883 Process process_1 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-16 08:52:18,883 Process process_1 stdout: </tr>
+2024-08-16 08:52:18,884 Process process_1 stdout: </tbody>
+2024-08-16 08:52:18,884 Process process_1 stdout: </table>
+2024-08-16 08:52:18,919 Process process_3 stdout: GREP Script Output:
+2024-08-16 08:52:18,919 Process process_3 stdout: /home/sieluser/iFAST_GREP_Executer/Logs//output_21_2_08162024_085217.csv
+2024-08-16 08:52:18,919 Process process_3 stdout: <table border="1" class="dataframe">
+2024-08-16 08:52:18,919 Process process_3 stdout: <thead>
+2024-08-16 08:52:18,919 Process process_3 stdout: <tr style="text-align: right;">
+2024-08-16 08:52:18,919 Process process_3 stdout: <th></th>
+2024-08-16 08:52:18,919 Process process_3 stdout: <th>NE_ID</th>
+2024-08-16 08:52:18,919 Process process_3 stdout: <th>MATCH</th>
+2024-08-16 08:52:18,920 Process process_3 stdout: </tr>
+2024-08-16 08:52:18,920 Process process_3 stdout: </thead>
+2024-08-16 08:52:18,920 Process process_3 stdout: <tbody>
+2024-08-16 08:52:18,920 Process process_3 stdout: <tr>
+2024-08-16 08:52:18,920 Process process_3 stdout: <th>0</th>
+2024-08-16 08:52:18,920 Process process_3 stdout: <td>07901640052</td>
+2024-08-16 08:52:18,920 Process process_3 stdout: <td>06000090001</td>
+2024-08-16 08:52:18,920 Process process_3 stdout: </tr>
+2024-08-16 08:52:18,920 Process process_3 stdout: <tr>
+2024-08-16 08:52:18,920 Process process_3 stdout: <th>1</th>
+2024-08-16 08:52:18,920 Process process_3 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-16 08:52:18,920 Process process_3 stdout: <td>NaN</td>
+2024-08-16 08:52:18,920 Process process_3 stdout: </tr>
+2024-08-16 08:52:18,920 Process process_3 stdout: <tr>
+2024-08-16 08:52:18,921 Process process_3 stdout: <th>2</th>
+2024-08-16 08:52:18,921 Process process_3 stdout: <td>NaN</td>
+2024-08-16 08:52:18,921 Process process_3 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-16 08:52:18,921 Process process_3 stdout: </tr>
+2024-08-16 08:52:18,921 Process process_3 stdout: </tbody>
+2024-08-16 08:52:18,921 Process process_3 stdout: </table>
+2024-08-16 09:09:15,342 Request to /newpage
+2024-08-16 09:38:25,490 Logging out user
+2024-08-16 09:38:25,490 Redirecting to: http://105.57.243.148:12258/
+2024-08-16 09:38:30,346 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-16 09:38:30,347 Account details found redirecting
+2024-08-16 09:38:30,347 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-16 09:38:30,347 Response status code: 302
+2024-08-16 09:38:30,833 Request to /newpage
+2024-08-16 09:39:52,648 SELECT 1 FROM scripts WHERE issue_id = 40 AND sequence_num = 1
+2024-08-16 09:40:09,162 SELECT 1 FROM scripts WHERE issue_id = 40 AND sequence_num = 1
+2024-08-19 06:59:44,802 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-19 06:59:44,803 Account details found redirecting
+2024-08-19 06:59:44,803 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-19 06:59:44,803 Response status code: 302
+2024-08-19 06:59:45,236 Request to /newpage
+2024-08-19 07:07:15,665 Request to /newpage
+2024-08-19 07:07:31,010 Request to /newpage
+2024-08-19 07:10:21,869 SELECT 1 FROM scripts WHERE issue_id = 40 AND sequence_num = 1
+2024-08-19 07:12:27,039 Starting parallel script execution
+2024-08-19 07:12:27,039 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']]
+2024-08-19 07:12:27,048 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-19 07:12:27,050 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-19 07:12:27,051 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-19 07:12:27,052 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-19 07:12:27,054 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-19 07:12:27,055 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-19 07:12:27,059 Process process_1: Subprocess started with PID 7039
+2024-08-19 07:12:27,059 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-19 07:12:27,060 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-19 07:12:27,061 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-19 07:12:27,064 Process process_3: Subprocess started with PID 7044
+2024-08-19 07:12:27,069 Process process_2: Subprocess started with PID 7042
+2024-08-19 07:12:27,075 Process process_4: Subprocess started with PID 7047
+2024-08-19 07:12:27,079 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-19 07:12:27,109 Process process_5: Subprocess started with PID 7048
+2024-08-19 07:12:27,649 Process process_1 stdout: 7901640052,6000090003
+2024-08-19 07:12:27,649 Process process_1 stdout: cli_exec.sh 7901640052,6000090003
+2024-08-19 07:12:27,731 Process process_5 stdout: 07901640052,06000090003,NE_ID
+2024-08-19 07:12:27,731 Process process_5 stdout: cli_exec.sh 07901640052,06000090003,NE_ID
+2024-08-19 07:12:27,769 Process process_2 stdout: 07901640052,06000090003,NE_ID
+2024-08-19 07:12:27,769 Process process_2 stdout: cli_exec.sh 07901640052,06000090003,NE_ID
+2024-08-19 07:12:27,793 Process process_4 stdout: 07901640052,06000090003,NE_ID
+2024-08-19 07:12:27,793 Process process_4 stdout: cli_exec.sh 07901640052,06000090003,NE_ID
+2024-08-19 07:12:27,803 Process process_3 stdout: 07901640052,06000090003,NE_ID
+2024-08-19 07:12:27,803 Process process_3 stdout: cli_exec.sh 07901640052,06000090003,NE_ID
+2024-08-19 07:20:29,895 Starting parallel script execution
+2024-08-19 07:20:29,895 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']]
+2024-08-19 07:20:29,904 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-19 07:20:29,905 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-19 07:20:29,907 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-19 07:20:29,908 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-19 07:20:29,909 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-19 07:20:29,911 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-19 07:20:29,912 Process process_1: Subprocess started with PID 7583
+2024-08-19 07:20:29,913 Process process_2: Subprocess started with PID 7586
+2024-08-19 07:20:29,914 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-19 07:20:29,915 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-19 07:20:29,916 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-19 07:20:29,929 Process process_3: Subprocess started with PID 7589
+2024-08-19 07:20:29,930 Process process_5: Subprocess started with PID 7591
+2024-08-19 07:20:29,930 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-19 07:20:29,954 Process process_4: Subprocess started with PID 7592
+2024-08-19 07:20:30,546 Process process_2 stdout: NE_ID
+2024-08-19 07:20:30,546 Process process_2 stdout: cli_exec.sh NE_ID
+2024-08-19 07:20:30,547 Process process_3 stderr: Traceback (most recent call last):
+2024-08-19 07:20:30,547 Process process_3 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 18, in <module>
+2024-08-19 07:20:30,547 Process process_3 stderr: df = pd.read_csv(output_file_path)
+2024-08-19 07:20:30,547 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+2024-08-19 07:20:30,547 Process process_3 stderr: return _read(filepath_or_buffer, kwds)
+2024-08-19 07:20:30,547 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+2024-08-19 07:20:30,548 Process process_3 stderr: parser = TextFileReader(fp_or_buf, **kwds)
+2024-08-19 07:20:30,548 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+2024-08-19 07:20:30,548 Process process_3 stderr: self._make_engine(self.engine)
+2024-08-19 07:20:30,548 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+2024-08-19 07:20:30,548 Process process_3 stderr: self._engine = CParserWrapper(self.f, **self.options)
+2024-08-19 07:20:30,548 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+2024-08-19 07:20:30,548 Process process_3 stderr: self._reader = parsers.TextReader(src, **kwds)
+2024-08-19 07:20:30,548 Process process_3 stderr: File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+2024-08-19 07:20:30,548 Process process_3 stderr: File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+2024-08-19 07:20:30,548 Process process_3 stderr: FileNotFoundError: [Errno 2] No such file or directory: 'No matches Found'
+2024-08-19 07:20:30,548 Process process_3: Subprocess exited with return code 1
+2024-08-19 07:20:30,614 Process process_5 stdout: NE_ID
+2024-08-19 07:20:30,614 Process process_5 stdout: cli_exec.sh NE_ID
+2024-08-19 07:20:30,647 Process process_1 stdout: NE_ID
+2024-08-19 07:20:30,647 Process process_1 stdout: cli_exec.sh NE_ID
+2024-08-19 07:20:30,689 Process process_4 stdout: NE_ID
+2024-08-19 07:20:30,689 Process process_4 stdout: cli_exec.sh NE_ID
+2024-08-19 11:07:16,613 Request to /newpage
+2024-08-19 11:07:40,952 Request to /newpage
+2024-08-19 11:07:58,635 Request to /newpage
+2024-08-19 11:10:42,175 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-19 11:10:42,175 Account details found redirecting
+2024-08-19 11:10:42,175 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-19 11:10:42,176 Response status code: 302
+2024-08-19 11:10:42,280 Request to /newpage
+2024-08-19 11:53:24,311 Request to /newpage
+2024-08-19 11:55:57,509 Request to /newpage
+2024-08-19 11:56:07,446 Request to /newpage
+2024-08-19 14:11:10,271 Request to /newpage
+2024-08-19 14:15:28,860 Request to /newpage
+2024-08-19 14:15:40,181 Request to /newpage
+2024-08-19 14:15:50,141 Request to /newpage
+2024-08-19 14:15:56,589 Request to /newpage
+2024-08-19 14:15:58,842 Request to /newpage
+2024-08-19 14:20:57,416 Logging out user
+2024-08-19 14:20:57,417 Redirecting to: http://105.57.243.148:12258/
+2024-08-19 14:21:06,185 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-19 14:21:06,186 Account details found redirecting
+2024-08-19 14:21:06,186 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-19 14:21:06,186 Response status code: 302
+2024-08-19 14:21:06,276 Request to /newpage
+2024-08-19 14:21:13,944 Request to /newpage
+2024-08-19 14:21:23,647 Request to /newpage
+2024-08-19 14:21:30,962 Request to /newpage
+2024-08-19 14:21:32,314 Request to /newpage
+2024-08-19 14:21:33,782 Request to /newpage
+2024-08-19 14:21:45,139 Request to /newpage
+2024-08-19 14:22:09,231 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-19 14:22:09,231 Account details found redirecting
+2024-08-19 14:22:09,231 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-19 14:22:09,232 Response status code: 302
+2024-08-19 14:22:09,325 Request to /newpage
+2024-08-19 14:28:27,974 Request to /newpage
+2024-08-19 14:31:58,220 Request to /newpage
+2024-08-19 14:32:05,527 Request to /newpage
+2024-08-19 14:32:42,269 Request to /newpage
+2024-08-19 14:32:50,665 Request to /newpage
+2024-08-19 14:32:58,217 Request to /newpage
+2024-08-19 14:33:02,625 Request to /newpage
+2024-08-19 14:34:28,253 Request to /newpage
+2024-08-19 14:34:36,208 Request to /newpage
+2024-08-19 14:34:45,269 Request to /newpage
+2024-08-19 14:35:03,007 Request to /newpage
+2024-08-19 14:35:45,088 Request to /newpage
+2024-08-19 14:35:59,132 Request to /newpage
+2024-08-19 14:49:28,221 Request to /newpage
+2024-08-19 14:49:37,344 Request to /newpage
+2024-08-19 14:49:47,491 Request to /newpage
+2024-08-19 14:50:03,315 Request to /newpage
+2024-08-19 15:24:22,719 Request to /newpage
+2024-08-19 15:44:09,453 Request to /newpage
+2024-08-19 15:44:50,903 Request to /newpage
+2024-08-19 15:47:10,546 Request to /newpage
+2024-08-19 15:48:15,784 Request to /newpage
+2024-08-19 15:49:22,732 Request to /newpage
+2024-08-19 17:54:49,027 SELECT 1 FROM scripts WHERE issue_id = 3 AND sequence_num = 1
+2024-08-19 17:57:32,939 SELECT 1 FROM scripts WHERE issue_id = 40 AND sequence_num = 1
+2024-08-19 17:59:02,460 Request to /newpage
+2024-08-19 18:11:52,881 Request to /newpage
+2024-08-19 18:15:53,081 Request to /newpage
+2024-08-19 18:16:20,332 Request to /newpage
+2024-08-19 18:32:28,362 Request to /newpage
+2024-08-19 18:33:29,459 Request to /newpage
+2024-08-19 18:47:27,456 Request to /newpage
+2024-08-19 18:48:52,433 Request to /newpage
+2024-08-19 19:18:53,262 Request to /newpage
+2024-08-19 19:29:03,363 Request to /newpage
+2024-08-19 19:34:26,133 Request to /newpage
+2024-08-20 09:09:31,434 Request to /newpage
+2024-08-20 09:09:37,332 Request to /newpage
+2024-08-20 09:09:42,047 Request to /newpage
+2024-08-20 09:09:47,760 Request to /newpage
+2024-08-20 09:09:52,764 Request to /newpage
+2024-08-20 09:10:03,491 Request to /newpage
+2024-08-20 09:18:29,342 Request to /newpage
+2024-08-20 09:21:23,726 Request to /newpage
+2024-08-20 09:21:31,221 Request to /newpage
+2024-08-20 09:28:16,060 Request to /newpage
+2024-08-20 09:34:08,159 Request to /newpage
+2024-08-20 10:44:38,989 Request to /newpage
+2024-08-20 10:44:52,559 Request to /newpage
+2024-08-20 10:56:50,482 Request to /newpage
+2024-08-20 10:57:14,201 Request to /newpage
+2024-08-20 11:26:08,269 Request to /newpage
+2024-08-20 11:59:49,370 Request to /newpage
+2024-08-20 11:59:56,345 Request to /newpage
+2024-08-20 12:06:54,560 Request to /newpage
+2024-08-20 12:07:21,070 Request to /newpage
+2024-08-20 12:20:02,759 Request to /newpage
+2024-08-20 12:36:10,649 Request to /newpage
+2024-08-20 14:08:33,880 Request to /newpage
+2024-08-20 15:25:15,102 Request to /newpage
+2024-08-20 18:21:31,319 Request to /newpage
+2024-08-20 18:22:06,779 Starting parallel script execution
+2024-08-20 18:22:06,779 [[None, None, '1234', '3']]
+2024-08-20 18:22:06,787 Process process_1: Called run scripts with args [None, None, '1234', '3']
+2024-08-20 18:22:06,789 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args [None, None, '1234', '3']
+2024-08-20 18:22:06,791 Process process_1: Exception occurred: expected str, bytes or os.PathLike object, not NoneType
+2024-08-20 22:01:54,901 Request to /newpage
+2024-08-20 22:02:51,178 Request to /newpage
+2024-08-20 22:17:22,423 Request to /newpage
+2024-08-20 22:37:07,723 Request to /newpage
+2024-08-20 22:48:24,780 Request to /newpage
+2024-08-21 11:40:36,108 Request to /newpage
+2024-08-21 11:41:07,045 Account details: {'user_id': 20, 'knox_id': 'p.venkata', 'password': '3b91359f05ac985993c514ec28e96b7d', 'fullname': 'Praseeda V', 'email': 'p.venkata@partner.samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-21 11:41:07,045 Account details found redirecting
+2024-08-21 11:41:07,045 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-21 11:41:07,045 Response status code: 302
+2024-08-21 11:41:07,139 Request to /newpage
+2024-08-21 11:44:57,985 Request to /newpage
+2024-08-21 11:50:31,104 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-21 11:50:31,105 Account details found redirecting
+2024-08-21 11:50:31,105 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-21 11:50:31,105 Response status code: 302
+2024-08-21 11:50:31,515 Request to /newpage
+2024-08-21 11:51:08,448 SELECT 1 FROM scripts WHERE issue_id = 40 AND sequence_num = 1
+2024-08-21 11:51:50,589 Request to /newpage
+2024-08-21 11:52:18,665 Request to /newpage
+2024-08-21 12:00:49,419 Request to /newpage
+2024-08-21 12:03:01,635 Request to /newpage
+2024-08-21 12:57:50,392 Request to /newpage
+2024-08-21 13:22:47,487 Starting parallel script execution
+2024-08-21 13:22:47,488 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']]
+2024-08-21 13:22:47,497 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-21 13:22:47,498 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-21 13:22:47,499 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-21 13:22:47,501 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-21 13:22:47,502 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-21 13:22:47,504 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-21 13:22:47,505 Process process_1: Subprocess started with PID 63463
+2024-08-21 13:22:47,505 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-21 13:22:47,506 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-21 13:22:47,507 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-21 13:22:47,508 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-21 13:22:47,519 Process process_3: Subprocess started with PID 63471
+2024-08-21 13:22:47,522 Process process_5: Subprocess started with PID 63472
+2024-08-21 13:22:47,523 Process process_2: Subprocess started with PID 63466
+2024-08-21 13:22:47,527 Process process_4: Subprocess started with PID 63469
+2024-08-21 13:22:48,127 Process process_4 stdout: NE_ID
+2024-08-21 13:22:48,127 Process process_4 stdout: cli_exec.sh NE_ID
+2024-08-21 13:22:48,192 Process process_5 stdout: NE_ID
+2024-08-21 13:22:48,192 Process process_5 stdout: cli_exec.sh NE_ID
+2024-08-21 13:22:48,202 Process process_1 stdout: NE_ID
+2024-08-21 13:22:48,202 Process process_1 stdout: cli_exec.sh NE_ID
+2024-08-21 13:22:48,223 Process process_3 stderr: Traceback (most recent call last):
+2024-08-21 13:22:48,223 Process process_3 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 18, in <module>
+2024-08-21 13:22:48,223 Process process_3 stderr: df = pd.read_csv(output_file_path)
+2024-08-21 13:22:48,223 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+2024-08-21 13:22:48,223 Process process_3 stderr: return _read(filepath_or_buffer, kwds)
+2024-08-21 13:22:48,223 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+2024-08-21 13:22:48,223 Process process_3 stderr: parser = TextFileReader(fp_or_buf, **kwds)
+2024-08-21 13:22:48,223 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+2024-08-21 13:22:48,223 Process process_3 stderr: self._make_engine(self.engine)
+2024-08-21 13:22:48,224 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+2024-08-21 13:22:48,224 Process process_3 stderr: self._engine = CParserWrapper(self.f, **self.options)
+2024-08-21 13:22:48,224 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+2024-08-21 13:22:48,224 Process process_3 stderr: self._reader = parsers.TextReader(src, **kwds)
+2024-08-21 13:22:48,224 Process process_3 stderr: File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+2024-08-21 13:22:48,224 Process process_3 stderr: File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+2024-08-21 13:22:48,224 Process process_3 stderr: FileNotFoundError: [Errno 2] No such file or directory: 'No matches Found'
+2024-08-21 13:22:48,224 Process process_3: Subprocess exited with return code 1
+2024-08-21 13:22:48,298 Process process_2 stdout: NE_ID
+2024-08-21 13:22:48,299 Process process_2 stdout: cli_exec.sh NE_ID
+2024-08-21 13:26:57,931 Starting parallel script execution
+2024-08-21 13:26:57,932 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']]
+2024-08-21 13:26:57,943 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-21 13:26:57,944 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-21 13:26:57,946 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-21 13:26:57,947 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-21 13:26:57,948 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-21 13:26:57,950 Process process_1: Subprocess started with PID 63809
+2024-08-21 13:26:57,950 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-21 13:26:57,954 Process process_2: Subprocess started with PID 63811
+2024-08-21 13:26:57,954 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-21 13:26:57,955 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-21 13:26:57,961 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-21 13:26:57,962 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-21 13:26:57,963 Process process_3: Subprocess started with PID 63814
+2024-08-21 13:26:57,976 Process process_5: Subprocess started with PID 63818
+2024-08-21 13:26:57,987 Process process_4: Subprocess started with PID 63816
+2024-08-21 13:26:58,597 Process process_3 stdout: NE_ID
+2024-08-21 13:26:58,597 Process process_3 stdout: cli_exec.sh NE_ID
+2024-08-21 13:26:58,626 Process process_1 stdout: NE_ID
+2024-08-21 13:26:58,626 Process process_1 stdout: cli_exec.sh NE_ID
+2024-08-21 13:26:58,657 Process process_5 stderr: Traceback (most recent call last):
+2024-08-21 13:26:58,657 Process process_5 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 18, in <module>
+2024-08-21 13:26:58,657 Process process_5 stderr: df = pd.read_csv(output_file_path)
+2024-08-21 13:26:58,659 Process process_5 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+2024-08-21 13:26:58,659 Process process_5 stderr: return _read(filepath_or_buffer, kwds)
+2024-08-21 13:26:58,659 Process process_5 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+2024-08-21 13:26:58,659 Process process_5 stderr: parser = TextFileReader(fp_or_buf, **kwds)
+2024-08-21 13:26:58,659 Process process_5 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+2024-08-21 13:26:58,660 Process process_5 stderr: self._make_engine(self.engine)
+2024-08-21 13:26:58,660 Process process_5 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+2024-08-21 13:26:58,660 Process process_5 stderr: self._engine = CParserWrapper(self.f, **self.options)
+2024-08-21 13:26:58,660 Process process_5 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+2024-08-21 13:26:58,660 Process process_5 stderr: self._reader = parsers.TextReader(src, **kwds)
+2024-08-21 13:26:58,660 Process process_5 stderr: File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+2024-08-21 13:26:58,660 Process process_5 stderr: File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+2024-08-21 13:26:58,660 Process process_5 stderr: FileNotFoundError: [Errno 2] No such file or directory: 'No matches Found'
+2024-08-21 13:26:58,660 Process process_5: Subprocess exited with return code 1
+2024-08-21 13:26:58,720 Process process_2 stdout: NE_ID
+2024-08-21 13:26:58,720 Process process_2 stdout: cli_exec.sh NE_ID
+2024-08-21 13:26:58,756 Process process_4 stdout: NE_ID
+2024-08-21 13:26:58,756 Process process_4 stdout: cli_exec.sh NE_ID
+2024-08-21 13:36:08,552 Request to /newpage
+2024-08-21 14:59:05,807 Request to /newpage
+2024-08-22 09:12:04,181 Request to /newpage
+2024-08-22 16:05:19,071 Request to /newpage
+2024-08-22 16:37:40,598 Request to /newpage
+2024-08-22 16:37:46,572 Request to /newpage
+2024-08-22 16:37:55,733 Request to /newpage
+2024-08-22 16:38:06,743 Request to /newpage
+2024-08-22 16:40:53,416 Request to /newpage
+2024-08-22 16:41:14,754 Request to /newpage
+2024-08-22 16:41:24,958 Request to /newpage
+2024-08-22 16:41:55,413 Request to /newpage
+2024-08-22 16:42:13,223 Request to /newpage
+2024-08-22 16:42:31,382 Request to /newpage
+2024-08-22 16:43:00,962 Request to /newpage
+2024-08-22 22:35:38,614 Request to /newpage
+2024-08-23 01:32:32,117 Request to /newpage
+2024-08-23 01:38:11,998 Request to /newpage
+2024-08-23 02:04:35,417 Request to /newpage
+2024-08-23 02:10:44,613 Request to /newpage
+2024-08-23 02:11:04,764 Request to /newpage
+2024-08-23 05:25:33,603 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-23 05:25:33,603 Account details found redirecting
+2024-08-23 05:25:33,603 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-23 05:25:33,604 Response status code: 302
+2024-08-23 05:25:33,696 Request to /newpage
+2024-08-23 05:25:43,995 Request to /newpage
+2024-08-23 07:43:12,495 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-23 07:43:12,496 Account details found redirecting
+2024-08-23 07:43:12,496 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-23 07:43:12,496 Response status code: 302
+2024-08-23 07:43:12,922 Request to /newpage
+2024-08-23 07:43:48,849 Starting parallel script execution
+2024-08-23 07:43:48,850 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']]
+2024-08-23 07:43:48,860 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-23 07:43:48,862 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-23 07:43:48,863 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-23 07:43:48,864 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-23 07:43:48,866 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-23 07:43:48,868 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-23 07:43:48,870 Process process_1: Subprocess started with PID 80938
+2024-08-23 07:43:48,874 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-23 07:43:48,874 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-23 07:43:48,876 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-23 07:43:48,876 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-23 07:43:48,880 Process process_3: Subprocess started with PID 80942
+2024-08-23 07:43:48,890 Process process_2: Subprocess started with PID 80940
+2024-08-23 07:43:48,891 Process process_4: Subprocess started with PID 80946
+2024-08-23 07:43:48,900 Process process_5: Subprocess started with PID 80945
+2024-08-23 07:43:48,911 Process process_1 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 17
+2024-08-23 07:43:48,912 Process process_1 stderr: return "No matches Found"
+2024-08-23 07:43:48,912 Process process_1 stderr: ^
+2024-08-23 07:43:48,912 Process process_1 stderr: SyntaxError: 'return' outside function
+2024-08-23 07:43:48,912 Process process_1: Subprocess exited with return code 1
+2024-08-23 07:43:48,913 Process process_2 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 17
+2024-08-23 07:43:48,913 Process process_2 stderr: return "No matches Found"
+2024-08-23 07:43:48,913 Process process_2 stderr: ^
+2024-08-23 07:43:48,913 Process process_2 stderr: SyntaxError: 'return' outside function
+2024-08-23 07:43:48,913 Process process_2: Subprocess exited with return code 1
+2024-08-23 07:43:48,915 Process process_3 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 17
+2024-08-23 07:43:48,915 Process process_3 stderr: return "No matches Found"
+2024-08-23 07:43:48,915 Process process_3 stderr: ^
+2024-08-23 07:43:48,915 Process process_3 stderr: SyntaxError: 'return' outside function
+2024-08-23 07:43:48,915 Process process_3: Subprocess exited with return code 1
+2024-08-23 07:43:48,917 Process process_4 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 17
+2024-08-23 07:43:48,917 Process process_4 stderr: return "No matches Found"
+2024-08-23 07:43:48,917 Process process_4 stderr: ^
+2024-08-23 07:43:48,917 Process process_4 stderr: SyntaxError: 'return' outside function
+2024-08-23 07:43:48,917 Process process_4: Subprocess exited with return code 1
+2024-08-23 07:43:48,921 Process process_5 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 17
+2024-08-23 07:43:48,921 Process process_5 stderr: return "No matches Found"
+2024-08-23 07:43:48,921 Process process_5 stderr: ^
+2024-08-23 07:43:48,921 Process process_5 stderr: SyntaxError: 'return' outside function
+2024-08-23 07:43:48,922 Process process_5: Subprocess exited with return code 1
+2024-08-23 08:36:11,302 Request to /newpage
+2024-08-23 08:39:42,580 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-23 08:39:42,580 Account details found redirecting
+2024-08-23 08:39:42,581 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-23 08:39:42,581 Response status code: 302
+2024-08-23 08:39:42,675 Request to /newpage
+2024-08-23 08:42:36,665 Request to /newpage
+2024-08-23 08:42:45,460 Logging out user
+2024-08-23 08:42:45,460 Redirecting to: http://105.57.243.148:12258/
+2024-08-23 08:42:57,489 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-23 08:42:57,489 Account details found redirecting
+2024-08-23 08:42:57,489 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-23 08:42:57,489 Response status code: 302
+2024-08-23 08:42:57,579 Request to /newpage
+2024-08-23 08:44:29,583 Request to /newpage
+2024-08-23 08:46:20,780 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-23 08:46:20,780 Account details found redirecting
+2024-08-23 08:46:20,780 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-23 08:46:20,780 Response status code: 302
+2024-08-23 08:46:20,873 Request to /newpage
+2024-08-23 08:55:01,323 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-23 08:55:01,323 Account details found redirecting
+2024-08-23 08:55:01,323 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-23 08:55:01,323 Response status code: 302
+2024-08-23 08:55:01,416 Request to /newpage
+2024-08-23 11:49:02,123 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-23 11:49:02,123 Account details found redirecting
+2024-08-23 11:49:02,124 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-23 11:49:02,124 Response status code: 302
+2024-08-23 11:49:02,215 Request to /newpage
+2024-08-23 11:49:58,621 Logging out user
+2024-08-23 11:49:58,622 Redirecting to: http://105.57.243.148:12258/
+2024-08-23 11:50:32,649 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-23 11:50:32,650 Account details found redirecting
+2024-08-23 11:50:32,650 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-23 11:50:32,650 Response status code: 302
+2024-08-23 11:50:32,742 Request to /newpage
+2024-08-25 08:19:25,715 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-25 08:19:25,715 Account details found redirecting
+2024-08-25 08:19:25,715 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-25 08:19:25,716 Response status code: 302
+2024-08-25 08:19:26,164 Request to /newpage
+2024-08-25 08:20:28,674 Starting parallel script execution
+2024-08-25 08:20:28,675 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']]
+2024-08-25 08:20:28,683 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-25 08:20:28,685 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-25 08:20:28,687 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-25 08:20:28,688 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-25 08:20:28,689 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-25 08:20:28,691 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-25 08:20:28,693 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-25 08:20:28,693 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-25 08:20:28,694 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-25 08:20:28,695 Process process_1: Subprocess started with PID 113711
+2024-08-25 08:20:28,695 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/script_exec.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-25 08:20:28,708 Process process_3: Subprocess started with PID 113718
+2024-08-25 08:20:28,709 Process process_4: Subprocess started with PID 113719
+2024-08-25 08:20:28,710 Process process_2: Subprocess started with PID 113714
+2024-08-25 08:20:28,720 Process process_5: Subprocess started with PID 113720
+2024-08-25 08:20:28,728 Process process_3 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 22
+2024-08-25 08:20:28,728 Process process_3 stderr: return "
+2024-08-25 08:20:28,728 Process process_3 stderr: ^
+2024-08-25 08:20:28,728 Process process_3 stderr: SyntaxError: EOL while scanning string literal
+2024-08-25 08:20:28,729 Process process_4 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 22
+2024-08-25 08:20:28,729 Process process_4 stderr: return "
+2024-08-25 08:20:28,729 Process process_4 stderr: ^
+2024-08-25 08:20:28,729 Process process_4 stderr: SyntaxError: EOL while scanning string literal
+2024-08-25 08:20:28,729 Process process_4: Subprocess exited with return code 1
+2024-08-25 08:20:28,729 Process process_3: Subprocess exited with return code 1
+2024-08-25 08:20:28,740 Process process_1 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 22
+2024-08-25 08:20:28,740 Process process_1 stderr: return "
+2024-08-25 08:20:28,740 Process process_1 stderr: ^
+2024-08-25 08:20:28,740 Process process_1 stderr: SyntaxError: EOL while scanning string literal
+2024-08-25 08:20:28,740 Process process_1: Subprocess exited with return code 1
+2024-08-25 08:20:28,742 Process process_5 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 22
+2024-08-25 08:20:28,742 Process process_5 stderr: return "
+2024-08-25 08:20:28,742 Process process_5 stderr: ^
+2024-08-25 08:20:28,742 Process process_5 stderr: SyntaxError: EOL while scanning string literal
+2024-08-25 08:20:28,742 Process process_5: Subprocess exited with return code 1
+2024-08-25 08:20:28,744 Process process_2 stderr: File "/home/sieluser/myflaskapp/scripts/script_exec.py", line 22
+2024-08-25 08:20:28,744 Process process_2 stderr: return "
+2024-08-25 08:20:28,745 Process process_2 stderr: ^
+2024-08-25 08:20:28,745 Process process_2 stderr: SyntaxError: EOL while scanning string literal
+2024-08-25 08:20:28,745 Process process_2: Subprocess exited with return code 1
+2024-08-25 08:23:31,773 Starting parallel script execution
+2024-08-25 08:23:31,774 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']]
+2024-08-25 08:23:31,782 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-25 08:23:31,783 [START OF PROCESS process_1]
+2024-08-25 08:23:31,784 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-25 08:23:31,785 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-25 08:23:31,786 [START OF PROCESS process_2]
+2024-08-25 08:23:31,786 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-25 08:23:31,788 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-25 08:23:31,788 [START OF PROCESS process_3]
+2024-08-25 08:23:31,789 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-25 08:23:31,794 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-25 08:23:31,795 [START OF PROCESS process_4]
+2024-08-25 08:23:31,796 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-25 08:23:31,798 Process process_1: Subprocess started with PID 114004
+2024-08-25 08:23:31,800 Process process_2: Subprocess started with PID 114007
+2024-08-25 08:23:31,801 Process process_3: Subprocess started with PID 114009
+2024-08-25 08:23:31,809 Process process_4: Subprocess started with PID 114011
+2024-08-25 08:23:31,813 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-25 08:23:31,814 [START OF PROCESS process_5]
+2024-08-25 08:23:31,826 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-25 08:23:31,851 Process process_5: Subprocess started with PID 114013
+2024-08-25 08:23:32,340 Process process_4 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:23:32,340 Process process_4 stdout: 
+2024-08-25 08:23:32,340 Process process_4 stdout: To pull OM
+2024-08-25 08:23:32,341 Process process_4 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:23:32,341 Process process_4 stdout: <counter> :  counters
+2024-08-25 08:23:32,341 Process process_4 stdout: <cond>    :  condition
+2024-08-25 08:23:32,341 Process process_4 stdout: <sites>   :  list of sites
+2024-08-25 08:23:32,341 Process process_4 stdout: <issue>   :  Issue ID
+2024-08-25 08:23:32,341 Process process_4 stdout: <session> :  Session ID
+2024-08-25 08:23:32,341 Process process_4 stdout: <env>     :  Type of ENV
+2024-08-25 08:23:32,341 Process process_4 stdout: 
+2024-08-25 08:23:32,378 Process process_3 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:23:32,378 Process process_3 stdout: 
+2024-08-25 08:23:32,378 Process process_3 stdout: To pull OM
+2024-08-25 08:23:32,379 Process process_3 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:23:32,379 Process process_3 stdout: <counter> :  counters
+2024-08-25 08:23:32,379 Process process_3 stdout: <cond>    :  condition
+2024-08-25 08:23:32,379 Process process_3 stdout: <sites>   :  list of sites
+2024-08-25 08:23:32,379 Process process_3 stdout: <issue>   :  Issue ID
+2024-08-25 08:23:32,379 Process process_3 stdout: <session> :  Session ID
+2024-08-25 08:23:32,379 Process process_3 stdout: <env>     :  Type of ENV
+2024-08-25 08:23:32,379 Process process_3 stdout: 
+2024-08-25 08:23:32,423 Process process_2 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:23:32,423 Process process_2 stdout: 
+2024-08-25 08:23:32,423 Process process_2 stdout: To pull OM
+2024-08-25 08:23:32,423 Process process_2 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:23:32,424 Process process_2 stdout: <counter> :  counters
+2024-08-25 08:23:32,424 Process process_2 stdout: <cond>    :  condition
+2024-08-25 08:23:32,424 Process process_2 stdout: <sites>   :  list of sites
+2024-08-25 08:23:32,424 Process process_2 stdout: <issue>   :  Issue ID
+2024-08-25 08:23:32,424 Process process_2 stdout: <session> :  Session ID
+2024-08-25 08:23:32,424 Process process_2 stdout: <env>     :  Type of ENV
+2024-08-25 08:23:32,424 Process process_2 stdout: 
+2024-08-25 08:23:32,443 Process process_5 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:23:32,453 Process process_5 stdout: 
+2024-08-25 08:23:32,453 Process process_5 stdout: To pull OM
+2024-08-25 08:23:32,454 Process process_5 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:23:32,454 Process process_5 stdout: <counter> :  counters
+2024-08-25 08:23:32,454 Process process_5 stdout: <cond>    :  condition
+2024-08-25 08:23:32,454 Process process_5 stdout: <sites>   :  list of sites
+2024-08-25 08:23:32,454 Process process_5 stdout: <issue>   :  Issue ID
+2024-08-25 08:23:32,455 Process process_5 stdout: <session> :  Session ID
+2024-08-25 08:23:32,455 Process process_5 stdout: <env>     :  Type of ENV
+2024-08-25 08:23:32,455 Process process_5 stdout: 
+2024-08-25 08:23:32,485 Process process_1 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:23:32,485 Process process_1 stdout: 
+2024-08-25 08:23:32,485 Process process_1 stdout: To pull OM
+2024-08-25 08:23:32,485 Process process_1 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:23:32,486 Process process_1 stdout: <counter> :  counters
+2024-08-25 08:23:32,486 Process process_1 stdout: <cond>    :  condition
+2024-08-25 08:23:32,486 Process process_1 stdout: <sites>   :  list of sites
+2024-08-25 08:23:32,486 Process process_1 stdout: <issue>   :  Issue ID
+2024-08-25 08:23:32,486 Process process_1 stdout: <session> :  Session ID
+2024-08-25 08:23:32,486 Process process_1 stdout: <env>     :  Type of ENV
+2024-08-25 08:23:32,486 Process process_1 stdout: 
+2024-08-25 08:26:41,426 Starting parallel script execution
+2024-08-25 08:26:41,427 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']]
+2024-08-25 08:26:41,436 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-25 08:26:41,437 [START OF PROCESS process_1]
+2024-08-25 08:26:41,437 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40']
+2024-08-25 08:26:41,439 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-25 08:26:41,440 [START OF PROCESS process_2]
+2024-08-25 08:26:41,441 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43']
+2024-08-25 08:26:41,442 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-25 08:26:41,442 [START OF PROCESS process_3]
+2024-08-25 08:26:41,443 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44']
+2024-08-25 08:26:41,445 Process process_1: Subprocess started with PID 114276
+2024-08-25 08:26:41,448 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-25 08:26:41,449 [START OF PROCESS process_5]
+2024-08-25 08:26:41,449 Process process_3: Subprocess started with PID 114280
+2024-08-25 08:26:41,449 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-25 08:26:41,450 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46']
+2024-08-25 08:26:41,450 [START OF PROCESS process_4]
+2024-08-25 08:26:41,450 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45']
+2024-08-25 08:26:41,463 Process process_4: Subprocess started with PID 114285
+2024-08-25 08:26:41,464 Process process_5: Subprocess started with PID 114284
+2024-08-25 08:26:41,486 Process process_2: Subprocess started with PID 114279
+2024-08-25 08:26:42,017 Process process_3 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:26:42,017 Process process_3 stdout: 
+2024-08-25 08:26:42,017 Process process_3 stdout: To pull OM
+2024-08-25 08:26:42,018 Process process_3 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:26:42,018 Process process_3 stdout: <counter> :  counters
+2024-08-25 08:26:42,018 Process process_3 stdout: <cond>    :  condition
+2024-08-25 08:26:42,018 Process process_3 stdout: <sites>   :  list of sites
+2024-08-25 08:26:42,018 Process process_3 stdout: <issue>   :  Issue ID
+2024-08-25 08:26:42,018 Process process_3 stdout: <session> :  Session ID
+2024-08-25 08:26:42,018 Process process_3 stdout: <env>     :  Type of ENV
+2024-08-25 08:26:42,018 Process process_3 stdout: 
+2024-08-25 08:26:42,018 Process process_5 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:26:42,019 Process process_5 stdout: 
+2024-08-25 08:26:42,019 Process process_5 stdout: To pull OM
+2024-08-25 08:26:42,019 Process process_5 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:26:42,019 Process process_5 stdout: <counter> :  counters
+2024-08-25 08:26:42,019 Process process_5 stdout: <cond>    :  condition
+2024-08-25 08:26:42,019 Process process_5 stdout: <sites>   :  list of sites
+2024-08-25 08:26:42,019 Process process_5 stdout: <issue>   :  Issue ID
+2024-08-25 08:26:42,019 Process process_5 stdout: <session> :  Session ID
+2024-08-25 08:26:42,019 Process process_5 stdout: <env>     :  Type of ENV
+2024-08-25 08:26:42,019 Process process_5 stdout: 
+2024-08-25 08:26:42,114 Process process_4 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:26:42,114 Process process_4 stdout: 
+2024-08-25 08:26:42,115 Process process_4 stdout: To pull OM
+2024-08-25 08:26:42,115 Process process_4 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:26:42,115 Process process_4 stdout: <counter> :  counters
+2024-08-25 08:26:42,115 Process process_4 stdout: <cond>    :  condition
+2024-08-25 08:26:42,115 Process process_4 stdout: <sites>   :  list of sites
+2024-08-25 08:26:42,115 Process process_4 stdout: <issue>   :  Issue ID
+2024-08-25 08:26:42,115 Process process_4 stdout: <session> :  Session ID
+2024-08-25 08:26:42,116 Process process_4 stdout: <env>     :  Type of ENV
+2024-08-25 08:26:42,116 Process process_4 stdout: 
+2024-08-25 08:26:42,125 Process process_1 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:26:42,125 Process process_1 stdout: 
+2024-08-25 08:26:42,126 Process process_1 stdout: To pull OM
+2024-08-25 08:26:42,126 Process process_1 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:26:42,126 Process process_1 stdout: <counter> :  counters
+2024-08-25 08:26:42,126 Process process_1 stdout: <cond>    :  condition
+2024-08-25 08:26:42,126 Process process_1 stdout: <sites>   :  list of sites
+2024-08-25 08:26:42,126 Process process_1 stdout: <issue>   :  Issue ID
+2024-08-25 08:26:42,126 Process process_1 stdout: <session> :  Session ID
+2024-08-25 08:26:42,126 Process process_1 stdout: <env>     :  Type of ENV
+2024-08-25 08:26:42,126 Process process_1 stdout: 
+2024-08-25 08:26:42,241 Process process_2 stdout: Error: Incorrect number of arguments.
+2024-08-25 08:26:42,241 Process process_2 stdout: 
+2024-08-25 08:26:42,242 Process process_2 stdout: To pull OM
+2024-08-25 08:26:42,242 Process process_2 stdout: Usage: /home/sieluser/myflaskapp/scripts/ifast_executer.py <counter> <cond> <sites> <issue> <session> <env>
+2024-08-25 08:26:42,242 Process process_2 stdout: <counter> :  counters
+2024-08-25 08:26:42,242 Process process_2 stdout: <cond>    :  condition
+2024-08-25 08:26:42,242 Process process_2 stdout: <sites>   :  list of sites
+2024-08-25 08:26:42,242 Process process_2 stdout: <issue>   :  Issue ID
+2024-08-25 08:26:42,243 Process process_2 stdout: <session> :  Session ID
+2024-08-25 08:26:42,243 Process process_2 stdout: <env>     :  Type of ENV
+2024-08-25 08:26:42,243 Process process_2 stdout: 
+2024-08-25 08:33:53,424 Starting parallel script execution
+2024-08-25 08:33:53,425 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']]
+2024-08-25 08:33:53,433 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:33:53,434 [START OF PROCESS process_1]
+2024-08-25 08:33:53,435 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:33:53,437 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:33:53,438 [START OF PROCESS process_2]
+2024-08-25 08:33:53,438 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:33:53,440 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:33:53,440 [START OF PROCESS process_3]
+2024-08-25 08:33:53,441 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:33:53,442 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:33:53,443 [START OF PROCESS process_4]
+2024-08-25 08:33:53,444 Process process_1: Subprocess started with PID 114882
+2024-08-25 08:33:53,444 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:33:53,448 Process process_3: Subprocess started with PID 114888
+2024-08-25 08:33:53,449 Process process_2: Subprocess started with PID 114885
+2024-08-25 08:33:53,451 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:33:53,451 [START OF PROCESS process_5]
+2024-08-25 08:33:53,452 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:33:53,466 Process process_5: Subprocess started with PID 114891
+2024-08-25 08:33:53,467 Process process_4: Subprocess started with PID 114889
+2024-08-25 08:33:54,094 Process process_3 stderr: Traceback (most recent call last):
+2024-08-25 08:33:54,094 Process process_3 stderr: File "/home/sieluser/myflaskapp/scripts/ifast_executer.py", line 125, in <module>
+2024-08-25 08:33:54,094 Process process_3 stderr: df = pd.read_csv(output_file_path)
+2024-08-25 08:33:54,094 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+2024-08-25 08:33:54,094 Process process_3 stderr: return _read(filepath_or_buffer, kwds)
+2024-08-25 08:33:54,094 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+2024-08-25 08:33:54,094 Process process_3 stderr: parser = TextFileReader(fp_or_buf, **kwds)
+2024-08-25 08:33:54,094 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+2024-08-25 08:33:54,094 Process process_3 stderr: self._make_engine(self.engine)
+2024-08-25 08:33:54,094 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+2024-08-25 08:33:54,094 Process process_3 stderr: self._engine = CParserWrapper(self.f, **self.options)
+2024-08-25 08:33:54,094 Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+2024-08-25 08:33:54,094 Process process_3 stderr: self._reader = parsers.TextReader(src, **kwds)
+2024-08-25 08:33:54,094 Process process_3 stderr: File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+2024-08-25 08:33:54,095 Process process_3 stderr: File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+2024-08-25 08:33:54,095 Process process_3 stderr: FileNotFoundError: [Errno 2] No such file or directory: 'No matches Found'
+2024-08-25 08:33:54,095 Process process_3: Subprocess exited with return code 1
+2024-08-25 08:33:54,304 Process process_4 stderr: Traceback (most recent call last):
+2024-08-25 08:33:54,304 Process process_4 stderr: File "/home/sieluser/myflaskapp/scripts/ifast_executer.py", line 125, in <module>
+2024-08-25 08:33:54,304 Process process_4 stderr: df = pd.read_csv(output_file_path)
+2024-08-25 08:33:54,304 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+2024-08-25 08:33:54,304 Process process_4 stderr: return _read(filepath_or_buffer, kwds)
+2024-08-25 08:33:54,304 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+2024-08-25 08:33:54,304 Process process_4 stderr: parser = TextFileReader(fp_or_buf, **kwds)
+2024-08-25 08:33:54,305 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+2024-08-25 08:33:54,305 Process process_4 stderr: self._make_engine(self.engine)
+2024-08-25 08:33:54,305 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+2024-08-25 08:33:54,305 Process process_4 stderr: self._engine = CParserWrapper(self.f, **self.options)
+2024-08-25 08:33:54,305 Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+2024-08-25 08:33:54,305 Process process_4 stderr: self._reader = parsers.TextReader(src, **kwds)
+2024-08-25 08:33:54,305 Process process_4 stderr: File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+2024-08-25 08:33:54,305 Process process_4 stderr: File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+2024-08-25 08:33:54,305 Process process_4 stderr: FileNotFoundError: [Errno 2] No such file or directory: 'No matches Found'
+2024-08-25 08:33:54,305 Process process_4: Subprocess exited with return code 1
+2024-08-25 08:33:55,012 Process process_5 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:33:55,021 Process process_5 stdout: <table border="1" class="dataframe">
+2024-08-25 08:33:55,022 Process process_5 stdout: <thead>
+2024-08-25 08:33:55,022 Process process_5 stdout: <tr style="text-align: right;">
+2024-08-25 08:33:55,022 Process process_5 stdout: <th>NE_ID</th>
+2024-08-25 08:33:55,022 Process process_5 stdout: <th>DESC</th>
+2024-08-25 08:33:55,022 Process process_5 stdout: <th>MATCH</th>
+2024-08-25 08:33:55,022 Process process_5 stdout: </tr>
+2024-08-25 08:33:55,022 Process process_5 stdout: </thead>
+2024-08-25 08:33:55,022 Process process_5 stdout: <tbody>
+2024-08-25 08:33:55,022 Process process_5 stdout: <tr>
+2024-08-25 08:33:55,022 Process process_5 stdout: <td>6000090001</td>
+2024-08-25 08:33:55,022 Process process_5 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:33:55,022 Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:33:55,022 Process process_5 stdout: </tr>
+2024-08-25 08:33:55,023 Process process_5 stdout: <tr>
+2024-08-25 08:33:55,023 Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,023 Process process_5 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:33:55,023 Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:33:55,023 Process process_5 stdout: </tr>
+2024-08-25 08:33:55,023 Process process_5 stdout: <tr>
+2024-08-25 08:33:55,023 Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,023 Process process_5 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:33:55,023 Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:33:55,023 Process process_5 stdout: </tr>
+2024-08-25 08:33:55,023 Process process_5 stdout: </tbody>
+2024-08-25 08:33:55,023 Process process_5 stdout: </table>
+2024-08-25 08:33:55,176 Process process_2 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:33:55,184 Process process_2 stdout: <table border="1" class="dataframe">
+2024-08-25 08:33:55,184 Process process_2 stdout: <thead>
+2024-08-25 08:33:55,184 Process process_2 stdout: <tr style="text-align: right;">
+2024-08-25 08:33:55,184 Process process_2 stdout: <th>NE_ID</th>
+2024-08-25 08:33:55,184 Process process_2 stdout: <th>DESC</th>
+2024-08-25 08:33:55,184 Process process_2 stdout: <th>MATCH</th>
+2024-08-25 08:33:55,184 Process process_2 stdout: </tr>
+2024-08-25 08:33:55,184 Process process_2 stdout: </thead>
+2024-08-25 08:33:55,184 Process process_2 stdout: <tbody>
+2024-08-25 08:33:55,184 Process process_2 stdout: <tr>
+2024-08-25 08:33:55,184 Process process_2 stdout: <td>6000090001</td>
+2024-08-25 08:33:55,184 Process process_2 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:33:55,184 Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:33:55,185 Process process_2 stdout: </tr>
+2024-08-25 08:33:55,185 Process process_2 stdout: <tr>
+2024-08-25 08:33:55,185 Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,185 Process process_2 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:33:55,185 Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:33:55,185 Process process_2 stdout: </tr>
+2024-08-25 08:33:55,185 Process process_2 stdout: <tr>
+2024-08-25 08:33:55,185 Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,185 Process process_2 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:33:55,185 Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:33:55,185 Process process_2 stdout: </tr>
+2024-08-25 08:33:55,185 Process process_2 stdout: </tbody>
+2024-08-25 08:33:55,185 Process process_2 stdout: </table>
+2024-08-25 08:33:55,193 Process process_1 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:33:55,201 Process process_1 stdout: <table border="1" class="dataframe">
+2024-08-25 08:33:55,201 Process process_1 stdout: <thead>
+2024-08-25 08:33:55,201 Process process_1 stdout: <tr style="text-align: right;">
+2024-08-25 08:33:55,201 Process process_1 stdout: <th>NE_ID</th>
+2024-08-25 08:33:55,201 Process process_1 stdout: <th>DESC</th>
+2024-08-25 08:33:55,202 Process process_1 stdout: <th>MATCH</th>
+2024-08-25 08:33:55,202 Process process_1 stdout: </tr>
+2024-08-25 08:33:55,202 Process process_1 stdout: </thead>
+2024-08-25 08:33:55,202 Process process_1 stdout: <tbody>
+2024-08-25 08:33:55,202 Process process_1 stdout: <tr>
+2024-08-25 08:33:55,202 Process process_1 stdout: <td>6000090001</td>
+2024-08-25 08:33:55,202 Process process_1 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:33:55,202 Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:33:55,202 Process process_1 stdout: </tr>
+2024-08-25 08:33:55,203 Process process_1 stdout: <tr>
+2024-08-25 08:33:55,203 Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,203 Process process_1 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:33:55,203 Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:33:55,203 Process process_1 stdout: </tr>
+2024-08-25 08:33:55,203 Process process_1 stdout: <tr>
+2024-08-25 08:33:55,203 Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,203 Process process_1 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:33:55,203 Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:33:55,203 Process process_1 stdout: </tr>
+2024-08-25 08:33:55,204 Process process_1 stdout: </tbody>
+2024-08-25 08:33:55,204 Process process_1 stdout: </table>
+2024-08-25 08:42:08,759 Starting parallel script execution
+2024-08-25 08:42:08,759 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']]
+2024-08-25 08:42:08,767 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:42:08,768 [START OF PROCESS process_1]
+2024-08-25 08:42:08,768 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:42:08,770 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:42:08,771 [START OF PROCESS process_2]
+2024-08-25 08:42:08,774 Process process_1: Subprocess started with PID 115766
+2024-08-25 08:42:08,774 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:42:08,775 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:42:08,775 [START OF PROCESS process_3]
+2024-08-25 08:42:08,776 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:42:08,780 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:42:08,781 [START OF PROCESS process_5]
+2024-08-25 08:42:08,782 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:42:08,783 [START OF PROCESS process_4]
+2024-08-25 08:42:08,784 Process process_2: Subprocess started with PID 115769
+2024-08-25 08:42:08,785 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:42:08,789 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:42:08,790 Process process_3: Subprocess started with PID 115771
+2024-08-25 08:42:08,803 Process process_4: Subprocess started with PID 115775
+2024-08-25 08:42:08,804 Process process_5: Subprocess started with PID 115774
+2024-08-25 08:42:09,449 Process process_3 stdout: 
+2024-08-25 08:42:09,449 Process process_3 stdout: No matches Found
+2024-08-25 08:42:09,449 Process process_3 stdout: 
+2024-08-25 08:42:09,449 Process process_3 stdout: 
+2024-08-25 08:42:09,502 Process process_4 stdout: 
+2024-08-25 08:42:09,502 Process process_4 stdout: No matches Found
+2024-08-25 08:42:09,503 Process process_4 stdout: 
+2024-08-25 08:42:09,503 Process process_4 stdout: 
+2024-08-25 08:42:10,342 Process process_2 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:42:10,351 Process process_2 stdout: <table border="1" class="dataframe">
+2024-08-25 08:42:10,351 Process process_2 stdout: <thead>
+2024-08-25 08:42:10,352 Process process_2 stdout: <tr style="text-align: right;">
+2024-08-25 08:42:10,352 Process process_2 stdout: <th>NE_ID</th>
+2024-08-25 08:42:10,352 Process process_2 stdout: <th>DESC</th>
+2024-08-25 08:42:10,352 Process process_2 stdout: <th>MATCH</th>
+2024-08-25 08:42:10,352 Process process_2 stdout: </tr>
+2024-08-25 08:42:10,352 Process process_2 stdout: </thead>
+2024-08-25 08:42:10,352 Process process_2 stdout: <tbody>
+2024-08-25 08:42:10,352 Process process_2 stdout: <tr>
+2024-08-25 08:42:10,352 Process process_2 stdout: <td>6000090001</td>
+2024-08-25 08:42:10,352 Process process_2 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:42:10,352 Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:42:10,352 Process process_2 stdout: </tr>
+2024-08-25 08:42:10,352 Process process_2 stdout: <tr>
+2024-08-25 08:42:10,352 Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,352 Process process_2 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:42:10,353 Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:42:10,353 Process process_2 stdout: </tr>
+2024-08-25 08:42:10,353 Process process_2 stdout: <tr>
+2024-08-25 08:42:10,353 Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,353 Process process_2 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:42:10,353 Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:42:10,353 Process process_2 stdout: </tr>
+2024-08-25 08:42:10,353 Process process_2 stdout: </tbody>
+2024-08-25 08:42:10,353 Process process_2 stdout: </table>
+2024-08-25 08:42:10,533 Process process_1 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:42:10,542 Process process_1 stdout: <table border="1" class="dataframe">
+2024-08-25 08:42:10,542 Process process_1 stdout: <thead>
+2024-08-25 08:42:10,542 Process process_1 stdout: <tr style="text-align: right;">
+2024-08-25 08:42:10,542 Process process_1 stdout: <th>NE_ID</th>
+2024-08-25 08:42:10,542 Process process_1 stdout: <th>DESC</th>
+2024-08-25 08:42:10,543 Process process_1 stdout: <th>MATCH</th>
+2024-08-25 08:42:10,543 Process process_1 stdout: </tr>
+2024-08-25 08:42:10,543 Process process_1 stdout: </thead>
+2024-08-25 08:42:10,543 Process process_1 stdout: <tbody>
+2024-08-25 08:42:10,543 Process process_1 stdout: <tr>
+2024-08-25 08:42:10,543 Process process_1 stdout: <td>6000090001</td>
+2024-08-25 08:42:10,543 Process process_1 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:42:10,543 Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:42:10,543 Process process_1 stdout: </tr>
+2024-08-25 08:42:10,543 Process process_1 stdout: <tr>
+2024-08-25 08:42:10,543 Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,543 Process process_1 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:42:10,543 Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:42:10,544 Process process_1 stdout: </tr>
+2024-08-25 08:42:10,544 Process process_1 stdout: <tr>
+2024-08-25 08:42:10,544 Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,544 Process process_1 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:42:10,544 Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:42:10,544 Process process_1 stdout: </tr>
+2024-08-25 08:42:10,544 Process process_1 stdout: </tbody>
+2024-08-25 08:42:10,544 Process process_1 stdout: </table>
+2024-08-25 08:42:10,621 Process process_5 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:42:10,629 Process process_5 stdout: <table border="1" class="dataframe">
+2024-08-25 08:42:10,629 Process process_5 stdout: <thead>
+2024-08-25 08:42:10,629 Process process_5 stdout: <tr style="text-align: right;">
+2024-08-25 08:42:10,629 Process process_5 stdout: <th>NE_ID</th>
+2024-08-25 08:42:10,629 Process process_5 stdout: <th>DESC</th>
+2024-08-25 08:42:10,630 Process process_5 stdout: <th>MATCH</th>
+2024-08-25 08:42:10,630 Process process_5 stdout: </tr>
+2024-08-25 08:42:10,630 Process process_5 stdout: </thead>
+2024-08-25 08:42:10,630 Process process_5 stdout: <tbody>
+2024-08-25 08:42:10,630 Process process_5 stdout: <tr>
+2024-08-25 08:42:10,630 Process process_5 stdout: <td>6000090001</td>
+2024-08-25 08:42:10,630 Process process_5 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:42:10,630 Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:42:10,630 Process process_5 stdout: </tr>
+2024-08-25 08:42:10,630 Process process_5 stdout: <tr>
+2024-08-25 08:42:10,630 Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,630 Process process_5 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:42:10,631 Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:42:10,631 Process process_5 stdout: </tr>
+2024-08-25 08:42:10,631 Process process_5 stdout: <tr>
+2024-08-25 08:42:10,631 Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,631 Process process_5 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:42:10,631 Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:42:10,631 Process process_5 stdout: </tr>
+2024-08-25 08:42:10,631 Process process_5 stdout: </tbody>
+2024-08-25 08:42:10,631 Process process_5 stdout: </table>
+2024-08-25 08:46:14,261 Starting parallel script execution
+2024-08-25 08:46:14,262 [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']]
+2024-08-25 08:46:14,270 Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:46:14,271 [START OF PROCESS process_1]
+2024-08-25 08:46:14,271 Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:46:14,273 Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:46:14,273 [START OF PROCESS process_2]
+2024-08-25 08:46:14,274 Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:46:14,278 Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:46:14,278 [START OF PROCESS process_4]
+2024-08-25 08:46:14,280 Process process_1: Subprocess started with PID 116216
+2024-08-25 08:46:14,280 Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:46:14,282 Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:46:14,283 [START OF PROCESS process_3]
+2024-08-25 08:46:14,285 Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:46:14,286 [START OF PROCESS process_5]
+2024-08-25 08:46:14,286 Process process_4: Subprocess started with PID 116221
+2024-08-25 08:46:14,287 Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:46:14,290 Process process_2: Subprocess started with PID 116218
+2024-08-25 08:46:14,293 Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:46:14,312 Process process_5: Subprocess started with PID 116224
+2024-08-25 08:46:14,324 Process process_3: Subprocess started with PID 116225
+2024-08-25 08:46:15,054 Process process_3 stdout: 
+2024-08-25 08:46:15,054 Process process_3 stdout: No matches Found
+2024-08-25 08:46:15,054 Process process_3 stdout: 
+2024-08-25 08:46:15,054 Process process_3 stdout: 
+2024-08-25 08:46:15,110 Process process_4 stdout: 
+2024-08-25 08:46:15,110 Process process_4 stdout: No matches Found
+2024-08-25 08:46:15,110 Process process_4 stdout: 
+2024-08-25 08:46:15,110 Process process_4 stdout: 
+2024-08-25 08:46:15,885 Process process_1 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:46:15,896 Process process_2 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:46:15,896 Process process_1 stdout: <table border="1" class="dataframe">
+2024-08-25 08:46:15,896 Process process_1 stdout: <thead>
+2024-08-25 08:46:15,897 Process process_1 stdout: <tr style="text-align: right;">
+2024-08-25 08:46:15,897 Process process_1 stdout: <th>NE_ID</th>
+2024-08-25 08:46:15,897 Process process_1 stdout: <th>DESC</th>
+2024-08-25 08:46:15,897 Process process_1 stdout: <th>MATCH</th>
+2024-08-25 08:46:15,897 Process process_1 stdout: </tr>
+2024-08-25 08:46:15,897 Process process_1 stdout: </thead>
+2024-08-25 08:46:15,897 Process process_1 stdout: <tbody>
+2024-08-25 08:46:15,897 Process process_1 stdout: <tr>
+2024-08-25 08:46:15,897 Process process_1 stdout: <td>6000090001</td>
+2024-08-25 08:46:15,897 Process process_1 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:46:15,897 Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:46:15,897 Process process_1 stdout: </tr>
+2024-08-25 08:46:15,897 Process process_1 stdout: <tr>
+2024-08-25 08:46:15,897 Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:46:15,897 Process process_1 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:46:15,897 Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:46:15,898 Process process_1 stdout: </tr>
+2024-08-25 08:46:15,898 Process process_1 stdout: <tr>
+2024-08-25 08:46:15,898 Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:46:15,898 Process process_1 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:46:15,898 Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:46:15,898 Process process_1 stdout: </tr>
+2024-08-25 08:46:15,898 Process process_1 stdout: </tbody>
+2024-08-25 08:46:15,898 Process process_1 stdout: </table>
+2024-08-25 08:46:15,909 Process process_2 stdout: <table border="1" class="dataframe">
+2024-08-25 08:46:15,909 Process process_2 stdout: <thead>
+2024-08-25 08:46:15,909 Process process_2 stdout: <tr style="text-align: right;">
+2024-08-25 08:46:15,909 Process process_2 stdout: <th>NE_ID</th>
+2024-08-25 08:46:15,910 Process process_2 stdout: <th>DESC</th>
+2024-08-25 08:46:15,910 Process process_2 stdout: <th>MATCH</th>
+2024-08-25 08:46:15,910 Process process_2 stdout: </tr>
+2024-08-25 08:46:15,910 Process process_2 stdout: </thead>
+2024-08-25 08:46:15,910 Process process_2 stdout: <tbody>
+2024-08-25 08:46:15,910 Process process_2 stdout: <tr>
+2024-08-25 08:46:15,910 Process process_2 stdout: <td>6000090001</td>
+2024-08-25 08:46:15,910 Process process_2 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:46:15,910 Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:46:15,910 Process process_2 stdout: </tr>
+2024-08-25 08:46:15,910 Process process_2 stdout: <tr>
+2024-08-25 08:46:15,910 Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:46:15,911 Process process_2 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:46:15,911 Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:46:15,911 Process process_2 stdout: </tr>
+2024-08-25 08:46:15,911 Process process_2 stdout: <tr>
+2024-08-25 08:46:15,911 Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:46:15,911 Process process_2 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:46:15,911 Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:46:15,911 Process process_2 stdout: </tr>
+2024-08-25 08:46:15,911 Process process_2 stdout: </tbody>
+2024-08-25 08:46:15,911 Process process_2 stdout: </table>
+2024-08-25 08:46:16,175 Process process_5 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:46:16,183 Process process_5 stdout: <table border="1" class="dataframe">
+2024-08-25 08:46:16,183 Process process_5 stdout: <thead>
+2024-08-25 08:46:16,183 Process process_5 stdout: <tr style="text-align: right;">
+2024-08-25 08:46:16,183 Process process_5 stdout: <th>NE_ID</th>
+2024-08-25 08:46:16,183 Process process_5 stdout: <th>DESC</th>
+2024-08-25 08:46:16,183 Process process_5 stdout: <th>MATCH</th>
+2024-08-25 08:46:16,183 Process process_5 stdout: </tr>
+2024-08-25 08:46:16,183 Process process_5 stdout: </thead>
+2024-08-25 08:46:16,183 Process process_5 stdout: <tbody>
+2024-08-25 08:46:16,184 Process process_5 stdout: <tr>
+2024-08-25 08:46:16,184 Process process_5 stdout: <td>6000090001</td>
+2024-08-25 08:46:16,184 Process process_5 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:46:16,184 Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:46:16,184 Process process_5 stdout: </tr>
+2024-08-25 08:46:16,184 Process process_5 stdout: <tr>
+2024-08-25 08:46:16,184 Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:46:16,184 Process process_5 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:46:16,184 Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:46:16,184 Process process_5 stdout: </tr>
+2024-08-25 08:46:16,184 Process process_5 stdout: <tr>
+2024-08-25 08:46:16,185 Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:46:16,185 Process process_5 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:46:16,185 Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:46:16,185 Process process_5 stdout: </tr>
+2024-08-25 08:46:16,185 Process process_5 stdout: </tbody>
+2024-08-25 08:46:16,185 Process process_5 stdout: </table>
+2024-08-25 09:23:10,644 Logging out user
+2024-08-25 09:23:10,645 Redirecting to: http://105.57.243.148:12258/
+2024-08-25 09:23:16,753 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-25 09:23:16,753 Account details found redirecting
+2024-08-25 09:23:16,753 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-25 09:23:16,754 Response status code: 302
+2024-08-25 09:23:17,256 Request to /newpage
+2024-08-25 09:24:57,000 Starting parallel script execution
+2024-08-25 09:24:57,023 Parallel script execution completed.
+2024-08-25 09:25:41,849 Request to /newpage
+2024-08-25 11:48:52,320 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-25 11:48:52,321 Account details found redirecting
+2024-08-25 11:48:52,321 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-25 11:48:52,321 Response status code: 302
+2024-08-25 11:48:52,768 Request to /newpage
+2024-08-26 22:43:47,710 Request to /newpage
+2024-08-27 10:28:01,692 Request to /newpage
+2024-08-27 17:03:22,536 Request to /newpage
+2024-08-27 17:03:38,184 Request to /newpage
+2024-08-27 19:17:22,354 Request to /newpage
+2024-08-28 10:51:58,264 Request to /newpage
+2024-08-28 12:38:53,407 Account details: {'user_id': 20, 'knox_id': 'p.venkata', 'password': '3b91359f05ac985993c514ec28e96b7d', 'fullname': 'Praseeda V', 'email': 'p.venkata@partner.samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-28 12:38:53,407 Account details found redirecting
+2024-08-28 12:38:53,407 Redirecting to http://ntpcweb/newpage
+2024-08-28 12:38:53,407 Response status code: 302
+2024-08-28 12:39:08,345 Account details: {'user_id': 20, 'knox_id': 'p.venkata', 'password': '3b91359f05ac985993c514ec28e96b7d', 'fullname': 'Praseeda V', 'email': 'p.venkata@partner.samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-28 12:39:08,345 Account details found redirecting
+2024-08-28 12:39:08,345 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-28 12:39:08,345 Response status code: 302
+2024-08-28 12:39:08,357 Request to /newpage
+2024-08-28 12:39:45,793 Request to /newpage
+2024-08-28 12:45:44,137 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-28 12:45:44,137 Account details found redirecting
+2024-08-28 12:45:44,137 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-28 12:45:44,137 Response status code: 302
+2024-08-28 12:45:44,586 Request to /newpage
+2024-08-29 09:46:14,489 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-29 09:46:14,490 Account details found redirecting
+2024-08-29 09:46:14,490 Redirecting to http://105.57.243.148:12258/newpage
+2024-08-29 09:46:14,490 Response status code: 302
+2024-08-29 09:46:14,947 Request to /newpage
+2024-08-29 10:14:11,071 Request to /newpage
+2024-08-29 10:15:08,086 Request to /newpage
+2024-08-29 10:15:17,283 Request to /newpage
+2024-08-29 10:56:01,294 Request to /newpage
+2024-09-03 12:22:45,460 Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-09-03 12:22:45,460 Account details found redirecting
+2024-09-03 12:22:45,460 Redirecting to http://105.57.243.148:12258/newpage
+2024-09-03 12:22:45,461 Response status code: 302
+2024-09-03 12:22:45,910 Request to /newpage
+2024-09-03 12:27:04,607 Starting parallel script execution
+2024-09-03 12:27:04,637 Parallel script execution completed.
+2024-09-03 12:29:53,907 Starting parallel script execution
+2024-09-03 12:29:53,935 Parallel script execution completed.
+2024-09-03 12:30:09,179 Starting parallel script execution
+2024-09-03 12:30:09,203 Parallel script execution completed.
+2024-09-03 17:33:03,550 Request to /newpage
+2024-09-03 21:58:35,999 Request to /newpage
+2024-09-03 21:59:59,803 Request to /newpage
+2024-09-03 22:00:04,787 Request to /newpage
+2024-09-03 22:00:09,706 Request to /newpage
+2024-09-03 22:00:14,671 Request to /newpage
+2024-09-03 22:01:13,399 Request to /newpage
+2024-09-03 22:11:03,491 Request to /newpage
+2024-09-03 22:13:27,212 Request to /newpage
+2024-09-03 22:19:31,596 Request to /newpage
+2024-09-03 22:19:35,948 Request to /newpage
+2024-09-03 22:20:08,635 Request to /newpage
+2024-09-03 22:20:39,389 Request to /newpage
+2024-09-03 22:21:29,969 Request to /newpage
+2024-09-03 22:21:38,174 Request to /newpage
+2024-09-04 22:13:19,114 Request to /newpage
+2024-09-05 10:25:07,757 Account details: {'user_id': 21, 'knox_id': 'n.nandu', 'password': '3b91359f05ac985993c514ec28e96b7d', 'fullname': 'Neepa Nandu', 'email': 'n.nandu@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-09-05 10:25:07,758 Account details found redirecting
+2024-09-05 10:25:07,759 Redirecting to http://105.57.243.148:12258/newpage
+2024-09-05 10:25:07,759 Response status code: 302
+2024-09-05 10:25:07,780 Request to /newpage
+2024-09-05 13:31:14,531 Account details: {'user_id': 21, 'knox_id': 'n.nandu', 'password': '3b91359f05ac985993c514ec28e96b7d', 'fullname': 'Neepa Nandu', 'email': 'n.nandu@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-09-05 13:31:14,531 Account details found redirecting
+2024-09-05 13:31:14,531 Redirecting to http://105.57.243.148:12258/newpage
+2024-09-05 13:31:14,532 Response status code: 302
+2024-09-05 13:31:14,547 Request to /newpage
+2024-10-16 12:30:03,782 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-16 12:30:03,782 Account details found redirecting
+2024-10-16 12:30:03,782 Redirecting to http://localhost:5004/newpage
+2024-10-16 12:30:03,783 Response status code: 302
+2024-10-16 12:30:03,787 Request to /newpage
+2024-10-16 12:30:35,225 Request to /newpage
+2024-10-16 21:18:09,008 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-16 21:18:09,009 Account details found redirecting
+2024-10-16 21:18:09,009 Redirecting to http://localhost:5004/newpage
+2024-10-16 21:18:09,009 Response status code: 302
+2024-10-16 21:18:09,017 Request to /newpage
+2024-10-16 21:23:01,488 INFODODO
+2024-10-16 21:23:01,491 TETSTSTST
+2024-10-16 21:23:01,501 Executing query inside else
+2024-10-16 21:23:01,503 (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 21:23:13,893 INFODODO
+2024-10-16 21:23:13,895 TETSTSTST
+2024-10-16 21:23:13,905 Executing query inside else
+2024-10-16 21:23:13,908 (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 21:23:27,539 INFODODO
+2024-10-16 21:23:27,540 TETSTSTST
+2024-10-16 21:23:27,542 Executing query inside else
+2024-10-16 21:23:27,543 (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 21:23:34,395 INFODODO
+2024-10-16 21:23:34,398 TETSTSTST
+2024-10-16 21:23:34,407 Executing query inside else
+2024-10-16 21:23:34,409 (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 22:02:04,769 INFODODO
+2024-10-16 22:02:04,776 TETSTSTST
+2024-10-16 22:02:04,787 Executing query inside else
+2024-10-16 22:02:04,790 (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 22:03:46,427 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-16 22:03:46,427 Account details found redirecting
+2024-10-16 22:03:46,428 Redirecting to http://localhost:5004/newpage
+2024-10-16 22:03:46,428 Response status code: 302
+2024-10-16 22:03:46,445 Request to /newpage
+2024-10-16 22:04:14,877 INFODODO
+2024-10-16 22:05:30,231 TETSTSTST
+2024-10-16 22:05:42,107 Executing query inside else
+2024-10-16 22:05:43,696 
+2024-10-16 22:06:00,513 Logging out user
+2024-10-16 22:06:00,514 Redirecting to: http://105.57.243.148:12258/
+2024-10-16 22:06:42,876 INFODODO
+2024-10-16 22:07:00,152 TETSTSTST
+2024-10-16 22:11:49,269 INFODODO
+2024-10-16 22:11:53,343 INFODODO
+2024-10-16 22:20:32,309 INFODODO
+2024-10-16 22:20:32,311 INFODODO
+2024-10-16 22:20:32,313 INFODODO
+2024-10-16 22:20:32,314 TETSTSTST
+2024-10-16 22:20:32,315 TETSTSTST
+2024-10-16 22:20:32,315 TETSTSTST
+2024-10-16 22:20:32,321 Packet sequence number wrong - got 102 expected 8
+2024-10-16 22:20:32,327 Executing query inside else
+2024-10-16 22:20:32,327 Executing query inside else
+2024-10-16 22:20:32,329 'NoneType' object has no attribute 'read'
+2024-10-16 22:20:32,331 inserted
+2024-10-16 22:20:32,337 [{'issue_id': 0}]
+2024-10-16 22:22:08,912 Request to /newpage
+2024-10-16 22:23:47,537 Request to /newpage
+2024-10-16 22:25:01,756 Request to /newpage
+2024-10-16 22:25:33,900 Request to /newpage
+2024-10-16 22:29:16,209 Request to /newpage
+2024-10-16 23:47:28,000 INFODODO
+2024-10-16 23:47:28,002 TETSTSTST
+2024-10-16 23:47:28,006 Executing query inside else
+2024-10-16 23:47:28,007 (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")

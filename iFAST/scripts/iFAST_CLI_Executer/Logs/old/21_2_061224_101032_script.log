@@ -1,0 +1,2 @@
+SITE_LIST=24593003029,24593002373,24593002050\nCommands=pod_login NE_ID dmp,logged into the dmp\nnrconfd_cli -C -u vsmuser,vsmuser connected\nshow managed-element virtual-function cnf pod pod-entries sync sync-state,#\nexit,$\nexit,vendgrp\n#proceed, No\nIssue_Seq=21_2\nDUO_ID=venpr8r
+spawn ssh venpr8r@198.226.62.124

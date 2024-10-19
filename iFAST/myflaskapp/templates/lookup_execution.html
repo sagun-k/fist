@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>iFAST</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+	<link href="/static/assets/css/actions/action_exe.css" rel="stylesheet" />
+	<style>
+		.nav-item.right-align {
+		margin-left: auto;
+		}
+		#sticky-footer {
+		position: relative;
+		bottom: 0;
+		width: 100%;
+		height: 58px;
+		//background: grey;
+		}
+		.checkbox-group {
+		display: flex;
+		align-items: center;
+		}
+		.checkbox-group label {
+		margin-left: 5px;
+		margin-right: 15px;
+		}
+		body, html {
+		height: 100%;
+		background-color: #f4f4f4;
+		font-size: 12px !important;
+		width: 100%;
+		margin: 0;
+		font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #292b2c;
+		display: flex;
+		flex-direction: column;
+		overflow-x: auto;
+		}
+		fieldset {
+		min-width: 0;
+		padding: 0;
+		margin: 0;
+		border: 0;
+		}
+		fieldset.label{
+		font-weight:bold;
+		}
+		.the-fieldset {
+		border: 1px groove #1428A0;
+		border-color: #5161ac;
+		background: #fff !important;
+		padding: 6px;
+		border-radius: 5px;
+		width:100%;
+		}
+		/* Full height image header */
+		.bgimg-1 {
+		background-position: center;
+		background-size: cover;
+		background-image: url("/w3images/mac.jpg");
+		min-height: 100%;
+		}
+		.w3-bar .w3-button {
+		padding: 16px;
+		}
+		.footer {
+		font-size:12px;
+		font-family:arial;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: black;
+		color: white;
+		text-align: center;
+		}
+		input.formInvalid::-webkit-input-placeholder {
+		color: red;
+		}
+		.star:after {
+		content: " *";
+		color: red;
+		}
+		.nohover {
+		pointer-events: none;
+		}
+		.hrefButton {
+		padding: 3px 10px;
+		text-decoration: none;
+		}
+		.button {
+		background-color: Teal;
+		border: none;
+		color: white;
+		padding: 8px 25px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 2px 2px;
+		cursor: pointer;
+		}
+		#advsrch {
+		display: none;
+		/* Hide the advsrch div by default */
+		}
+		.button:hover {
+		background-color: #ddd;
+		color: black;
+		}
+		label.required::after {
+		content: " *";
+		color: red; /* Customize the color if needed */
+		}
+		.swal2-popup {
+		width: 300px; /* Change the width as per your requirement */
+		}
+		.swal2-popup {
+		font-size: 8px; /* Change the font size as per your requirement */
+		}
+		.error {
+		color: red;
+		}
+
+	    .dropdown-menu {
+		position: absolute !important;
+		top: 100% !important;
+		left: 0 !important;
+		margin-top: 0 !important;
+		}
+		.btn-transparent-on-hover {
+		transition: background-color 0.3s;
+		}
+		.btn-transparent-on-hover:hover {
+		background-color: transparent !important;
+		}
+		.container {
+		max-width: 1400px;
+		border: 2px groove ThreeDFace;
+		margin: 0 auto;
+		padding-top: 20px;
+		background: #fff !important;
+		margin-top: 20px;
+		//overflow:auto;
+		}
+		.progressbar {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		counter-reset: step;
+		margin: 2rem 0;
+		width: 130px;
+		}
+		.step {
+		width: 2.1875rem;
+		height: 1.9rem;
+		border-radius: 50%;
+		text-align: center;
+		line-height: 30px;
+		background-color: lightgray;
+		color: white;
+		position: relative;
+		z-index: 1;
+		}
+		.step.active {
+		background-color: blue;
+		}
+		.step.completed {
+		background-color: blue;
+		}
+		.step:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: -105%;
+		right: -50%;
+		height: 2px;
+		width: calc(100% + 50%);
+		background-color: lightgray;
+		z-index: -1;
+		}
+		.step:first-child:before {
+		display: none;
+		}
+		.step.active:before, .step.completed:before {
+		background-color: blue;
+		}
+		.progress {
+		content: "";
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 4px;
+		width: 100%;
+		background-color: #dcdcdc;
+		z-index: -1;
+		}
+		.progressbar::before,
+		.progress {
+		width: calc(100% - 2.1875rem * 4); /* Adjust the number of steps accordingly */
+		height: 0.2rem; /* Adjust the height as needed */
+		background-color: var(--primary-color);
+		border-radius: 0.1rem; /* Adjust the border radius as needed */
+		margin: auto;
+		}
+		.nav-tabs .nav-link.active {
+		color: white;
+		background-color: blue;
+		border-color: blue;
+		}
+		.nav-tabs .nav-link {
+		color: grey;
+		background-color: lightgrey;
+		border-color: lightgrey;
+		}
+		.the-fieldset label{
+		font-weight:bold;
+		}
+
+
+		.navbar-custom {
+		 background-color: #283db4;
+		 box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+		 font-size: 13px;
+		 font-weight: bold;
+		 padding: 2px 2px;
+	}
+    .nav-link {
+		color: white;
+		transition: color 0.2s;
+	}
+    .nav-link:hover {
+		color: white;
+	}
+		.select2-container--bootstrap5 {
+  z-index: 1060 !important; /* Use !important to override any inline styles */
+}
+
+
+.select2-container--bootstrap5 .select2-dropdown {
+    z-index: 1060 !important; /* Ensure dropdown has correct z-index */
+}
+                .modal-dialog {
+            max-width: 40%;
+        }
+
+
+        .nav-item .dropdown-menu {
+            background-color: #283db4;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px; /* Adjust width as needed */
+        }
+        .nav-item .dropdown-menu a {
+            color: white;
+        }
+        .nav-item .dropdown-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+		.dropdown-menu {
+            right: 0;
+            left: auto;
+            width: 150px; /* Adjust width as needed */
+        }
+        .user-profile {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link {
+            color: white;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link .profile-text {
+            margin-left: 5px;
+            font-size: 10px;
+        }
+        .content-section {
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            width: 100%; /* Ensure width is 100% */
+        }
+        .content-section h2 {
+            color: #283db4;
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            margin-bottom: 15px;
+        }
+        .dataTables_wrapper {
+            padding: 0;
+        }
+        table.dataTable {
+            border: 1px solid #ddd; /* Ensure border is visible */
+        }
+        .dataTables_filter {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+          .navbar-brand {
+            font-family: 'Arial', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #283db4, 0 0 5px #283db4;
+            position: relative;
+            transition: all 0.3s ease;
+		  }
+
+		.navbar-brand:hover {
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #ffeb3b, 0 0 5px #ffeb3b;
+        }
+
+
+
+        .btn-disabled {
+            pointer-events: none;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+
+	</style>
+	<script> 
+	function toggle(source) { 
+		let checkboxes = document 
+			.querySelectorAll('input[type="checkbox"]'); 
+		for (let i = 0; i < checkboxes.length; i++) { 
+			if (checkboxes[i] != source) 
+				checkboxes[i].checked = source.checked; 
+		} 
+	}
+
+
+		$(document).ready(function(){
+			 $('#regex').val(`{{regex}}`);
+			  $('#email_id').val(`{{email_ids}}`);
+
+		})
+</script>
+</head>
+<body>
+	     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="{{url_for('newpage')}}">&nbsp;&nbsp;iFAST<i class="fa fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link " id="knowledge-base-tab"  href="{{url_for('newpage')}}#knowledge-base" >&nbsp;|&nbsp;&nbsp;KNOWLEDGE BASE</a>
+
+                </li>
+                <li class="nav-item">
+<!--                    <a class="nav-link" id="lookup-issue-tab" data-bs-toggle="tab" href="{{url_for('lookup_onload')}}" role="tab" aria-controls="lookup-issue" aria-selected="false">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>-->
+                    <a class="nav-link active" id="lookup-issue-tab" href="{{url_for('lookup_onload')}}">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;CONFIGURATION MANAGEMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>
+<!--                    <a class="nav-link" id="user-pane-tab" data-bs-toggle="tab" href="#user-pane" role="tab" aria-controls="user-pane" aria-selected="false">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>-->
+                </li>
+            </ul>
+        </div>
+        <div class="question-dropdown">
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="questionDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="questionDropdown">
+                    <li><a class="dropdown-item" href="#">Help</a></li>
+                    <li><a class="dropdown-item" href="#">Support</a></li>
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <div class="dropdown">
+
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-lg"></i><span class="profile-text">{{session['user_name']}}<br> Superadmin</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+	<div class="container-fluid p-1">
+		<div class="row">
+			<div class="col d-flex justify-content-start">
+				<p style="text-align:left;">
+<!--					<a href="{{url_for('index')}}" class="btn btn-sm btn-transparent-on-hover custom-btn text-dark"><span><i class="fa fa-home" style="font-size: 1.2em;"></i><u class="text-dark">iFAST</u></span></a>-->
+<!--					&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-sm btn-transparent-on-hover custom-btn text-dark">-->
+<!--					<u>LOOK UP ISSUE</u>-->
+<!--					</a>-->
+<!--				</p>-->
+<!--			</div>-->
+<!--			<div class="col d-flex justify-content-end text-end">-->
+<!--				<div class="dropdown" id="dropdownWrapper">-->
+<!--					<button class="btn  dropdown-toggle text-dark btn-transparent-on-hover" type="button" id="dropdownMenuButton" aria-expanded="false">-->
+<!--					<i class="fa fa-user-circle-o" style="font-size:12px"></i>&nbsp;&nbsp;{{session['user_name']}}-->
+<!--					</button>-->
+<!--					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--						<li><a class="dropdown-item" href="#">Change Password</a></li>-->
+<!--						<li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+<!--	</div>-->
+<!--	<div class="container-fluid p-1">-->
+<!--		<div class="bg-light">-->
+<!--			<h2 class="display-8 text-center"><b>Issue Fast Automated Identification Tool</b></h2>-->
+<!--		</div>-->
+<!--	</div>-->
+	<div class="container mt-1">
+			<div class="tab-pane w-100" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="width:60%">
+				<form name="IssueSequenceForm" id="IssueSequenceForm" style="margin-left:100px;margin-right:100px">
+					<fieldset class="the-fieldset">
+						<legend class="w-auto px-2" style="text-decoration: underline;">Search</legend>
+						<div class="form-row mt-1">
+							<div class="form-group col-md-2">
+								<label for="issue_cat" class="star">Issue Category:</label>
+								<select name="issue_cat" id="issue_cat" class="form-control" style="width:140px;">
+								<option  selected value="{{category_val}}" disabled > {{category_val}}</option>
+								</select>
+								<script>
+								  $(document).ready(function () {
+									//change selectboxes to selectize mode to be searchable
+									$("issue_cat").select2();
+									});
+								</script> 
+							</div>
+							<div class="form-group">
+							<div class="col-md-3 mb-3">
+								<label for="select_SW" >Software:</label>
+								<select name="select_SW" id="select_SW" class="form-control" style="width:120px;">
+									<option  selected value="{{software_val}}" disabled > {{software_val}}</option>
+								</select>
+								<script>
+									  $(document).ready(function () {
+									//change selectboxes to selectize mode to be searchable
+									   $("select_SW").select2();
+									});
+								</script> 
+							</div>
+							</div>
+							<div class="form-group col-md-2">
+								<label for="select_Tech" class="star">Technology:</label>
+								<select name="select_Tech" id="select_Tech" class="form-control" style="width:120px;">
+								<option  selected value="{{technology_val}}" disabled > {{technology_val}}</option>
+
+								</select>
+								<script>
+									  $(document).ready(function () {
+									//change selectboxes to selectize mode to be searchable
+									   $("select_Tech").select2();
+									});
+								</script>
+							</div>
+							<div class="form-group">
+							<div class="col-md-3 mb-3">
+								<label for="select_kpi">KPI:</label>								
+								<select name="select_kpi" id="select_kpi" class="form-control" style="width:120px;">
+									<option  selected value="{{kpi_val}}" disabled > {{kpi_val}}</option>
+								</select>
+								<script>
+								  $(document).ready(function () {
+									//change selectboxes to selectize mode to be searchable
+									   $("select_kpi").select2();
+									});
+								</script>
+							</div>
+							</div>
+							<div class="form-group">								
+							<div class="col-md-3 mb-3">
+								<label for="select_Area" >Area:</label>												
+								<select name="select_Area" id="select_Area" class="form-control" style="width:120px;">
+									<option  selected value="{{area_val}}" disabled > {{area_val}}</option>
+								</select>
+								  <script>
+									  $(document).ready(function () {
+									//change selectboxes to selectize mode to be searchable
+									   $("select").select2();
+									});
+								</script>
+							</div>
+							</div>
+						</div>
+						<div class="form-row mt-1">
+							<div class="form-group col-md-3 mb-3 ">
+								<label for="regex" class="form-label star">NE ID's:</label>
+								<textarea  id="regex" name="regex" class="form-control" rows="3" cols="2" disabled style="width:250px;"></textarea>
+							</div>
+							<div class="form-group col-md-3 mb-3 ">
+								<label for="email_id" class="form-label star"> Email ID:</label>
+								<textarea  id="email_id" name="email_id" class="form-control" rows="3" disabled cols="2" style="width:250px;"></textarea>
+							</div>
+						</div>
+					</fieldset>
+					<div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+						<button type="button" class="w3-button w3-black w3-round btn-disabled" id="action5">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="button" class="w3-button w3-black w3-round btn-disabled" id="action6">Execute Selected</button>&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					<br>
+					<fieldset class="the-fieldset">
+						<legend class="w-auto px-2" style="text-decoration: underline;">Execution Details</legend>
+					<div class="container-fluid mt-1">
+					<table class="table table-bordered table-striped" id="issueTable">
+					<thead>
+						<tr>
+							<th>Session ID</th>
+							<th>User Name</th>
+							<th>Issue</th>
+							<th>Issue Category</th>
+							<th>Execution Status</th>
+							<th style="width:10%">Curr Action no.</th>
+							<th>TimeStamp Start</th>
+							<th>TimeStamp End</th>
+							<th>NE Matches</th>
+							<th>View Logs</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Dynamic rows go here -->
+						<!-- <tr class="odd" align="center"><td valign="top" colspan="11" class="dataTables_empty">No Issues Found</td></tr> -->
+						{% for record in results %}
+						<tr class="odd">
+							<td>{{record.session}}</td>
+							<td>{{record.user }}</td>
+							<td class="sorting_1">{{record.issue}}</td>
+							<td>{{record.Issue_Category}}</td>
+							<td style="background-color: #ABEBC6 ;">Completed</td>
+							<td style="width:10%">4/4</td>
+							<td>2024-06-03-09:15:42</td>
+							<td>2024-06-03-09:30:42</td>
+							<td class="result-column" style="width:10%"><a href="#" class="log-link"><i class="fa fa-file-text"></i></a> 12/50 sites</td>
+							<td class="result-column" style="width:10%"><a href="#" class="log-link" title="Live Log"><i class="fa fa-file" style="color:#95A5A6 ;"></i></a> &nbsp; &nbsp; &nbsp;<a href="#" class="log-link" title="Summary"><i class="	fa fa-file-text-o" style="color:#95A5A6 ;"></i></a></td>
+						</tr>
+						{% endfor %}
+<!--						<tr class="odd"><td>13246</td><td>john.doe</td><td class="sorting_1">7</td><td>CA Req Band and ENDC Band Config</td><td style="background-color: #CD6155 ;">Failure</td><td style="width:10%">2/3</td><td>2024-06-03-09:22:40</td><td>2024-06-03-09:30:40</td><td>-</td><td class="result-column" style="width:10%"><a href="#" class="log-link" title="Error Log"><i class="fa fa-file-text" style="color:#CD6155;"></i></a></td></tr>-->
+<!--						-->
+<!--						<tr class="even"><td>13347</td><td>john.doe</td><td class="sorting_1">9</td><td>High ENDC Drop Rate due to Sync Reconfig Fails</td><td style="background-color: #FAD7A0;">InProgress</td><td style="width:10%">1/5</td><td>2024-06-03-09:25:31</td><td>-</td><td>-</td><td>-</td></tr>-->
+<!--						-->
+<!--						<tr class="odd"><td>13545</td><td>john.doe</td><td class="sorting_1">10</td><td>High ENDC Drop Rate due to Sync Reconfig Fails</td><td style="background-color: grey;">Pending</td><td style="width:10%">-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>-->
+					</tbody>
+				</table>
+				</div>
+				</fieldset>
+				</br>
+				</form>
+			</div>
+			
+		<!------------------------------!>
+		</div>
+	</div>
+</body>
+</html>

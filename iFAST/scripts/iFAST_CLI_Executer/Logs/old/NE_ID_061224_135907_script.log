@@ -1,0 +1,80 @@
+SITE_LIST=24593003029\nCommands=pod_login\nIssue_Seq=NE_ID\nDUO_ID=venpr8r
+spawn ssh venpr8r@198.226.62.124
+The authenticity of host '198.226.62.124 (198.226.62.124)' can't be established.
+ECDSA key fingerprint is SHA256:Ti/8pv4fQx/9dXbsfAU8ylr68efoggRG48fLTxPJPvU.
+ECDSA key fingerprint is MD5:1b:54:c2:87:7b:50:c6:fb:6d:8f:22:9e:09:4b:06:3c.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '198.226.62.124' (ECDSA) to the list of known hosts.
+TX11v
+
+   +-------------------------------------------------------------------------+
+   |                     * * *   W A R N I N G   * * *                       |
+   |                                                                         |
+   | THIS SYSTEM IS INTENDED TO BE USED SOLELY BY AUTHORIZED USERS IN THE    |
+   | COURSE OF LEGITIMATE CORPORATE BUSINESS.  UNAUTHORIZED USE OF THIS      |
+   | COMPUTER SYSTEM, NETWORK OR DATA IS A VIOLATION OF LAW.  USERS ARE      |
+   | MONITORED TO THE EXTENT NECESSARY TO PROPERLY ADMINISTER THE SYSTEM, TO |
+   | IDENTIFY UNAUTHORIZED USERS, AND TO INVESTIGATE IMPROPER ACCESS OR USE. |
+   | BY ACCESSING THIS SYSTEM, YOU ARE CONSENTING TO THIS MONITORING.        |
+   +-------------------------------------------------------------------------+
+
+   ***************************************************************************
+   * Secure Access to Network Elements (SANE) is a non-directional tool for  *
+   * Network Security IAM and the business. It is officially in              *
+   *                                                                         *
+   *                    ---> MAINTENANCE MODE <---                           *
+   *                                                                         *
+   * Any new element/device requests will need to go through HQ and Security *
+   * Planning to be directed to the appropriate directional tool(s).   TX11v *
+   ***************************************************************************
+(sane)Password:
+Last login: Wed Jun 12 13:55:51 2024 from 10.134.223.68
+
+venpr8r connected to txslsanepa11v: 
+
+Welcome to SANE, now connecting...
+              [1m *** S A N E (Secure Access to Network Elements) ***[0m
+
+               1 ) Network Element Selection by Market 
+
+               2 ) Network Element Selection by Vendor 
+
+               3 ) Network Element Selection by NE Type 
+
+               4 ) Network Element Selection by [ Praseeda's ] List
+
+               5 ) Direct Network Element Connection by NEID Number
+
+               6 ) Direct Network Element Connection by IP Address
+
+
+               t ) Toggle Network Element Display Mode [ NE_Name   ] 
+
+               a ) About SANE
+
+               x ) Exit 
+               
+[1m[32mSecure Access to Network Elements (SANE) is a non-directional tool for Network Security IAM and the business.  It is officially in MAINTENANCE MODE.  Any new element/device requests will need to go through HQ and Security Planning to be directed to the appropriate directional tool(s).[0m 
+
+
+
+                   Please Enter Selection: > 
+ Please enter NEID Number: > 75332
+
+
+ Now Connecting to Network Element: [ Roch_LSM_MS4 ] 
+
+ Please wait... 
+
+
+[01;41m           You are now Logged in!          [0m
+[HNRTNYCRLSM-MS04:/home/vendgrp] 
+Sane login successful
+
+Exec_Start,NE_ID:24593003029
+NE_ID : 24593003029
+pod_login
+                                                                                                                                                                
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               [HNRTNYCRLSM-MS04:/home/vendgrp] 
+Exec_End,NE_ID:24593003029

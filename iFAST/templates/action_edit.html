@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>iFAST</title>
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="/static/assets/js/script.js" defer></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+<style>
+  .progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem 0;
+  width: 300px;
+  }
+  .step {
+    width: 2.1875rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    background-color: lightgray;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+  .step.active {
+    background-color: blue;
+  }
+  .step.completed {
+    background-color: blue;
+  }
+  .step:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -105%;
+	right: -50%;
+    height: 2px;
+    width: calc(100% + 50%);
+    background-color: lightgray;
+    z-index: -1;
+  }
+
+
+  .step:first-child:before {
+    display: none;
+  }
+  .step.active:before, .step.completed:before {
+    background-color: blue;
+  }
+  .progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+.progressbar::before,
+.progress {
+  width: calc(100% - 2.1875rem * 4); /* Adjust the number of steps accordingly */
+  height: 0.2rem; /* Adjust the height as needed */
+  background-color: var(--primary-color);
+  border-radius: 0.1rem; /* Adjust the border radius as needed */
+  margin: auto;
+}
+.btn-transparent-on-hover {
+    transition: background-color 0.3s;
+}
+
+.btn-transparent-on-hover:hover {
+    background-color: transparent !important;
+}
+.error{
+color:red;
+}
+.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+}
+@keyframes blink {
+  5% { opacity: 0; }
+}
+
+#blinking-text {
+  animation: blink 1s infinite;
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<div class="container-fluid p-1">
+        <div class="row">
+            <div class="col d-flex justify-content-start">
+                <p style="text-align:left;">
+                    <a href="{{url_for('index')}}" class="btn btn-sm btn-outline-dark custom-btn text-dark"><span><i class="fa fa-home" style="font-size: 1.2em;"></i><u class="text-dark">iFAST</u></span></a>
+                    &nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-sm btn-outline-dark custom-btn text-dark">
+                        <u>LOOK UP ISSUE</u>
+                    </a>
+                </p>
+            </div>
+            <div class="col d-flex justify-content-end text-end">
+                <div class="dropdown" id="dropdownWrapper">
+                    <button class="btn btn-outline-dark dropdown-toggle text-dark btn-transparent-on-hover" type="button" id="dropdownMenuButton" aria-expanded="false">
+                        <i class="fa fa-user-circle-o" style="font-size:12px"></i>&nbsp;&nbsp;{{session['user_name']}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="container-fluid p-1">
+    <div class="bg-light">
+        <h2 class="display-8 text-center"><b>Issue Fast Automated Identification Tool</b></h2>
+    </div>
+</div>
+
+<!-- <div id="preloader"> -->
+    <!-- <img src="/static/assets/img/please-wait.gif" alt="Loading..."> -->
+<!-- </div> -->
+<div class="container p-1" style="margin-top:1px">
+     <p id="blinking-text" style="color:red;text-align:center">NOTE: Please save the progress before going to next!!</p>
+<div class="d-flex justify-content-center align-items-center">
+
+  <div class="progressbar">
+    <div class="step active">1</div>
+    <div class="step">2</div>
+    <div class="step">3</div>
+    <div class="step">4</div>
+    <div class="step">5</div>
+  </div>
+</div>
+<div class="container mt-1">
+    <div class="row justify-content-center">
+        <p id="replysave" style="color:green"></p>
+    </div>
+</div>
+<div class="container mt-1">
+    <form class="form" id="saveaction">
+        <div class="row justify-content-center">
+
+                    <input type="hidden" value="{{issue.issue}}" id="issue_id" name="issue_id">
+                    <div class="col-md-2">
+                        <label for="sw" class="form-label">SOFTWARE:</label>
+                        <input type="text" id="sw" name="issue_sw" class="form-control" value="{{issue.SW}}" readonly>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="status" class="form-label">STATUS:</label>
+                        <input type="text" id="status" name="issue_st" class="form-control" value="{{issue.Status}}" readonly>
+                    </div>
+                    <div class="col-md-2">
+
+                        <label for="action_type" class="form-label">TYPE:</label><br>
+                        <select id="action_type" class="form-select" name="action_type">
+                            <option value="{{issue.script_type}}" selected>{{issue.script_type}}</option>
+                            <option>RUN SCRIPT</option>
+                            <option>GET FILE</option>
+                            <option>GREP</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-1">
+                    <div class="col-md-2">
+                        <label for="scName" class="form-label">SCRIPT NAME:</label>
+                        <input type="text" id="scName" class="form-control" name="scName" value="{{ issue.script_name if issue.script_name is not none else '' }}">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="uid" class="form-label">SSH USER ID:</label>
+                        <input type="text" id="uid" class="form-control" name="uid" value="{{ issue.ssh_user_id if issue.ssh_user_id is not none else ''  }}">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="pwd" class="form-label">SSH PASSWORD:</label>
+                        <input type="password" id="pwd" class="form-control" name="pwd" value="{{ issue.ssh_password if issue.ssh_password is not none else ''  }}">
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-1">
+                    <div class="col-md-2">
+                        <label for="ip" class="form-label">SERVER IP:</label>
+                        <input type="text" id="ip" class="form-control" name="ip" value="{{ issue.server_ip if issue.server_ip is not none else '' }}">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="scLoc" class="form-label">SERVER LOCATION:</label>
+                        <input type="text" id="scLoc" class="form-control" name="scLoc" value="{{ issue.server_location if issue.server_location is not none else '' }}">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="scOwner" class="form-label">SCRIPT OWNER:</label>
+                        <input type="text" id="scOwner" class="form-control" name="scOwner" value="{{ issue.script_owner if issue.script_owner is not none else '' }}">
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-1">
+                    <div class="col-md-6">
+                        <label for="scPath" class="form-label">SCRIPT PATH:</label>
+                        <input type="text" id="scPath" class="form-control" name="scPath" value="{{ issue.script_path if issue.script_path is not none else '' }}">
+                    </div>
+                </div>
+<!--                <div class="row justify-content-center mt-1">-->
+<!--                    <div class="col-md-6">-->
+<!--                        <label for="issueCat" class="form-label">ISSUE CATEGORY:</label>-->
+<!--                        <input type="text" id="issueCat" name="issuecat" class="form-control" value="{{ issue.Issue_Category }}" readonly>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="row justify-content-center mt-1">
+                    <div class="col-md-6">
+                        <label for="file" class="form-label">FILE NAME:</label>
+                        <input type="text" id="file" class="form-control" name="file" value="{{ issue.file_name if issue.file_name is not none else '' }}">
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-1">
+                    <div class="col-md-6">
+                        <label for="regex" class="form-label">ARGUMENTS:</label>
+                        <input type="text" id="regex" class="form-control" name="regex" value="{{ issue.arguments if issue.arguments is not none else '' }}{{ issue.script_name if issue.script_name is not none else '' }}">
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-1">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">EMAIL TO:</label>
+                        <input type="text" id="email" class="form-control" name="email" value="{{ issue.email_to if issue.email_to is not none else '' }}">
+                    </div>
+                </div>
+
+    </form>
+</div>
+
+
+  <!-- Add instructions and buttons for each step -->
+<div class="row mt-1">
+<div class="col text-center">
+  <div class="instruction" id="step1">
+  <div class="w3-container w3-padding-10 w3-center btns-group" style="margin-top:30px">
+    <input type="button" class="w3-button w3-black w3-round" value="Save" id="save_btn">&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" class="w3-button w3-black btn-prev w3-round previous" value="PREV" id="prev5" onclick="">&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" class="w3-button w3-black btn-next w3-round next" value="NEXT" id="next2" onclick="formStepsNum++;">&nbsp;&nbsp;&nbsp;&nbsp;
+      <a type="button" class="w3-button w3-black w3-round" href="/" id="action5">DONE</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+  </div>
+  <!-- Add similar structure for remaining steps -->
+</div>
+</div>
+</div>
+<br>
+		    <footer id="sticky-footer" class="bg-dark text-white-50">
+        		<div class="container text-center" style="font-size:12px">
+            		<small style="color:white">Created by GSC Tools and Automation Team</small><br>
+          			<small style="color:white">&copy; Samsung Electronics 2023. All Rights Reserved. Confidential and Proprietary.</small>
+
+        		</div>
+      		</footer>
+<!-- Bootstrap JS and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script>
+
+$(document).ready(function(){
+  $('.step').click(function() {
+    var stepNumber = $(this).data('step');
+    alert(stepNumber);
+  });
+$('#saveaction').validate({
+            rules: {
+
+                    uid: "required",
+                    pwd: "required",
+                    ip: "required",
+                    scLoc: "required",
+                    scOwner: "required",
+                    scPath: "required",
+                },
+                messages: {
+
+                    uid: "This field is required",
+                    pwd: "This field is required",
+                    ip: "This field is required",
+                    scLoc: "This field is required",
+                    scOwner: "This field is required",
+                    scPath: "This field is required",
+                },
+});
+    $('#save_btn').click(function() {
+            if ($('#saveaction').valid()) {
+
+                var currentStep = $('.step.active').index() + 1;
+                currentStep = "step"+currentStep;
+
+                var formData = $('#saveaction').serialize();
+
+                formData += '&currentStep=' + currentStep;
+                $('#saveaction input, #saveaction textarea').prop('disabled', true);
+                $.ajax({
+                    url: "/save_action",
+                    type: "post",
+                    data: formData,
+                    success: function(response) {
+                        if (response.msg){
+                            $('#replysave').html(response.msg);
+                            $('#saveaction input, #saveaction textarea').prop('disabled', false);
+                        } else {
+                            $('#errorModal').modal('show');
+                            $('#errmsg').html(response.error);
+                        }
+                    },
+
+                    error: function(xhr, status, error) {
+                        console.error('Error saving data:', error);
+                    }
+                });
+            }
+    });
+
+    $('.dropdown').hover(function(){
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(300).addClass('show');
+    }, function(){
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300).removeClass('show');
+    });
+  var currentStep = 1;
+
+  // Function to update progress bar
+  function updateProgressBar() {
+    $(".step").removeClass("active completed");
+    $(".step:lt(" + currentStep + ")").addClass("completed");
+    $(".step:nth-child(" + currentStep + ")").addClass("active");
+  }
+
+  // Show initial progress bar state
+  updateProgressBar();
+$(".next").click(function(){
+    issue = "{{ issue.issue }}";
+    nextstep = currentStep + 1;
+    if (currentStep < 5) {
+        currentStep++;
+        updateProgressBar();
+        $.ajax({
+            url: '/fetch_step_data',
+            method: 'GET',
+            data: { step: currentStep, issue:issue },
+            success: function(response) {
+                console.log("response from ajax: "+response.script_type);
+                $('#sw').val(response.SW);
+                $('#status').val(response.Status);
+                $('#action_type').val(response.script_type);
+                $('#scName').val(response.script_name);
+                $('#uid').val(response.ssh_user_id);
+                $('#pwd').val(response.ssh_password);
+                $('#ip').val(response.server_ip);
+                $('#scLoc').val(response.server_location);
+                $('#scOwner').val(response.script_owner);
+                $('#scPath').val(response.script_path);
+                $('#issueCat').val(response.Issue_Category);
+                $('#file').val(response.file_name);
+                $('#regex').val(response.arguments);
+                $('#email').val(response.email_to);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching step data:', error);
+            }
+        });
+    } else if (currentStep == 5) {
+        $(this).prop('disabled', true);
+    }
+});
+
+
+$(".previous").click(function(){
+    if (currentStep > 1) {
+        currentStep--;
+        updateProgressBar();
+        $.ajax({
+            url: '/fetch_step_data',
+            method: 'GET',
+            data: { step: currentStep, issue: issue },
+            success: function(response) {
+                $('#sw').val(response.SW !== null ? response.SW : '');
+                $('#status').val(response.Status !== null ? response.Status : '');
+                $('#type').val(response.script_type !== null ? response.script_type : '');
+                $('#scName').val(response.script_name !== null ? response.script_name : '');
+                $('#uid').val(response.ssh_user_id === "None" ? '' : response.ssh_user_id);
+                $('#pwd').val(response.ssh_password === "None" ? '' : response.ssh_password);
+                $('#ip').val(response.server_ip !== null ? response.server_ip : '');
+                $('#scLoc').val(response.server_location !== null ? response.server_location : '');
+                $('#scOwner').val(response.script_owner !== null ? response.script_owner : '');
+                $('#scPath').val(response.script_path !== null ? response.script_path : '');
+                $('#issueCat').val(response.Issue_Category !== null ? response.Issue_Category : '');
+                $('#file').val(response.file_name !== null ? response.file_name : '');
+                $('#regex').val(response.arguments !== null ? response.arguments : '');
+                $('#email').val(response.email_to !== null ? response.email_to : '');
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching step data:', error);
+            }
+        });
+    }
+});
+
+});
+</script>
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="errorModalLabel">Error</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+            <p id="errmsg"></p>
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- Additional action buttons can be added here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

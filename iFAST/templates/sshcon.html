@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSH Connection</title>
+    <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <h1>SSH Connection Output</h1>
+    <!-- Use jQuery to simplify the script -->
+    <button id="downloadButton" class="btn btn-sm btn-primary"><i class="bi bi-download"></i>Download Output</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#downloadButton').click(function () {
+                var downloadUrl = '/static/execution_log/script_output.txt';
+
+                // Create a hidden link element
+                var link = $('<a style="display: none;"></a>');
+
+                link.attr({
+                    'download': 'script_output.txt',
+                    'href': downloadUrl
+                });
+
+                // Append the link to the body and trigger a click to start the download
+                $('body').append(link);
+                link[0].click();
+
+                // Remove the link from the body
+                link.remove();
+            });
+        });
+    </script>
+</body>
+</html>
+

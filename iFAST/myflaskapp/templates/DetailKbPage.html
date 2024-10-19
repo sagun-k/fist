@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FIST</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+        <script src="/static/assets/js/issues/single_issue.js" defer></script>
+
+
+
+
+        <style>
+            .link {
+              display: inline-block; /* Makes each anchor element inline while maintaining block-level features */
+              padding: 8px;
+            }
+            .nav-item.right-align {
+            margin-left: auto;
+            }
+            #sticky-footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            height: 58px;
+            //background: grey;
+            }
+            .checkbox-group {
+            display: flex;
+            align-items: center;
+            }
+            .checkbox-group label {
+            margin-left: 5px;
+            margin-right: 15px;
+            }
+            body, html {
+            height: 100%;
+            background-color: #f4f4f4;
+            font-size: 12px !important;
+            width: 100%;
+            margin: 0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #292b2c;
+            display: flex;
+            flex-direction: column;
+            overflow-x: auto;
+            }
+            fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            }
+            fieldset.label{
+            font-weight:bold;
+            }
+            .input_class{
+            height:47px !important
+             }
+            .the-fieldset {
+            border: 1px groove #1428A0;
+            border-color: #5161ac;
+            background: #fff !important;
+            padding: 15px;
+            border-radius: 5px;
+            width:100%;
+            }
+            /* Full height image header */
+            .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("/w3images/mac.jpg");
+            min-height: 100%;
+            }
+            .w3-bar .w3-button {
+            padding: 16px;
+            }
+            .footer {
+            font-size:12px;
+            font-family:arial;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            }
+            input.formInvalid::-webkit-input-placeholder {
+            color: red;
+            }
+            .star:after {
+            content: " *";
+            color: red;
+            }
+            .nohover {
+            pointer-events: none;
+            }
+            .hrefButton {
+            padding: 3px 10px;
+            text-decoration: none;
+            }
+            .button {
+            background-color: Teal;
+            border: none;
+            color: white;
+            padding: 8px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+            }
+            #advsrch {
+            display: none;
+            /* Hide the advsrch div by default */
+            }
+            .button:hover {
+            background-color: #ddd;
+            color: black;
+            }
+            label.required::after {
+            content: " *";
+            color: red; /* Customize the color if needed */
+            }
+            .swal2-popup {
+            width: 300px; /* Change the width as per your requirement */
+            }
+            .swal2-popup {
+            font-size: 8px; /* Change the font size as per your requirement */
+            }
+            .error {
+            color: red;
+            }
+            .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            margin-top: 0 !important;
+            }
+            .btn-transparent-on-hover {
+            transition: background-color 0.3s;
+            }
+            .btn-transparent-on-hover:hover {
+            background-color: transparent !important;
+            }
+            .container {
+            max-width: 1400px;
+            border: 2px groove ThreeDFace;
+            margin: 0 auto;
+            padding-top: 10px;
+            background: #fff !important;
+          //  margin-top: 20px;
+            //overflow:auto;
+            }
+            .progressbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            counter-reset: step;
+            margin: 2rem 0;
+            width: 130px;
+            }
+            .step {
+            width: 2.1875rem;
+            height: 1.9rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            background-color: lightgray;
+            color: white;
+            position: relative;
+            z-index: 1;
+            }
+            .step.active {
+            background-color: blue;
+            }
+            .step.completed {
+            background-color: blue;
+            }
+            .step:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -105%;
+            right: -50%;
+            height: 2px;
+            width: calc(100% + 50%);
+            background-color: lightgray;
+            z-index: -1;
+            }
+            .step:first-child:before {
+            display: none;
+            }
+            .step.active:before, .step.completed:before {
+            background-color: blue;
+            }
+            .progress {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            background-color: #dcdcdc;
+            z-index: -1;
+            }
+            .progressbar::before,
+            .progress {
+            width: calc(100% - 2.1875rem * 4); /* Adjust the number of steps accordingly */
+            height: 0.2rem; /* Adjust the height as needed */
+            background-color: var(--primary-color);
+            border-radius: 0.1rem; /* Adjust the border radius as needed */
+            margin: auto;
+            }
+            .nav-tabs .nav-link.active {
+            color: white;
+            background-color: blue;
+            border-color: blue;
+            }
+            .nav-tabs .nav-link {
+            color: grey;
+            background-color: lightgrey;
+            border-color: lightgrey;
+            }
+            .the-fieldset label{
+            font-weight:bold;
+            }
+
+
+            .navbar-custom {
+            background-color: #283db4;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+            font-size: 13px;
+            font-weight: bold;
+            padding: 2px 2px;
+        }
+        .nav-link {
+            color: white;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: white;
+        }
+        .select2-container--bootstrap5 {
+    z-index: 1060 !important; /* Use !important to override any inline styles */
+}
+
+.select2-container--bootstrap5 .select2-dropdown {
+    z-index: 1060 !important; /* Ensure dropdown has correct z-index */
+}
+                .modal-dialog {
+            max-width: 40%;
+        }
+
+        .nav-item .dropdown-menu {
+            background-color: #283db4;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px; /* Adjust width as needed */
+        }
+        .nav-item .dropdown-menu a {
+            color: white;
+        }
+        .nav-item .dropdown-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+            width: 150px; /* Adjust width as needed */
+        }
+        .user-profile {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link {
+            color: white;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link .profile-text {
+            margin-left: 5px;
+            font-size: 10px;
+        }
+        .content-section {
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            width: 100%; /* Ensure width is 100% */
+        }
+        .content-section h2 {
+            color: #283db4;
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            margin-bottom: 15px;
+        }
+        .dataTables_wrapper {
+            padding: 0;
+        }
+        table.dataTable {
+            border: 1px solid #ddd; /* Ensure border is visible */
+        }
+        .dataTables_filter {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+        .navbar-brand {
+            font-family: 'Arial', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #283db4, 0 0 5px #283db4;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #ffeb3b, 0 0 5px #ffeb3b;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure the navbar stays on top of other content */
+        }
+         body {
+            padding-top: 70px; /* Adjust based on the navbar height */
+        }
+
+
+        select {
+          /*webkit browsers */
+          -webkit-appearance: menulist !important;
+          /*Firefox */
+          -moz-appearance: menulist !important;
+          /* modern browsers */
+          appearance: none;
+          border-radius: 0;
+
+        }
+           .card-div{
+            padding-left: 15px;
+            padding-right: 15px;
+
+        }
+        </style>
+        <script>
+            $(document).ready(function() {
+
+                $('#nav-profile-tab').click(function(){
+                    $('.edit_save_div').hide()
+                    $('#nav-home-tab').removeClass('active')
+         //           $('#nav-profile-tab').addClass('active')
+
+                })
+             $('#nav-home-tab').click(function(){
+                    $('.edit_save_div').show()
+                    $('#nav-profile-tab').removeClass('active')
+        //            $('#nav-home-tab').addClass('active')
+
+                })
+
+
+           $('.dropdown').hover(function(){
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(300).addClass('show');
+    }, function(){
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300).removeClass('show');
+    });
+             //   $('#saveissue').hide();
+               $('#saveissue').attr('disabled', true);
+
+            $("#proceed").click(function() {
+                    let issue_id = $(this).attr("data-issue-id")
+                    let sw_version = $(this).attr("data-sw-version")
+                    // let len_script = $(this).attr("data-len-script")
+                    $("#nav-profile-tab").click();
+                    $(".edit_save_div").hide();
+
+                    $("#issue_id").val(issue_id)
+                    $("#sw_val").val(sw_version)
+
+
+            });
+
+        });
+
+
+
+        $(document).ready(function(){
+            $(".IssueSequenceForm").hide();
+            $("#IssueSequenceForm_1").show();
+            first_form = $("#IssueSequenceForm_1")
+        });
+
+              function next_step(el){
+
+             var curr_id = el.id.split("_")[1]; //check if not curr_id initialize it as 0
+             var next_id = parseInt(curr_id) + 1;
+             var sequence_length = parseInt($('#sequenceid').attr('data-len-script'));
+
+             if (next_id > sequence_length){
+                 $('#sequenceid').val(next_id)
+                 var clone_form =  $(`#IssueSequenceForm_${curr_id}`).clone();
+                 clone_form.attr('id', `IssueSequenceForm_${next_id}`)
+                 clone_form.find('.btn-nxt').attr('id', `next_${next_id}`)
+                 $(`#IssueSequenceForm_${curr_id}`).after(clone_form);
+
+             }
+              console.log("next",el)
+              console.log("next_id",next_id)
+              console.log("curr_id",curr_id)
+             $(".IssueSequenceForm").hide();
+             curr_step = `.progressbar #step_${curr_id}`
+             $(curr_step).removeClass("active")
+             selector = '#IssueSequenceForm_' + next_id
+            $(selector).show();
+             var active_step = `.progressbar #step_${next_id}`
+            $(active_step).addClass("active")
+         }
+
+
+            function prev_step(el){
+             var curr_id = el.id.split("_")[1];
+             var prev_id = parseInt(curr_id) - 1;
+             if (prev_id === 0){
+                return false;
+             }
+
+             $(".IssueSequenceForm").hide();
+             curr_step = `.progressbar #step_${curr_id}`
+             $(curr_step).removeClass("active")
+
+             selector = '#IssueSequenceForm_' + prev_id
+            $(selector).show();
+            var active_step = `.progressbar #step_${prev_id}`
+            $(active_step).addClass("active")
+
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function toggleClass(el) {
+        var el_id = $(el).attr('id')
+        $($(el).attr('data-bs-target')).toggleClass('show')
+        console.log('el_id', el_id)
+        $(`#${el_id}`).toggleClass('fa-plus fa-minus');
+        let expanded_len = $('.iconCardMinus.fa-minus ').length
+        let collapsed_len = $('.iconCardMinus.fa-plus ').length
+        let total_len = $('.iconCardMinus').length
+        if(expanded_len === total_len){
+             $('#toggleIssue').text('Collapse All');
+        }else if (collapsed_len === total_len){
+            $('#toggleIssue').text('Expand All');
+        }
+
+
+    };
+
+ let allCollapsed = false;
+function toggleIssueSequence(el) {
+    if (allCollapsed) {
+        // Expand all divs
+        $('[id^="collapseCard"]').collapse('show');
+        $(el).text('Collapse All');
+        $('[id^="iconCard"]').removeClass('fa-plus').addClass('fa-minus');
+    } else {
+        // Collapse all divs
+        $('[id^="collapseCard"]').collapse('hide');
+        $(el).text('Expand All');
+        $('[id^="iconCard"]').removeClass('fa-minus').addClass('fa-plus');
+    }
+    allCollapsed = !allCollapsed;
+}
+
+
+function editIssue(el) {
+  //  var form_id = '#' + $(el).parent().parent().siblings().find('form[name="IssueSequenceForm"]').attr('id')
+  //  var form_selector = $(form_id)
+
+
+    var parentId =  $(el).parent().parent().parent().attr('id')
+
+   var  form_selector  = $('#'+ parentId+':not(.d-none)').find('form[name="IssueSequenceForm"]')
+
+
+
+     var  current_select_val = $(form_selector).find('select[name="action_type"]').val()
+    $(form_selector).find('select[name="action_type"]').attr('data-prev-val', current_select_val)
+     let excludedFields = ['issue_id', 'sequenceid' ]
+     $(form_selector).find('input, textarea').each(function() {
+          if (!excludedFields.includes($(this).attr('name'))) {
+                     $(this).prop('disabled', false);
+                     $(this).prop('readonly', false);
+                     $(this).css('background-color', '#ffffff')
+                }
+
+    });
+     $(form_selector).find("select[name='action_type']").prop("disabled", false)
+    $(form_selector).find("select[name='action_type']").css({"background": "white"})
+}
+
+
+
+function saveIssue(el) {
+    var parentId =  $(el).parent().parent().parent().attr('id')
+   // var formId =  $(el).parent().parent().siblings().find('form[name="IssueSequenceForm"]').attr('id')
+ //  $('#'+ parentId+':not(.d-none)').find('form[name="IssueSequenceForm"]').attr('id')
+//    var form_id = '#' + formId
+
+ //   var form_selector = $(form_id)
+   var  form_selector  = $('#'+ parentId+':not(.d-none)').find('form[name="IssueSequenceForm"]')
+
+    // var check_type = $(form_selector).find('input[name="check_type"]:checked').val();
+    var issue_id = $(form_selector).find('input[name="issue_id"]').val()
+    var status_val = $(form_selector).find('input[name="status_val"]').val()
+    var action_id = $(form_selector).find('input[name="action_id"]').val()
+    var sw_val = $(form_selector).find('input[name="sw_val"]').val()
+    var sc_name = $(form_selector).find('input[name="scName"]').val()
+    var proceed = $(form_selector).find('input[name="proceed"]:checked').val();
+    var check_condition = $(form_selector).find('textarea[name="check_condition"]').val();
+    var regex = $(form_selector).find('textarea[name="regex"]').val();
+    var om_counters = $(form_selector).find('textarea[name="om_counters"]').val();
+    var detection_id  = form_selector.find('input[name="sequenceid"]').val()
+    var prev_detection_type = form_selector.find('select[name="action_type"]').attr('data-prev-val')
+    var detection_type = form_selector.find('select[name="action_type"]').val()
+    var uid = $(form_selector).find('input[name="uid"]').val()
+    var pwd = $(form_selector).find('input[name="pwd"]').val()
+    var ip = $(form_selector).find('input[name="ip"]').val()
+    var scLoc = $(form_selector).find('input[name="scLoc"]').val()
+    var scOwner = $(form_selector).find('input[name="scOwner"]').val()
+    var scPath = $(form_selector).find('input[name="scPath"]').val()
+    var pattern_grep = $(form_selector).find('textarea[name="pattern_grep"]').val()
+
+
+
+
+    var formData = {
+        issue_id: issue_id,
+        status_val: status_val,
+        action_id: action_id,
+        sw_val:sw_val ,
+        sequenceid: detection_id,
+        prev_action_type: prev_detection_type,
+        action_type: detection_type,
+        scName:sc_name,
+        uid: uid,
+        pwd: pwd,
+        ip: ip,
+        scLoc:scLoc,
+        scOwner: scOwner,
+        scPath:scPath,
+        pattern_grep: pattern_grep,
+    //    check_type: check_type,
+        proceed: proceed,
+        check_condition: check_condition,
+        regex: regex,
+        om_counters: om_counters
+    };
+
+    $.ajax({
+        url: "/insert_issue_seq",
+        type: "post",
+        data: formData,
+        success: function (data) {
+
+            if (data.message) {
+                if (data.redirect_url) {
+                    $('#exampleModal').modal('show');
+                    $('#modalMessage').html(data.message);
+                    $('#update_kb').hide();
+                    $('#searchForm :input').prop('readonly', true);
+                    $('#searchForm textarea').prop('readonly', true);
+                    $('#redirectModalButton').on('click', function () {
+                        window.location.href = data.redirect_url;
+                    });
+                } else {
+                    $('#successModalIssue').modal('show');
+                    $('#sucmsgIssue').html('Success! Please proceed for next step');
+
+                    header_length = $(form_selector).closest(`#${parentId}`).find('.card-header > .icon-container > .header').length
+
+                    if (!header_length) {
+                        $(form_selector).closest(`#${parentId}`).find('.card-header > .icon-container').append(`<h5 class="text-white header ml-4" style="position: relative; bottom: 20px;"> &nbsp; &nbsp; &nbsp;Issue Detection Step Id: ${detection_id} &nbsp; &nbsp; &nbsp; Detection Type : ${detection_type}</h5>`)
+
+                    }else{
+                        $(form_selector).closest(`#${parentId}`).find('.card-header > .icon-container').children().eq(1).remove();
+                        $(form_selector).closest(`#${parentId}`).find('.card-header > .icon-container').append(`<h5 class="text-white header ml-4" style="position: relative; bottom: 20px;"> &nbsp; &nbsp; &nbsp;Issue Detection Step Id: ${detection_id} &nbsp; &nbsp; &nbsp; Detection Type : ${detection_type}</h5>`)
+
+                    }
+                    $(form_selector).find('input, textarea, select').each(function() {
+                     $(this).prop('disabled', true);
+                     $(this).prop('readonly', true);
+                      $(this).css('background-color', '#e9ecef');
+                   });
+                    $(form_selector).find('input[name="action_id"]').val(data.action_id)
+                }
+            } else {
+                $('#update_ret').parent().removeClass('d-none');
+                $('#update_ret').html(data.error).removeClass('text-success').addClass('text-danger');
+            }
+        },
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function deleteIssue(el){
+    var parent_div   = $(el).parent().parent().parent().attr('id')
+    var form_selector = $('#' + $(el).parent().parent().siblings().find('form[name="IssueSequenceForm"]').attr('id'))
+    var issue_id = $(form_selector).find('input[name="issue_id"]').val()
+    var sequenceid = $(form_selector).find('input[name="sequenceid"]').val()
+    var action_type = form_selector.find('select[name="action_type"]').val()
+
+    $.ajax({
+        url: "/delete_issue_seq",
+        type: "post",
+        data: {
+            issue_id:issue_id,
+            sequenceid:sequenceid,
+            action_type:action_type
+        },
+        success: function (data) {
+                $(`#${parent_div}`).addClass('d-none')
+                $('#successModalIssue').modal('show');
+                $('#sucmsgIssue').html(`Issue Sequence with Issue ID: ${issue_id} and Sequence Id: ${sequenceid} deleted successfully`);
+        },
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function validateForm(formId) {
+   var form_id = $(`#${formId}`)
+
+    form_id.validate({
+        rules: {
+            issue_id:{
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            sw_val:{
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            sequenceid:{
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            action_type: {
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            scName: {
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            uid: {
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            pwd: {
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            ip: {
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            scLoc: {
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            scOwner: {
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            scPath: {
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            proceed:{
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            check_condition:{
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            regex:{
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            },
+            pattern_grep:{
+                required: function(element) {
+                    // Return true (required) only if the field is NOT readonly or disabled
+                    return !$(element).is(':disabled') && !$(element).is('[readonly]');
+                }
+            }
+
+        },
+        messages: {
+            action_type: {
+                required: "Action type is Mandatory"
+            },
+            scName: {
+                required: "Script name is Mandatory"
+            },
+            uid: {
+                required: "UserName is required"
+            },
+            pwd: {
+                required: "Password is required"
+            },
+            ip: {
+                required: "IP is required"
+            },
+            scLoc: {
+                required: "Server Location is required"
+            },
+            scOwner: {
+                required: "script owner is required"
+            },
+            scPath: {
+                required: "location of script(path) field is required"
+            },
+        },
+        errorPlacement: function (error, element) {
+            error.appendTo(element.parent()); // Adjust the placement of the error message
+        }
+        });
+        return form_id.valid();
+
+}
+
+
+
+
+
+function checkFormValidity(formId) {
+            var errorMessages = []
+            var issueSequenceFormValid = validateForm(formId)
+           var issueSequenceFormErrors = [];
+            if (!issueSequenceFormValid) {
+                $('#' + formId + ' .error:visible').each(function() {
+
+                    var fieldName = $(this).prev('label').text().replace('*', '').trim();
+                    fieldName = fieldName.split(':')
+                    errorMessages.push(fieldName[0]);
+                    issueSequenceFormErrors.push(fieldName[0]);
+                });
+
+                let errorMessagesUpdated = errorMessages.map(function(item) {
+                     return item === 'Yes' ? 'Proceed On Failure' : item;
+                            });
+
+                 var errorMessageText = errorMessagesUpdated.join('<br>');
+
+                // Display error message if any field is missing in either form
+                if (errorMessagesUpdated.length > 0) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Required fields are missing',
+                        html: errorMessageText
+                    });
+                }
+
+            }
+            return issueSequenceFormValid;
+        }
+
+
+		var issue_sequence_add_counter = 0;
+		var issue_idx = 0;
+		function addIssueSequence() {
+            var form_id = ''
+			cardCount = $('#nav-profile .card:not(.d-none)').length;
+
+            if (cardCount === 1) {
+                form_id = 'IssueSequenceForm'
+            }else if (cardCount > 1){
+                form_id = `IssueSequenceForm${cardCount}`
+            } else if (cardCount === 0){
+                form_id = null
+            }
+
+            if(cardCount){
+               let  state = checkFormValidity(form_id)
+               if(!state) {
+                return
+               }
+            }
+
+            var sequence_clone = $('#issue_sequence_card').clone();
+            issue_sequence_add_counter = cardCount;
+            issue_idx = cardCount + 1
+            console.log('idx', issue_idx)
+            console.log('counter', issue_sequence_add_counter)
+            sequence_clone.removeClass('d-none')
+            sequence_clone.attr('id', `issue_sequence_card_${issue_idx}`)
+            sequence_clone.find('.icon-container >  .iconCardMinus').attr('id', `iconCard${issue_idx}Minus`);
+            sequence_clone.find('.icon-container >  .iconCardMinus').attr('data-bs-target', `#collapseCard${issue_idx}`);
+            sequence_clone.find('.icon-container >  .iconCardMinus').attr('aria-controls', `collapseCard${issue_idx}`);
+            sequence_clone.find('.card-header > .icon-container').children().eq(1).remove();
+            sequence_clone.find('.collapse').attr('id', `collapseCard${issue_idx}`);
+            sequence_clone.find(`#collapseCard${issue_idx} > .card-body > #IssueSequenceForm`).attr('id', `IssueSequenceForm${issue_idx}`);
+            issue_id = `{{ issue_id }}`
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} input[type="text"], #IssueSequenceForm${issue_idx} input[type="password"], #IssueSequenceForm${issue_idx} textarea`).val('');
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} select`).prop('selectedIndex', 0);
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} input[type="checkbox"], #IssueSequenceForm${issue_idx} input[type="radio"]`).prop('checked', false);
+            sequence_clone.find('#issue_id').val(`${issue_id}`)
+            sequence_clone.find('#sequenceid').val(`${issue_idx}`)
+            current_editbtn_id  = sequence_clone.find(`.edit_btn`).attr('id').split("_")[0]
+            current_savebtn_id  = sequence_clone.find(`.save_btn`).attr('id').split("_")[0]
+            current_deletebtn_id  = sequence_clone.find(`.delete_btn`).attr('id').split("_")[0]
+            sequence_clone.find(`.edit_btn`).attr('id',`${current_editbtn_id}_${issue_idx}`)
+            sequence_clone.find(`.save_btn`).attr('id',`${current_savebtn_id}_${issue_idx}`)
+            sequence_clone.find(`.delete_btn`).attr('id',`${current_deletebtn_id}_${issue_idx}`)
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} select`).attr('onchange', `changeFunction(${issue_idx})`)
+            let excludedIds = ['issue_id', 'sequenceid']
+            sequence_clone.find('input, textarea, select').each(function() {
+            if (!excludedIds.includes($(this).attr('id'))) {
+             $(this).prop('disabled', false);
+             $(this).prop('readonly', false);
+            }
+
+            });
+            sequence_clone.find('select[name="action_type"]').css('background-color', '#fff')
+          //  if(cardCount){
+         //   $(`#issue_sequence_card_${issue_sequence_add_counter}`).after(sequence_clone);
+        //    }else{
+            $("#nav-profile").append(sequence_clone)
+        //    }
+            hideFunction(`issue_sequence_card_${issue_idx}`)
+
+
+		}
+
+        </script>
+        <script>
+            $(document).ready(function() {
+                // Select all divs with IDs starting with "issue_sequence_card_"
+                var divs = $('div[id^="issue_sequence_card_"]');
+
+                // Sort the divs by extracting the number part of their IDs
+                divs.sort(function(a, b) {
+                    var numA = parseInt(a.id.split('_').pop());
+                    var numB = parseInt(b.id.split('_').pop());
+                    return numA - numB;
+                });
+
+                // Append the sorted divs back into the parent container
+                var parent = $('#nav-profile'); // Replace with the actual parent container ID
+                divs.appendTo(parent);
+
+                $(divs).find("form[name='IssueSequenceForm'] select[name='action_type']").prop("disabled", true)
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid p-1">
+
+              <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="{{url_for('newpage')}}">&nbsp;&nbsp;FIST<i class="fa fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav" role="tablist">
+                <li class="nav-item">
+                   <a class="nav-link " id="lookup-issue-tab" href="{{url_for('newpage')}}">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>
+
+{#                    <a class="nav-link active " id="knowledge-base-tab" data-bs-toggle="tab" href="/newpage#knowledge-base" role="tab" aria-controls="knowledge-base" aria-selected="true">&nbsp;|&nbsp;&nbsp;KNOWLEDGE BASE</a>#}
+                </li>
+                <li class="nav-item">
+{#                    <a class="nav-link " id="lookup-issue-tab" href="{{url_for('lookup_onload')}}">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>#}
+                    <a class="nav-link active " id="knowledge-base-tab" data-bs-toggle="tab" href="/newpage#knowledge-base" role="tab" aria-controls="knowledge-base" aria-selected="true">&nbsp;|&nbsp;&nbsp;KNOWLEDGE BASE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;CONFIGURATION MANAGEMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="question-dropdown">
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="questionDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="questionDropdown">
+                    <li><a class="dropdown-item" href="#">Help</a></li>
+                    <li><a class="dropdown-item" href="#">Support</a></li>
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <div class="dropdown">
+
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-lg"></i><span class="profile-text">{{session['user_name']}}<br> Superadmin</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        {# {% if users %} #}
+        <div class="container ">
+            <nav>
+                <div class="nav nav-tabs row" id="nav-tab" role="tablist">
+                    <div class="col-md-10" >
+                        <a class="nav-item nav-link active link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">ISSUE DETAILS</a>
+                        <a class="nav-item nav-link link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">ISSUE DETECTION/MITIGATION STEPS</a>
+                    </div>
+                    <div class="col-md-2 edit_save_div" style="right:-85px">
+                             <input type="button" class="w3-button w3-black edit-button" value="Edit" id="editissue">
+                             <input type="submit" class="w3-button w3-black save-button" value="Save" id="saveissue">
+
+                    </div>
+                </div>
+
+
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+
+                <div class="tab-pane show fade active w-100" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                    <div class="d-none">
+                        <p id="update_ret" class="text-danger"></p>
+                    </div>
+
+
+                     <form class="form" id="singleissueform">
+                        {% for record in records %}
+                        <fieldset class="the-fieldset">
+                            <legend class="w-auto px-2" style="text-decoration: underline;">ISSUE DESCRIPTION SECTION</legend>
+                            <div class="form-row mt-1">
+                                <div class="form-group col-md-3">
+                                    <label class="label" for="msId">ISSUE</label>
+                                    <input type="text" id="msId" class="form-control" name="msId" value="{{ record.issue }}" readonly>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="POC">POC</label>
+                                    <input type="text" id="POC" class="form-control" name="POC" value="{{ record.PoC }}" readonly>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="sw">SW</label>
+                                     <select class="form-control" name="swname" id="sw" disabled>
+                                         {% for sw in software %}
+                                        <option value="{{sw}}" {% if record.SW == sw %}selected{% endif %} >{{sw}}</option>
+                                         {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="status" class="form-label">STATUS</label>
+                                    <select class="form-control" name="status" id="status" disabled>
+                                    <option value="Open" {% if record.Status == 'Open' %}selected{% endif %} >Open</option>
+                                    <option value="Closed" {% if record.Status == 'Closed' %}selected{% endif %}>Closed</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                             <div class="form-row mt-1">
+                                <div class="form-group col-md-3">
+                                    <label for="area">AREA</label>
+{#                                    <input type="text" id="area" class="form-control" name="area" value="{{ record.Area }}" readonly>#}
+                                     <select class="form-control" name="area" id="area" disabled>
+                                     <option value="" style="font-size:14px;font-weight:bold">--select--</option>
+                                        {% for area in areas %}
+                                        <option value="{{ area }}" {% if record.Area == area %} selected {% endif %}>{{area}}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="tech">TECHNOLOGY</label>
+                                     <select class="form-control" name="tech" id="tech" disabled>
+{#                                     <option value="" style="font-size:14px;font-weight:bold">--select--</option>#}
+                                         {% for technology in technologies %}
+                                        <option value="{{technology}}" {% if record.Technology == technology %}selected{% endif %}>{{technology}}</option>
+                                         {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="Visibility">VISIBILITY</label>
+<!--                                    <input type="text" id="Visibility" class="form-control" name="Visibility" value="{{ record.Visibility }}" readonly>-->
+                                     <select class="form-control" name="Visibility" id="Visibility" disabled>
+                                         {% for visibility in visibilities %}
+                                        <option value="{{visibility}}" {% if record.Visibility == visibility %}selected{% endif %}>{{visibility}}</option>
+                                         {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="kpi">MAJOR KPI DEGRADATION</label>
+{#                                    <input type="text" id="kpi" class="form-control" name="kpi" value="{{ record.Major_KPI_Degradation }}" readonly>#}
+
+                                     <select class="form-control" name="kpi" id="kpi" disabled>
+                                     <option value="" style="font-size:14px;font-weight:bold">--select--</option>
+                                        {% for kpi in kpis %}
+                                        <option value="{{ kpi }}" {% if record.Major_KPI_Degradation == kpi %} selected {% endif %}>{{kpi}}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                </div>
+                             </div>
+                             <div class="form-row mt-1">
+                                <div class="form-group col-md-3">
+                                    <label for="email">EMAIL</label>
+                                    <input type="text" id="email" class="form-control input_class" name="email" value="{{ record.email_to }}" readonly>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="Cell_site">CELL LEVEL/ SITE LEVEL</label>
+                                    <input type="text" id="Cell_site" class="form-control input_class" name="cell" value="{{ record.Cell_or_Site_Level }}" readonly>
+                                </div>
+
+
+                                <div class="form-group col-md-3">
+                                    <label for="ic">ISSUE NAME</label>
+                                    <textarea id ="ic" class="form-control" name="ic" rows="2" cols="100" style="width:100%" readonly>{{ record.Issue_Category }}</textarea>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="desc">DESCRIPTION</label>
+                                    <textarea id ="desc" class="form-control" name="desc" rows="2" cols="100" style="width:100%" readonly>{{ record.Description }}</textarea>
+                                </div>
+
+                            </div>
+{#                            <div class="form-row mt-1">#}
+{#                                <div class="form-group col-md-6">#}
+{#                                    <label for="ic">Issue Name:</label>#}
+{#                                    <textarea id ="ic" class="form-control" name="ic" rows="2" cols="100" style="width:100%" readonly>{{ record.Issue_Category }}</textarea>#}
+{#                                </div>#}
+{#                                <div class="form-group col-md-6">#}
+{#                                    <label for="desc">Description:</label>#}
+{#                                    <textarea id ="desc" class="form-control" name="desc" rows="2" cols="100" style="width:100%" readonly>{{ record.Description }}</textarea>#}
+{#                                </div>#}
+{#                            </div>#}
+                            <div class="form-row mt-1">
+                                 <div class="form-group col-md-3">
+                                    <label for="rca">ROOT_CAUSE</label>
+                                    <textarea id ="rca" class="form-control" name="rca" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Root_Cause }}</textarea>
+                                </div>
+                                 <div class="form-group col-md-3">
+                                    <label for="impact">IMPACT</label>
+                                    <textarea id ="impact" class="form-control" name="impact" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Impact }}</textarea>
+                                </div>
+
+
+                                <div class="form-group col-md-3">
+                                    <label>REMARKS NOTES</label>
+                                    <textarea id ="remarks" class="form-control" name="remarks" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Remarks_Notes }}</textarea>
+                                </div>
+                                 <div class="form-group col-md-3">
+                                    <label>REFERENCE LINKS</label>
+                                    <textarea id ="reference" class="form-control" name="reference" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.reference_link }}</textarea>
+                                </div>
+                            </div>
+{#                            <div class="form-row mt-1">#}
+{#                                 <div class="form-group col-md-6">#}
+{#                                    <label>Remarks Notes:</label>#}
+{#                                    <textarea id ="remarks" class="form-control" name="remarks" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Remarks_Notes }}</textarea>#}
+{#                                </div>#}
+{#                                 <div class="form-group col-md-6">#}
+{#                                    <label>Reference Links:</label>#}
+{#                                    <textarea id ="reference" class="form-control" name="reference" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.reference_link }}</textarea>#}
+{#                                </div>#}
+{#                            </div>#}
+                            <div class="form-row mt-1">
+                                 <div class="form-group col-md-3">
+                                    <label>INTERIM_SOLUTIONS_WORKAROUND</label>
+                                    <textarea id ="Interim_Solution_Workaround" class="form-control" name="Interim_Solution_Workaround" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Interim_Solution_Workaround }}</textarea>
+                                </div>
+                                 <div class="form-group col-md-3">
+                                    <label>PERMANENT_FIX</label>
+                                    <textarea id ="Permanent_Fix" class="form-control" name="Permanent_Fix" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Permanent_Fix }}</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                       {# {% if record['Status'] == 'Open'%} #}
+                        <div class="form-row mx-auto mt-5 d-flex justify-content-center">
+                            <div class="button-container">
+<!--                                <input type="submit" class="w3-button w3-black save-button" value="Update" id="saveissue">-->
+<!--                                <input type="button" class="w3-button w3-black edit-button" value="Edit" id="editissue">-->
+                                <input type="button" class="w3-button w3-black edit-button" data-issue-id="{{record.issue}}" data-sw-version="{{record.SW}}"  value="Next" id="proceed">
+                            </div>
+                        </div>
+                        <br>
+                       {# {% endif %} #}
+                        {% endfor %}
+                    </form>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+                <div class="tab-pane  w-100" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="width: 60%; position:relative; bottom:20px">
+
+
+
+
+
+
+                     {#
+                    <form name="IssueSequenceForm" class="IssueSequenceForm" id="IssueSequenceForm_{{ record.Sequence_num }}" >
+                        <fieldset class="the-fieldset">
+                            <legend class="w-auto px-2" style="text-decoration: underline;">Issue Sequence Section</legend>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="progressbar" style="">
+                                    <div class="step active" id="step_1">1</div>
+                                    <div class="step" id="step_2">2</div>
+                                    <div class="step" id="step_3">3</div>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-3">
+                                    <label for="issue_id"> Issue ID:</label>
+                                    <input type="text" id="issue_id" class="form-control" name="issue_id" value="{{record.issue}}" readonly>
+                                    <input type="hidden" id="status_val" name="status_val">
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="sw_val"> Software:</label>
+                                    <input type="text" id="sw_val" class="form-control" name="sw_val" value="{{record.SW}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="sequenceid"> Action ID:</label>
+                                    <input type="text" id="sequenceid" class="form-control" data-len-script="{{len_script}}" name="sequenceid" value="{{record.Sequence_num}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+
+                                    <label for="action_type"> Action Type:</label>
+                                    <select class="form-control" id="action_type" name="action_type" >
+                                        <option value="" style="font-size:14px;font-weight:bold">--select--</option>
+                                        {% for action in action_type %}
+                                        <option value="{{ action }}" {% if record.action_type == action %} selected {% endif %}>{{action}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-3">
+                                    <label for="scName" class="form-label">SCRIPT NAME:</label>
+                                    <input type="text" id="scName" class="form-control" name="scName" value="{{record.script_name}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="uid" class="form-label">SSH USER ID:</label>
+                                    <input type="text" id="uid" class="form-control" name="uid" value="{{record.server_Login}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="pwd" class="form-label">SSH PASSWORD:</label>
+                                    <input type="password" id="pwd" class="form-control" name="pwd" value="{{record.server_password}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="ip" class="form-label">SERVER IP:</label>
+                                    <input type="text" id="ip" class="form-control" name="ip" value="{{record.Server_IP}}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-row mt-2">
+                                <div class="checkbox-group">
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="proceed_yes" style="font-weight:bold">Proceed ?</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input  class="form-check-input" type="radio" id="proceed_yes" name="proceed" value="yes"
+                                            {% if record.proceed == 'Yes' %} checked {% endif %}>
+                                            <label class="form-check-label" for="proceed_yes"> Yes</label>
+                                            <input  class="form-check-input" type="radio" id="proceed_no" name="proceed" value="no"
+                                            {% if record.proceed == 'No' %} checked {% endif %}>
+                                            <label class="form-check-label" for="proceed_no"> No</label>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-row mt-3">
+                                <div class="form-group col-5">
+                                    <label for="check_condition" class="form-label">Check Condition:</label>
+                                    <textarea  id="check_condition" name="check_condition" class="form-control" rows="3" cols="2" readonly>{{record.check_condition}}</textarea>
+                                </div>
+                                <div class="form-group col-5">
+                                    <label for="regex" class="form-label">Arguments:</label>
+                                    <textarea  id="regex" name="regex" class="form-control" rows="3" cols="2" readonly>{{record.args}}</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                        {% if record['Status'] == 'Open'%}
+                        <div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+                            <input type="button" class="w3-button w3-black btn-prev w3-round previous" value="PREV" id="prev_{{ record.Sequence_num}}" onclick="prev_step(this)">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="button" class="w3-button w3-black btn-next w3-round next" value="NEXT" id="next_{{ record.Sequence_num}}" onclick="next_step(this)">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a type="button" class="w3-button w3-black w3-round" href="/newpage" id="action5">DONE</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <br>
+                        {% endif %}
+                    </form>
+                    #}
+                    <div class="tab-pane fade show w-100" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="width: 60%; position: relative; top:20px">
+                        <button class="btn btn-warning btn-md " style="float:right; position:relative; bottom:28px " id="toggleIssue" onclick="toggleIssueSequence(this)">COLLAPSE All </button>
+
+                		<button class="btn btn-info btn-md " style="float:right; position:relative; bottom:28px" id="add_issue_btn" onclick="addIssueSequence()">CREATE DETECTION STEP</button>
+
+                    {% if scripts_data %}
+                     {% for record in scripts_data  %}
+					<div class="card mb-1 text-white card-div" id="issue_sequence_card_{{ record.Sequence_num }}" style="width: 100% !important; " >
+						<div class="card-header row" style="height: 30px!important;background: #283db4!important;">
+
+                            <div class="icon-container col-md-10" style="position: relative; bottom: 15px; left:-20px">
+
+								<i class="fas fa-lg fa-minus icon iconCardMinus mt-4"  id="iconCard{{ record.Sequence_num }}Minus" onclick="toggleClass(this)" data-bs-toggle="collapse" data-bs-target="#collapseCard{{record.Sequence_num }}" aria-expanded="true" aria-controls="collapseCard{{record.Sequence_num }}"></i>
+							    <h5 class="text-white header ml-4" style="position: relative; bottom: 20px;"> &nbsp; &nbsp; &nbsp;EXECUTION ORDER NUMBER {{ record.Sequence_num }} &nbsp; &nbsp; &nbsp; DETECTION TYPE  {{ record.action_type }}</h5>
+							</div>
+							<div class="div-header col-md-2" style="text-align: right; position: relative; bottom: 5px; right:-25px">
+                               <button class="btn btn-outline-warning btn-sm edit_btn" id="editbtn_{{ record.Sequence_num }}" onclick="editIssue(this)"><i class="fas fa-lg fa-edit icon text-white" ></i></button>
+                                <button class="btn btn-outline-success btn-sm save_btn" id="savebtn_{{ record.Sequence_num }}" onclick="saveIssue(this)"><i class="fas fa-lg fa-save icon text-white" ></i></button>
+                                <button class="btn btn-outline-danger btn-sm delete_btn" id="deletebtn_{{ record.Sequence_num }}" onclick="deleteIssue(this)" disabled><i class="fas fa-lg fa-trash icon text-white" ></i></button>
+
+                            </div>
+
+
+						</div>
+						<div id="collapseCard{{record.Sequence_num }}" class="collapse show">
+							<div class="card-body" style="color:black">
+
+
+			<form name="IssueSequenceForm" id="IssueSequenceForm{{ record.Sequence_num }}" >
+			<fieldset class="the-fieldset">
+				<legend class="w-auto px-2" style="text-decoration: underline;">ISSUE SEQUENCE SECTION</legend>
+
+
+				<div class="form-row">
+					<div class="form-group col-3">
+						<label for="issue_id_{{ record.Sequence_num }}"> ISSUE ID</label>
+						<input type="text" id="issue_id_{{ record.Sequence_num }}" class="form-control" name="issue_id" value="{{ record.issue }}" readonly>
+						<input type="hidden" id="status_val_{{ record.Sequence_num }}" name="status_val" value="{{ record.Status }}">
+						<input type="hidden" id="action_id_{{ record.Sequence_num }}" name="action_id" value="{{ record.CLI_ACTION_ID }}">
+					</div>
+					<div class="form-group col-3">
+						<label for="sw_val_{{ record.Sequence_num }}"> SOFTWARE</label>
+						<input type="text" id="sw_val_{{ record.Sequence_num }}" class="form-control" name="sw_val" value="{{ record.SW }}" readonly>
+					</div>
+                     <div class="form-group col-3">
+						<label for="sequenceid_{{ record.Sequence_num }}"> ISSUE DETECTION ID:</label>
+						<input type="text" id="sequenceid_{{ record.Sequence_num }}" class="form-control" name="sequenceid" value="{{ record.Sequence_num }}"readonly>
+					</div>
+					<div class="form-group col-3">
+						 <label for="action_type_{{ record.Sequence_num }}"> DETECTION TYPE:</label>
+                        <select class="form-control" id="action_type_{{ record.Sequence_num }}" name="action_type" onchange="updateFunction({{ record.Sequence_num }})">
+                             {% for action in action_type %}
+                            <option class="{% if action == 'GET FILE' %}d-none {% endif %}" value="{{ action }}" {% if record.action_type == action %} selected {% endif %}>{{action}} </option>
+                            {% endfor %}
+                        </select>
+
+					</div>
+
+
+				</div>
+
+				<div class="form-row d-none">
+					<div class="form-group col-3  {% if record.action_type == 'RUN CLI' %} d-none {% endif %}">
+						<label for="scName_{{ record.Sequence_num }}" class="form-label">SCRIPT NAME</label>
+						<input type="text" id="scName_{{ record.Sequence_num }}" class="form-control" value="{{ record.script_name }}" name="scName" readonly>
+					</div>
+					<div class="form-group col-3">
+						<label for="uid_{{ record.Sequence_num }}" class="form-label">SSH USER ID</label>
+						<input type="text" id="uid_{{ record.Sequence_num }}" class="form-control" value="{{ record.server_Login }}" name="uid" readonly>
+					</div>
+					<div class="form-group col-3">
+						<label for="pwd_{{ record.Sequence_num }}" class="form-label">SSH PASSWORD</label>
+						<input type="password" id="pwd_{{ record.Sequence_num }}" class="form-control" value="{{ record.server_password }}" name="pwd" readonly>
+					</div>
+					<div class="form-group col-3 {% if record.action_type == 'RUN CLI' %} d-none {% endif %}">
+						<label for="ip_{{ record.Sequence_num }}" class="form-label">SERVER IP</label>
+						<input type="text" id="ip_{{ record.Sequence_num }}" class="form-control" value="{{ record.Server_IP }}" name="ip" readonly>
+					</div>
+
+				</div>
+{#				<div class="form-row">#}
+{#					<div class="form-group col-3">#}
+{#						<label for="scLoc" class="form-label">SERVER LOCATION:</label>#}
+{#						<input type="text" id="scLoc" class="form-control" name="scLoc" >#}
+{#					</div>#}
+{#					<div class="form-group col-3"> #}
+{#						<label for="scOwner" class="form-label">SCRIPT OWNER:</label>#}
+{#						<input type="text" id="scOwner" class="form-control" name="scOwner">#}
+{#					</div>#}
+{#					<div class="form-group col-4">#}
+{#						<label for="scPath" class="form-label">SCRIPT PATH:</label>#}
+{#						<input type="text" id="scPath" class="form-control" name="scPath">#}
+{#					</div>#}
+{#				</div>#}
+
+				<div class="form-row mt-2">
+				   <div class="checkbox-group">
+
+						<div class="form-check">
+							<label class="form-check-label" for="proceed_yes" style="font-weight:bold">PROCEED ON FAILURE?</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" id="proceed_yes_{{ record.Sequence_num }}" disabled name="proceed" {% if record.proceed.lower() == 'yes' %} checked {% endif %} value="Yes">
+							<label class="form-check-label" for="proceed_yes_{{ record.Sequence_num }}">Yes</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" id="proceed_no_{{ record.Sequence_num }}" disabled name="proceed" {% if record.proceed.lower()  == 'no' %} checked {% endif %} value="No">
+							<label class="form-check-label" for="proceed_no_{{ record.Sequence_num }}">No</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row mt-3">
+					<div class="form-group col-5">
+						<label for="check_condition_{{ record.Sequence_num }}" class="form-label">COMMAND</label>
+						<textarea  id="check_condition_{{ record.Sequence_num }}" name="check_condition" readonly class="form-control" rows="3" cols="2" >{{ record.check_condition }}</textarea>
+					</div>
+					{#
+					<div class="form-group col-5">
+						<label for="regex_{{ record.Sequence_num }}" class="form-label">NE IDS:</label>
+						<textarea  id="regex_{{ record.Sequence_num }}" name="regex" class="form-control" readonly rows="3" cols="2" >{{ record.args }}</textarea>
+					</div>
+					#}
+					<div class="form-group col-5  {% if record.action_type == 'RUN CLI' %} d-none {% endif %}">
+						<label for="pattern_grep_{{ record.Sequence_num }}" class="form-label">GREP PATTERN:</label>
+						<textarea  id="pattern_grep_{{ record.Sequence_num }}" name="pattern_grep" readonly  class="form-control" rows="3" cols="2" >{{ record.counter_info }}</textarea>
+					</div>
+				</div>
+				<div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+
+				</div>
+			</fieldset>
+			</form><br>
+
+
+
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+                    {% endif %}
+
+                    {% if execs_data %}
+                     {% for record in execs_data  %}
+					<div class="card mb-1 text-white card-div" id="issue_sequence_card_{{ record.Sequence_num }}" style="width: 100% !important; " >
+						<div class="card-header row" style="height: 30px!important;background: #283db4!important;">
+
+                            <div class="icon-container col-md-10" style="position: relative; bottom: 15px; left:-20px">
+
+								<i class="fas fa-lg fa-minus icon iconCardMinus mt-4"  id="iconCard{{ record.Sequence_num }}Minus" onclick="toggleClass(this)" data-bs-toggle="collapse" data-bs-target="#collapseCard{{ record.Sequence_num }}" aria-expanded="true" aria-controls="collapseCard{{ record.Sequence_num }}"></i>
+                                <h5 class="text-white header ml-4" style="position: relative; bottom: 20px;"> &nbsp; &nbsp; &nbsp;EXECUTION ORDER NUMBER : {{ record.Sequence_num }} &nbsp; &nbsp; &nbsp; DETECTION TYPE : {{ record.action_type }}</h5>
+
+							</div>
+							<div class="div-header col-md-2" style="text-align: right; position: relative; bottom: 5px; right:-25px">
+                               <button class="btn btn-outline-warning btn-sm edit_btn" id="editbtn_{{ record.Sequence_num }}" onclick="editIssue(this)"><i class="fas fa-lg fa-edit icon text-white" ></i></button>
+                                <button class="btn btn-outline-success btn-sm save_btn" id="savebtn_{{ record.Sequence_num }}" onclick="saveIssue(this)"><i class="fas fa-lg fa-save icon text-white" ></i></button>
+                                <button class="btn btn-outline-danger btn-sm delete_btn" id="deletebtn_{{ record.Sequence_num }}" onclick="deleteIssue(this)" disabled><i class="fas fa-lg fa-trash icon text-white" ></i></button>
+
+                            </div>
+
+
+						</div>
+						<div id="collapseCard{{ record.Sequence_num }}" class="collapse show">
+							<div class="card-body" style="color:black">
+
+
+			<form name="IssueSequenceForm" id="IssueSequenceForm{{ record.Sequence_num }}" >
+			<fieldset class="the-fieldset">
+				<legend class="w-auto px-2" style="text-decoration: underline;">ISSUE SEQUENCE SECTION</legend>
+
+
+				<div class="form-row">
+					<div class="form-group col-4">
+						<label for="issue_id_{{ record.Sequence_num }}"> ISSUE ID:</label>
+						<input type="text" id="issue_id_{{ record.Sequence_num }}" class="form-control" name="issue_id" value="{{ record.issue }}" readonly>
+						<input type="hidden" id="status_val_{{ record.Sequence_num }}" name="status_val" value="{{ record.Status }}">
+                        <input type="hidden" id="action_id_{{ record.Sequence_num }}" name="action_id" value="{{ record.OM_ACTION_ID }}">
+
+					</div>
+
+                     <div class="form-group col-4">
+						<label for="sequenceid_{{ record.Sequence_num }}"> ISSUE DETECTION ID:</label>
+						<input type="text" id="sequenceid_{{ record.Sequence_num }}" class="form-control" name="sequenceid" value="{{ record.Sequence_num }}"readonly>
+					</div>
+					<div class="form-group col-4">
+						 <label for="action_type_{{ record.Sequence_num }}"> DETECTION TYPE:</label>
+                        <select class="form-control" id="action_type_{{ record.Sequence_num }}" name="action_type"  onchange="updateFunction({{ record.Sequence_num }})">
+                             {% for action in action_type %}
+                            <option class="{% if action == 'GET FILE' %}d-none {% endif %}" value="{{ action }}" {% if record.action_type == action %} selected {% endif %}>{{action}}</option>
+                            {% endfor %}
+                        </select>
+
+					</div>
+
+
+				</div>
+
+{#				<div class="form-row">#}
+{#					<div class="form-group col-3  {% if record.action_type == 'RUN CLI' %} d-none {% endif %}">#}
+{#						<label for="scName" class="form-label">SCRIPT NAME:</label>#}
+{#						<input type="text" id="scName" class="form-control" value="{{ record.script_name }}" name="scName" readonly>#}
+{#					</div>#}
+{#					<div class="form-group col-3">#}
+{#						<label for="uid" class="form-label">SSH USER ID:</label>#}
+{#						<input type="text" id="uid" class="form-control" value="{{ record.server_Login }}" name="uid" readonly>#}
+{#					</div>#}
+{#					<div class="form-group col-3">#}
+{#						<label for="pwd" class="form-label">SSH PASSWORD:</label>#}
+{#						<input type="password" id="pwd" class="form-control" value="{{ record.server_password }}" name="pwd" readonly>#}
+{#					</div>#}
+{#					<div class="form-group col-3 {% if record.action_type == 'RUN CLI' %} d-none {% endif %}">#}
+{#						<label for="ip" class="form-label">SERVER IP:</label>#}
+{#						<input type="text" id="ip" class="form-control" value="{{ record.Server_IP }}" name="ip" readonly>#}
+{#					</div>#}
+{##}
+{#				</div>#}
+
+
+				<div class="form-row mt-2">
+				   <div class="checkbox-group">
+
+						<div class="form-check">
+							<label class="form-check-label" for="proceed_yes" style="font-weight:bold">PROCEED ON FAILURE?</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" id="proceed_yes_{{ record.Sequence_num }}" disabled name="proceed" {% if record.proceed.lower() == 'yes' %} checked {% endif %} value="Yes">
+							<label class="form-check-label" for="proceed_yes_{{ record.Sequence_num }}">Yes</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" id="proceed_no_{{ record.Sequence_num }}" disabled name="proceed" {% if record.proceed.lower()  == 'no' %} checked {% endif %} value="No">
+							<label class="form-check-label" for="proceed_no_{{ record.Sequence_num }}">No</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row mt-3">
+					<div class="form-group col-6">
+						<label for="check_condition_{{ record.Sequence_num }}" class="form-label">CHECK CONDITION:</label>
+						<textarea  id="check_condition_{{ record.Sequence_num }}" name="check_condition" readonly class="form-control" rows="3" cols="2" >{{ record.check_condition }}</textarea>
+					</div>
+                    <div class="form-group col-6">
+						<label for="om_counters_{{ record.Sequence_num }}" class="form-label">OM COUNTERS:</label>
+						<textarea  id="om_counters_{{ record.Sequence_num }}" name="om_counters" readonly class="form-control" rows="3" cols="2" data-bs-toggle="tooltip" data-bs-placement="top"
+						title="OM FAMILY and OM Counters <om_family_name|counter1,counter2,etc.,> seperated by new line">{{ record.counter_info }}</textarea>
+					</div>
+
+				</div>
+				<div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+
+				</div>
+			</fieldset>
+			</form><br>
+
+
+
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+                    {% endif %}
+
+                        {% if greps_data %}
+                     {% for record in greps_data  %}
+					<div class="card mb-1 text-white card-div" id="issue_sequence_card_{{ record.Sequence_num }}" style="width: 100% !important; " >
+						<div class="card-header row" style="height: 30px!important;background: #283db4!important;">
+
+                            <div class="icon-container col-md-10" style="position: relative; bottom: 15px; left:-20px">
+
+								<i class="fas fa-lg fa-minus icon iconCardMinus mt-4"  id="iconCard{{ record.Sequence_num }}Minus" onclick="toggleClass(this)" data-bs-toggle="collapse" data-bs-target="#collapseCard{{ record.Sequence_num }}" aria-expanded="true" aria-controls="collapseCard{{ record.Sequence_num }}"></i>
+                                <h5 class="text-white header ml-4" style="position: relative; bottom: 20px;"> &nbsp; &nbsp; &nbsp;EXECUTION ORDER NUMBER: {{ record.Sequence_num }} &nbsp; &nbsp; &nbsp; DETECTION TYPE : {{ record.action_type }}</h5>
+
+							</div>
+							<div class="div-header col-md-2" style="text-align: right; position: relative; bottom: 5px; right:-25px">
+                               <button class="btn btn-outline-warning btn-sm edit_btn" id="editbtn_{{ record.Sequence_num }}" onclick="editIssue(this)"><i class="fas fa-lg fa-edit icon text-white" ></i></button>
+                                <button class="btn btn-outline-success btn-sm save_btn" id="savebtn_{{ record.Sequence_num }}" onclick="saveIssue(this)"><i class="fas fa-lg fa-save icon text-white" ></i></button>
+                                <button class="btn btn-outline-danger btn-sm delete_btn" id="deletebtn_{{ record.Sequence_num }}" onclick="deleteIssue(this)" disabled><i class="fas fa-lg fa-trash icon text-white" ></i></button>
+
+                            </div>
+
+
+						</div>
+						<div id="collapseCard{{ record.Sequence_num }}" class="collapse show">
+							<div class="card-body" style="color:black">
+
+
+			<form name="IssueSequenceForm" id="IssueSequenceForm{{ record.Sequence_num }}" >
+			<fieldset class="the-fieldset">
+				<legend class="w-auto px-2" style="text-decoration: underline;">ISSUE SEQUENCE SECTION</legend>
+
+
+				<div class="form-row">
+					<div class="form-group col-3">
+						<label for="issue_id_{{ record.Sequence_num }}"> ISSUE ID:</label>
+						<input type="text" id="issue_id_{{ record.Sequence_num }}" class="form-control" name="issue_id" value="{{ record.issue }}" readonly>
+						<input type="hidden" id="status_val_{{ record.Sequence_num }}" name="status_val" value="{{ record.Status }}">
+                        <input type="hidden" id="action_id_{{ record.Sequence_num }}" name="action_id" value="{{ record.GREP_ACTION_ID }}">
+
+					</div>
+
+                     <div class="form-group col-3">
+						<label for="sequenceid_{{ record.Sequence_num }}"> EXECUTION ORDER NUMBER:</label>
+						<input type="text" id="sequenceid_{{ record.Sequence_num }}" class="form-control" name="sequenceid" value="{{ record.Sequence_num }}">
+					</div>
+					<div class="form-group col-3">
+						 <label for="action_type_{{ record.Sequence_num }}"> DETECTION Type:</label>
+                        <select class="form-control" id="action_type_{{ record.Sequence_num }}" name="action_type"  onchange="updateFunction({{ record.Sequence_num }})">
+                             {% for action in action_type %}
+                            <option class="{% if action == 'GET FILE' %}d-none {% endif %}" value="{{ action }}" {% if record.action_type == action %} selected {% endif %}>{{action}}</option>
+                            {% endfor %}
+                        </select>
+
+					</div>
+					<div class="form-group col-3 ">
+						<label for="grep_target_{{ record.Sequence_num }}" class="form-label">GREP PATTERN:</label>
+{#						<input type="text" id="grep_target_{{ record.Sequence_num }}" class="form-control" value="{{ record.grep_target }}" name="pattern_grep" readonly>#}
+					    <textarea  id="grep_target_{{ record.Sequence_num }}" name="pattern_grep" class="form-control" rows="3" cols="2" readonly>{{ record.grep_target }}</textarea>
+					</div>
+
+
+				</div>
+
+
+
+				<div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+
+				</div>
+			</fieldset>
+			</form><br>
+
+
+
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+                    {% endif %}
+
+
+    </div>
+
+
+
+
+{#
+                     {% if not users %}
+
+                    <form name="IssueSequenceForm" class="IssueSequenceForm" id="IssueSequenceForm_1" method="POST", action="{{url_for('save_script')}}" >
+                        <fieldset class="the-fieldset">
+                            <legend class="w-auto px-2" style="text-decoration: underline;">Issue Sequence Section</legend>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="progressbar" style="">
+                                    <div class="step active" id="step_1">1</div>
+                                    <div class="step" id="step_2">2</div>
+                                    <div class="step" id="step_3">3</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-3">
+                                    <label for="issue_id"> Issue ID:</label>
+                                    <input type="text" id="issue_id" class="form-control" name="issue_id" value="" readonly>
+                                    <input type="hidden" id="status_val" name="status_val">
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="sw_val"> Software:</label>
+                                    <input type="text" id="sw_val" class="form-control" name="sw_val" value="" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="sequenceid"> Action ID:</label>
+                                    <input type="text" id="sequenceid" class="form-control" name="sequenceid" value="1" readonly>
+                                </div>
+                                <div class="form-group col-3">
+
+                                    <label for="action_type"> Action Type:</label>
+                                    <select class="form-control" id="action_type" name="action_type" >
+
+                                        <option value="RUN OM SCRIPT" selected>RUN OM SCRIPT</option>
+                                        <option value="RUN CLI SCRIPT">RUN CLI SCRIPT</option>
+                                        <option value="RUN ADHOC SCRIPT">RUN  ADHOC SCRIPT</option>
+                                        <option value="GREP">RUN GREP SCRIPT</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-3">
+                                    <label for="scName" class="form-label">SCRIPT NAME:</label>
+                                    <input type="text" id="scName" class="form-control" name="scName" value="" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="uid" class="form-label">SSH USER ID:</label>
+                                    <input type="text" id="uid" class="form-control" name="uid" value="" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="pwd" class="form-label">SSH PASSWORD:</label>
+                                    <input type="password" id="pwd" class="form-control" name="pwd" value="" >
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="ip" class="form-label">SERVER IP:</label>
+                                    <input type="text" id="ip" class="form-control" name="ip" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="form-row mt-2">
+                                <div class="checkbox-group">
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="proceed_yes" style="font-weight:bold">Proceed ?</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input  class="form-check-input" type="radio" id="proceed_yes" name="proceed" value="Yes">
+                                            <label class="form-check-label" for="proceed_yes"> Yes</label>
+                                            <input  class="form-check-input" type="radio" id="proceed_no" name="proceed" value="no"
+                                            checked >
+                                            <label class="form-check-label" for="proceed_no"> No</label>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-row mt-3">
+                                <div class="form-group col-5">
+                                    <label for="check_condition" class="form-label">Check Condition:</label>
+                                    <textarea  id="check_condition" name="check_condition" class="form-control" rows="3" cols="2" >None</textarea>
+                                </div>
+                                <div class="form-group col-5">
+                                    <label for="regex" class="form-label">Arguments:</label>
+                                    <textarea  id="regex" name="regex" class="form-control" rows="3" cols="2" ></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+                            <input type="button" class="w3-button w3-black btn-prev w3-round previous  " value="PREV" id="prev_1" onclick="">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="button" class="w3-button w3-black btn-next w3-round next " value="NEXT" id="next_1" onclick="">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="w3-button w3-black w3-round" href="/newpage#knowledge-base" id="action5">DONE</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <br>
+
+                    </form>
+
+                    {% endif %}
+
+
+#}
+
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+					<div class="card mb-1 text-white card-div d-none" id="issue_sequence_card" style="width: 100% !important; " >
+						<div class="card-header row" style="height: 30px!important;background: #283db4!important;">
+
+							<div class="icon-container col-md-10" style="position: relative; bottom: 15px; left:-20px">
+								<i class="fas fa-lg fa-minus icon iconCardMinus mt-4"  id="iconCard1Minus" onclick="toggleClass(this)" data-bs-toggle="collapse" data-bs-target="#collapseCard1" aria-expanded="true" aria-controls="collapseCard1"></i>
+							</div>
+							<div class="div-header col-md-2" style="text-align: right; position: relative; bottom: 5px; right:-25px">
+                               <button class="btn btn-outline-warning btn-sm edit_btn" id="editbtn_1" onclick="editIssue(this)"><i class="fas fa-lg fa-edit icon text-white" ></i></button>
+                                <button class="btn btn-outline-success btn-sm save_btn" id="savebtn_1" onclick="saveIssue(this)"><i class="fas fa-lg fa-save icon text-white" ></i></button>
+                                    <button class="btn btn-outline-danger btn-sm delete_btn" id="deletebtn_1" onclick="deleteIssue(this)" disabled><i class="fas fa-lg fa-trash icon text-white" ></i></button>
+
+                            </div>
+
+
+						</div>
+						<div id="collapseCard1" class="collapse show">
+							<div class="card-body" style="color:black">
+
+
+			<form name="IssueSequenceForm" id="IssueSequenceForm" >
+			<fieldset class="the-fieldset">
+				<legend class="w-auto px-2" style="text-decoration: underline;">Issue Sequence Section</legend>
+
+		<!--		<div class="d-flex justify-content-center align-items-center">
+					<div class="progressbar" id="progressbar">
+					</div>
+				</div> -->
+				<div class="form-row">
+					<div class="form-group col-3">
+						<label for="issue_id"> Issue ID:</label>
+						<input type="text" id="issue_id" class="form-control" name="issue_id" readonly>
+						<input type="hidden" id="status_val" name="status_val" value="Open">
+						<input type="hidden" id="action_id" name="action_id" >
+					</div>
+					<div class="form-group col-3">
+						<label for="sw_val"> Software:</label>
+						<input type="text" id="sw_val" class="form-control" name="sw_val">
+					</div>
+                     <div class="form-group col-3">
+						<label for="sequenceid"> Issue Detection ID:</label>
+						<input type="text" id="sequenceid" class="form-control" name="sequenceid" readonly>
+					</div>
+					<div class="form-group col-3">
+						 <label for="action_type"> Detection Type:</label>
+                        <select class="form-control" id="action_type" name="action_type" >
+                           <option value="" selected style="font-size:14px;font-weight:bold">--select--</option>
+                             {% for action in action_type %}
+                            <option class="{% if action == 'GET FILE' %}d-none {% endif %}" value="{{ action }}" >{{action}}</option>
+                            {% endfor %}
+                        </select>
+
+					</div>
+
+
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-3">
+						<label for="scName" class="form-label">SCRIPT NAME:</label>
+						<input type="text" id="scName" class="form-control" name="scName">
+					</div>
+					<div class="form-group col-3">
+						<label for="uid" class="form-label">SANE USER ID:</label>
+						<input type="text" id="uid" class="form-control" name="uid">
+					</div>
+					<div class="form-group col-3">
+						<label for="pwd" class="form-label">SANE PASSCODE:</label>
+						<input type="password" id="pwd" class="form-control" name="pwd" >
+					</div>
+					<div class="form-group col-3">
+						<label for="ip" class="form-label">SERVER IP:</label>
+						<input type="text" id="ip" class="form-control" name="ip">
+					</div>
+
+				</div>
+				<div class="form-row">
+					<div class="form-group col-3">
+						<label for="scLoc" class="form-label">SERVER LOCATION:</label>
+						<input type="text" id="scLoc" class="form-control" name="scLoc" >
+					</div>
+					<div class="form-group col-3">
+						<label for="scOwner" class="form-label">SCRIPT OWNER:</label>
+						<input type="text" id="scOwner" class="form-control" name="scOwner">
+					</div>
+					<div class="form-group col-4">
+						<label for="scPath" class="form-label">SCRIPT PATH:</label>
+						<input type="text" id="scPath" class="form-control" name="scPath">
+					</div>
+				</div>
+
+				<div class="form-row mt-2">
+				   <div class="checkbox-group">
+<!--						<div class="form-check">-->
+<!--							<label class="form-check-label" for="check_type" style="font-weight:bold">Check ?</label>-->
+<!--						</div>-->
+<!--						<div class="form-check">-->
+<!--							<input class="form-check-input" type="radio" id="OM" name="check_type" id="check_type" value="OM">-->
+<!--							<label class="form-check-label" for="OM">OM</label>-->
+<!--						</div>-->
+<!--						<div class="form-check">-->
+<!--							<input class="form-check-input" type="radio" id="CLI" name="check_type" value="CLI">-->
+<!--							<label class="form-check-label" for="CLI">CLI</label>-->
+<!--						</div>-->
+						<div class="form-check">
+							<label class="form-check-label" for="proceed_yes" style="font-weight:bold">Proceed on Failure?</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" id="proceed_yes" name="proceed" value="Yes">
+							<label class="form-check-label" for="proceed_yes">Yes</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" id="proceed_no" name="proceed" value="No">
+							<label class="form-check-label" for="proceed_no">No</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row mt-3">
+					<div class="form-group col-5">
+						<label for="check_condition" class="form-label">Check Condition:</label>
+						<textarea  id="check_condition" name="check_condition" class="form-control" rows="3" cols="2" ></textarea>
+					</div>
+					<div class="form-group col-5">
+						<label for="regex" class="form-label">NE IDS:</label>
+						<textarea  id="regex" name="regex" class="form-control" rows="3" cols="2" ></textarea>
+					</div>
+					<div class="form-group col-5" style="display:none">
+						<label for="om_counters" class="form-label">OM Counters:</label>
+						<textarea  id="om_counters" name="om_counters" class="form-control" rows="3" cols="2" data-bs-toggle="tooltip" data-bs-placement="top"
+						title="OM FAMILY and OM Counters <om_family_name|counter1,counter2,etc.,> seperated by new line"></textarea>
+					</div>
+					<div class="form-group col-5">
+						<label for="pattern_grep" class="form-label">Grep Pattern:</label>
+						<textarea  id="pattern_grep" name="pattern_grep" class="form-control" rows="3" cols="2" ></textarea>
+					</div>
+				</div>
+				<div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+             <!--       <input type="button" class="w3-button w3-black btn-next w3-round next edit_btn" value="Edit" id="editbtn_1">&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" class="w3-button w3-black w3-round save_btn" value="Save" id="savebtn_1" onclick="saveFunction(this)">&nbsp;&nbsp;&nbsp;&nbsp; -->
+		<!--			<input type="button" class="w3-button w3-black w3-round"  id="remove">Remove</input>&nbsp;&nbsp;&nbsp;&nbsp; -->
+				</div>
+			</fieldset>
+			</form><br>
+
+
+
+							</div>
+						</div>
+					</div>
+
+<div class="modal fade" id="successModalIssue" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel" style="color:green">Success!!</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+            <p id="sucmsgIssue"></p>
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- Additional action buttons can be added here -->
+      </div>
+    </div>
+  </div>
+</div>

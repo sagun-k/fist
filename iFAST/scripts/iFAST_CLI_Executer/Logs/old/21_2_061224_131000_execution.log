@@ -1,0 +1,29 @@
+spawn ssh venpr8r@198.226.62.124
+The authenticity of host '198.226.62.124 (198.226.62.124)' can't be established.
+ECDSA key fingerprint is SHA256:Ti/8pv4fQx/9dXbsfAU8ylr68efoggRG48fLTxPJPvU.
+ECDSA key fingerprint is MD5:1b:54:c2:87:7b:50:c6:fb:6d:8f:22:9e:09:4b:06:3c.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '198.226.62.124' (ECDSA) to the list of known hosts.
+TX11v
+
+   +-------------------------------------------------------------------------+
+   |                     * * *   W A R N I N G   * * *                       |
+   |                                                                         |
+   | THIS SYSTEM IS INTENDED TO BE USED SOLELY BY AUTHORIZED USERS IN THE    |
+   | COURSE OF LEGITIMATE CORPORATE BUSINESS.  UNAUTHORIZED USE OF THIS      |
+   | COMPUTER SYSTEM, NETWORK OR DATA IS A VIOLATION OF LAW.  USERS ARE      |
+   | MONITORED TO THE EXTENT NECESSARY TO PROPERLY ADMINISTER THE SYSTEM, TO |
+   | IDENTIFY UNAUTHORIZED USERS, AND TO INVESTIGATE IMPROPER ACCESS OR USE. |
+   | BY ACCESSING THIS SYSTEM, YOU ARE CONSENTING TO THIS MONITORING.        |
+   +-------------------------------------------------------------------------+
+
+   ***************************************************************************
+   * Secure Access to Network Elements (SANE) is a non-directional tool for  *
+   * Network Security IAM and the business. It is officially in              *
+   *                                                                         *
+   *                    ---> MAINTENANCE MODE <---                           *
+   *                                                                         *
+   * Any new element/device requests will need to go through HQ and Security *
+   * Planning to be directed to the appropriate directional tool(s).   TX11v *
+   ***************************************************************************
+(sane)Password:

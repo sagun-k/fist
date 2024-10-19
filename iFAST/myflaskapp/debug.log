@@ -1,0 +1,1033 @@
+2024-08-25 08:33:53,424 INFO: Starting parallel script execution
+2024-08-25 08:33:53,425 INFO: [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']]
+2024-08-25 08:33:53,433 INFO: Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:33:53,434 INFO: [START OF PROCESS process_1]
+2024-08-25 08:33:53,435 INFO: Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:33:53,437 INFO: Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:33:53,438 INFO: [START OF PROCESS process_2]
+2024-08-25 08:33:53,438 INFO: Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:33:53,440 INFO: Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:33:53,440 INFO: [START OF PROCESS process_3]
+2024-08-25 08:33:53,441 INFO: Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:33:53,442 INFO: Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:33:53,443 INFO: [START OF PROCESS process_4]
+2024-08-25 08:33:53,444 INFO: Process process_1: Subprocess started with PID 114882
+2024-08-25 08:33:53,444 INFO: Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:33:53,448 INFO: Process process_3: Subprocess started with PID 114888
+2024-08-25 08:33:53,449 INFO: Process process_2: Subprocess started with PID 114885
+2024-08-25 08:33:53,451 INFO: Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:33:53,451 INFO: [START OF PROCESS process_5]
+2024-08-25 08:33:53,452 INFO: Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:33:53,466 INFO: Process process_5: Subprocess started with PID 114891
+2024-08-25 08:33:53,467 INFO: Process process_4: Subprocess started with PID 114889
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: Traceback (most recent call last):
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: File "/home/sieluser/myflaskapp/scripts/ifast_executer.py", line 125, in <module>
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: df = pd.read_csv(output_file_path)
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: return _read(filepath_or_buffer, kwds)
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: parser = TextFileReader(fp_or_buf, **kwds)
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: self._make_engine(self.engine)
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: self._engine = CParserWrapper(self.f, **self.options)
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: self._reader = parsers.TextReader(src, **kwds)
+2024-08-25 08:33:54,094 ERROR: Process process_3 stderr: File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+2024-08-25 08:33:54,095 ERROR: Process process_3 stderr: File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+2024-08-25 08:33:54,095 ERROR: Process process_3 stderr: FileNotFoundError: [Errno 2] No such file or directory: 'No matches Found'
+2024-08-25 08:33:54,095 ERROR: Process process_3: Subprocess exited with return code 1
+2024-08-25 08:33:54,304 ERROR: Process process_4 stderr: Traceback (most recent call last):
+2024-08-25 08:33:54,304 ERROR: Process process_4 stderr: File "/home/sieluser/myflaskapp/scripts/ifast_executer.py", line 125, in <module>
+2024-08-25 08:33:54,304 ERROR: Process process_4 stderr: df = pd.read_csv(output_file_path)
+2024-08-25 08:33:54,304 ERROR: Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 688, in read_csv
+2024-08-25 08:33:54,304 ERROR: Process process_4 stderr: return _read(filepath_or_buffer, kwds)
+2024-08-25 08:33:54,304 ERROR: Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 454, in _read
+2024-08-25 08:33:54,304 ERROR: Process process_4 stderr: parser = TextFileReader(fp_or_buf, **kwds)
+2024-08-25 08:33:54,305 ERROR: Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 948, in __init__
+2024-08-25 08:33:54,305 ERROR: Process process_4 stderr: self._make_engine(self.engine)
+2024-08-25 08:33:54,305 ERROR: Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 1180, in _make_engine
+2024-08-25 08:33:54,305 ERROR: Process process_4 stderr: self._engine = CParserWrapper(self.f, **self.options)
+2024-08-25 08:33:54,305 ERROR: Process process_4 stderr: File "/usr/local/lib64/python3.6/site-packages/pandas/io/parsers.py", line 2010, in __init__
+2024-08-25 08:33:54,305 ERROR: Process process_4 stderr: self._reader = parsers.TextReader(src, **kwds)
+2024-08-25 08:33:54,305 ERROR: Process process_4 stderr: File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+2024-08-25 08:33:54,305 ERROR: Process process_4 stderr: File "pandas/_libs/parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+2024-08-25 08:33:54,305 ERROR: Process process_4 stderr: FileNotFoundError: [Errno 2] No such file or directory: 'No matches Found'
+2024-08-25 08:33:54,305 ERROR: Process process_4: Subprocess exited with return code 1
+2024-08-25 08:33:55,012 INFO: Process process_5 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:33:55,021 INFO: Process process_5 stdout: <table border="1" class="dataframe">
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <thead>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <tr style="text-align: right;">
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <th>NE_ID</th>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <th>DESC</th>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <th>MATCH</th>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: </thead>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <tbody>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <tr>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <td>6000090001</td>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:33:55,022 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: <tr>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: <tr>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: </tbody>
+2024-08-25 08:33:55,023 INFO: Process process_5 stdout: </table>
+2024-08-25 08:33:55,176 INFO: Process process_2 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <table border="1" class="dataframe">
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <thead>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <tr style="text-align: right;">
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <th>NE_ID</th>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <th>DESC</th>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <th>MATCH</th>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: </thead>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <tbody>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <tr>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <td>6000090001</td>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:33:55,184 INFO: Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: <tr>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: <tr>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: </tbody>
+2024-08-25 08:33:55,185 INFO: Process process_2 stdout: </table>
+2024-08-25 08:33:55,193 INFO: Process process_1 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:33:55,201 INFO: Process process_1 stdout: <table border="1" class="dataframe">
+2024-08-25 08:33:55,201 INFO: Process process_1 stdout: <thead>
+2024-08-25 08:33:55,201 INFO: Process process_1 stdout: <tr style="text-align: right;">
+2024-08-25 08:33:55,201 INFO: Process process_1 stdout: <th>NE_ID</th>
+2024-08-25 08:33:55,201 INFO: Process process_1 stdout: <th>DESC</th>
+2024-08-25 08:33:55,202 INFO: Process process_1 stdout: <th>MATCH</th>
+2024-08-25 08:33:55,202 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:33:55,202 INFO: Process process_1 stdout: </thead>
+2024-08-25 08:33:55,202 INFO: Process process_1 stdout: <tbody>
+2024-08-25 08:33:55,202 INFO: Process process_1 stdout: <tr>
+2024-08-25 08:33:55,202 INFO: Process process_1 stdout: <td>6000090001</td>
+2024-08-25 08:33:55,202 INFO: Process process_1 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:33:55,202 INFO: Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:33:55,202 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: <tr>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: <tr>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:33:55,203 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:33:55,204 INFO: Process process_1 stdout: </tbody>
+2024-08-25 08:33:55,204 INFO: Process process_1 stdout: </table>
+2024-08-25 08:42:08,759 INFO: Starting parallel script execution
+2024-08-25 08:42:08,759 INFO: [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']]
+2024-08-25 08:42:08,767 INFO: Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:42:08,768 INFO: [START OF PROCESS process_1]
+2024-08-25 08:42:08,768 INFO: Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:42:08,770 INFO: Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:42:08,771 INFO: [START OF PROCESS process_2]
+2024-08-25 08:42:08,774 INFO: Process process_1: Subprocess started with PID 115766
+2024-08-25 08:42:08,775 INFO: Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:42:08,774 INFO: Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:42:08,775 INFO: [START OF PROCESS process_3]
+2024-08-25 08:42:08,776 INFO: Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:42:08,780 INFO: Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:42:08,781 INFO: [START OF PROCESS process_5]
+2024-08-25 08:42:08,782 INFO: Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:42:08,783 INFO: [START OF PROCESS process_4]
+2024-08-25 08:42:08,784 INFO: Process process_2: Subprocess started with PID 115769
+2024-08-25 08:42:08,785 INFO: Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:42:08,789 INFO: Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:42:08,790 INFO: Process process_3: Subprocess started with PID 115771
+2024-08-25 08:42:08,803 INFO: Process process_4: Subprocess started with PID 115775
+2024-08-25 08:42:08,804 INFO: Process process_5: Subprocess started with PID 115774
+2024-08-25 08:42:09,449 INFO: Process process_3 stdout: 
+2024-08-25 08:42:09,449 INFO: Process process_3 stdout: No matches Found
+2024-08-25 08:42:09,449 INFO: Process process_3 stdout: 
+2024-08-25 08:42:09,449 INFO: Process process_3 stdout: 
+2024-08-25 08:42:09,502 INFO: Process process_4 stdout: 
+2024-08-25 08:42:09,502 INFO: Process process_4 stdout: No matches Found
+2024-08-25 08:42:09,503 INFO: Process process_4 stdout: 
+2024-08-25 08:42:09,503 INFO: Process process_4 stdout: 
+2024-08-25 08:42:10,342 INFO: Process process_2 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:42:10,351 INFO: Process process_2 stdout: <table border="1" class="dataframe">
+2024-08-25 08:42:10,351 INFO: Process process_2 stdout: <thead>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <tr style="text-align: right;">
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <th>NE_ID</th>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <th>DESC</th>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <th>MATCH</th>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: </thead>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <tbody>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <tr>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <td>6000090001</td>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <tr>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,352 INFO: Process process_2 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:42:10,353 INFO: Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:42:10,353 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:42:10,353 INFO: Process process_2 stdout: <tr>
+2024-08-25 08:42:10,353 INFO: Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,353 INFO: Process process_2 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:42:10,353 INFO: Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:42:10,353 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:42:10,353 INFO: Process process_2 stdout: </tbody>
+2024-08-25 08:42:10,353 INFO: Process process_2 stdout: </table>
+2024-08-25 08:42:10,533 INFO: Process process_1 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:42:10,542 INFO: Process process_1 stdout: <table border="1" class="dataframe">
+2024-08-25 08:42:10,542 INFO: Process process_1 stdout: <thead>
+2024-08-25 08:42:10,542 INFO: Process process_1 stdout: <tr style="text-align: right;">
+2024-08-25 08:42:10,542 INFO: Process process_1 stdout: <th>NE_ID</th>
+2024-08-25 08:42:10,542 INFO: Process process_1 stdout: <th>DESC</th>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <th>MATCH</th>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: </thead>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <tbody>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <tr>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <td>6000090001</td>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <tr>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:42:10,543 INFO: Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:42:10,544 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:42:10,544 INFO: Process process_1 stdout: <tr>
+2024-08-25 08:42:10,544 INFO: Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,544 INFO: Process process_1 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:42:10,544 INFO: Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:42:10,544 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:42:10,544 INFO: Process process_1 stdout: </tbody>
+2024-08-25 08:42:10,544 INFO: Process process_1 stdout: </table>
+2024-08-25 08:42:10,621 INFO: Process process_5 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:42:10,629 INFO: Process process_5 stdout: <table border="1" class="dataframe">
+2024-08-25 08:42:10,629 INFO: Process process_5 stdout: <thead>
+2024-08-25 08:42:10,629 INFO: Process process_5 stdout: <tr style="text-align: right;">
+2024-08-25 08:42:10,629 INFO: Process process_5 stdout: <th>NE_ID</th>
+2024-08-25 08:42:10,629 INFO: Process process_5 stdout: <th>DESC</th>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: <th>MATCH</th>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: </thead>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: <tbody>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: <tr>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: <td>6000090001</td>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: <tr>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,630 INFO: Process process_5 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:42:10,631 INFO: Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:42:10,631 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:42:10,631 INFO: Process process_5 stdout: <tr>
+2024-08-25 08:42:10,631 INFO: Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:42:10,631 INFO: Process process_5 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:42:10,631 INFO: Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:42:10,631 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:42:10,631 INFO: Process process_5 stdout: </tbody>
+2024-08-25 08:42:10,631 INFO: Process process_5 stdout: </table>
+2024-08-25 08:46:14,261 INFO: Starting parallel script execution
+2024-08-25 08:46:14,262 INFO: [['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV'], ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']]
+2024-08-25 08:46:14,270 INFO: Process process_1: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:46:14,271 INFO: [START OF PROCESS process_1]
+2024-08-25 08:46:14,271 INFO: Process process_1: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '40', 'ex', 'DEV']
+2024-08-25 08:46:14,273 INFO: Process process_2: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:46:14,273 INFO: [START OF PROCESS process_2]
+2024-08-25 08:46:14,274 INFO: Process process_2: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,>=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '43', 'ex', 'DEV']
+2024-08-25 08:46:14,278 INFO: Process process_4: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:46:14,278 INFO: [START OF PROCESS process_4]
+2024-08-25 08:46:14,280 INFO: Process process_1: Subprocess started with PID 116216
+2024-08-25 08:46:14,280 INFO: Process process_4: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,>,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '45', 'ex', 'DEV']
+2024-08-25 08:46:14,282 INFO: Process process_3: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:46:14,283 INFO: [START OF PROCESS process_3]
+2024-08-25 08:46:14,285 INFO: Process process_5: Called run scripts with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:46:14,286 INFO: [START OF PROCESS process_5]
+2024-08-25 08:46:14,286 INFO: Process process_4: Subprocess started with PID 116221
+2024-08-25 08:46:14,287 INFO: Process process_5: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,=,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,=,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '46', 'ex', 'DEV']
+2024-08-25 08:46:14,290 INFO: Process process_2: Subprocess started with PID 116218
+2024-08-25 08:46:14,293 INFO: Process process_3: Preparing to execute script ['python3', '-u', '/home/sieluser/myflaskapp/scripts/ifast_executer.py'] with args ['S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num', 'S5NR_DLMACLayerDataVolume_MB+S5NR_ULMACLayerDataVolume_MB,<,0\nS5NR_ULMACcellAggregateTput_Mbps_Num+S5NR_DLTTIUtilization_Pct_Num,<,0\n#proceed,No', '07901640052,06000090001,06000090003,06000090024', '44', 'ex', 'DEV']
+2024-08-25 08:46:14,312 INFO: Process process_5: Subprocess started with PID 116224
+2024-08-25 08:46:14,324 INFO: Process process_3: Subprocess started with PID 116225
+2024-08-25 08:46:15,054 INFO: Process process_3 stdout: 
+2024-08-25 08:46:15,054 INFO: Process process_3 stdout: No matches Found
+2024-08-25 08:46:15,054 INFO: Process process_3 stdout: 
+2024-08-25 08:46:15,054 INFO: Process process_3 stdout: 
+2024-08-25 08:46:15,110 INFO: Process process_4 stdout: 
+2024-08-25 08:46:15,110 INFO: Process process_4 stdout: No matches Found
+2024-08-25 08:46:15,110 INFO: Process process_4 stdout: 
+2024-08-25 08:46:15,110 INFO: Process process_4 stdout: 
+2024-08-25 08:46:15,885 INFO: Process process_1 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:46:15,896 INFO: Process process_2 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:46:15,896 INFO: Process process_1 stdout: <table border="1" class="dataframe">
+2024-08-25 08:46:15,896 INFO: Process process_1 stdout: <thead>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <tr style="text-align: right;">
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <th>NE_ID</th>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <th>DESC</th>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <th>MATCH</th>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: </thead>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <tbody>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <tr>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <td>6000090001</td>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <tr>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:46:15,897 INFO: Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:46:15,898 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:46:15,898 INFO: Process process_1 stdout: <tr>
+2024-08-25 08:46:15,898 INFO: Process process_1 stdout: <td>6000090003</td>
+2024-08-25 08:46:15,898 INFO: Process process_1 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:46:15,898 INFO: Process process_1 stdout: <td>No Match</td>
+2024-08-25 08:46:15,898 INFO: Process process_1 stdout: </tr>
+2024-08-25 08:46:15,898 INFO: Process process_1 stdout: </tbody>
+2024-08-25 08:46:15,898 INFO: Process process_1 stdout: </table>
+2024-08-25 08:46:15,909 INFO: Process process_2 stdout: <table border="1" class="dataframe">
+2024-08-25 08:46:15,909 INFO: Process process_2 stdout: <thead>
+2024-08-25 08:46:15,909 INFO: Process process_2 stdout: <tr style="text-align: right;">
+2024-08-25 08:46:15,909 INFO: Process process_2 stdout: <th>NE_ID</th>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: <th>DESC</th>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: <th>MATCH</th>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: </thead>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: <tbody>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: <tr>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: <td>6000090001</td>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: <tr>
+2024-08-25 08:46:15,910 INFO: Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: <tr>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: <td>6000090003</td>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: <td>No Match</td>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: </tr>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: </tbody>
+2024-08-25 08:46:15,911 INFO: Process process_2 stdout: </table>
+2024-08-25 08:46:16,175 INFO: Process process_5 stdout: /home/sieluser/iFAST_GREP_Executer/grep_exec.py /home/sieluser/iFAST_CLI_Executer/Logs/21_2_082324_133306_execution.log 'Alarm' '21_2'
+2024-08-25 08:46:16,183 INFO: Process process_5 stdout: <table border="1" class="dataframe">
+2024-08-25 08:46:16,183 INFO: Process process_5 stdout: <thead>
+2024-08-25 08:46:16,183 INFO: Process process_5 stdout: <tr style="text-align: right;">
+2024-08-25 08:46:16,183 INFO: Process process_5 stdout: <th>NE_ID</th>
+2024-08-25 08:46:16,183 INFO: Process process_5 stdout: <th>DESC</th>
+2024-08-25 08:46:16,183 INFO: Process process_5 stdout: <th>MATCH</th>
+2024-08-25 08:46:16,183 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:46:16,183 INFO: Process process_5 stdout: </thead>
+2024-08-25 08:46:16,183 INFO: Process process_5 stdout: <tbody>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: <tr>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: <td>6000090001</td>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: <td>No current Alarm on :  06000090001_5GDU_PVD_ELMW_072_RI-WNDS</td>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: <tr>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: <td>No current Alarm on :  07901640052_5GDU_79108_RT9_AND_184TH-YNKR</td>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:46:16,184 INFO: Process process_5 stdout: <tr>
+2024-08-25 08:46:16,185 INFO: Process process_5 stdout: <td>6000090003</td>
+2024-08-25 08:46:16,185 INFO: Process process_5 stdout: <td>No current Alarm on :  06000090003_5GDU_PROVIDENCE_9_RI-WNDS</td>
+2024-08-25 08:46:16,185 INFO: Process process_5 stdout: <td>No Match</td>
+2024-08-25 08:46:16,185 INFO: Process process_5 stdout: </tr>
+2024-08-25 08:46:16,185 INFO: Process process_5 stdout: </tbody>
+2024-08-25 08:46:16,185 INFO: Process process_5 stdout: </table>
+2024-08-25 09:23:10,644 INFO: Logging out user
+2024-08-25 09:23:10,645 INFO: Redirecting to: http://105.57.243.148:12258/
+2024-08-25 09:23:16,753 INFO: Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-25 09:23:16,753 INFO: Account details found redirecting
+2024-08-25 09:23:16,753 INFO: Redirecting to http://105.57.243.148:12258/newpage
+2024-08-25 09:23:16,754 INFO: Response status code: 302
+2024-08-25 09:23:17,256 INFO: Request to /newpage
+2024-08-25 09:24:57,000 INFO: Starting parallel script execution
+2024-08-25 09:24:57,023 INFO: Parallel script execution completed.
+2024-08-25 09:25:41,849 INFO: Request to /newpage
+2024-08-25 11:48:52,320 INFO: Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-25 11:48:52,321 INFO: Account details found redirecting
+2024-08-25 11:48:52,321 INFO: Redirecting to http://105.57.243.148:12258/newpage
+2024-08-25 11:48:52,321 INFO: Response status code: 302
+2024-08-25 11:48:52,768 INFO: Request to /newpage
+2024-08-26 22:43:47,710 INFO: Request to /newpage
+2024-08-27 10:28:01,692 INFO: Request to /newpage
+2024-08-27 17:03:22,536 INFO: Request to /newpage
+2024-08-27 17:03:38,184 INFO: Request to /newpage
+2024-08-27 19:17:22,354 INFO: Request to /newpage
+2024-08-28 10:51:58,264 INFO: Request to /newpage
+2024-08-28 12:38:53,407 INFO: Account details: {'user_id': 20, 'knox_id': 'p.venkata', 'password': '3b91359f05ac985993c514ec28e96b7d', 'fullname': 'Praseeda V', 'email': 'p.venkata@partner.samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-28 12:38:53,407 INFO: Account details found redirecting
+2024-08-28 12:38:53,407 INFO: Redirecting to http://ntpcweb/newpage
+2024-08-28 12:38:53,407 INFO: Response status code: 302
+2024-08-28 12:39:08,345 INFO: Account details: {'user_id': 20, 'knox_id': 'p.venkata', 'password': '3b91359f05ac985993c514ec28e96b7d', 'fullname': 'Praseeda V', 'email': 'p.venkata@partner.samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-08-28 12:39:08,345 INFO: Account details found redirecting
+2024-08-28 12:39:08,345 INFO: Redirecting to http://105.57.243.148:12258/newpage
+2024-08-28 12:39:08,345 INFO: Response status code: 302
+2024-08-28 12:39:08,357 INFO: Request to /newpage
+2024-08-28 12:39:45,793 INFO: Request to /newpage
+2024-08-28 12:45:44,137 INFO: Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-28 12:45:44,137 INFO: Account details found redirecting
+2024-08-28 12:45:44,137 INFO: Redirecting to http://105.57.243.148:12258/newpage
+2024-08-28 12:45:44,137 INFO: Response status code: 302
+2024-08-28 12:45:44,586 INFO: Request to /newpage
+2024-08-29 09:46:14,489 INFO: Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-08-29 09:46:14,490 INFO: Account details found redirecting
+2024-08-29 09:46:14,490 INFO: Redirecting to http://105.57.243.148:12258/newpage
+2024-08-29 09:46:14,490 INFO: Response status code: 302
+2024-08-29 09:46:14,947 INFO: Request to /newpage
+2024-08-29 10:14:11,071 INFO: Request to /newpage
+2024-08-29 10:15:08,086 INFO: Request to /newpage
+2024-08-29 10:15:17,283 INFO: Request to /newpage
+2024-08-29 10:56:01,294 INFO: Request to /newpage
+2024-09-03 12:22:45,460 INFO: Account details: {'user_id': 1, 'knox_id': 'shruti.sagar', 'password': '41ed44e3038dbeee7d2ffaa7f51d8a4b', 'fullname': 'Shrutisagar M K', 'email': 'shruti.sagar@samsung.com', 'role': 'admin', 'team': 'GSC', 'status': 'active', 'mode': 'view'}
+2024-09-03 12:22:45,460 INFO: Account details found redirecting
+2024-09-03 12:22:45,460 INFO: Redirecting to http://105.57.243.148:12258/newpage
+2024-09-03 12:22:45,461 INFO: Response status code: 302
+2024-09-03 12:22:45,910 INFO: Request to /newpage
+2024-09-03 12:27:04,607 INFO: Starting parallel script execution
+2024-09-03 12:27:04,637 INFO: Parallel script execution completed.
+2024-09-03 12:29:53,907 INFO: Starting parallel script execution
+2024-09-03 12:29:53,935 INFO: Parallel script execution completed.
+2024-09-03 12:30:09,179 INFO: Starting parallel script execution
+2024-09-03 12:30:09,203 INFO: Parallel script execution completed.
+2024-09-03 17:33:03,550 INFO: Request to /newpage
+2024-09-03 21:58:35,999 INFO: Request to /newpage
+2024-09-03 21:59:59,803 INFO: Request to /newpage
+2024-09-03 22:00:04,787 INFO: Request to /newpage
+2024-09-03 22:00:09,706 INFO: Request to /newpage
+2024-09-03 22:00:14,671 INFO: Request to /newpage
+2024-09-03 22:01:13,399 INFO: Request to /newpage
+2024-09-03 22:11:03,491 INFO: Request to /newpage
+2024-09-03 22:13:27,212 INFO: Request to /newpage
+2024-09-03 22:19:31,596 INFO: Request to /newpage
+2024-09-03 22:19:35,948 INFO: Request to /newpage
+2024-09-03 22:20:08,635 INFO: Request to /newpage
+2024-09-03 22:20:39,389 INFO: Request to /newpage
+2024-09-03 22:21:29,969 INFO: Request to /newpage
+2024-09-03 22:21:38,174 INFO: Request to /newpage
+2024-09-04 22:13:19,114 INFO: Request to /newpage
+2024-09-05 10:25:07,757 INFO: Account details: {'user_id': 21, 'knox_id': 'n.nandu', 'password': '3b91359f05ac985993c514ec28e96b7d', 'fullname': 'Neepa Nandu', 'email': 'n.nandu@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-09-05 10:25:07,758 INFO: Account details found redirecting
+2024-09-05 10:25:07,759 INFO: Redirecting to http://105.57.243.148:12258/newpage
+2024-09-05 10:25:07,759 INFO: Response status code: 302
+2024-09-05 10:25:07,780 INFO: Request to /newpage
+2024-09-05 13:31:14,531 INFO: Account details: {'user_id': 21, 'knox_id': 'n.nandu', 'password': '3b91359f05ac985993c514ec28e96b7d', 'fullname': 'Neepa Nandu', 'email': 'n.nandu@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-09-05 13:31:14,531 INFO: Account details found redirecting
+2024-09-05 13:31:14,531 INFO: Redirecting to http://105.57.243.148:12258/newpage
+2024-09-05 13:31:14,532 INFO: Response status code: 302
+2024-09-05 13:31:14,547 INFO: Request to /newpage
+2024-10-16 01:03:09,043 INFO:  * Restarting with stat
+2024-10-16 01:03:11,173 WARNING:  * Debugger is active!
+2024-10-16 01:03:11,176 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 01:05:06,195 INFO:  * Restarting with stat
+2024-10-16 01:05:08,188 WARNING:  * Debugger is active!
+2024-10-16 01:05:08,192 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 01:09:07,987 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-16 01:09:07,987 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 01:09:56,342 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2024-10-16 01:09:56,342 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 01:11:26,101 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2024-10-16 01:11:26,101 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 01:14:58,240 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2024-10-16 01:14:58,240 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 01:15:04,562 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-16 01:15:04,562 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 01:19:57,211 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-16 01:19:57,212 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 01:20:07,269 INFO:  * Restarting with stat
+2024-10-16 01:20:08,936 WARNING:  * Debugger is active!
+2024-10-16 01:20:08,939 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 01:20:49,002 INFO:  * Restarting with stat
+2024-10-16 01:20:51,265 WARNING:  * Debugger is active!
+2024-10-16 01:20:51,269 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 11:25:22,829 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-16 11:25:22,830 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 11:26:16,002 INFO: 127.0.0.1 - - [16/Oct/2024 11:26:16] "GET / HTTP/1.1" 200 -
+2024-10-16 11:26:16,079 INFO: 127.0.0.1 - - [16/Oct/2024 11:26:16] "GET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1" 200 -
+2024-10-16 11:26:16,090 INFO: 127.0.0.1 - - [16/Oct/2024 11:26:16] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 11:26:16,102 INFO: 127.0.0.1 - - [16/Oct/2024 11:26:16] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 11:26:16,113 INFO: 127.0.0.1 - - [16/Oct/2024 11:26:16] "GET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1" 200 -
+2024-10-16 11:26:16,122 INFO: 127.0.0.1 - - [16/Oct/2024 11:26:16] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 11:26:25,750 INFO: 127.0.0.1 - - [16/Oct/2024 11:26:25] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 11:26:26,379 INFO: 127.0.0.1 - - [16/Oct/2024 11:26:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-16 11:55:50,103 INFO: 127.0.0.1 - - [16/Oct/2024 11:55:50] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 11:55:50,115 INFO: 127.0.0.1 - - [16/Oct/2024 11:55:50] "GET /login HTTP/1.1" 200 -
+2024-10-16 11:55:50,158 INFO: 127.0.0.1 - - [16/Oct/2024 11:55:50] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 11:55:50,161 INFO: 127.0.0.1 - - [16/Oct/2024 11:55:50] "GET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1" 200 -
+2024-10-16 11:55:50,162 INFO: 127.0.0.1 - - [16/Oct/2024 11:55:50] "GET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1" 200 -
+2024-10-16 11:55:50,163 INFO: 127.0.0.1 - - [16/Oct/2024 11:55:50] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 11:55:50,167 INFO: 127.0.0.1 - - [16/Oct/2024 11:55:50] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 11:55:50,195 INFO: 127.0.0.1 - - [16/Oct/2024 11:55:50] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 11:55:50,306 INFO: 127.0.0.1 - - [16/Oct/2024 11:55:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-16 11:59:56,619 INFO: 127.0.0.1 - - [16/Oct/2024 11:59:56] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 11:59:56,627 INFO: 127.0.0.1 - - [16/Oct/2024 11:59:56] "GET /login HTTP/1.1" 200 -
+2024-10-16 11:59:56,664 INFO: 127.0.0.1 - - [16/Oct/2024 11:59:56] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 11:59:56,666 INFO: 127.0.0.1 - - [16/Oct/2024 11:59:56] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 11:59:56,667 INFO: 127.0.0.1 - - [16/Oct/2024 11:59:56] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 11:59:56,669 INFO: 127.0.0.1 - - [16/Oct/2024 11:59:56] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 11:59:56,672 INFO: 127.0.0.1 - - [16/Oct/2024 11:59:56] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 11:59:56,700 INFO: 127.0.0.1 - - [16/Oct/2024 11:59:56] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 11:59:56,723 INFO: 127.0.0.1 - - [16/Oct/2024 11:59:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-16 12:03:58,029 INFO: 127.0.0.1 - - [16/Oct/2024 12:03:58] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:03:58,039 INFO: 127.0.0.1 - - [16/Oct/2024 12:03:58] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:03:58,066 INFO: 127.0.0.1 - - [16/Oct/2024 12:03:58] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:03:58,066 INFO: 127.0.0.1 - - [16/Oct/2024 12:03:58] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:03:58,072 INFO: 127.0.0.1 - - [16/Oct/2024 12:03:58] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:03:58,075 INFO: 127.0.0.1 - - [16/Oct/2024 12:03:58] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 12:03:58,076 INFO: 127.0.0.1 - - [16/Oct/2024 12:03:58] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:03:58,101 INFO: 127.0.0.1 - - [16/Oct/2024 12:03:58] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 12:03:58,123 INFO: 127.0.0.1 - - [16/Oct/2024 12:03:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-16 12:04:26,137 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:26] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:04:26,180 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:26] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:26,183 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:26] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:26,186 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:26] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:26,213 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:26] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:26,215 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:26] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:26,239 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:26] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 12:04:35,439 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:35] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:04:35,444 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:35] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:04:35,486 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:35] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:35,488 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:35] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:35,489 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:35] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:35,493 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:35] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:35,497 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:35] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 12:04:35,516 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:35] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:04:43,913 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-16 12:04:43,913 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:04:47,736 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:47] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:04:47,758 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:47] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:47,762 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:47] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:47,764 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:47] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:47,766 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:47] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:47,769 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:47] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:47,793 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:47] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:04:49,040 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:49] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:04:49,046 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:49] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:04:49,069 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:49] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:04:49,070 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:49] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:49,075 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:49] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:49,077 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:49] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 12:04:49,078 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:49] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:49,104 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:49] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:04:50,136 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:50] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:04:50,156 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:50] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:50,161 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:50] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:50,161 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:50] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:50,166 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:50] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:50,167 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:50] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:50,191 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:50] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:04:56,551 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:56] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:04:56,555 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:56] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:04:56,588 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:56] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:56,593 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:56] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:56,596 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:56] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:56,597 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:56] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:04:56,599 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:56] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 12:04:56,619 INFO: 127.0.0.1 - - [16/Oct/2024 12:04:56] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:06:15,213 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-16 12:06:15,213 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:06:27,776 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-16 12:06:27,776 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:07:24,806 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-16 12:07:24,806 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:08:19,931 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-16 12:08:19,931 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:09:14,561 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:14] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:09:14,589 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:14] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:14,591 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:14] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:14,594 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:14] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:14,602 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:14] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:14,603 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:14] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:14,606 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:14] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 12:09:14,636 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-16 12:09:31,702 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:31] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:09:31,707 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:31] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:09:31,792 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:31] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:09:31,796 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:31] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 12:09:31,805 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:31] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:31,808 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:31] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:31,813 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:31] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:31,920 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:31] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:09:42,254 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:42] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:09:42,262 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:42] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:09:42,325 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:42] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:42,326 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:42] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:42,329 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:42] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:42,336 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:42] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:42,337 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:42] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:42,379 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:42] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:09:45,788 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:45] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:09:45,802 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:45] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:09:45,840 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:45] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:45,841 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:45] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:45,848 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:45] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:45,849 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:45] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:45,850 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:45] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 12:09:45,915 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:45] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:09:46,680 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:46] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:09:46,691 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:46] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:09:46,731 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:46] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:46,737 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:46] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:46,739 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:46] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:46,742 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:46] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:46,746 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:46] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:46,804 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:46] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:09:47,561 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:47] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:09:47,573 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:47] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:09:47,614 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:47] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:09:47,620 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:47] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:47,623 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:47] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:47,625 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:47] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 12:09:47,626 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:47] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:47,671 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:47] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:09:49,428 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:49] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:09:49,440 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:49] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:09:49,477 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:49] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:49,479 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:49] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:49,483 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:49] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:49,485 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:49] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:49,488 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:49] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:49,537 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:49] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:09:50,257 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:50] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:09:50,269 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:50] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:09:50,303 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:50] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:50,304 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:50] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:50,308 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:50] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:50,312 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:50] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:50,314 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:50] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 12:09:50,355 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:50] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:09:51,096 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:51] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:09:51,106 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:51] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:09:51,140 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:51] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:51,142 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:51] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:51,148 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:51] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:51,149 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:51] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:51,151 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:51] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:09:51,190 INFO: 127.0.0.1 - - [16/Oct/2024 12:09:51] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:11:02,024 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 12:11:02,024 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:11:02,024 INFO:  * Restarting with stat
+2024-10-16 12:11:03,259 WARNING:  * Debugger is active!
+2024-10-16 12:11:03,261 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:11:47,769 INFO: 127.0.0.1 - - [16/Oct/2024 12:11:47] "GET / HTTP/1.1" 200 -
+2024-10-16 12:11:47,846 INFO: 127.0.0.1 - - [16/Oct/2024 12:11:47] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:11:47,848 INFO: 127.0.0.1 - - [16/Oct/2024 12:11:47] "GET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1" 200 -
+2024-10-16 12:11:47,852 INFO: 127.0.0.1 - - [16/Oct/2024 12:11:47] "GET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1" 200 -
+2024-10-16 12:11:47,854 INFO: 127.0.0.1 - - [16/Oct/2024 12:11:47] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 12:11:47,854 INFO: 127.0.0.1 - - [16/Oct/2024 12:11:47] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 12:11:57,282 INFO: 127.0.0.1 - - [16/Oct/2024 12:11:57] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 12:11:57,865 INFO: 127.0.0.1 - - [16/Oct/2024 12:11:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-16 12:12:41,678 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 12:12:41,845 INFO:  * Restarting with stat
+2024-10-16 12:12:43,220 WARNING:  * Debugger is active!
+2024-10-16 12:12:43,225 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:13:19,281 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:19] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:13:19,300 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:19] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:13:19,382 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:19] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:19,386 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:19] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:19,390 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:19] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:19,392 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:19] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:19,393 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:19] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:19,435 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:19] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:13:53,189 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:53] "GET / HTTP/1.1" 200 -
+2024-10-16 12:13:53,237 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:53] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:53,238 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:53] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:53,242 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:53] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:53,246 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:53] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:53,247 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:53] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:13:53,294 INFO: 127.0.0.1 - - [16/Oct/2024 12:13:53] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:14:22,087 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 12:14:22,257 INFO:  * Restarting with stat
+2024-10-16 12:14:23,587 WARNING:  * Debugger is active!
+2024-10-16 12:14:23,590 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:15:44,771 INFO: 127.0.0.1 - - [16/Oct/2024 12:15:44] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:15:44,784 INFO: 127.0.0.1 - - [16/Oct/2024 12:15:44] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:15:44,831 INFO: 127.0.0.1 - - [16/Oct/2024 12:15:44] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:15:44,831 INFO: 127.0.0.1 - - [16/Oct/2024 12:15:44] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:15:44,834 INFO: 127.0.0.1 - - [16/Oct/2024 12:15:44] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:15:44,837 INFO: 127.0.0.1 - - [16/Oct/2024 12:15:44] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:15:44,839 INFO: 127.0.0.1 - - [16/Oct/2024 12:15:44] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:15:44,863 INFO: 127.0.0.1 - - [16/Oct/2024 12:15:44] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:16:02,052 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:02] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:16:02,076 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:02] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:16:02,079 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:02] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:02,081 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:02] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:02,085 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:02] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 12:16:02,086 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:02] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 12:16:02,112 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:02] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:16:08,769 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:08] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:16:08,793 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:08] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:08,796 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:08] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:08,799 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:08] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:08,803 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:08] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:08,805 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:08] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:08,826 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:08] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 12:16:27,650 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 12:16:27,811 INFO:  * Restarting with stat
+2024-10-16 12:16:29,288 WARNING:  * Debugger is active!
+2024-10-16 12:16:29,290 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:16:40,670 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:40] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:16:40,680 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:40] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:16:40,715 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:40] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:40,716 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:40] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:40,721 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:40] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:40,723 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:40] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:40,724 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:40] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:16:40,750 INFO: 127.0.0.1 - - [16/Oct/2024 12:16:40] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:16:49,104 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 12:16:49,321 INFO:  * Restarting with stat
+2024-10-16 12:16:50,884 WARNING:  * Debugger is active!
+2024-10-16 12:16:50,887 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:18:27,166 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 12:18:27,335 INFO:  * Restarting with stat
+2024-10-16 12:18:28,598 INFO:  * Restarting with stat
+2024-10-16 12:18:34,192 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 12:18:34,192 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:18:34,192 INFO:  * Restarting with stat
+2024-10-16 12:18:35,430 WARNING:  * Debugger is active!
+2024-10-16 12:18:35,432 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:18:39,101 INFO: 127.0.0.1 - - [16/Oct/2024 12:18:39] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:18:39,123 INFO: 127.0.0.1 - - [16/Oct/2024 12:18:39] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:18:39,130 INFO: 127.0.0.1 - - [16/Oct/2024 12:18:39] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 12:18:39,131 INFO: 127.0.0.1 - - [16/Oct/2024 12:18:39] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:18:39,131 INFO: 127.0.0.1 - - [16/Oct/2024 12:18:39] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:18:39,133 INFO: 127.0.0.1 - - [16/Oct/2024 12:18:39] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:18:39,155 INFO: 127.0.0.1 - - [16/Oct/2024 12:18:39] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 12:18:39,481 INFO: 127.0.0.1 - - [16/Oct/2024 12:18:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-16 12:20:45,969 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 12:20:46,278 INFO:  * Restarting with stat
+2024-10-16 12:20:50,480 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 12:20:50,480 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:20:50,480 INFO:  * Restarting with stat
+2024-10-16 12:20:51,753 WARNING:  * Debugger is active!
+2024-10-16 12:20:51,756 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:21:00,492 INFO: 127.0.0.1 - - [16/Oct/2024 12:21:00] "GET / HTTP/1.1" 200 -
+2024-10-16 12:21:00,518 INFO: 127.0.0.1 - - [16/Oct/2024 12:21:00] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:21:00,524 INFO: 127.0.0.1 - - [16/Oct/2024 12:21:00] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:21:00,527 INFO: 127.0.0.1 - - [16/Oct/2024 12:21:00] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:21:00,530 INFO: 127.0.0.1 - - [16/Oct/2024 12:21:00] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 12:21:00,534 INFO: 127.0.0.1 - - [16/Oct/2024 12:21:00] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:21:00,556 INFO: 127.0.0.1 - - [16/Oct/2024 12:21:00] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:22:41,913 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 12:22:42,164 INFO:  * Restarting with stat
+2024-10-16 12:22:45,796 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 12:22:45,796 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:22:45,796 INFO:  * Restarting with stat
+2024-10-16 12:22:47,253 WARNING:  * Debugger is active!
+2024-10-16 12:22:47,256 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:23:15,085 INFO: 127.0.0.1 - - [16/Oct/2024 12:23:15] "GET / HTTP/1.1" 200 -
+2024-10-16 12:23:15,120 INFO: 127.0.0.1 - - [16/Oct/2024 12:23:15] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:23:15,120 INFO: 127.0.0.1 - - [16/Oct/2024 12:23:15] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:23:15,125 INFO: 127.0.0.1 - - [16/Oct/2024 12:23:15] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:23:15,127 INFO: 127.0.0.1 - - [16/Oct/2024 12:23:15] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:23:15,131 INFO: 127.0.0.1 - - [16/Oct/2024 12:23:15] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:23:15,157 INFO: 127.0.0.1 - - [16/Oct/2024 12:23:15] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 12:24:46,808 WARNING:  * Debugger is active!
+2024-10-16 12:24:46,809 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 12:24:46,837 INFO: 127.0.0.1 - - [16/Oct/2024 12:24:46] "[35m[1mPOST /login_succ HTTP/1.1[0m" 500 -
+2024-10-16 12:24:47,299 INFO:  * Restarting with stat
+2024-10-16 12:24:48,635 WARNING:  * Debugger is active!
+2024-10-16 12:24:48,637 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:25:04,134 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 12:25:04,135 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:25:04,135 INFO:  * Restarting with stat
+2024-10-16 12:25:05,554 WARNING:  * Debugger is active!
+2024-10-16 12:25:05,556 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:25:05,625 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:05] "GET / HTTP/1.1" 200 -
+2024-10-16 12:25:05,648 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:05] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:25:05,649 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:05] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:25:05,651 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:05] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:25:05,656 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:05] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:25:05,972 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:05] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:25:05,982 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:05] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 12:25:28,380 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:28] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:25:28,388 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:28] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:25:28,418 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:28] "[36mGET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:25:28,419 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:28] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:25:28,423 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:28] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:25:28,427 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:28] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:25:28,428 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:28] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 12:25:28,504 INFO: 127.0.0.1 - - [16/Oct/2024 12:25:28] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 12:25:37,315 WARNING:  * Debugger is active!
+2024-10-16 12:25:37,316 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 12:25:38,317 INFO:  * Restarting with stat
+2024-10-16 12:25:39,595 WARNING:  * Debugger is active!
+2024-10-16 12:25:39,598 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:29:52,095 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 12:29:52,096 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 12:29:52,096 INFO:  * Restarting with stat
+2024-10-16 12:29:53,450 WARNING:  * Debugger is active!
+2024-10-16 12:29:53,453 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 12:29:55,855 INFO: 127.0.0.1 - - [16/Oct/2024 12:29:55] "GET /login HTTP/1.1" 200 -
+2024-10-16 12:29:55,888 INFO: 127.0.0.1 - - [16/Oct/2024 12:29:55] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 12:29:55,891 INFO: 127.0.0.1 - - [16/Oct/2024 12:29:55] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 12:29:55,897 INFO: 127.0.0.1 - - [16/Oct/2024 12:29:55] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:29:55,910 INFO: 127.0.0.1 - - [16/Oct/2024 12:29:55] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 12:29:55,926 INFO: 127.0.0.1 - - [16/Oct/2024 12:29:55] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 12:29:55,942 INFO: 127.0.0.1 - - [16/Oct/2024 12:29:55] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 12:30:03,782 INFO: Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-16 12:30:03,782 INFO: Account details found redirecting
+2024-10-16 12:30:03,782 INFO: Redirecting to http://localhost:5004/newpage
+2024-10-16 12:30:03,783 INFO: Response status code: 302
+2024-10-16 12:30:03,783 INFO: 127.0.0.1 - - [16/Oct/2024 12:30:03] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 12:30:03,787 INFO: Request to /newpage
+2024-10-16 12:30:03,841 INFO: 127.0.0.1 - - [16/Oct/2024 12:30:03] "GET /newpage HTTP/1.1" 200 -
+2024-10-16 12:30:18,501 INFO: 127.0.0.1 - - [16/Oct/2024 12:30:18] "GET /kb_hit HTTP/1.1" 200 -
+2024-10-16 12:30:18,533 INFO: 127.0.0.1 - - [16/Oct/2024 12:30:18] "GET /static/assets/js/script.js HTTP/1.1" 200 -
+2024-10-16 12:30:18,534 INFO: 127.0.0.1 - - [16/Oct/2024 12:30:18] "GET /static/assets/js/insert/create_kb.js HTTP/1.1" 200 -
+2024-10-16 12:30:35,225 INFO: Request to /newpage
+2024-10-16 12:30:35,236 INFO: 127.0.0.1 - - [16/Oct/2024 12:30:35] "GET /newpage HTTP/1.1" 200 -
+2024-10-16 21:17:00,725 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 21:17:00,725 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 21:17:00,725 INFO:  * Restarting with stat
+2024-10-16 21:17:02,617 WARNING:  * Debugger is active!
+2024-10-16 21:17:02,666 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 21:17:15,712 INFO: 127.0.0.1 - - [16/Oct/2024 21:17:15] "GET / HTTP/1.1" 200 -
+2024-10-16 21:17:15,803 INFO: 127.0.0.1 - - [16/Oct/2024 21:17:15] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 21:17:15,810 INFO: 127.0.0.1 - - [16/Oct/2024 21:17:15] "GET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-10-16 21:17:15,828 INFO: 127.0.0.1 - - [16/Oct/2024 21:17:15] "GET /static/assets/vendor/select2/select2.min.js HTTP/1.1" 200 -
+2024-10-16 21:17:15,853 INFO: 127.0.0.1 - - [16/Oct/2024 21:17:15] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 21:17:15,862 INFO: 127.0.0.1 - - [16/Oct/2024 21:17:15] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 21:17:16,614 INFO: 127.0.0.1 - - [16/Oct/2024 21:17:16] "GET /static/assets/img/logo-removebg-preview.png HTTP/1.1" 200 -
+2024-10-16 21:17:16,707 INFO: 127.0.0.1 - - [16/Oct/2024 21:17:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-16 21:18:09,008 INFO: Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-16 21:18:09,009 INFO: Account details found redirecting
+2024-10-16 21:18:09,009 INFO: Redirecting to http://localhost:5004/newpage
+2024-10-16 21:18:09,009 INFO: Response status code: 302
+2024-10-16 21:18:09,011 INFO: 127.0.0.1 - - [16/Oct/2024 21:18:09] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 21:18:09,017 INFO: Request to /newpage
+2024-10-16 21:18:09,590 INFO: 127.0.0.1 - - [16/Oct/2024 21:18:09] "GET /newpage HTTP/1.1" 200 -
+2024-10-16 21:18:21,349 INFO: 127.0.0.1 - - [16/Oct/2024 21:18:21] "GET /kb_hit HTTP/1.1" 200 -
+2024-10-16 21:18:21,530 INFO: 127.0.0.1 - - [16/Oct/2024 21:18:21] "GET /static/assets/js/script.js HTTP/1.1" 200 -
+2024-10-16 21:18:21,546 INFO: 127.0.0.1 - - [16/Oct/2024 21:18:21] "GET /static/assets/js/insert/create_kb.js HTTP/1.1" 200 -
+2024-10-16 21:23:01,488 INFO: INFODODO
+2024-10-16 21:23:01,491 INFO: TETSTSTST
+2024-10-16 21:23:01,501 INFO: Executing query inside else
+2024-10-16 21:23:01,503 INFO: (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 21:23:01,505 INFO: 127.0.0.1 - - [16/Oct/2024 21:23:01] "POST /insert_kb HTTP/1.1" 200 -
+2024-10-16 21:23:13,893 INFO: INFODODO
+2024-10-16 21:23:13,895 INFO: TETSTSTST
+2024-10-16 21:23:13,905 INFO: Executing query inside else
+2024-10-16 21:23:13,908 INFO: (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 21:23:13,909 INFO: 127.0.0.1 - - [16/Oct/2024 21:23:13] "POST /insert_kb HTTP/1.1" 200 -
+2024-10-16 21:23:25,367 INFO: 127.0.0.1 - - [16/Oct/2024 21:23:25] "GET /kb_hit HTTP/1.1" 200 -
+2024-10-16 21:23:25,492 INFO: 127.0.0.1 - - [16/Oct/2024 21:23:25] "GET /static/assets/js/script.js HTTP/1.1" 200 -
+2024-10-16 21:23:25,509 INFO: 127.0.0.1 - - [16/Oct/2024 21:23:25] "[36mGET /static/assets/js/insert/create_kb.js HTTP/1.1[0m" 304 -
+2024-10-16 21:23:27,539 INFO: INFODODO
+2024-10-16 21:23:27,540 INFO: TETSTSTST
+2024-10-16 21:23:27,542 INFO: Executing query inside else
+2024-10-16 21:23:27,543 INFO: (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 21:23:27,544 INFO: 127.0.0.1 - - [16/Oct/2024 21:23:27] "POST /insert_kb HTTP/1.1" 200 -
+2024-10-16 21:23:34,395 INFO: INFODODO
+2024-10-16 21:23:34,398 INFO: TETSTSTST
+2024-10-16 21:23:34,407 INFO: Executing query inside else
+2024-10-16 21:23:34,409 INFO: (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 21:23:34,411 INFO: 127.0.0.1 - - [16/Oct/2024 21:23:34] "POST /insert_kb HTTP/1.1" 200 -
+2024-10-16 21:24:42,803 WARNING:  * Debugger is active!
+2024-10-16 21:24:42,804 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 21:24:43,963 INFO:  * Restarting with stat
+2024-10-16 21:24:46,153 WARNING:  * Debugger is active!
+2024-10-16 21:24:46,157 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:01:42,801 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 22:01:42,801 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 22:01:42,801 INFO:  * Restarting with stat
+2024-10-16 22:01:45,149 WARNING:  * Debugger is active!
+2024-10-16 22:01:45,155 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:01:47,516 INFO: 127.0.0.1 - - [16/Oct/2024 22:01:47] "GET /kb_hit HTTP/1.1" 200 -
+2024-10-16 22:01:47,611 INFO: 127.0.0.1 - - [16/Oct/2024 22:01:47] "GET /static/assets/js/script.js HTTP/1.1" 200 -
+2024-10-16 22:01:47,618 INFO: 127.0.0.1 - - [16/Oct/2024 22:01:47] "[36mGET /static/assets/js/insert/create_kb.js HTTP/1.1[0m" 304 -
+2024-10-16 22:02:04,769 INFO: INFODODO
+2024-10-16 22:02:04,776 INFO: TETSTSTST
+2024-10-16 22:02:04,787 INFO: Executing query inside else
+2024-10-16 22:02:04,790 INFO: (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 22:02:04,792 INFO: 127.0.0.1 - - [16/Oct/2024 22:02:04] "POST /insert_kb HTTP/1.1" 200 -
+2024-10-16 22:02:49,093 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 22:02:49,328 INFO:  * Restarting with stat
+2024-10-16 22:03:40,971 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 22:03:40,971 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 22:03:40,971 INFO:  * Restarting with stat
+2024-10-16 22:03:43,574 WARNING:  * Debugger is active!
+2024-10-16 22:03:43,577 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:03:43,673 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:43] "GET / HTTP/1.1" 200 -
+2024-10-16 22:03:43,754 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:43] "GET /static/assets/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+2024-10-16 22:03:43,768 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:43] "[36mGET /static/assets/vendor/animsition/js/animsition.min.js HTTP/1.1[0m" 304 -
+2024-10-16 22:03:43,771 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:43] "[36mGET /static/assets/vendor/bootstrap/js/popper.js HTTP/1.1[0m" 304 -
+2024-10-16 22:03:43,777 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:43] "[36mGET /static/assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-10-16 22:03:43,778 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:43] "[36mGET /static/assets/vendor/select2/select2.min.js HTTP/1.1[0m" 304 -
+2024-10-16 22:03:43,785 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:43] "[36mGET /static/assets/img/logo-removebg-preview.png HTTP/1.1[0m" 304 -
+2024-10-16 22:03:46,427 INFO: Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-16 22:03:46,427 INFO: Account details found redirecting
+2024-10-16 22:03:46,428 INFO: Redirecting to http://localhost:5004/newpage
+2024-10-16 22:03:46,428 INFO: Response status code: 302
+2024-10-16 22:03:46,431 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:46] "[32mPOST /login_succ HTTP/1.1[0m" 302 -
+2024-10-16 22:03:46,445 INFO: Request to /newpage
+2024-10-16 22:03:46,629 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:46] "GET /newpage HTTP/1.1" 200 -
+2024-10-16 22:03:52,343 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:52] "GET /kb_hit HTTP/1.1" 200 -
+2024-10-16 22:03:52,431 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:52] "GET /static/assets/js/script.js HTTP/1.1" 200 -
+2024-10-16 22:03:52,438 INFO: 127.0.0.1 - - [16/Oct/2024 22:03:52] "[36mGET /static/assets/js/insert/create_kb.js HTTP/1.1[0m" 304 -
+2024-10-16 22:04:14,877 INFO: INFODODO
+2024-10-16 22:05:30,231 INFO: TETSTSTST
+2024-10-16 22:05:42,107 INFO: Executing query inside else
+2024-10-16 22:05:43,690 WARNING:  * Debugger is active!
+2024-10-16 22:05:43,691 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 22:05:43,696 INFO: 
+2024-10-16 22:05:43,698 INFO: 127.0.0.1 - - [16/Oct/2024 22:05:43] "POST /insert_kb HTTP/1.1" 200 -
+2024-10-16 22:05:44,837 INFO:  * Restarting with stat
+2024-10-16 22:05:51,572 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 22:05:51,572 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 22:05:51,572 INFO:  * Restarting with stat
+2024-10-16 22:05:55,572 WARNING:  * Debugger is active!
+2024-10-16 22:05:55,586 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:05:56,912 INFO: 127.0.0.1 - - [16/Oct/2024 22:05:56] "GET /kb_hit HTTP/1.1" 200 -
+2024-10-16 22:05:57,054 INFO: 127.0.0.1 - - [16/Oct/2024 22:05:57] "GET /static/assets/js/script.js HTTP/1.1" 200 -
+2024-10-16 22:05:57,066 INFO: 127.0.0.1 - - [16/Oct/2024 22:05:57] "[36mGET /static/assets/js/insert/create_kb.js HTTP/1.1[0m" 304 -
+2024-10-16 22:06:00,513 INFO: Logging out user
+2024-10-16 22:06:00,514 INFO: Redirecting to: http://105.57.243.148:12258/
+2024-10-16 22:06:00,515 INFO: 127.0.0.1 - - [16/Oct/2024 22:06:00] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-10-16 22:06:16,384 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 22:06:16,654 INFO:  * Restarting with stat
+2024-10-16 22:06:19,876 WARNING:  * Debugger is active!
+2024-10-16 22:06:19,886 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:06:37,795 INFO: 127.0.0.1 - - [16/Oct/2024 22:06:37] "GET /kb_hit HTTP/1.1" 200 -
+2024-10-16 22:06:37,884 INFO: 127.0.0.1 - - [16/Oct/2024 22:06:37] "GET /static/assets/js/script.js HTTP/1.1" 200 -
+2024-10-16 22:06:37,889 INFO: 127.0.0.1 - - [16/Oct/2024 22:06:37] "[36mGET /static/assets/js/insert/create_kb.js HTTP/1.1[0m" 304 -
+2024-10-16 22:06:42,876 INFO: INFODODO
+2024-10-16 22:07:00,152 INFO: TETSTSTST
+2024-10-16 22:11:49,269 INFO: INFODODO
+2024-10-16 22:11:53,343 INFO: INFODODO
+2024-10-16 22:20:28,875 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 22:20:29,162 INFO:  * Restarting with stat
+2024-10-16 22:20:32,167 WARNING:  * Debugger is active!
+2024-10-16 22:20:32,173 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:20:32,309 INFO: INFODODO
+2024-10-16 22:20:32,311 INFO: INFODODO
+2024-10-16 22:20:32,313 INFO: INFODODO
+2024-10-16 22:20:32,314 INFO: TETSTSTST
+2024-10-16 22:20:32,315 INFO: TETSTSTST
+2024-10-16 22:20:32,315 INFO: TETSTSTST
+2024-10-16 22:20:32,321 INFO: Packet sequence number wrong - got 102 expected 8
+2024-10-16 22:20:32,322 INFO: 127.0.0.1 - - [16/Oct/2024 22:20:32] "POST /insert_kb HTTP/1.1" 200 -
+2024-10-16 22:20:32,327 INFO: Executing query inside else
+2024-10-16 22:20:32,327 INFO: Executing query inside else
+2024-10-16 22:20:32,329 INFO: 'NoneType' object has no attribute 'read'
+2024-10-16 22:20:32,330 INFO: 127.0.0.1 - - [16/Oct/2024 22:20:32] "POST /insert_kb HTTP/1.1" 200 -
+2024-10-16 22:20:32,331 INFO: inserted
+2024-10-16 22:20:32,337 INFO: [{'issue_id': 0}]
+2024-10-16 22:20:32,339 INFO: 127.0.0.1 - - [16/Oct/2024 22:20:32] "[35m[1mPOST /insert_kb HTTP/1.1[0m" 500 -
+2024-10-16 22:22:08,912 INFO: Request to /newpage
+2024-10-16 22:22:09,051 INFO: 127.0.0.1 - - [16/Oct/2024 22:22:09] "GET /newpage HTTP/1.1" 200 -
+2024-10-16 22:22:11,720 INFO: 127.0.0.1 - - [16/Oct/2024 22:22:11] "GET /kb_hit HTTP/1.1" 200 -
+2024-10-16 22:22:11,957 INFO: 127.0.0.1 - - [16/Oct/2024 22:22:11] "GET /static/assets/js/script.js HTTP/1.1" 200 -
+2024-10-16 22:22:11,965 INFO: 127.0.0.1 - - [16/Oct/2024 22:22:11] "[36mGET /static/assets/js/insert/create_kb.js HTTP/1.1[0m" 304 -
+2024-10-16 22:22:49,257 WARNING:  * Debugger is active!
+2024-10-16 22:22:49,258 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 22:23:43,425 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 22:23:43,425 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 22:23:43,425 INFO:  * Restarting with stat
+2024-10-16 22:23:45,373 WARNING:  * Debugger is active!
+2024-10-16 22:23:45,376 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:23:47,537 INFO: Request to /newpage
+2024-10-16 22:23:47,597 INFO: 127.0.0.1 - - [16/Oct/2024 22:23:47] "GET /newpage HTTP/1.1" 200 -
+2024-10-16 22:24:49,983 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 22:24:50,149 INFO:  * Restarting with stat
+2024-10-16 22:24:51,892 WARNING:  * Debugger is active!
+2024-10-16 22:24:51,895 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:24:52,003 WARNING:  * Debugger is active!
+2024-10-16 22:24:52,003 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 22:24:54,198 INFO:  * Restarting with stat
+2024-10-16 22:24:59,789 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 22:24:59,789 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 22:24:59,789 INFO:  * Restarting with stat
+2024-10-16 22:25:01,605 WARNING:  * Debugger is active!
+2024-10-16 22:25:01,608 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:25:01,756 INFO: Request to /newpage
+2024-10-16 22:25:31,738 INFO:  * Detected change in 'D:\\test.git.ifast\\iFAST\\myflaskapp\\app.py', reloading
+2024-10-16 22:25:31,908 INFO:  * Restarting with stat
+2024-10-16 22:25:33,826 WARNING:  * Debugger is active!
+2024-10-16 22:25:33,829 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:25:33,900 INFO: Request to /newpage
+2024-10-16 22:28:46,187 WARNING:  * Debugger is active!
+2024-10-16 22:28:46,188 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 22:28:46,240 INFO: 127.0.0.1 - - [16/Oct/2024 22:28:46] "[35m[1mGET /newpage HTTP/1.1[0m" 500 -
+2024-10-16 22:28:47,329 INFO:  * Restarting with stat
+2024-10-16 22:29:11,114 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 22:29:11,115 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 22:29:11,115 INFO:  * Restarting with stat
+2024-10-16 22:29:12,552 WARNING:  * Debugger is active!
+2024-10-16 22:29:12,555 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 22:29:16,209 INFO: Request to /newpage
+2024-10-16 22:40:31,271 WARNING:  * Debugger is active!
+2024-10-16 22:40:31,272 INFO:  * Debugger PIN: 985-890-083
+2024-10-16 22:40:31,302 INFO: 127.0.0.1 - - [16/Oct/2024 22:40:31] "[35m[1mGET /newpage HTTP/1.1[0m" 500 -
+2024-10-16 22:40:31,758 INFO:  * Restarting with stat
+2024-10-16 23:46:44,955 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5004
+2024-10-16 23:46:44,955 INFO: [33mPress CTRL+C to quit[0m
+2024-10-16 23:46:44,955 INFO:  * Restarting with stat
+2024-10-16 23:46:46,270 WARNING:  * Debugger is active!
+2024-10-16 23:46:46,272 INFO:  * Debugger PIN: 139-589-716
+2024-10-16 23:46:50,665 INFO: 127.0.0.1 - - [16/Oct/2024 23:46:50] "GET /kb_hit HTTP/1.1" 200 -
+2024-10-16 23:46:50,739 INFO: 127.0.0.1 - - [16/Oct/2024 23:46:50] "GET /static/assets/js/script.js HTTP/1.1" 200 -
+2024-10-16 23:46:50,749 INFO: 127.0.0.1 - - [16/Oct/2024 23:46:50] "GET /static/assets/js/insert/create_kb.js HTTP/1.1" 200 -
+2024-10-16 23:46:51,227 INFO: 127.0.0.1 - - [16/Oct/2024 23:46:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-10-16 23:47:28,000 INFO: INFODODO
+2024-10-16 23:47:28,002 INFO: TETSTSTST
+2024-10-16 23:47:28,006 INFO: Executing query inside else
+2024-10-16 23:47:28,007 INFO: (1054, "Unknown column 'Detection_Methodology_OMs' in 'field list'")
+2024-10-16 23:47:28,008 INFO: 127.0.0.1 - - [16/Oct/2024 23:47:28] "POST /insert_kb HTTP/1.1" 200 -
+2024-10-16 23:47:34,952 WARNING:  * Debugger is active!
+2024-10-16 23:47:34,952 INFO:  * Debugger PIN: 985-890-083

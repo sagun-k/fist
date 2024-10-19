@@ -1,0 +1,28 @@
+2024-07-30 07:46:50,352 - INFO - Response from server on port 8002: Message received: Executing command on port 8002
+2024-07-30 07:46:50,353 - INFO - Response from server on port 8004: Message received: Executing command on port 8004
+2024-07-30 07:46:50,355 - INFO - Response from server on port 8003: Message received: Executing command on port 8003
+2024-07-30 07:46:50,359 - INFO - Response from server on port 8006: Message received: Executing command on port 8006
+2024-07-30 07:46:50,369 - INFO - Response from server on port 8007: Message received: Executing command on port 8007
+2024-07-30 07:46:50,588 - INFO - SSH output for port 8003: Proceed no. Exiting
+
+2024-07-30 07:46:50,653 - INFO - SSH output for port 8004: Proceed no from PID 8004
+Proceed to step 2 from process number 8004
+
+2024-07-30 07:46:52,869 - INFO - SSH output for port 8007: Completed the process from process 8007
+Proceed to step5!!got from process 8007
+10.100.1.159 worked proceed to step4 from pid 8007
+10.100.1.159 found proceed to step3!! PID 8007
+Proceed to step 2 from process number 8007
+
+2024-07-30 07:46:52,893 - INFO - SSH output for port 8002: Completed the process from process 8002
+Proceed to step5!!got from process 8002
+10.100.1.159 worked proceed to step4 from pid 8002
+10.100.1.159 found proceed to step3!! PID 8002
+Proceed to step 2 from process number 8002
+
+2024-07-30 07:46:52,909 - INFO - SSH output for port 8006: Completed the process from process 8006
+Proceed to step5!!got from process 8006
+10.100.1.159 worked proceed to step4 from pid 8006
+10.100.1.159 found proceed to step3!! PID 8006
+Proceed to step 2 from process number 8006
+

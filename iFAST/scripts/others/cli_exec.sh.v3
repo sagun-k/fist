@@ -1,0 +1,126 @@
+#!/bin/bash
+
+##########################################################
+# Tool : CLI_Executer                                    #
+# Author :Praseeda <p.venkata@partner.sea.samsung.com>   #
+##########################################################
+/bin/rm  -f ~/.ssh/known_hosts > /dev/null 2>&1
+
+InstallDir=`pwd`
+TOOLS="$InstallDir/Conf/tools.conf"
+USER="$1"
+PASS="$2"
+SITE_LIST="$3"
+# CMD_FILE="$4"
+PID="$4"
+CMD_FILE="$InstallDir/Conf/cmd_temp.conf"
+LOGFILE="$InstallDir/Logs/CLIExecuter_${DateTime}_${PID}.log"
+
+#NE_ID="13291523020"
+
+IFS=', ' read -r -a site_array <<< "$SITE_LIST"
+echo "${site_array[@]}"
+#for NE_ID in "${site_array[@]}"
+#do
+#    echo "$NE_ID"
+#done
+
+SANE_SERVER=198.226.62.124
+tmp=$(mktemp /tmp/tmp.XXXXX.deleteme)
+
+SSH_OPTS='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+for S_SERVER in $SANE_SERVER 198.226.62.{123,125,124,123} 198.226.62.{124,123,125,124} # try a second time... (if all failing)
+do
+    ssh $SSH_OPTS  -o ConnectTimeout=3  -o NumberOfPasswordPrompts=0   ConnectionCheck@$S_SERVER > $tmp 2>&1 < /dev/null
+    if ! grep 'Connection refused' $tmp > /dev/null 2>&1 # silent
+    then
+        SANE_SERVER=$S_SERVER
+        break
+    # else echo $S_SERVER FAILED
+    fi
+done
+rm -f $tmp
+unset S_SERVER
+
+echo SANE_LOGIN=$USER
+echo -n
+{
+        /bin/expect  << EOF
+        set match_max 5000
+        set FD [open $TOOLS r]
+        set CMDS [split [read \$FD] "\n"]
+        set CLI_FD  [open $CMD_FILE r]
+        set CLI_CMDS [split [read \$CLI_FD] "\n"]
+        log_file -a $LOGFILE
+        set timeout 300
+        global expect_out
+        proc myExpect {string} {
+                global expect_out
+                expect {
+                        -re "Are you sure you want to continue connecting (yes/no)?" {send "yes\r";exp_continue}
+                        timeout { send_user "\nFAILED : Expect timed out waiting for '\$string' \n"; exit 1}
+                        -re "\$string" { }
+                }
+                unset expect_out(buffer)
+        }
+        spawn ssh $USER@$SANE_SERVER
+        expect {
+                "Are you sure you want to continue connecting (yes/no)?" {send "yes\r";exp_continue}
+                timeout { send_user "\nFAILED : Sane login failure\n"; exit 1}
+                "Password:" {
+                        send "$PASS\r"
+                        expect {
+                                timeout { send_user "\nFAILED : Sane login failure\n"; exit 1}
+                                "Please Enter Selection: >" {}
+                        }
+                }
+        }
+
+        foreach CMD \$CMDS {
+                set string1 [exec echo \$CMD | cut -f1 -d,]
+                set string2 [exec echo \$CMD | cut -f2 -d,]
+                if {\$string2 ne ""} then {
+                        send "\$string1\r"
+                        myExpect "\$string2"
+                }
+        }
+
+        send_user "\nSane login successful\n"
+
+        #exit
+
+        foreach NE_ID {${site_array[@]}} {
+            puts "NE_ID : \$NE_ID" 
+            foreach CLI_CMD \$CLI_CMDS {
+                puts "NE_ID2 : \$NE_ID"
+                set cmd1 [regsub -all -- {NE_ID} [exec echo \$CLI_CMD | cut -f1 -d,] {${site_array[0]}}]
+                set exp2 [exec echo \$CLI_CMD | cut -f2 -d,]
+                    if {\$exp2 ne ""} then {
+                            send "\$cmd1\r"
+                            sleep 1
+                            myExpect "\$exp2"
+                    }
+            }
+        }
+
+EOF
+}
+echo "logfile= $LOGFILE"
+
+if test -f "$LOGFILE"; then
+//g' $LOGFILE 's/
+//g' $LOGFILE  's/
+        if grep --quiet FAILED $LOGFILE; then
+                echo;echo
+                echo "Tool execution failure refer $LOGFILE for more details"
+                echo;echo
+        else
+                echo;echo
+                echo "COMMAND(s) Output can be found @ $LOGFILE"
+                echo;echo
+        fi
+else
+        echo;echo
+        echo "Tool execution failure.. contact support!"
+        echo;echo
+fi

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execute All</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Execute All Tasks</h1>
+    <form id="executeForm">
+        <label for="issue_id">Issue ID:</label>
+        <input type="text" id="issue_id" name="issue_id">
+        <button type="submit">Execute All</button>
+    </form>
+
+    <div id="progressUpdates"></div>
+
+    <script>
+        var socket = io('http://127.0.0.1:8001');
+        socket.on('connect', function() {
+            console.log('Connected to server');
+        });
+
+        socket.on('execution_result', function(data) {
+            console.log('Execution result:', data);
+            // Handle progress updates and display in the HTML
+            var progressUpdatesDiv = document.getElementById('progressUpdates');
+            progressUpdatesDiv.innerHTML = '';  // Clear previous updates
+            data.progress_updates.forEach(function(update) {
+                var updateElement = document.createElement('div');
+                updateElement.innerHTML = `<p>Sequence ${update.sequence_num}: ${update.status}</p>`;
+                progressUpdatesDiv.appendChild(updateElement);
+            });
+        });
+        socket.io.on("reconnect_error", (error) => {
+          socket.disconnect()
+        });
+
+        document.getElementById('executeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var issueId = document.getElementById('issue_id').value;
+            socket.emit('execute_all', { issue_id: issueId });
+        });
+    </script>
+</body>
+</html>

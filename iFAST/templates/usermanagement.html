@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>User Management</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx-populate/1.24.0/xlsx-populate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<style>
+body {
+    color: #566787;
+    background: #f5f5f5;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 13px;
+}
+.table-responsive {
+    margin: 30px 0;
+}
+.table-wrapper {
+    min-width: 1000px;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+    padding-bottom: 15px;
+    background: #299be4;
+    color: #fff;
+    padding: 16px 30px;
+    margin: -20px -25px 10px;
+    border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+}
+.table-title .btn {
+    color: #566787;
+    float: right;
+    font-size: 13px;
+    background: #fff;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+}
+.table-title .btn:hover, .table-title .btn:focus {
+    color: #566787;
+    background: #f2f2f2;
+}
+.table-title .btn i {
+    float: left;
+    font-size: 21px;
+    margin-right: 5px;
+}
+.table-title .btn span {
+    float: left;
+    margin-top: 2px;
+}
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+table.table tr th:first-child {
+    width: 60px;
+}
+table.table tr th:last-child {
+    width: 100px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table td:last-child i {
+    opacity: 0.9;
+    font-size: 22px;
+    margin: 0 5px;
+}
+table.table td a {
+    font-weight: bold;
+    color: #566787;
+    display: inline-block;
+    text-decoration: none;
+}
+table.table td a:hover {
+    color: #2196F3;
+}
+table.table td a.settings {
+    color: #2196F3;
+}
+table.table td a.delete {
+    color: #F44336;
+}
+table.table td i {
+    font-size: 19px;
+}
+table.table .avatar {
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.status {
+    font-size: 30px;
+    margin: 2px 2px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 10px;
+}
+.text-success {
+    color: #10c469;
+}
+.text-info {
+    color: #62c9e8;
+}
+.text-warning {
+    color: #FFC107;
+}
+.text-danger {
+    color: #ff5b5b;
+}
+.pagination {
+    float: right;
+    margin: 0 0 5px;
+}
+.pagination li a {
+    border: none;
+    font-size: 13px;
+    min-width: 30px;
+    min-height: 30px;
+    color: #999;
+    margin: 0 2px;
+    line-height: 30px;
+    border-radius: 2px !important;
+    text-align: center;
+    padding: 0 6px;
+}
+.pagination li a:hover {
+    color: #666;
+}
+.pagination li.active a, .pagination li.active a.page-link {
+    background: #03A9F4;
+}
+.pagination li.active a:hover {
+    background: #0397d6;
+}
+.pagination li.disabled i {
+    color: #ccc;
+}
+.pagination li i {
+    font-size: 16px;
+    padding-top: 6px
+}
+.hint-text {
+    float: left;
+    margin-top: 10px;
+    font-size: 13px;
+}
+</style>
+<script>
+
+
+$(document).ready(function(){
+$('#addsinglebtn').on('click',function(e){
+    e.preventDefault();
+    var formData = $('#useraddform').serialize();
+    $.ajax({
+        url:"/adduser",
+        method:"post",
+        data: formData,
+        success: function(data){
+          $('#modalCreateUser').modal('hide');
+          $('#flashModal').modal('show');
+          $('#sucmsgs').html(data.suc);
+        },
+    });
+
+});
+function downloadExcel() {
+    // Create a new workbook
+    XlsxPopulate.fromBlankAsync()
+        .then(workbook => {
+            var sheet = workbook.sheet(0);
+
+            // Iterate over each row in the table
+            $('#usertable tbody tr').each(function(rowIndex) {
+                var row = $(this);
+                row.find('td').each(function(cellIndex) {
+                    // Write cell value to the Excel sheet
+                    sheet.cell(rowIndex + 1, cellIndex + 1).value($(this).text());
+                });
+            });
+
+            // Save the workbook and trigger the download
+            return workbook.outputAsync();
+        })
+        .then(data => {
+            // Trigger the file download
+            var blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+            var url = window.URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            document.body.appendChild(a);
+            a.href = url;
+            a.download = 'users.xlsx';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+            console.error(error);
+            alert('An error occurred while generating the Excel file.');
+        });
+}
+    $('.btn-secondary.export-excel').on('click', function(e) {
+        e.preventDefault();
+        downloadExcel();
+    });
+
+
+$('.save_user').hide();
+	$('[data-toggle="tooltip"]').tooltip();
+	$('.edit_user').on('click',function(e){
+
+        e.preventDefault();
+        var row = $(this).closest('tr');
+        console.log(row);
+        row.find('td:not(:nth-last-child(-n+3))').each(function() {
+            var originalText = $(this).text(); // Get the original text content
+            $(this).html('<input type="text" class="form-control" value="' + originalText + '">');
+        });
+
+            var switchElement = row.find('.custom-switch');
+            var switchInput = $('<input>').attr({
+                'type': 'checkbox',
+                'class': 'custom-control-input',
+                'name': 'csbtn',
+                'id': switchElement.find('input').attr('id')
+            });
+            var checkbox = row.find('input[name="csbtn"]');
+
+            if (checkbox.length > 0) {
+
+                checkbox.prop('disabled', false);
+               }
+            var statusCell = row.find('td[name="statusval"]');
+statusCell.html('<input type="radio" name="status" value="active" checked> Active&nbsp;&nbsp;' +
+                '<input type="radio" name="status" value="inactive"> Inactive');
+statusCell.css('width', '15%');
+row.find('.edit_user').hide();
+row.find('.save_user').show();
+	});
+$('.delete_user').click(function(e){
+    e.preventDefault();
+    var row = $(this).closest('tr');
+    var userId = row.find('td:eq(8)').text().trim();
+    $('#deleteEmployeeModal').modal('show');
+    $('#deleteUserId').val(userId);
+});
+$('#deleteEmployeeForm').submit(function(e) {
+    e.preventDefault();
+
+    var userId = $('#deleteUserId').val();
+
+    $.ajax({
+        url: '/deluser',
+        method: 'POST',
+        data: { user_id: userId },
+        success: function(data) {
+            $('#deleteEmployeeModal').modal('hide');
+            $('#flashModal').modal('show');
+            $('#sucmsgs').html(data.suc);
+
+
+        },
+        error: function(xhr, status, error) {
+            // Handle error if needed
+            console.error(error);
+        }
+    });
+});
+
+	$('.save_user').on('click',function(e){
+        var mode = "view";
+        var row = $(this).closest('tr');
+        knoxid=row.find('td:eq(0) input').val().trim();
+        username=row.find('td:eq(1) input').val().trim();
+        email = row.find('td:eq(2) input').val().trim();
+        role = row.find('td:eq(3) input').val().trim();
+        team = row.find('td:eq(4) input').val().trim();
+        status = row.find('td:eq(5) input[type="radio"]:checked').val();
+        user_id = row.find('td:eq(8)').text().trim();
+        var csbtnChecked = row.find('input[name="csbtn"]').prop('checked');
+
+        if (csbtnChecked) {
+            mode = "edit";
+        }
+        $.ajax({
+            url:"/update_user",
+            type:"POST",
+            data:{knoxid:knoxid,username:username,email:email,role:role,team:team,status:status,mode:mode,user_id:user_id},
+            success:function(data){
+                row.find('.edit_user').show();
+                row.find('.save_user').hide();
+                if (data.suc){
+                    $('#flashModal').modal('show');
+                    $('#sucmsgs').html(data.suc);
+                }else{
+                    alert(data.err);
+                }
+            }
+        });
+	});
+
+
+});
+
+
+</script>
+</head>
+<body>
+<div class="row">
+    <div class="col" style="margin-left: 20px;">
+        <p style="text-align:left;margin-left:10px"><a href="{{url_for('index')}}"><span><i class="fa fa-home" style="font-size: 1.2em;"></i><u>iFAST</u></span></a></p>
+    </div>
+    <div class="col text-right">
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle btn-transparent" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fa fa-user-circle-o" style="font-size:24px"></i>&nbsp;&nbsp; {{session['user_name']}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{{url_for('logout')}}">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron p-2">
+    <div class="well text-container" style="text-align:center;">
+        <h2 style="font-size:24px;font-family:arial"><b>issue Fast Automated identification Tool</b></h2>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>User <b>Management</b></h2>
+                    </div>
+                    <div class="col-sm-7">
+                        <a href="#modalCreateUser" class="btn btn-secondary" data-toggle="modal" data-target="#modalCreateUser">
+    <i class="material-icons">&#xE147;</i> <span>Add New User</span>
+</a>
+                        <a href="/download_user" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover table-bordered" id="usertable">
+                <thead>
+                    <tr>
+                        <th>Knox ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Team</th>
+                        <th>Status</th>
+                        <th>Mode</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for u in users[(page_number-1)*10:page_number*10] %}
+                    <tr>
+                        <td>{{u['knox_id']}}</td>
+                        <td>{{u['fullname']}}</td>
+                        <td>{{u['email']}}</td>
+                        <td>{{u['role']}}</td>
+                        <td>{{u['team']}}</td>
+                        {% if u['status'] == 'active' %}
+                            <td name="statusval"><span class="status text-success">&bull;</span>{{u['status']}}</td>
+                        {% else %}
+                            <td name="statusval"><span class="status text-danger">&bull;</span>{{u['status']}}</td>
+                        {% endif %}
+                        <td>
+                            <div class="d-flex justify-content-between align-items-center">
+                                {% if u['mode'] == "edit" %}
+                                    <label class="view-label" style="margin-right:-10px">View</label>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" name="csbtn" id="toggleSwitch{{ loop.index }}" checked disabled>
+                                        <label class="custom-control-label" for="toggleSwitch{{ loop.index }}"></label>
+                                    </div>
+                                    <label class="edit-label" style="margin-left:-10px">Edit</label>
+                                {% elif u['mode'] == "view" %}
+                                    <label class="view-label">View</label>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" name="csbtn" id="toggleSwitch{{ loop.index }}" disabled>
+                                        <label class="custom-control-label" for="toggleSwitch{{ loop.index }}"></label>
+                                    </div>
+                                    <label class="edit-label">Edit</label>
+                                {% endif %}
+                            </div>
+                        </td>
+
+                        <td>
+                            <a href="#" class="edit_user" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="#" class="save_user" title="Save" data-toggle="tooltip"><i class="fa fa-save"></i></a>
+                            <a href="#" class="delete_user" title="Delete" data-toggle="modal" data-target="#deleteEmployeeModal"><i class="material-icons">&#xE5C9;</i></a>
+                        </td>
+                        <td style="display:none">
+                            {{u['user_id']}}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b>{{ total_entries }}</b> out of <b>{{ total_entries }}</b> entries</div>
+                <ul class="pagination">
+                    {% if total_pages > 1 %}
+                        <li class="page-item {% if page_number == 1 %}disabled{% endif %}">
+                            <a class="page-link" href="?page={{ page_number - 1 }}">Previous</a>
+                        </li>
+                        {% set start_page = page_number - 1 if page_number > 1 else 1 %}
+                        {% set end_page = page_number + 1 if page_number < total_pages else total_pages %}
+                        {% if end_page - start_page < 2 %}
+                            {% if start_page > 1 %}
+                                {% set start_page = start_page - 1 %}
+                            {% elif end_page < total_pages %}
+                                {% set end_page = end_page + 1 %}
+                            {% endif %}
+                        {% endif %}
+                        {% for page in range(start_page, end_page) %}
+                            <li class="page-item {% if page == page_number %}active{% endif %}">
+                                <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                            </li>
+                        {% endfor %}
+                        <li class="page-item {% if page_number == total_pages %}disabled{% endif %}">
+                            <a class="page-link" href="{% if page_number < total_pages %}?page={{ page_number}}{% endif %}">Next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalCreateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" style="font-size: 18px; color: green;">Create Resource</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="useraddform">
+                    <div class="form-group">
+                        <label for="knoxid" class="control-label">Knox ID</label>
+                        <input type="text" class="form-control" id="knoxid" name="knoxid" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fname" class="control-label">FullName</label>
+                        <input type="text" class="form-control" id="fname" name="fname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="control-label">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="team" class="control-label">Team</label>
+                        <input type="text" class="form-control" id="team" name="team" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="control-label">Status</label>
+                        <select id="status" class="form-control">
+                            {% for s in status %}
+                                <option value="{{s}}">{{s}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="role" class="control-label">Role</label>
+                        <select id="role" name="role" class="form-control">
+                            {% for r in roles %}
+                                <option value="{{r}}">{{r}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <button type="submit" class="btn btn-success" id="addsinglebtn">Create</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="flashModal" tabindex="-1" role="dialog" aria-labelledby="flashModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="flashModalLabel">Success Message</h5>
+            </div>
+            <div class="modal-body">
+               <p id="sucmsgs" style="color:green"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="{{url_for('usermanagement')}}" class="btn btn-secondary">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="deleteEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="deleteEmployeeForm">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Employee</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>By deleting user, user’s data will permanently be erased. </p>
+                    <p class="text-warning"><small>Do you still want to delete?.</small></p>
+                    <input type="hidden" id="deleteUserId" name="user_id">
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+spawn ssh venpr8r@198.226.62.124
+The authenticity of host '198.226.62.124 (198.226.62.124)' can't be established.
+ECDSA key fingerprint is SHA256:Ti/8pv4fQx/9dXbsfAU8ylr68efoggRG48fLTxPJPvU.
+ECDSA key fingerprint is MD5:1b:54:c2:87:7b:50:c6:fb:6d:8f:22:9e:09:4b:06:3c.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '198.226.62.124' (ECDSA) to the list of known hosts.
+TX11v
+
+   +-------------------------------------------------------------------------+
+   |                     * * *   W A R N I N G   * * *                       |
+   |                                                                         |
+   | THIS SYSTEM IS INTENDED TO BE USED SOLELY BY AUTHORIZED USERS IN THE    |
+   | COURSE OF LEGITIMATE CORPORATE BUSINESS.  UNAUTHORIZED USE OF THIS      |
+   | COMPUTER SYSTEM, NETWORK OR DATA IS A VIOLATION OF LAW.  USERS ARE      |
+   | MONITORED TO THE EXTENT NECESSARY TO PROPERLY ADMINISTER THE SYSTEM, TO |
+   | IDENTIFY UNAUTHORIZED USERS, AND TO INVESTIGATE IMPROPER ACCESS OR USE. |
+   | BY ACCESSING THIS SYSTEM, YOU ARE CONSENTING TO THIS MONITORING.        |
+   +-------------------------------------------------------------------------+
+
+   ***************************************************************************
+   * Secure Access to Network Elements (SANE) is a non-directional tool for  *
+   * Network Security IAM and the business. It is officially in              *
+   *                                                                         *
+   *                    ---> MAINTENANCE MODE <---                           *
+   *                                                                         *
+   * Any new element/device requests will need to go through HQ and Security *
+   * Planning to be directed to the appropriate directional tool(s).   TX11v *
+   ***************************************************************************
+(sane)Password:
+Last login: Thu Jun 13 07:37:15 2024 from 10.134.223.68
+
+venpr8r connected to txslsanepa11v: 
+
+Welcome to SANE, now connecting...
+              [1m *** S A N E (Secure Access to Network Elements) ***[0m
+
+               1 ) Network Element Selection by Market 
+
+               2 ) Network Element Selection by Vendor 
+
+               3 ) Network Element Selection by NE Type 
+
+               4 ) Network Element Selection by [ Praseeda's ] List
+
+               5 ) Direct Network Element Connection by NEID Number
+
+               6 ) Direct Network Element Connection by IP Address
+
+
+               t ) Toggle Network Element Display Mode [ NE_Name   ] 
+
+               a ) About SANE
+
+               x ) Exit 
+               
+[1m[32mSecure Access to Network Elements (SANE) is a non-directional tool for Network Security IAM and the business.  It is officially in MAINTENANCE MODE.  Any new element/device requests will need to go through HQ and Security Planning to be directed to the appropriate directional tool(s).[0m 
+
+
+
+                   Please Enter Selection: > 
+ Please enter NEID Number: > 75332
+
+
+ Now Connecting to Network Element: [ Roch_LSM_MS4 ] 
+
+ Please wait... 
+
+
+[01;41m           You are now Logged in!          [0m
+[HNRTNYCRLSM-MS04:/home/vendgrp] 
+Sane login successful
+
+Exec_Start,NE_ID:24593002373
+pod_login 24593002373 dmp
+NAME                                    READY   STATUS      RESTARTS   AGE
+adpf24593002373-cmp0-848cb99b68-42bs2   1/1     Running     0          35d
+adpf24593002373-credentials-test        0/1     Completed   0          35d
+adpf24593002373-dip0-58c7bcfd94-6c5fp   1/1     Running     0          35d
+adpf24593002373-dmp0-66d484d5cb-cpn2w   1/1     Running     0          35d
+adpf24593002373-dpp0-5f9c99fb8f-6k8d9   2/2     Running     0          35d
+adpf24593002373-pmp0-6788688d68-vtqv9   1/1     Running     0          35d
+adpf24593002373-rmp0-64f5669466-pf8c6   1/1     Running     0          35d
+_______________________________________________________________
+ kube conf is : /home/lsm/kubeconfig/DSS/24593002373.conf
+ Pod name is : adpf24593002373-dmp0-66d484d5cb-cpn2w
+ You are now logged into the dmp0 Shell 
+_______________________________________________________________
+basename: missing operand
+Try 'basename --help' for more information.
+]0;@adpf24593002373-dmp0-66d484d5cb-cpn2w:/[sapp@adpf24593002373-dmp0-66d484d5cb-cpn2w /]$ nrconfd_cli -C -u vsmuser
+Welcome to the ConfD CLI
+User vsmuser last logged in 2024-06-13T05:55:23.77203+00:00, to adpf24593002373-dmp0-66d484d5cb-cpn2w, from fd00:4888:0:1::1 using netconf-ssh
+vsmuser connected from 127.0.0.1 using console on adpf24593002373-dmp0-66d484d5cb-cpn2w
+[?7hadpf24593002373-dmp0-66d484d5cb-cpn2w#show managed-element virtual-function cnf  pod pod-entries sync sync-state
+POD   POD  SYNC    
+TYPE  ID   STATE   
+-------------------
+dpp   0    locked  
+
+adpf24593002373-dmp0-66d484d5cb-cpn2w#exit
+]0;@adpf24593002373-dmp0-66d484d5cb-cpn2w:/[sapp@adpf24593002373-dmp0-66d484d5cb-cpn2w /]$ exit
+exit
+[HNRTNYCRLSM-MS04:/home/vendgrp] 
+Exec_End,NE_ID:24593002373
+
+Exec_Start,NE_ID:24593002050
+pod_login 24593002050 dmp
+NAME                                    READY   STATUS      RESTARTS   AGE
+adpf24593002050-cmp0-69f5d675f6-qxvwq   1/1     Running     0          38d
+adpf24593002050-credentials-test        0/1     Completed   0          38d
+adpf24593002050-dip0-77df459c66-bsk9z   1/1     Running     0          38d
+adpf24593002050-dmp0-764b87bcb8-fb6rf   1/1     Running     0          38d
+adpf24593002050-dpp0-554ddc7679-s54xg   2/2     Running     0          38d
+adpf24593002050-pmp0-58789f7f84-qhgqw   1/1     Running     0          38d
+adpf24593002050-rmp0-54698d5bbb-q4nm6   1/1     Running     0          38d
+_______________________________________________________________
+ kube conf is : /home/lsm/kubeconfig/DSS/24593002050.conf
+ Pod name is : adpf24593002050-dmp0-764b87bcb8-fb6rf
+ You are now logged into the dmp0 Shell 
+_______________________________________________________________
+basename: missing operand
+Try 'basename --help' for more information.
+]0;@adpf24593002050-dmp0-764b87bcb8-fb6rf:/[sapp@adpf24593002050-dmp0-764b87bcb8-fb6rf /]$ nrconfd_cli -C -u vsmuser
+Welcome to the ConfD CLI
+User vsmuser last logged in 2024-06-13T05:39:24.480891+00:00, to adpf24593002050-dmp0-764b87bcb8-fb6rf, from fd00:4888:0:1::1 using netconf-ssh
+vsmuser connected from 127.0.0.1 using console on adpf24593002050-dmp0-764b87bcb8-fb6rf
+[?7hadpf24593002050-dmp0-764b87bcb8-fb6rf#show managed-element virtual-function cnf  pod pod-entries sync sync-state
+POD   POD  SYNC    
+TYPE  ID   STATE   
+-------------------
+dpp   0    locked  
+
+adpf24593002050-dmp0-764b87bcb8-fb6rf#exit
+]0;@adpf24593002050-dmp0-764b87bcb8-fb6rf:/[sapp@adpf24593002050-dmp0-764b87bcb8-fb6rf /]$ exit
+exit
+[HNRTNYCRLSM-MS04:/home/vendgrp] 
+Exec_End,NE_ID:24593002050
+
+Exec_Start,NE_ID:24593003029
+pod_login 24593003029 dmp
+NAME                                    READY   STATUS      RESTARTS   AGE
+adpf24593003029-cmp0-5fc564df78-hhjc6   1/1     Running     0          36d
+adpf24593003029-credentials-test        0/1     Completed   0          36d
+adpf24593003029-dip0-5b896b54c8-sppm4   1/1     Running     0          36d
+adpf24593003029-dmp0-c866d4ffb-xzkhx    1/1     Running     0          36d
+adpf24593003029-dpp0-85ffc7784b-dhknp   2/2     Running     0          36d
+adpf24593003029-pmp0-6976f4c976-x5m4b   1/1     Running     0          36d
+adpf24593003029-rmp0-57b76d5858-5v88d   1/1     Running     0          36d
+_______________________________________________________________
+ kube conf is : /home/lsm/kubeconfig/CBAND/24593003029.conf
+ Pod name is : adpf24593003029-dmp0-c866d4ffb-xzkhx
+ You are now logged into the dmp0 Shell 
+_______________________________________________________________
+basename: missing operand
+Try 'basename --help' for more information.
+]0;@adpf24593003029-dmp0-c866d4ffb-xzkhx:/[sapp@adpf24593003029-dmp0-c866d4ffb-xzkhx /]$ nrconfd_cli -C -u vsmuser
+Welcome to the ConfD CLI
+User vsmuser last logged in 2024-06-13T05:55:46.660978+00:00, to adpf24593003029-dmp0-c866d4ffb-xzkhx, from fd00:4888:0:1::1 using netconf-ssh
+vsmuser connected from 127.0.0.1 using console on adpf24593003029-dmp0-c866d4ffb-xzkhx
+[?7hadpf24593003029-dmp0-c866d4ffb-xzkhx#show managed-element virtual-function cnf pod pod-entries sync sync-state
+POD   POD  SYNC    
+TYPE  ID   STATE   
+-------------------
+dpp   0    locked  
+
+adpf24593003029-dmp0-c866d4ffb-xzkhx#exit
+]0;@adpf24593003029-dmp0-c866d4ffb-xzkhx:/[sapp@adpf24593003029-dmp0-c866d4ffb-xzkhx /]$ exit
+exit
+[HNRTNYCRLSM-MS04:/home/vendgrp] 
+Exec_End,NE_ID:24593003029

@@ -1,0 +1,11 @@
+spawn ssh venpr8r@198.226.62.124
+ssh_exchange_identification: Connection closed by remote host
+send: spawn id exp8 not open
+    while executing
+"send "$string1\r""
+    ("foreach" body line 5)
+    invoked from within
+"foreach CMD $CMDS {
+                set string1 [exec echo $CMD | cut -f1 -d,]
+                set string2 [exec echo $CMD | cut -f2 -d,]
+            ..."

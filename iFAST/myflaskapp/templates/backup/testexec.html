@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Executor</title>
+    <script>
+        function testSSE() {
+            const eventSource = new EventSource('/execute');
+
+            eventSource.onmessage = function(event) {
+                console.log("Received data:", event.data);  // Log the received data
+                const logs = document.getElementById('logs');
+                logs.innerHTML += event.data + '<br>';
+                logs.scrollTop = logs.scrollHeight;  // Scroll to the bottom
+                if (event.data.includes('[END OF STREAM]')) {
+                    console.log("Stream ended.");
+                    eventSource.close();  // Close the EventSource connection
+                }
+            };
+
+            eventSource.onerror = function(event) {
+                console.error("Error occurred:", event);  // Log the full error event
+                const logs = document.getElementById('logs');
+                logs.innerHTML += 'Error occurred: ' + (event.message || 'Unknown error') + '<br>';
+                eventSource.close();
+            };
+
+            eventSource.onopen = function() {
+                console.log("Connection opened.");
+                const logs = document.getElementById('logs');
+                logs.innerHTML += 'Connection opened.<br>';
+            };
+
+            eventSource.addEventListener('end', function(event) {
+                console.log("Stream ended.");
+                const logs = document.getElementById('logs');
+                logs.innerHTML += 'Stream ended.<br>';
+                eventSource.close();
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Execute Script</h1>
+    <button onclick="testSSE()">Execute</button>
+    <div id="logs" style="border: 1px solid #000; height: 300px; overflow-y: scroll;"></div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+SITE_LIST='VZ_07901640052','VZ_06000090001','VZ_06000090003'
+/opt/drill/apache-drill-1.19.0/bin/sqlline -u jdbc:drill:zk=local -e "select * from dfs.vzdb. where NE_NAME IN ('VZ_07901640052','VZ_06000090001','VZ_06000090003') and datetime_utc like '%2024-08-12 07%';" --outputformat="csv" > /opt/data/iFAST_Logs/S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num_21_2_08-13-2024_035624.csv ; sed -i -e "s/'//g" -e "s/apache drill>//g" /opt/data/iFAST_Logs/S5NR_DLMACLayerDataVolume_MB,S5NR_ULMACLayerDataVolume_MB,S5NR_ULMACcellAggregateTput_Mbps_Num,S5NR_DLTTIUtilization_Pct_Num_21_2_08-13-2024_035624.csv
+om_exec.sh: line 72: sshpass: command not found
+om_exec complete
+$VAR1 = {};
+NE_ID,CELL_ID,CONDITION,PROCESSED_VALUE,OPERATOR,COMPARE_VALUE

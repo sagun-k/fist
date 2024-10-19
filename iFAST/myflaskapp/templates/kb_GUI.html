@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FIST</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/script.js"></script>
+    {#
+    <script src="/static/assets/js/insert/create_kb.js"></script>
+    #}
+    <script src="{{ url_for('static', filename='assets/js/insert/create_kb.js') }} "></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <style>
+        .nav-item.right-align {
+            margin-left: auto;
+        }
+
+        #sticky-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+
+            height: 58px;
+            //background: grey;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group label {
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+
+        body,
+        html {
+            height: 100%;
+            background-color: #f4f4f4;
+            font-size: 12px !important;
+            width: 100%;
+            margin: 0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+                Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #292b2c;
+            display: flex;
+            flex-direction: column;
+            overflow-x: auto;
+        }
+
+        fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        fieldset.label {
+            font-weight: bold;
+        }
+
+        .kpi_class {
+            height: 47px !important;
+        }
+
+        .the-fieldset {
+            border: 2px groove #1428a0;
+            border-color: #5161ac;
+            background: #fff !important;
+            padding: 15px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        /* Full height image header */
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("/w3images/mac.jpg");
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        .footer {
+            font-size: 12px;
+            font-family: arial;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        input.formInvalid::-webkit-input-placeholder {
+            color: red;
+        }
+
+        .star:after {
+            content: " *";
+            color: red;
+        }
+
+        .nohover {
+            pointer-events: none;
+        }
+
+        .hrefButton {
+            padding: 3px 10px;
+            text-decoration: none;
+        }
+
+        .button {
+            background-color: Teal;
+            border: none;
+            color: white;
+            padding: 8px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+        }
+
+        #advsrch {
+            display: none;
+            /* Hide the advsrch div by default */
+        }
+
+        .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        label.required::after {
+            content: " *";
+            color: red;
+            /* Customize the color if needed */
+        }
+
+        .swal2-popup {
+            width: 300px;
+            /* Change the width as per your requirement */
+        }
+
+        .swal2-popup {
+            font-size: 8px;
+            /* Change the font size as per your requirement */
+        }
+
+        .error {
+            color: red;
+        }
+
+        .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        .btn-transparent-on-hover {
+            transition: background-color 0.3s;
+        }
+
+        .btn-transparent-on-hover:hover {
+            background-color: transparent !important;
+        }
+
+        .container {
+            max-width: 1400px;
+            border: 2px groove ThreeDFace;
+            margin: 0 auto;
+            padding-top: 10px;
+            background: #fff !important;
+            //   margin-top: 10px;
+            //overflow:auto;
+        }
+
+        .progressbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .progressbar .step {
+            position: relative;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            background-color: #ddd;
+            color: #333;
+            line-height: 30px;
+            border-radius: 50%;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        .progressbar .step.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .progressbar .line {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            background-color: #ddd;
+            z-index: 0;
+        }
+
+        .progressbar .line.active {
+            background-color: #0d6efd;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: white;
+            background-color: blue;
+            border-color: blue;
+        }
+
+        .nav-tabs .nav-link {
+            color: grey;
+            background-color: lightgrey;
+            border-color: lightgrey;
+        }
+
+        .the-fieldset label {
+            font-weight: bold;
+        }
+
+        .the-fieldset legend {
+            font-weight: bold;
+            color: #1428a0;
+            text-decoration: underline;
+            padding: 0 10px;
+            background-color: #f4f4f4;
+        }
+
+        .user-profile {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-profile .nav-link {
+            color: white;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-profile .nav-link .profile-text {
+            margin-left: 5px;
+            font-size: 10px;
+        }
+
+        .content-section {
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            width: 100%;
+            /* Ensure width is 100% */
+        }
+
+        .content-section h2 {
+            color: #283db4;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            /* Ensure the navbar stays on top of other content */
+        }
+
+        body {
+            padding-top: 70px;
+            /* Adjust based on the navbar height */
+        }
+
+        .navbar-custom {
+            background-color: #283db4;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+            font-size: 13px;
+            font-weight: bold;
+            padding: 2px 2px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            /* Ensure the navbar stays on top of other content */
+        }
+
+        .navbar-brand {
+            font-family: "Arial", sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #283db4, 0 0 5px #283db4;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #ffeb3b, 0 0 5px #ffeb3b;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: white;
+            background-color: blue;
+            border-color: blue;
+        }
+
+        .nav-tabs .nav-link {
+            color: grey;
+            background-color: lightgrey;
+            border-color: lightgrey;
+        }
+
+        .nav-link {
+            color: white;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+    </style>
+
+    <style>
+        .dropdown input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .dropdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+            position: absolute;
+            width: 100%;
+            background: #fff;
+            z-index: 1;
+        }
+
+        .dropdown ul li {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .dropdown ul li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .card-div {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .generic_button:hover {
+            background-color: #283db4;
+            color: white !important;
+        }
+    </style>
+
+    <style></style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdowns = document.querySelectorAll("[data-dropdown]");
+
+            dropdowns.forEach((dropdown) => {
+                const searchInput = dropdown.querySelector("[data-search]");
+                const dropdownOptions = dropdown.querySelector("[data-options]");
+                const options = dropdownOptions.getElementsByTagName("li");
+
+                searchInput.addEventListener("input", function () {
+                    const filter = searchInput.value.toLowerCase();
+                    dropdownOptions.style.display = "block";
+
+                    Array.from(options).forEach((option) => {
+                        const text = option.textContent.toLowerCase();
+                        if (text.indexOf(filter) > -1) {
+                            option.style.display = "";
+                        } else {
+                            option.style.display = "none";
+                        }
+                    });
+
+                    if (!filter) {
+                        dropdownOptions.style.display = "none";
+                    }
+                });
+
+                Array.from(options).forEach((option) => {
+                    option.addEventListener("click", function () {
+                        searchInput.value = this.textContent;
+                        dropdownOptions.style.display = "none";
+                    });
+                });
+
+                document.addEventListener("click", function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdownOptions.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+
+        //   function validateForm(formId) {
+        //       form_id = $(`#${formId}`)
+
+        //       form_id.validate({
+        //           ignore: '',
+        //           rules: {
+        //               sequenceid: {
+        //                   required: true
+        //               },
+        //               sw_val: {
+        //                   required: true
+        //               },
+        //               action_type: {
+        //                   required: true
+        //               },
+        //               scName: {
+        //                   required: true
+        //               },
+        //               uid: {
+        //                   required: true
+        //               },
+        //               pwd: {
+        //                   required: true
+        //               },
+        //               ip: {
+        //                   required: true
+        //               },
+        //               scLoc: {
+        //                   required: true
+        //               },
+        //               scOwner: {
+        //                   required: true
+        //               },
+        //               scPath: {
+        //                   required: true
+        //               },
+        //               proceed: {
+        //                   required: true
+        //               },
+        //               check_condition: {
+        //                   required: true
+        //               },
+        //               regex: {
+        //                   required: true
+        //               },
+        //               pattern_grep: {
+        //                   required: true
+        //               }
+
+        //           },
+        //           messages: {
+        //               action_type: {
+        //                   required: "Action type is Mandatory"
+        //               },
+        //               sw_val: {
+        //                   required: "Software Version is Required"
+        //               },
+        //               scName: {
+        //                   required: "Script name is Mandatory"
+        //               },
+        //               uid: {
+        //                   required: "UserName is required"
+        //               },
+        //               pwd: {
+        //                   required: "Password is required"
+        //               },
+        //               ip: {
+        //                   required: "IP is required"
+        //               },
+        //               scLoc: {
+        //                   required: "Server Location is required"
+        //               },
+        //               scOwner: {
+        //                   required: "script owner is required"
+        //               },
+        //               scPath: {
+        //                   required: "location of script(path) field is required"
+        //               },
+        //           },
+        //           errorPlacement: function (error, element) {
+        //               error.appendTo(element.parent()); // Adjust the placement of the error message
+        //           }
+        //       });
+        //       return form_id.valid();
+        //   }
+
+
+
+        function editIssue(el) {
+            var form_id = '#' + $(el).parent().parent().siblings().find('form[name="IssueSequenceForm"]').attr('id')
+            var form_selector = $(form_id)
+            var current_select_val = $(form_selector).find('select[name="action_type"]').val()
+            $(form_selector).find('select[name="action_type"]').attr('data-prev-val', current_select_val)
+            let excludedIds = ['issue_id', 'sequenceid', 'uid', 'pwd']
+            $(form_selector).find('input, textarea, select').each(function () {
+                if (!excludedIds.includes($(this).attr('id'))) {
+                    $(this).prop('disabled', false);
+                    $(this).prop('readonly', false);
+                }
+
+            });
+        }
+
+        function saveIssue(el) {
+            var parentId = $(el).parent().parent().parent().attr('id')
+            var formId = $(el).parent().parent().siblings().find('form[name="IssueSequenceForm"]').attr('id')
+            var form_id = '#' + formId
+
+            var form_selector = $(form_id)
+            const isValid = validateForm(form_selector);
+            if (!isValid) {
+                return
+                Swl.fire({
+                    icon: 'error',
+                    title: 'Required fields are missing',
+                    html: '<p>Please fill the required fields</p>'
+                });
+            }
+            var check_type = $(form_selector).find('input[name="check_type"]:checked').val();
+            var proceed = $(form_selector).find('input[name="proceed"]:checked').val();
+            var check_condition = $(form_selector).find('#check_condition').val();
+            var regex = $(form_selector).find('#regex').val();
+            var detection_id = form_selector.find('#sequenceid').val()
+            var prev_detection_type = form_selector.find('#action_type').attr('data-prev-val')
+            var detection_type = form_selector.find('#action_type').val()
+            var uid = null
+            var pwd = null
+            {% if not sane_id %}
+            uid = $(form_selector).find('#uid').val()
+            {% else %}
+            uid = `{{ sane_id }}`
+            {% endif %}
+            {% if not sane_pwd %}
+            pwd = $(form_selector).find('#pwd').val()
+            {% else %}
+            pwd = `{{ sane_pwd }}`
+            {% endif %}
+            var formData = {
+                issue_id: $(form_selector).find('#issue_id').val(),
+                status_val: $(form_selector).find('#status_val').val(),
+                sw_val: $(form_selector).find('#sw_val').val(),
+                sequenceid: $(form_selector).find('#sequenceid').val(),
+                prev_action_type: prev_detection_type,
+                action_type: detection_type,
+                scName: $(form_selector).find('#scName').val(),
+                uid: uid,
+                pwd: pwd,
+                ip: $(form_selector).find('#ip').val(),
+                scLoc: $(form_selector).find('#scLoc').val(),
+                scOwner: $(form_selector).find('#scOwner').val(),
+                scPath: $(form_selector).find('#scPath').val(),
+                pattern_grep: $(form_selector).find('#pattern_grep').val(),
+                om_counters: $(form_selector).find('#om_counters').val(),
+                check_type: check_type,
+                proceed: proceed,
+                check_condition: check_condition,
+                regex: regex,
+                action_id: $(form_selector).find('#action_id').val()
+            };
+            $.ajax({
+                url: "/insert_issue_seq",
+                type: "post",
+                data: formData,
+                success: function (data) {
+                    if (data.message) {
+                        if (data.redirect_url) {
+                            $('#exampleModal').modal('show');
+                            $('#modalMessage').html(data.message);
+                            $('#update_kb').hide();
+                            $('#searchForm :input').prop('readonly', true);
+                            $('#searchForm textarea').prop('readonly', true);
+                            $('#redirectModalButton').on('click', function () {
+                                window.location.href = data.redirect_url;
+                            });
+                        } else {
+                            $('#successModal').modal('show');
+                            $('#sucmsg').html('Success! Please proceed for the next step');
+
+                            // Update the value of the existing action_id input
+                            $(form_selector).find('#action_id').val(data.action_id);
+
+                            // Optionally add your existing logic for updating the header
+                            header_length = $(form_selector)
+                                .closest(`#${parentId}`)
+                                .find('.card-header > .icon-container > .header')
+                                .length;
+
+                            if (!header_length) {
+                                $(form_selector)
+                                    .closest(`#${parentId}`)
+                                    .find('.card-header > .icon-container')
+                                    .append(`<h5 class="text-white header ml-4" style="position: relative; bottom: 20px;">
+                                                                  &nbsp; &nbsp; &nbsp;EXECUTION ORDER NUMBER: ${detection_id}
+                                                                  &nbsp; &nbsp; &nbsp; DETECTION TYPE : ${detection_type}</h5>`);
+                            } else if (header_length === 1) {
+                                $(form_selector)
+                                    .closest(`#${parentId}`)
+                                    .find('.card-header > .icon-container :nth-child(2)')
+                                    .html(`&nbsp; &nbsp; &nbsp;EXECUTION ORDER NUMBER: ${detection_id}
+                                                                  &nbsp; &nbsp; &nbsp; DETECTION TYPE : ${detection_type}`);
+                            }
+
+                            // Disable all inputs in this form instance
+                            $(form_selector).find('input, textarea, select').each(function () {
+                                $(this).prop('disabled', true);
+                                $(this).prop('readonly', true);
+                            });
+                        }
+                    } else {
+                        $('#update_ret').html(data.error).removeClass('text-success').addClass('text-danger');
+                    }
+                }
+            });
+
+        }
+
+        function deleteIssue(el) {
+            var parent_div = $(el).parent().parent().parent().attr('id')
+            var form_selector = $('#' + $(el).parent().parent().siblings().find('form[name="IssueSequenceForm"]').attr('id'))
+            var issue_id = $(form_selector).find('#issue_id').val()
+            var sequenceid = $(form_selector).find('#sequenceid').val()
+            var action_type = form_selector.find('#action_type').val()
+
+            $.ajax({
+                url: "/delete_issue_seq",
+                type: "post",
+                data: {
+                    issue_id: issue_id,
+                    sequenceid: sequenceid,
+                    action_type: action_type
+                },
+                success: function (data) {
+                    $(`#${parent_div}`).addClass('d-none')
+                    $('#successModal').modal('show');
+                    $('#sucmsg').html(`Issue Sequence with Issue ID: ${issue_id} and Sequence Id: ${sequenceid} deleted successfully`);
+                },
+            });
+
+        }
+
+
+        //   function checkFormValidity(formId) {
+        //       var errorMessages = []
+        //       var issueSequenceFormValid = validateForm(formId)
+        //       console.log("issue check")
+        //       var issueSequenceFormErrors = [];
+        //       let proceed_val = null
+        //       if (!issueSequenceFormValid) {
+        //           $('#' + formId + ' .error').each(function () {
+        //               proceed_val = $('input[name=proceed]').val()
+        //               if ($(this).closest('div').attr('style') !== "display: none;") {
+        //                   var fieldName = $(this).prev('label').text().replace('*', '').trim();
+        //                   fieldName = fieldName.split(':')
+        //                   errorMessages.push(fieldName[0]);
+        //                   issueSequenceFormErrors.push(fieldName[0]);
+        //               }
+        //           });
+        //           let errorMessagesUpdated = errorMessages.map(function (item) {
+        //               return item === 'Yes' ? 'Proceed On Failure' : item;
+        //           });
+        //           // Display error message if any field is missing in either form
+        //           if (errorMessagesUpdated.length > 0 && (!proceed_val && ["Yes", "No", "Proceed On Failure"].every(item => errorMessagesUpdated.includes(item)))) {
+        //               Swal.fire({
+        //                   icon: 'error',
+        //                   title: 'Required fields are missing',
+        //                   html: errorMessageText
+        //               });
+        //           } else {
+        //               issueSequenceFormValid = true
+        //           }
+
+        //       }
+        //       console.log(issueSequenceFormErrors)
+        //       console.log(errorMessages)
+        //       return issueSequenceFormValid;
+        //   }
+
+        // Combine error messages from both forms
+        //  var errorMessages = IssueSequenceFormError.concat(issueSequenceFormErrors);
+
+        var issue_sequence_add_counter = 0;
+        var issue_idx = 0;
+        function addIssueSequence() {
+            var form_id = ''
+            cardCount = $('#nav-profile .card').length;
+            if (cardCount === 1) {
+                form_id = 'IssueSequenceForm'
+            } else {
+                form_id = `IssueSequenceForm${cardCount}`
+            }
+            //   let state = checkFormValidity(form_id)
+            //   if (!state) {
+            //       return
+            //   }
+
+            //    saveIssue(form_id)
+
+            //	const steps = parseInt($('#nav-profile-tab').attr("data-action-steps"))
+            //	if (issue_sequence_add_counter < (steps-1)) {
+            var sequence_clone = $('#issue_sequence_card_1').clone();
+            issue_sequence_add_counter += 1;
+            issue_idx = issue_sequence_add_counter + 1
+            console.log('idx', issue_idx)
+            console.log('counter', issue_sequence_add_counter)
+            sequence_clone.attr('id', `issue_sequence_card_${issue_idx}`)
+            sequence_clone.removeClass('d-none')
+            //	sequence_clone.find('.icon-container > .fa-plus').attr('id', `iconCard${issue_idx}Plus`);
+            //	sequence_clone.find('.icon-container > .fa-plus').attr('data-bs-target', `#collapseCard${issue_idx}`);
+            //	sequence_clone.find('.icon-container > .fa-plus').attr('aria-controls', `collapseCard${issue_idx}`);
+            sequence_clone.find('.icon-container >  .iconCardMinus').attr('id', `iconCard${issue_idx}Minus`);
+            sequence_clone.find('.icon-container >  .iconCardMinus').attr('data-bs-target', `#collapseCard${issue_idx}`);
+            sequence_clone.find('.icon-container >  .iconCardMinus').attr('aria-controls', `collapseCard${issue_idx}`);
+            // sequence_clone.find('.card-header > .div-header').html('');
+            sequence_clone.find('.card-header > .icon-container').children().eq(1).remove();
+
+
+
+            sequence_clone.find('.collapse').attr('id', `collapseCard${issue_idx}`);
+            sequence_clone.find(`#collapseCard${issue_idx} > .card-body > #IssueSequenceForm`).attr('id', `IssueSequenceForm${issue_idx}`);
+            issue_id = sequence_clone.find(`#IssueSequenceForm${issue_idx} #issue_id`).val()
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} input[type="text"], #IssueSequenceForm${issue_idx} input[type="password"], #IssueSequenceForm${issue_idx} textarea`).val('');
+            // Reset select fields to their first option
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} select`).prop('selectedIndex', 0);
+            // Uncheck checkboxes and radio buttons
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} input[type="checkbox"], #IssueSequenceForm${issue_idx} input[type="radio"]`).prop('checked', false);
+            sequence_clone.find('#issue_id').val(`${issue_id}`)
+            sequence_clone.find('#sequenceid').val(`${issue_idx}`)
+            current_editbtn_id = sequence_clone.find(`.edit_btn`).attr('id').split("_")[0]
+            current_savebtn_id = sequence_clone.find(`.save_btn`).attr('id').split("_")[0]
+            sequence_clone.find(`.edit_btn`).attr('id', `${current_editbtn_id}_${issue_idx}`)
+            sequence_clone.find(`.save_btn`).attr('id', `${current_savebtn_id}_${issue_idx}`)
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} select`).attr('onchange', `changeFunction(${issue_idx})`)
+
+            let excludedIds = ['issue_id', 'sequenceid']
+            sequence_clone.find('input, textarea, select').each(function () {
+                if (!excludedIds.includes($(this).attr('id'))) {
+                    $(this).prop('disabled', false);
+                    $(this).prop('readonly', false);
+                }
+
+            });
+            sequence_clone.find('#check_condition').prev('label').text('Check Condition:');
+            $(`#issue_sequence_card_${issue_sequence_add_counter}`).after(sequence_clone);
+            hideFunction(`issue_sequence_card_${issue_idx}`)
+
+            //	}else{
+            //	}
+
+        }
+        let allCollapsed = false;
+
+        function toggleIconClass(icon, isCollapsed) {
+            if (isCollapsed) {
+                icon.removeClass('fa-minus').addClass('fa-plus');
+            } else {
+                icon.removeClass('fa-plus').addClass('fa-minus');
+            }
+        }
+
+        function toggleIssueSequence(el) {
+            if (allCollapsed) {
+                // Expand all divs
+                $('[id^="collapseCard"]').collapse('show');
+                $(el).text('Collapse All');
+                $('[id^="iconCard"]').removeClass('fa-plus').addClass('fa-minus');
+            } else {
+                // Collapse all divs
+                $('[id^="collapseCard"]').collapse('hide');
+                $(el).text('Expand All');
+                $('[id^="iconCard"]').removeClass('fa-minus').addClass('fa-plus');
+            }
+            allCollapsed = !allCollapsed;
+        }
+
+        // Adjust the icon classes based on individual collapse events
+        $('[id^="collapseCard"]').on('shown.bs.collapse', function () {
+            let targetId = $(this).attr('id');
+            let icon = $(`[data-bs-target="#${targetId}"]`);
+            toggleIconClass(icon, false);
+            allCollapsed = false;
+            $('#toggleIssue').text('Collapse All');
+        });
+
+        $('[id^="collapseCard"]').on('hidden.bs.collapse', function () {
+            let targetId = $(this).attr('id');
+            let icon = $(`[data-bs-target="#${targetId}"]`);
+            toggleIconClass(icon, true);
+
+            if ($('.collapse.show').length === 0) {
+                allCollapsed = true;
+                $('#toggleIssue').text('Expand All');
+            }
+        });
+
+        function toggleClass(el) {
+            var el_id = $(el).attr('id')
+            console.log('el_id', el_id)
+            $(`#${el_id}`).toggleClass('fa-plus fa-minus');
+            let expanded_len = $('.iconCardMinus.fa-minus ').length
+            let collapsed_len = $('.iconCardMinus.fa-plus ').length
+            let total_len = $('.iconCardMinus').length
+            if (expanded_len === total_len) {
+                $('#toggleIssue').text('COLLAPSE All');
+            } else if (collapsed_len === total_len) {
+                $('#toggleIssue').text('EXPAND All');
+            }
+
+
+        };
+        $(document).ready(function () {
+
+            $("#knowledge-base-tab").click(function (e) {
+                e.preventDefault()
+                window.location.href = '/newpage#knowledge-base'
+            })
+
+        });
+        // To store form data uniquely for each form
+        let formDataStore = {};
+        function saveFunction(el) {
+
+            // Get the parent form of the clicked button
+            let $form = $(el).closest('form');
+
+            // Get the unique ID of the form
+            let formID = $form.attr('id');
+
+            // Initialize an empty object to store form values
+            let formData = {};
+
+            // Collect all form inputs
+            $form.find('input, textarea, select').each(function () {
+                let $input = $(this);
+                let inputType = $input.attr('type');
+                let inputName = $input.attr('name');
+
+                // Handle different input types
+                if (inputType === 'checkbox') {
+                    formData[inputName] = $input.is(':checked') ? $input.val() : '';
+                } else if (inputType === 'radio') {
+                    if ($input.is(':checked')) {
+                        formData[inputName] = $input.val();
+                    }
+                } else {
+                    formData[inputName] = $input.val();
+                }
+            });
+
+            // Save the form data in a unique variable (object key = formID)
+            formDataStore[formID] = formData;
+
+            localStorage.setItem(formID, JSON.stringify(formData));
+
+            // Output the stored data for verification (you can remove this)
+            console.log('Saved data for', formID, ':', formDataStore[formID]);
+            console.log('Saved data for', ':', formDataStore);
+
+
+        }
+
+        /*
+           let allCollapsed = false;
+
+        function toggleIconClass(icon, isCollapsed) {
+                if (isCollapsed) {
+
+                    icon.removeClass('fa-minus').addClass('fa-plus');
+                } else {
+
+                    icon.removeClass('fa-plus').addClass('fa-minus');
+                }
+            }
+
+
+
+            function toggleIssueSequence(el){
+            // Initially expanded state
+
+                if (allCollapsed) {
+                    // Expand all divs
+                    $('[id^="collapseCard"]').collapse('show');
+
+                    $(el).text('Collapse All');
+                } else {
+                    // Collapse all divs
+                    $('[id^="collapseCard"]').collapse('hide');
+                    $(el).text('Expand All');
+                }
+                allCollapsed = !allCollapsed;
+            };
+
+
+              // Adjust the button text based on individual collapse events
+            $('[id^="collapseCard"]').on('shown.bs.collapse', function () {
+                let targetId = $(this).attr('id');
+                let icon = $(`[data-bs-target="#${targetId}"]`);
+
+                toggleIconClass(icon, false);
+
+                allCollapsed = false;
+                $('#toggleIssue').text('Collapse All');
+            });
+
+            $('[id^="collapseCard"]').on('hidden.bs.collapse', function () {
+                let targetId = $(this).attr('id');
+                let icon = $(`[data-bs-target="#${targetId}"]`);
+
+                toggleIconClass(icon, true);
+
+                if ($('.collapse.show').length === 0) {
+                    allCollapsed = true;
+                    $('#toggleIssue').text('Expand All');
+                }
+            });
+
+        */
+
+        function showError(input, message) {
+            let errorDiv = input.parentElement.querySelector('.error-message');
+            if (!errorDiv) {
+                errorDiv = document.createElement('div');
+                errorDiv.classList.add('error-message');
+                errorDiv.style.color = 'red';
+                errorDiv.style.fontSize = '12px';
+                input.parentElement.appendChild(errorDiv);
+            }
+            errorDiv.innerText = message;
+            input.style.borderColor = 'red';
+        }
+
+        function removeError(input) {
+            // Ensure 'input' is a DOM element in case it's a jQuery object
+            input = input instanceof jQuery ? input[0] : input;
+
+            const errorDiv = input.parentElement.querySelector('.error-message');
+            if (errorDiv) {
+                input.parentElement.removeChild(errorDiv);
+            }
+            input.style.borderColor = '';
+        }
+        function checkRadioGroup(name) {
+            const radios = document.getElementsByName(name);
+            const isChecked = Array.from(radios).some(radio => radio.checked);
+            return isChecked;
+        }
+
+        // Function to validate the form
+        function validateForm(form) {
+            if (form instanceof jQuery) {
+                form = form[0];
+            }
+            let isValid = true;
+            const inputs = form.querySelectorAll('input, select, textarea');
+
+            inputs.forEach(input => {
+                removeError(input);
+                if (input.offsetParent !== null && input.value.trim() === '' && input.getAttribute('name') !== 'issue_id') {
+                    showError(input, `${input.previousElementSibling.innerText} is required`);
+                    isValid = false;
+                }
+            });
+
+            const proceedChecked = checkRadioGroup('proceed');
+            const radioGroupDiv = document.querySelector('.checkbox-group'); // Adjust selector to your radio group container
+            const detectionType = form.querySelector('select[name="action_type"]').value;
+            if (detectionType === "specific_value") {
+                const specificField = form.querySelector('#specific_field'); // Adjust for real field
+                if (specificField && specificField.offsetParent !== null && specificField.value.trim() === '') {
+                    showError(specificField, 'This field is required for this detection type');
+                    isValid = false;
+                }
+            }
+
+            return isValid;
+        }
+
+        $(document).on('input change', 'input, select, textarea', function () {
+            removeError($(this));
+        });
+
+
+        $(document).ready(function () {
+            $('[data-bs-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="{{url_for('newpage')}}">&nbsp;&nbsp;FIST<i class="fa fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="lookup-issue-tab"
+                        href="{{ url_for('newpage') }}#lookup-issue">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"
+                        href="{{ url_for('newpage') }}#knowledge-base">&nbsp;|&nbsp;&nbsp;KNOWLEDGE BASE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;CONFIGURATION MANAGEMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>
+                    <!--                    <a class="nav-link" id="user-pane-tab" data-bs-toggle="tab" href="#user-pane" role="tab" aria-controls="user-pane" aria-selected="false">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>-->
+                </li>
+            </ul>
+        </div>
+        <div class="question-dropdown">
+            <div class="dropdown" style="width: auto !important">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="questionDropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="questionDropdown">
+                    <li><a class="dropdown-item" href="#">Help</a></li>
+                    <li><a class="dropdown-item" href="#">Support</a></li>
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <div class="dropdown" style="width: auto !important">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="settingsDropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-lg"></i><span class="profile-text">{{session['user_name']}}<br />
+                        Superadmin</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li>
+                        <a class="dropdown-item" href="{{url_for('logout')}}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                    aria-controls="nav-home" aria-selected="true">ISSUE DETAILS</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" role="tab"
+                    aria-controls="nav-profile" aria-selected="false">ISSUE DETECTION STEPS</a>
+                {#
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                    aria-controls="nav-profile" aria-selected="false">ISSUE DETECTION/MITIGATION STEPS</a>#}
+                <!--			<a class="btn btn-lg btn-secondary ml-auto" id="nav-IMPORT-tab" data-toggle="modal" data-target="#uploadModal" >IMPORT</a>-->
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <br />
+            <div class="tab-pane fade show active w-100" id="nav-home" role="tabpanel" style=""
+                aria-labelledby="nav-home-tab">
+                <div>
+                    <span id="update_ret"></span>
+                </div>
+                <form name="SearchForm" id="searchForm">
+                    <fieldset class="the-fieldset">
+                        <legend class="w-auto px-2" style="text-decoration: underline">
+                            ISSUE DESCRIPTION SECTION
+                        </legend>
+                        <div class="form-row mt-1">
+                            <div class="form-group col-md-3">
+                                <label for="POC">POC</label>
+                                <input type="text" id="POC" class="form-control" name="POC" value="" />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="email">EMAIL</label>
+                                <input type="text" id="email" class="form-control" name="email" value="" />
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="cell">CELL LEVEL/ SITE LEVEL</label>
+                                <input type="text" id="cell" class="form-control" name="cell" value="" />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <!--	<label for="sw" class="form-label">SOFTWARE:</label>
+							<input type="text" id="sw" name="issue_sw" class="form-control" value=""> -->
+                                <label for="issue_sw">SOFTWARE<span class="text-danger">*</span></label>
+                                <div class="dropdown" data-dropdown>
+                                    <input class="form-control" type="text" name="issue_sw" id="issue_sw" class="search"
+                                        placeholder="" data-search />
+                                    <ul data-options id="dropdown-options_sw">
+                                        {% for sw in softwares %}
+                                        <li data-value="{{sw}}">{{sw}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="status" class="form-label">STATUS<span class="text-danger">*</span></label>
+                                <select class="form-control" name="status" id="status">
+                                    <option value="">--select--</option>
+                                    <option value="Open">Open</option>
+                                    <option value="Closed">Closed</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="area_val">AREA<span class="text-danger">*</span></label>
+                                <!--			<input type="text" id="area_val" class="form-control" name="area_val" value=""> -->
+                                <div class="dropdown" data-dropdown>
+                                    <input class="form-control" type="text" id="area_val" name="area_val" class="search"
+                                        placeholder="" data-search />
+                                    <ul data-options id="dropdown-options_area">
+                                        {% for area in areas %}
+                                        <li data-value="{{area}}">{{area}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <!--		<label for="tech">Technology:</label>
+							<input type="text" id="tech" class="form-control" name="tech"> -->
+                                <label for="tech">TECHNOLOGY<span class="text-danger">*</span></label>
+                                <div class="dropdown" data-dropdown>
+                                    <input class="form-control" type="text" id="tech" name="tech" class="search"
+                                        placeholder="" data-search />
+                                    <ul data-options id="dropdown-options_tech">
+                                        {% for tech in technologies %}
+                                        <li data-value="{{tech}}">{{tech}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="Visibility">VISIBILITY<span class="text-danger">*</span></label>
+                                <select name="Visibility" id="Visibility" class="form-control">
+                                    <option value="">--select--</option>
+                                    <option value="External">External</option>
+                                    <option value="Internal">Internal</option>
+                                </select>
+                                <!--							<input type="text" id="Visibility"  name="Visibility">-->
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="kpi">MAJOR KPI DEGRADATION<span class="text-danger">*</span></label>
+                                <div class="dropdown" data-dropdown style="width: 100% !important">
+                                    <input class="form-control kpi_class" type="text" id="kpi" name="kpi" class="search"
+                                        placeholder="" data-search />
+                                    <ul data-options id="dropdown-options_kpi">
+                                        {% for kpi in kpis %}
+                                        <li data-value="{{kpi}}">{{kpi}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label>ISSUE NAME</label>
+                                <textarea id="icat" class="form-control" name="icat" rows="2" cols="100"
+                                    style="width: 100%"></textarea>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label>DESCRIPTION</label>
+                                <textarea id="desc" class="form-control" name="desc" rows="2" cols="100"
+                                    style="width: 100%"></textarea>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label>ROOT CAUSE<span class="text-danger">*</span></label>
+                                <textarea id="rca" class="form-control" name="rca" rows="2" cols="100" wrap="hard"
+                                    style="width: 100%"></textarea>
+                            </div>
+                        </div>
+                        {##} {#
+                        <div class="form-row">
+                            #} {#
+                            <div class="form-group col-md-6">
+                                #} {# <label>Description:</label>#} {#
+                                <textarea id="desc" class="form-control" name="desc" rows="2" cols="100"
+                                    style="width: 100%"></textarea>#} {#
+                            </div>
+                            #} {#
+                            <div class="form-group col-md-6">
+                                #} {#
+                                <label>Root_Cause:<span class="text-danger">*</span></label>#} {#
+                                <textarea id="rca" class="form-control" name="rca" rows="2" cols="100" wrap="hard"
+                                    style="width: 100%"></textarea>#} {#
+                            </div>
+                            #} {##} {#
+                        </div>
+                        #}
+
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label>IMPACT</label>
+                                <textarea id="impact" class="form-control" name="impact" rows="2" cols="100" wrap="hard"
+                                    style="width: 100%"></textarea>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label>REMARKS NOTES</label>
+                                <textarea id="remarks" class="form-control" name="remarks" rows="2" cols="100"
+                                    wrap="hard" style="width: 100%"></textarea>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label>REFERENCE LINKS</label>
+                                <textarea id="reference" class="form-control" name="reference" rows="2" cols="100"
+                                    wrap="hard" style="width: 100%"></textarea>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label>INTERIM SOLUTION WORKAROUND</label>
+                                <textarea id="Interim_Solution_Workaround" class="form-control" name="wa" rows="2"
+                                    cols="100" wrap="hard" style="width: 100%"></textarea>
+                            </div>
+                        </div>
+                        {##} {#
+                        <div class="form-row">
+                            #} {#
+                            <div class="form-group col-md-6">
+                                #} {##} {# <label>Reference Links:</label>#} {#
+                                <textarea id="reference" class="form-control" name="reference" rows="2" cols="100"
+                                    wrap="hard" style="width: 100%"></textarea>#} {#
+                            </div>
+                            #} {#
+                            <div class="form-group col-md-6">
+                                #} {# <label>Interim_Solution_Workaround:</label>#} {#
+                                <textarea id="Interim_Solution_Workaround" class="form-control" name="wa" rows="2"
+                                    cols="100" wrap="hard" style="width: 100%"></textarea>#} {#
+                            </div>
+                            #} {#
+                        </div>
+                        #}
+
+                        <div class="form-row mt-1">
+                            <div class="form-group col-md-6">
+                                <label>PERMANENT_FIX</label>
+                                <textarea id="Permanent_Fix" class="form-control" name="pf" rows="2" cols="100"
+                                    wrap="hard" style="width: 100%"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-row mt-3 d-flex justify-content-center">
+                        <input type="button" class="btn btn-md btn-light generic_button" style="
+                  color: #283db4;
+                  border: 2px solid #283db4;
+                  border-radius: 5px;
+                  font-size: 1.2rem;
+                " value="Create" id="update_kb" />
+                    </div>
+                    <br /><br />
+                </form>
+                <br />
+            </div>
+            <div class="tab-pane fade show w-100" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                style="width: 60%; position: relative; bottom: 25px">
+                <button class="btn btn-md btn-light generic_button ml-2" style="
+              color: #283db4;
+              border: 2px solid #283db4;
+              border-radius: 5px;
+              float: right;
+              position: relative;
+              bottom: 24px;
+            " id="toggleIssue" onclick="toggleIssueSequence(this)">
+                    COLLAPSE All
+                </button>
+
+                <button class="btn btn-md btn-light generic_button" style="
+              color: #283db4;
+              border: 2px solid #283db4;
+              border-radius: 5px;
+              float: right;
+              position: relative;
+              bottom: 24px;
+            " id="add_issue_btn" onclick="addIssueSequence()">
+                    CREATE DETECTION STEP
+                </button>
+
+                <div class="card mb-1 text-white card-div" id="issue_sequence_card_1" style="width: 100% !important">
+                    <div class="card-header row" style="height: 30px !important; background: #283db4 !important">
+                        <div class="icon-container col-md-10" style="position: relative; bottom: 15px; left: -20px">
+                            <i class="fas fa-lg fa-minus icon iconCardMinus mt-4" id="iconCard1Minus"
+                                onclick="toggleClass(this)" data-bs-toggle="collapse" data-bs-target="#collapseCard1"
+                                aria-expanded="true" aria-controls="collapseCard1"></i>
+                        </div>
+                        <div class="div-header col-md-2" style="
+                  text-align: right;
+                  position: relative;
+                  bottom: 5px;
+                  right: -25px;
+                ">
+                            <button class="btn btn-outline-warning btn-sm edit_btn" id="editbtn_1"
+                                onclick="editIssue(this)">
+                                <i class="fas fa-lg fa-edit icon text-white"></i>
+                            </button>
+                            <button class="btn btn-outline-success btn-sm save_btn" id="savebtn_1"
+                                onclick="saveIssue(this)">
+                                <i class="fas fa-lg fa-save icon text-white"></i>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm delete_btn" id="deletebtn_1"
+                                onclick="deleteIssue(this)" disabled>
+                                <i class="fas fa-lg fa-trash icon text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="collapseCard1" class="collapse show">
+                        <div class="card-body" style="color: black">
+                            <form name="IssueSequenceForm" id="IssueSequenceForm">
+                                <fieldset class="the-fieldset">
+                                    <legend class="w-auto px-2" style="text-decoration: underline">
+                                        ISSUE SEQUENCE SECTION
+                                    </legend>
+
+                                    <!--		<div class="d-flex justify-content-center align-items-center">
+					<div class="progressbar" id="progressbar">
+					</div>
+				</div> -->
+                                    <div class="form-row">
+                                        <div class="form-group col-3">
+                                            <label for="issue_id"> ISSUE ID</label>
+                                            <input type="text" id="issue_id" class="form-control" name="issue_id"
+                                                readonly />
+                                            <input type="hidden" id="status_val" name="status_val" />
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label for="sw_val"> SOFTWARE</label>
+                                            <input type="text" id="sw_val" class="form-control" name="sw_val" />
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label for="sequenceid"> EXECUTION ORDER NUMBER</label>
+                                            <input type="text" id="sequenceid" class="form-control" name="sequenceid" />
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label for="action_type"> DETECTION TYPE</label>
+                                            <select class="form-control" id="action_type" name="action_type"
+                                                onchange="changeFunction()">
+                                                <option value="" selected style="font-size: 14px; font-weight: bold">
+                                                    --select--
+                                                </option>
+                                                {% for action in action_type %}
+                                                <option class="{% if action == 'GET FILE' %}d-none {% endif %}"
+                                                    value="{{ action }}">
+                                                    {{action}}
+                                                </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-3">
+                                            <label for="scName" class="form-label">SCRIPT NAME</label>
+                                            <input type="text" id="scName" class="form-control" name="scName" />
+                                        </div>
+                                        {#
+                                        <div class="form-group col-3">
+                                            #} {#
+                                            <label for="uid" class="form-label">SANE USER ID:</label>#} {#
+                                            <input type="text" id="uid" {% if sane_id %} placeholder="{{ sane_id }}"
+                                                disabled {% endif %} class="form-control" name="uid" />#} {#
+                                        </div>
+                                        #} {#
+                                        <div class="form-group col-3">
+                                            #} {#
+                                            <label for="pwd" class="form-label">SANE PASSCODE:</label>#} {#
+                                            <input type="password" id="pwd" {% if sane_pwd %} placeholder="********"
+                                                disabled {% endif %} class="form-control" name="pwd" />#} {#
+                                        </div>
+                                        #}
+                                        <div class="form-group col-3">
+                                            <label for="ip" class="form-label">SERVER IP</label>
+                                            <input type="text" id="ip" class="form-control" name="ip" />
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-3">
+                                            <label for="scLoc" class="form-label">SERVER LOCATION</label>
+                                            <input type="text" id="scLoc" class="form-control" name="scLoc" />
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label for="scOwner" class="form-label">SCRIPT OWNER</label>
+                                            <input type="text" id="scOwner" class="form-control" name="scOwner" />
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="scPath" class="form-label">SCRIPT PATH</label>
+                                            <input type="text" id="scPath" class="form-control" name="scPath" />
+                                        </div>
+                                    </div>
+                                    `
+                                    <div style="display: none">
+                                        <label for="action_id">Action ID</label>
+                                        <input type="text" id="action_id" name="action_id" readonly
+                                            class="form-control" />
+                                    </div>
+
+                                    <div class="form-row mt-2">
+                                        <div class="checkbox-group">
+                                            <!--						<div class="form-check">-->
+                                            <!--							<label class="form-check-label" for="check_type" style="font-weight:bold">Check ?</label>-->
+                                            <!--						</div>-->
+                                            <!--						<div class="form-check">-->
+                                            <!--							<input class="form-check-input" type="radio" id="OM" name="check_type" id="check_type" value="OM">-->
+                                            <!--							<label class="form-check-label" for="OM">OM</label>-->
+                                            <!--						</div>-->
+                                            <!--						<div class="form-check">-->
+                                            <!--							<input class="form-check-input" type="radio" id="CLI" name="check_type" value="CLI">-->
+                                            <!--							<label class="form-check-label" for="CLI">CLI</label>-->
+                                            <!--						</div>-->
+                                            <div class="form-check">
+                                                <label class="form-check-label" for="proceed_yes"
+                                                    style="font-weight: bold">PROCEED ON FAILURE?</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="proceed_yes"
+                                                    name="proceed" value="Yes" />
+                                                <label class="form-check-label" for="proceed_yes">Yes</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="proceed_no"
+                                                    name="proceed" value="No" />
+                                                <label class="form-check-label" for="proceed_no">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row mt-3">
+                                        <div class="form-group col-5">
+                                            <label for="check_condition" class="form-label">CHECK CONDITIONS</label>
+                                            <textarea id="check_condition" name="check_condition" class="form-control"
+                                                rows="3" cols="2"></textarea>
+                                        </div>
+                                        <div class="form-group col-5">
+                                            <label for="regex" class="form-label">NE IDS:</label>
+                                            <textarea id="regex" name="regex" class="form-control" rows="3"
+                                                cols="2"></textarea>
+                                        </div>
+                                        <div class="form-group col-5" style="display: none">
+                                            <label for="om_counters" class="form-label">OM COUNTERS:</label>
+                                            <textarea id="om_counters" name="om_counters" class="form-control" rows="3"
+                                                cols="2" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="OM FAMILY and OM Counters <om_family_name|counter1,counter2,etc.,> seperated by new line"></textarea>
+                                        </div>
+                                        <div class="form-group col-5">
+                                            <label for="pattern_grep" class="form-label">GREP PATTERN</label>
+                                            <textarea id="pattern_grep" name="pattern_grep" class="form-control"
+                                                rows="3" cols="2"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-3 mx-5 d-flex justify-content-center"
+                                        style="margin-top: 30px">
+                                        <!--       <input type="button" class="w3-button w3-black btn-next w3-round next edit_btn" value="Edit" id="editbtn_1">&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" class="w3-button w3-black w3-round save_btn" value="Save" id="savebtn_1" onclick="saveFunction(this)">&nbsp;&nbsp;&nbsp;&nbsp; -->
+                                        <!--			<input type="button" class="w3-button w3-black w3-round"  id="remove">Remove</input>&nbsp;&nbsp;&nbsp;&nbsp; -->
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Redirection Confirmation
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalMessage">
+                    <!-- Redirection message will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="button" id="redirectModalButton" class="btn btn-success">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel" style="color: red">
+                    <i class="fas fa-exclamation-circle text-danger"></i>Error
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    &times;
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p id="errmsg"></p>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <!-- Additional action buttons can be added here -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel" style="color: green">
+                    Success!!
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    &times;
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p id="sucmsg"></p>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <!-- Additional action buttons can be added here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadModalLabel">Bulk Upload</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="formFile" class="form-label">Choose XLSX file</label>
+                        <input class="form-control-file" type="file" id="formFile" accept=".xlsx" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary" onclick="uploadFile()">
+                    Upload
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

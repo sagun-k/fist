@@ -1,0 +1,8 @@
+SITE_LIST='24593002050_5GDU_CATAWBA_SOUTH-CLMB','24593002373_5GDU_MERCHANTS_LANDING-CLMB','24593003029_5GDU_FOSTORIA-CLMB'
+/opt/drill/apache-drill-1.19.0/bin/sqlline -u jdbc:drill:zk=local -e "select * from dfs.vzdb.NR_PRACH_BEAM_HOURLY where NE_NAME IN ('24593002050_5GDU_CATAWBA_SOUTH-CLMB','24593002373_5GDU_MERCHANTS_LANDING-CLMB','24593003029_5GDU_FOSTORIA-CLMB') and datetime_utc like '%2024-08-01 12%';" --outputformat="csv" > /opt/data/iFAST_Logs/NR_PRACH_BEAM_21_1_08-02-2024_081527.csv ; sed -i -e "s/'//g" -e "s/apache drill>//g" /opt/data/iFAST_Logs/NR_PRACH_BEAM_21_1_08-02-2024_081527.csv
+./om_exec.sh: line 72: sshpass: command not found
+/opt/drill/apache-drill-1.19.0/bin/sqlline -u jdbc:drill:zk=local -e "select * from dfs.vzdb.CUCPCSL_PER_GNB_HEXA_HOURLY where NE_NAME IN ('24593002050_5GDU_CATAWBA_SOUTH-CLMB','24593002373_5GDU_MERCHANTS_LANDING-CLMB','24593003029_5GDU_FOSTORIA-CLMB') and datetime_utc like '%2024-08-01 12%';" --outputformat="csv" > /opt/data/iFAST_Logs/CU-CSL_21_1_08-02-2024_081527.csv ; sed -i -e "s/'//g" -e "s/apache drill>//g" /opt/data/iFAST_Logs/CU-CSL_21_1_08-02-2024_081527.csv
+./om_exec.sh: line 72: sshpass: command not found
+om_exec complete
+$VAR1 = {};
+NE_ID,CELL_ID,CONDITION,PROCESSED_VALUE,OPERATOR,COMPARE_VALUE

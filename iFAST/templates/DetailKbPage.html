@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>iFAST</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+        <script src="/static/assets/js/issues/single_issue.js" defer></script>
+        <style>
+            .nav-item.right-align {
+            margin-left: auto;
+            }
+            #sticky-footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            height: 58px;
+            //background: grey;
+            }
+            .checkbox-group {
+            display: flex;
+            align-items: center;
+            }
+            .checkbox-group label {
+            margin-left: 5px;
+            margin-right: 15px;
+            }
+            body, html {
+            height: 100%;
+            background-color: #f4f4f4;
+            font-size: 12px !important;
+            width: 100%;
+            margin: 0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #292b2c;
+            display: flex;
+            flex-direction: column;
+            overflow-x: auto;
+            }
+            fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            }
+            fieldset.label{
+            font-weight:bold;
+            }
+            .the-fieldset {
+            border: 1px groove #1428A0;
+            border-color: #5161ac;
+            background: #fff !important;
+            padding: 15px;
+            border-radius: 5px;
+            width:100%;
+            }
+            /* Full height image header */
+            .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("/w3images/mac.jpg");
+            min-height: 100%;
+            }
+            .w3-bar .w3-button {
+            padding: 16px;
+            }
+            .footer {
+            font-size:12px;
+            font-family:arial;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            }
+            input.formInvalid::-webkit-input-placeholder {
+            color: red;
+            }
+            .star:after {
+            content: " *";
+            color: red;
+            }
+            .nohover {
+            pointer-events: none;
+            }
+            .hrefButton {
+            padding: 3px 10px;
+            text-decoration: none;
+            }
+            .button {
+            background-color: Teal;
+            border: none;
+            color: white;
+            padding: 8px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+            }
+            #advsrch {
+            display: none;
+            /* Hide the advsrch div by default */
+            }
+            .button:hover {
+            background-color: #ddd;
+            color: black;
+            }
+            label.required::after {
+            content: " *";
+            color: red; /* Customize the color if needed */
+            }
+            .swal2-popup {
+            width: 300px; /* Change the width as per your requirement */
+            }
+            .swal2-popup {
+            font-size: 8px; /* Change the font size as per your requirement */
+            }
+            .error {
+            color: red;
+            }
+            .dropdown-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            margin-top: 0 !important;
+            }
+            .btn-transparent-on-hover {
+            transition: background-color 0.3s;
+            }
+            .btn-transparent-on-hover:hover {
+            background-color: transparent !important;
+            }
+            .container {
+            max-width: 1400px;
+            border: 2px groove ThreeDFace;
+            margin: 0 auto;
+            padding-top: 20px;
+            background: #fff !important;
+            margin-top: 20px;
+            //overflow:auto;
+            }
+            .progressbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            counter-reset: step;
+            margin: 2rem 0;
+            width: 130px;
+            }
+            .step {
+            width: 2.1875rem;
+            height: 1.9rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            background-color: lightgray;
+            color: white;
+            position: relative;
+            z-index: 1;
+            }
+            .step.active {
+            background-color: blue;
+            }
+            .step.completed {
+            background-color: blue;
+            }
+            .step:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -105%;
+            right: -50%;
+            height: 2px;
+            width: calc(100% + 50%);
+            background-color: lightgray;
+            z-index: -1;
+            }
+            .step:first-child:before {
+            display: none;
+            }
+            .step.active:before, .step.completed:before {
+            background-color: blue;
+            }
+            .progress {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            background-color: #dcdcdc;
+            z-index: -1;
+            }
+            .progressbar::before,
+            .progress {
+            width: calc(100% - 2.1875rem * 4); /* Adjust the number of steps accordingly */
+            height: 0.2rem; /* Adjust the height as needed */
+            background-color: var(--primary-color);
+            border-radius: 0.1rem; /* Adjust the border radius as needed */
+            margin: auto;
+            }
+            .nav-tabs .nav-link.active {
+            color: white;
+            background-color: blue;
+            border-color: blue;
+            }
+            .nav-tabs .nav-link {
+            color: grey;
+            background-color: lightgrey;
+            border-color: lightgrey;
+            }
+            .the-fieldset label{
+            font-weight:bold;
+            }
+
+
+            .navbar-custom {
+            background-color: #283db4;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+            font-size: 13px;
+            font-weight: bold;
+            padding: 2px 2px;
+        }
+        .nav-link {
+            color: white;
+            transition: color 0.2s;
+        }
+        .nav-link:hover {
+            color: white;
+        }
+        .select2-container--bootstrap5 {
+    z-index: 1060 !important; /* Use !important to override any inline styles */
+}
+
+.select2-container--bootstrap5 .select2-dropdown {
+    z-index: 1060 !important; /* Ensure dropdown has correct z-index */
+}
+                .modal-dialog {
+            max-width: 40%;
+        }
+
+        .nav-item .dropdown-menu {
+            background-color: #283db4;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px; /* Adjust width as needed */
+        }
+        .nav-item .dropdown-menu a {
+            color: white;
+        }
+        .nav-item .dropdown-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+            width: 150px; /* Adjust width as needed */
+        }
+        .user-profile {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link {
+            color: white;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile .nav-link .profile-text {
+            margin-left: 5px;
+            font-size: 10px;
+        }
+        .content-section {
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            width: 100%; /* Ensure width is 100% */
+        }
+        .content-section h2 {
+            color: #283db4;
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            margin-bottom: 15px;
+        }
+        .dataTables_wrapper {
+            padding: 0;
+        }
+        table.dataTable {
+            border: 1px solid #ddd; /* Ensure border is visible */
+        }
+        .dataTables_filter {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+        .navbar-brand {
+            font-family: 'Arial', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #283db4, 0 0 5px #283db4;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000000, 0 0 25px #ffeb3b, 0 0 5px #ffeb3b;
+        }
+        </style>
+        <script>
+            $(document).ready(function() {
+           $('.dropdown').hover(function(){
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(300).addClass('show');
+    }, function(){
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300).removeClass('show');
+    });
+             //   $('#saveissue').hide();
+               $('#saveissue').attr('disabled', true);
+                $('#saveissue').on('click',function(e){
+                    e.preventDefault();
+
+                    var formData = $('#singleissueform').serialize();
+                    $.ajax({
+                        url:"/save_singleissue",
+                        type: "post",
+                        data: formData,
+                        success:function(data){
+                            if (data.message) {
+                                $('#update_ret').html(data.message).removeClass('text-danger').addClass('text-success');
+                                $('#singleissueform :input').prop('readonly', true);
+                                $('#singleissueform textarea').prop('readonly', true);
+                                location.reload();
+                            } else {
+                                $('#update_ret').html(data.error).removeClass('text-success').addClass('text-danger');
+                            }
+
+                        },
+
+                    });
+                });
+            $('#editissue').click(function() {
+                // Remove readonly attribute from all input and textarea elements
+                $('input[type="text"], textarea').removeAttr('readonly');
+                $('input[type="password"], textarea').removeAttr('readonly');
+                $('#msId').attr('readonly', true)
+               //  $("#msId").attr('disabled', true)
+
+                $("#status").attr('readonly', false);
+                $("#status").attr('style', 'background-color:#fff;');
+                 $("#status").removeAttr('disabled')
+
+                 $("#sw").attr('readonly', false);
+                 $("#sw").attr('style', 'background-color:#fff;');
+                 $("#sw").removeAttr('disabled')
+
+                 $("#Visibility").attr('readonly', false);
+                 $("#Visibility").removeAttr('disabled')
+                 $("#Visibility").attr('style', 'background-color:#fff;');
+
+                 $("#tech").attr('readonly', false);
+                 $("#tech").removeAttr('disabled')
+                 $("#tech").attr('style', 'background-color:#fff;');
+
+                    $("#action_type").attr('readonly', false);
+                 $("#action_type").removeAttr('disabled')
+                 $("#action_type").attr('style', 'background-color:#fff;');
+
+                $('#editissue').attr('disabled', true);
+               $('#saveissue').attr('disabled', false);
+            });
+
+
+            $("#proceed").click(function() {
+                    let issue_id = $(this).attr("data-issue-id")
+                    let sw_version = $(this).attr("data-sw-version")
+                    // let len_script = $(this).attr("data-len-script")
+                    $("#nav-profile-tab").click();
+                    $("#issue_id").val(issue_id)
+                    $("#sw_val").val(sw_version)
+
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+
+
+
+        $(document).ready(function(){
+            $(".IssueSequenceForm").hide();
+            $("#IssueSequenceForm_1").show();
+            first_form = $("#IssueSequenceForm_1")
+        });
+
+
+
+
+
+         //    function next_step(el){
+         //
+         //     var curr_id = el.id.split("_")[1];
+         //     var next_id = parseInt(curr_id) + 1;
+         //     if (next_id > 3) {
+         //        return;
+         //     }
+         //      console.log("next",el)
+         //      console.log("next",next_id)
+         //      console.log("curr",curr_id)
+         //     $(".IssueSequenceForm").hide();
+         //     curr_step = `.progressbar #step_${curr_id}`
+         //     $(curr_step).removeClass("active")
+         //     selector = '#IssueSequenceForm_' + next_id
+         //    $(selector).show();
+         //     var active_step = `.progressbar #step_${next_id}`
+         //    $(active_step).addClass("active")
+         // }
+
+
+
+
+              function next_step(el){
+
+             var curr_id = el.id.split("_")[1]; //check if not curr_id initialize it as 0
+             var next_id = parseInt(curr_id) + 1;
+             var sequence_length = parseInt($('#sequenceid').attr('data-len-script'));
+
+             if (next_id > sequence_length){
+                 $('#sequenceid').val(next_id)
+                 var clone_form =  $(`#IssueSequenceForm_${curr_id}`).clone();
+                 clone_form.attr('id', `IssueSequenceForm_${next_id}`)
+                 clone_form.find('.btn-nxt').attr('id', `next_${next_id}`)
+                 $(`#IssueSequenceForm_${curr_id}`).after(clone_form);
+
+             }
+              console.log("next",el)
+              console.log("next_id",next_id)
+              console.log("curr_id",curr_id)
+             $(".IssueSequenceForm").hide();
+             curr_step = `.progressbar #step_${curr_id}`
+             $(curr_step).removeClass("active")
+             selector = '#IssueSequenceForm_' + next_id
+            $(selector).show();
+             var active_step = `.progressbar #step_${next_id}`
+            $(active_step).addClass("active")
+         }
+
+
+            function prev_step(el){
+             var curr_id = el.id.split("_")[1];
+             var prev_id = parseInt(curr_id) - 1;
+             if (prev_id === 0){
+                return false;
+             }
+
+             $(".IssueSequenceForm").hide();
+             curr_step = `.progressbar #step_${curr_id}`
+             $(curr_step).removeClass("active")
+
+             selector = '#IssueSequenceForm_' + prev_id
+            $(selector).show();
+            var active_step = `.progressbar #step_${prev_id}`
+            $(active_step).addClass("active")
+
+         }
+
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid p-1">
+            {#
+            <div class="row">
+                <div class="col d-flex justify-content-start">
+                    <p style="text-align:left;">
+                        <a href="{{url_for('index')}}" class="btn btn-sm btn-transparent-on-hover custom-btn text-dark"><span><i class="fa fa-home" style="font-size: 1.2em;"></i><u class="text-dark">iFAST</u></span></a>
+                        &nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-sm btn-transparent-on-hover custom-btn text-dark">
+<!--                        <u>LOOK UP ISSUE</u>-->
+                        </a>
+                    </p>
+                </div>
+                <div class="col d-flex justify-content-end text-end">
+                    <div class="dropdown" id="dropdownWrapper">
+                        <button class="btn  dropdown-toggle text-dark btn-transparent-on-hover" type="button" id="dropdownMenuButton" aria-expanded="false">
+                        <i class="fa fa-user-circle-o" style="font-size:12px"></i>&nbsp;&nbsp;{{session['user_name']}}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid p-1">
+            <div class="bg-light">
+                <h2 class="display-8 text-center"><b>Issue Fast Automated Identification Tool</b></h2>
+            </div>
+        </div>
+        #}
+              <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="#">&nbsp;&nbsp;iFAST<i class="fa fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active " id="knowledge-base-tab" data-bs-toggle="tab" href="/newpage#knowledge-base" role="tab" aria-controls="knowledge-base" aria-selected="true">&nbsp;|&nbsp;&nbsp;KNOWLEDGE BASE</a>
+                </li>
+                <li class="nav-item">
+<!--                    <a class="nav-link" id="lookup-issue-tab" data-bs-toggle="tab" href="{{url_for('lookup_onload')}}" role="tab" aria-controls="lookup-issue" aria-selected="false">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>-->
+                    <a class="nav-link " id="lookup-issue-tab" href="{{url_for('lookup_onload')}}">&nbsp;|&nbsp;&nbsp;LOOKUP ISSUE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;CONFIGURATION MANAGEMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>
+<!--                    <a class="nav-link" id="user-pane-tab" data-bs-toggle="tab" href="#user-pane" role="tab" aria-controls="user-pane" aria-selected="false">&nbsp;|&nbsp;&nbsp;USER MANAGEMENT</a>-->
+                </li>
+            </ul>
+        </div>
+        <div class="question-dropdown">
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="questionDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="questionDropdown">
+                    <li><a class="dropdown-item" href="#">Help</a></li>
+                    <li><a class="dropdown-item" href="#">Support</a></li>
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <div class="dropdown">
+
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-lg"></i><span class="profile-text">{{session['user_name']}}<br> Superadmin</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                    <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        {# {% if users %} #}
+        <div class="container mt-1">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">ISSUE DETAILS</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">ISSUE DETECTION/MITIGATION STEPS</a>
+                 </div>
+                 <div class="float-end" style="position: relative; bottom: 40px;" >
+                         <input type="button" class="w3-button w3-black edit-button" value="Edit" id="editissue">
+                         <input type="submit" class="w3-button w3-black save-button" value="Save" id="saveissue">
+                    </div>
+
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <br>
+                <div class="tab-pane show fade active w-100" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div>
+                        <p id="update_ret" class="text-danger"></p>
+                    </div>
+
+
+                     <form class="form" id="singleissueform">
+                        {% for record in records %}
+                        <fieldset class="the-fieldset">
+                            <legend class="w-auto px-2" style="text-decoration: underline;">Issue Description Section</legend>
+                            <div class="form-row mt-1">
+                                <div class="form-group col-md-3">
+                                    <label class="label" for="msId">Issue:</label>
+                                    <input type="text" id="msId" class="form-control" name="msId" value="{{ record.issue }}" readonly>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="POC">POC:</label>
+                                    <input type="text" id="POC" class="form-control" name="POC" value="{{ record.PoC }}" readonly>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="sw">SW:</label>
+                                     <select class="form-control" name="swname" id="sw" disabled>
+                                         {% for sw in software %}
+                                        <option value="{{sw}}" {% if record.SW == sw %}selected{% endif %} >{{sw}}</option>
+                                         {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="status" class="form-label">STATUS:</label>
+                                    <select class="form-control" name="status" id="status" disabled>
+                                    <option value="Open" {% if record.Status == 'Open' %}selected{% endif %} >Open</option>
+                                    <option value="Closed" {% if record.Status == 'Closed' %}selected{% endif %}>Closed</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                             <div class="form-row mt-1">
+                                <div class="form-group col-md-3">
+                                    <label for="area">Area:</label>
+                                    <input type="text" id="area" class="form-control" name="area" value="{{ record.Area }}" readonly>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="tech">Technology:</label>
+                                     <select class="form-control" name="tech" id="tech" disabled>
+                                         {% for technology in technologies %}
+                                        <option value="{{technology}}" {% if record.Technology == technology %}selected{% endif %}>{{technology}}</option>
+                                         {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="Visibility">Visibility:</label>
+<!--                                    <input type="text" id="Visibility" class="form-control" name="Visibility" value="{{ record.Visibility }}" readonly>-->
+                                     <select class="form-control" name="Visibility" id="Visibility" disabled>
+                                         {% for visibility in visibilities %}
+                                        <option value="{{visibility}}" {% if record.Visibility == visibility %}selected{% endif %}>{{visibility}}</option>
+                                         {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="kpi">Major KPI Degradation:</label>
+                                    <input type="text" id="kpi" class="form-control" name="kpi" value="{{ record.Major_KPI_Degradation }}" readonly>
+                                </div>
+                             </div>
+                             <div class="form-row mt-1">
+                                <div class="form-group col-md-6">
+                                    <label for="Issue_Detection">Issue Detection Category:</label>
+                                    <input type="text" id="Issue_Detection" class="form-control" name="detect" value="{{ record.Issue_Detection_Category }}" readonly>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Cell_site">Cell Site:</label>
+                                    <input type="text" id="Cell_site" class="form-control" name="cell" value="{{ record.Cell_or_Site_Level }}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-row mt-1">
+                                <label for="ic">Issue Category:</label>
+                                <textarea id ="ic" class="form-control" name="ic" rows="2" cols="100" style="width:100%" readonly>{{ record.Issue_Category }}</textarea>
+                            </div>
+                            <div class="form-row mt-1">
+                                <label for="desc">Description:</label>
+                                <textarea id ="desc" class="form-control" name="desc" rows="2" cols="100" style="width:100%" readonly>{{ record.Description }}</textarea>
+                            </div>
+                            <div class="form-row mt-1">
+                                <label for="rca">Root_Cause:</label>
+                                <textarea id ="rca" class="form-control" name="rca" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Root_Cause }}</textarea>
+                            </div>
+                            <div class="form-row mt-1">
+                                <label for="impact">Impact:</label>
+                                <textarea id ="impact" class="form-control" name="impact" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Impact }}</textarea>
+                            </div>
+                            <div class="form-row mt-1">
+                                <label>Detection_Methodology_OMs:</label>
+                                <textarea id ="Detection_Methodology_OMs" class="form-control" name="Detection_Methodology_OMs" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Detection_Methodology_OMs }}</textarea>
+                            </div>
+                            <div class="form-row mt-1">
+                                <label>Detection_Methodology_Log_Script:</label>
+                                <textarea id ="Detection_Methodology_Log_Script" class="form-control" name="Detection_Methodology_Log_Script" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Detection_Methodology_Log_Script }}</textarea>
+                            </div>
+                            <div class="form-row mt-1">
+                                <label>Interim_Solution_Workaround:</label>
+                                <textarea id ="Interim_Solution_Workaround" class="form-control" name="Interim_Solution_Workaround" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Interim_Solution_Workaround }}</textarea>
+                            </div>
+                            <div class="form-row mt-1">
+                                <label>Permanent_Fix:</label>
+                                <textarea id ="Permanent_Fix" class="form-control" name="Permanent_Fix" rows="2" cols="100" wrap="hard" style="width:100%" readonly>{{ record.Permanent_Fix }}</textarea>
+                            </div>
+                        </fieldset>
+                       {# {% if record['Status'] == 'Open'%} #}
+                        <div class="form-row mx-auto mt-5 d-flex justify-content-center">
+                            <div class="button-container">
+<!--                                <input type="submit" class="w3-button w3-black save-button" value="Update" id="saveissue">-->
+<!--                                <input type="button" class="w3-button w3-black edit-button" value="Edit" id="editissue">-->
+                                <input type="button" class="w3-button w3-black edit-button" data-issue-id="{{record.issue}}" data-sw-version="{{record.SW}}"  value="Next" id="proceed">
+                            </div>
+                        </div>
+                        <br>
+                       {# {% endif %} #}
+                        {% endfor %}
+                    </form>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+                <div class="tab-pane  w-100" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="width:60%">
+
+
+
+
+
+
+                     {% for record in users  %}
+                    <form name="IssueSequenceForm" class="IssueSequenceForm" id="IssueSequenceForm_{{ record.Sequence_num }}" >
+                        <fieldset class="the-fieldset">
+                            <legend class="w-auto px-2" style="text-decoration: underline;">Issue Sequence Section</legend>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="progressbar" style="">
+                                    <div class="step active" id="step_1">1</div>
+                                    <div class="step" id="step_2">2</div>
+                                    <div class="step" id="step_3">3</div>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-3">
+                                    <label for="issue_id"> Issue ID:</label>
+                                    <input type="text" id="issue_id" class="form-control" name="issue_id" value="{{record.issue}}" readonly>
+                                    <input type="hidden" id="status_val" name="status_val">
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="sw_val"> Software:</label>
+                                    <input type="text" id="sw_val" class="form-control" name="sw_val" value="{{record.SW}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="sequenceid"> Action ID:</label>
+                                    <input type="text" id="sequenceid" class="form-control" data-len-script="{{len_script}}" name="sequenceid" value="{{record.Sequence_num}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+
+                                    <label for="action_type"> Action Type:</label>
+                                    <select class="form-control" id="action_type" name="action_type" >
+                                        <option value="" style="font-size:14px;font-weight:bold">--select--</option>
+                                        {% for action in action_type %}
+                                        <option value="{{ action }}" {% if record.action_type == action %} selected {% endif %}>{{action}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-3">
+                                    <label for="scName" class="form-label">SCRIPT NAME:</label>
+                                    <input type="text" id="scName" class="form-control" name="scName" value="{{record.script_name}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="uid" class="form-label">SSH USER ID:</label>
+                                    <input type="text" id="uid" class="form-control" name="uid" value="{{record.server_Login}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="pwd" class="form-label">SSH PASSWORD:</label>
+                                    <input type="password" id="pwd" class="form-control" name="pwd" value="{{record.server_password}}" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="ip" class="form-label">SERVER IP:</label>
+                                    <input type="text" id="ip" class="form-control" name="ip" value="{{record.Server_IP}}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-row mt-2">
+                                <div class="checkbox-group">
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="proceed_yes" style="font-weight:bold">Proceed ?</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input  class="form-check-input" type="radio" id="proceed_yes" name="proceed" value="yes"
+                                            {% if record.proceed == 'Yes' %} checked {% endif %}>
+                                            <label class="form-check-label" for="proceed_yes"> Yes</label>
+                                            <input  class="form-check-input" type="radio" id="proceed_no" name="proceed" value="no"
+                                            {% if record.proceed == 'No' %} checked {% endif %}>
+                                            <label class="form-check-label" for="proceed_no"> No</label>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-row mt-3">
+                                <div class="form-group col-5">
+                                    <label for="check_condition" class="form-label">Check Condition:</label>
+                                    <textarea  id="check_condition" name="check_condition" class="form-control" rows="3" cols="2" readonly>{{record.check_condition}}</textarea>
+                                </div>
+                                <div class="form-group col-5">
+                                    <label for="regex" class="form-label">Arguments:</label>
+                                    <textarea  id="regex" name="regex" class="form-control" rows="3" cols="2" readonly>{{record.args}}</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                        {% if record['Status'] == 'Open'%}
+                        <div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+                            <input type="button" class="w3-button w3-black btn-prev w3-round previous" value="PREV" id="prev_{{ record.Sequence_num}}" onclick="prev_step(this)">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="button" class="w3-button w3-black btn-next w3-round next" value="NEXT" id="next_{{ record.Sequence_num}}" onclick="next_step(this)">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a type="button" class="w3-button w3-black w3-round" href="/newpage#knowledge-base" id="action5">DONE</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <br>
+                        {% endif %}
+                    </form>
+                    {% endfor %}
+
+
+
+
+
+
+                     {% if not users %}
+
+                    <form name="IssueSequenceForm" class="IssueSequenceForm" id="IssueSequenceForm_1" method="POST", action="{{url_for('save_script')}}" >
+                        <fieldset class="the-fieldset">
+                            <legend class="w-auto px-2" style="text-decoration: underline;">Issue Sequence Section</legend>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="progressbar" style="">
+                                    <div class="step active" id="step_1">1</div>
+                                    <div class="step" id="step_2">2</div>
+                                    <div class="step" id="step_3">3</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-3">
+                                    <label for="issue_id"> Issue ID:</label>
+                                    <input type="text" id="issue_id" class="form-control" name="issue_id" value="" readonly>
+                                    <input type="hidden" id="status_val" name="status_val">
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="issue_id"> Software:</label>
+                                    <input type="text" id="sw_val" class="form-control" name="sw_val" value="" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="sequenceid"> Action ID:</label>
+                                    <input type="text" id="sequenceid" class="form-control" name="sequenceid" value="1" readonly>
+                                </div>
+                                <div class="form-group col-3">
+
+                                    <label for="action_type"> Action Type:</label>
+                                    <select class="form-control" id="action_type" name="action_type" >
+
+                                        <option value="RUN OM SCRIPT" selected>RUN OM SCRIPT</option>
+                                        <option value="RUN CLI SCRIPT">RUN CLI SCRIPT</option>
+                                        <option value="RUN ADHOC SCRIPT">RUN  ADHOC SCRIPT</option>
+                                        <option value="GREP">RUN GREP SCRIPT</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-3">
+                                    <label for="scName" class="form-label">SCRIPT NAME:</label>
+                                    <input type="text" id="scName" class="form-control" name="scName" value="" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="uid" class="form-label">SSH USER ID:</label>
+                                    <input type="text" id="uid" class="form-control" name="uid" value="" readonly>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="pwd" class="form-label">SSH PASSWORD:</label>
+                                    <input type="password" id="pwd" class="form-control" name="pwd" value="" >
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="ip" class="form-label">SERVER IP:</label>
+                                    <input type="text" id="ip" class="form-control" name="ip" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="form-row mt-2">
+                                <div class="checkbox-group">
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="proceed_yes" style="font-weight:bold">Proceed ?</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input  class="form-check-input" type="radio" id="proceed_yes" name="proceed" value="Yes">
+                                            <label class="form-check-label" for="proceed_yes"> Yes</label>
+                                            <input  class="form-check-input" type="radio" id="proceed_no" name="proceed" value="no"
+                                            checked >
+                                            <label class="form-check-label" for="proceed_no"> No</label>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-row mt-3">
+                                <div class="form-group col-5">
+                                    <label for="check_condition" class="form-label">Check Condition:</label>
+                                    <textarea  id="check_condition" name="check_condition" class="form-control" rows="3" cols="2" >None</textarea>
+                                </div>
+                                <div class="form-group col-5">
+                                    <label for="regex" class="form-label">Arguments:</label>
+                                    <textarea  id="regex" name="regex" class="form-control" rows="3" cols="2" ></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-row  mt-3 mx-5 d-flex justify-content-center" style="margin-top:30px">
+                            <input type="button" class="w3-button w3-black btn-prev w3-round previous  " value="PREV" id="prev_1" onclick="">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="button" class="w3-button w3-black btn-next w3-round next " value="NEXT" id="next_1" onclick="">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="w3-button w3-black w3-round" href="/newpage#knowledge-base" id="action5">DONE</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <br>
+
+                    </form>
+
+                    {% endif %}
+
+
+
+
+
+                </div>
+            </div>
+            {# {% endif %} #}
+        </div>
+    </body>
+</html>
+

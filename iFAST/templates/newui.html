@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            background-color: #f4f4f4;
+            font-size: 12px !important;
+            width: 100%;
+            margin: 0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #292b2c;
+        }
+        fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        .the-fieldset {
+            border: 2px groove ThreeDFace;
+            background: #fff !important;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-check {
+            margin-bottom: 0.5rem;
+        }
+        .custom-textarea {
+            resize: none;
+        }
+        *, ::after, ::before {
+            box-sizing: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            border: 2px groove ThreeDFace;
+            margin: 0 auto;
+            padding-top: 20px;
+            background: #fff !important;
+            margin-top: 20px;
+            overflow:auto;
+        }
+        #preloader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Initially hide the preloader */
+    z-index: 9999;
+    background-color: transparent;
+}
+
+#preloader img {
+    width: 250px;
+    height: 240px;
+}
+
+.btn-transparent-on-hover {
+    transition: background-color 0.3s;
+}
+
+.btn-transparent-on-hover:hover {
+    background-color: transparent !important;
+}
+.error{
+color:red;
+}
+.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+}
+@keyframes blink {
+  5% { opacity: 0; }
+}
+
+#blinking-text {
+  animation: blink 1s infinite;
+  color: red;
+}
+        .sidebar {
+            position: absolute;
+            width: 200px;
+            color: white;
+            margin-top:50px;
+        }
+                .progressbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+                .progressbar::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            width: 1px;
+
+            height: calc(100% - 40px);
+            background-color: #6c757d;
+            z-index: 0;
+        }
+                .step {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background-color: #6c757d;
+            color: white;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .step.active {
+            background-color: #007bff;
+        }
+        .sidebar #replysave {
+            text-align: center;
+            margin-top: 20px;
+            color: green;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+                .form-group {
+            margin-bottom: 0.5rem;
+        }
+        .form-control {
+            height: calc(1.25em + 0.5rem + 2px);
+            padding: 0.25rem 0.5rem;
+            font-size: 14px;
+        }
+        .step a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+        .step i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+ <div id="preloader">
+     <img src="/static/assets/img/please-wait1.gif" alt="Loading...">
+ </div>
+
+        <div class="row">
+            <div class="col d-flex justify-content-start">
+                <p style="text-align:left;">
+                    <a href="{{url_for('index')}}" class="btn btn-sm  custom-btn text-dark"><span><i class="fa fa-home" style="font-size: 1.2em;"></i><u class="text-dark">iFAST</u></span></a>
+                    &nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-sm  custom-btn text-dark">
+                        <u>LOOK UP ISSUE</u>
+                    </a>
+                </p>
+            </div>
+            <div class="col d-flex justify-content-end text-end">
+                <div class="dropdown" id="dropdownWrapper">
+                    <button class="btn dropdown-toggle text-dark btn-transparent-on-hover" type="button" id="dropdownMenuButton" aria-expanded="false">
+                        <i class="fa fa-user-circle-o" style="font-size:12px"></i>&nbsp;&nbsp;{{session['user_name']}}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#">Change Password</a></li>
+                        <li><a class="dropdown-item" href="{{url_for('logout')}}">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="container-fluid p-2">
+    <div class="bg-light">
+        <h2 class="display-5 text-center"><b>Issue Fast Automated Identification Tool</b></h2>
+    </div>
+</div>
+    <div class="sidebar">
+        <div class="progressbar">
+            <div class="step active">
+                <a href="#" onclick="return false;">
+                    <i class="fas fa-check-circle fa-lg"></i> 1
+                </a>
+            </div>
+            <div class="step">
+                <a href="#" onclick="return false;">
+                    <i class="fas fa-check-circle fa-lg"></i> 2
+                </a>
+            </div>
+            <div class="step">
+                <a href="#" onclick="return false;">
+                    <i class="fas fa-check-circle fa-lg"></i> 3
+                </a>
+            </div>
+            <div class="step">
+                <a href="#" onclick="return false;">
+                    <i class="fas fa-check-circle fa-lg"></i> 4
+                </a>
+            </div>
+            <div class="step">
+                <a href="#" onclick="return false;">
+                    <i class="fas fa-check-circle fa-lg"></i> 5
+                </a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <p id="replysave" style="color:green"></p>
+        </div>
+    </div>
+
+ <div class="container">
+        <div class="row">
+            <!-- General Fieldset -->
+            <div class="col-3">
+                <fieldset class="the-fieldset border p-3">
+                    <legend class="w-auto px-2" style="text-decoration: underline;">Default Fields</legend>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="sw" class="form-label">SOFTWARE:</label>
+                            <input type="text" id="sw" name="issue_sw" class="form-control" value="" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="status" class="form-label">STATUS:</label>
+                            <input type="text" id="status" name="issue_st" class="form-control" value="" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="migrationStrategy"> Action Type:</label>
+                            <select class="form-control" id="migrationStrategy" name="migrationStrategy">
+                                <option value="" selected>--Select--</option>
+                                <option value="RUN SCRIPT" >RUN SCRIPT</option>
+                                <option value="GET FILE">GET FILE</option>
+                                <option value="GREP">GREP</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="issueCat" class="form-label">ISSUE CATEGORY:</label>
+                            <textarea type="" id="issueCat" name="issuecat" class="form-control"  cols="3" rows="2" value="" readonly></textarea>
+                        </div>
+
+
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="POC" class="form-label">POC:</label>
+                            <input type="text" id="POC" name="POC" class="form-control" value="" readonly/>
+                        </div>
+
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- New Fieldset -->
+            <div class="col-4">
+                <fieldset class="the-fieldset border p-3">
+                    <legend class="w-auto px-2" style="text-decoration: underline;">Script Fields</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="scName" class="form-label">SCRIPT NAME:</label>
+                            <input type="text" id="scName" class="form-control" name="scName" value="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="uid" class="form-label">SSH USER ID:</label>
+                            <input type="text" id="uid" class="form-control" name="uid" value="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="pwd" class="form-label">SSH PASSWORD:</label>
+
+                            <input type="password" id="pwd" class="form-control" name="pwd" value="" >
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="ip" class="form-label">SERVER IP:</label>
+                            <input type="text" id="ip" class="form-control" name="ip" value="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="scLoc" class="form-label">SERVER LOCATION:</label>
+                            <input type="text" id="scLoc" class="form-control" name="scLoc" value="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="scOwner" class="form-label">SCRIPT OWNER:</label>
+                        <input type="text" id="scOwner" class="form-control" name="scOwner" value="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label for="scPath" class="form-label">SCRIPT PATH:</label>
+                        <input type="text" id="scPath" class="form-control" name="scPath"  value="">
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row">
+                            <div class="col-2">
+                                   <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="OM" name="OM">
+                                        <label class="form-check-label" for="OM">OM</label>
+                                    </div>
+                            </div>
+                            <div class="col-2">
+                                   <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="CLI" name="CLI">
+                                        <label class="form-check-label" for="CLI">CLI</label>
+                                    </div>
+                            </div>
+                            <div class="col-2">
+<!--                                   <label>Proceed?</label>-->
+                                   <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="proceed_yes" name="proceed_yes">
+                                        <label class="form-check-label" for="proceed_yes">Yes</label>
+                                    </div>
+                            </div>
+                            <div class="col-2">
+                                   <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="proceed_no" name="proceed_no">
+                                        <label class="form-check-label" for="proceed_no">No</label>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                        <div class="form-row">
+                                   <div class="form-check">
+
+                                    </div>
+                        </div>
+                        <div class="form-group col-md-10">
+                            <label for="check_type" class="form-label">Check Condition:</label>
+                            <textarea  id="check_condition" name="check_condition" class="form-control" rows="3" cols="2" ></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-2">
+                <fieldset class="the-fieldset border p-3">
+                    <legend class="w-auto px-2" style="text-decoration: underline;">Misc Fields</legend>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="email" class="form-label">EMAIL TO:</label>
+                            <input type="text" id="email" class="form-control" name="email" value="" >
+                        </div>
+                    </div>
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-10">
+                            <label for="regex" class="form-label" >ARGUMENTS:</label>
+                            <textarea  id="regex" class="form-control" name="regex" value="" cols="2" rows="3"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </div>
+            <div class="col-1 mt-5">
+
+<!--                    <legend class="w-auto px-2" style="text-decoration: underline;">EXECUTE</legend>-->
+                    <div class="form-row mt-1">
+                        <div class="d-flex justify-content-center w-100">
+                            <input type="button" class="btn btn-lg btn-primary" value="NEXT" id="next2" onclick="formStepsNum++;"><br><br>
+
+                        </div>
+                    </div>
+                    <div class="form-row mt-5">
+                        <div class="d-flex justify-content-center w-100">
+                            <input type="button" class="btn btn-lg btn-primary" value="PREV" id="prev5" onclick=""><br><br>
+                        </div>
+                    </div>
+                    <div class="form-row mt-5">
+                        <div class="d-flex justify-content-center w-100">
+                            <a type="button" class="btn btn-lg btn-primary" href="#" id="execute_btn">Execute</a><br><br>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+  <div class="container">
+    <table class="table table-responsive table-bordered table-striped w-100" >
+        <thead>
+        <tr >
+            <th>Issue Sequence</th>
+            <th>Sequence Condition</th>
+            <th>execution Status</th>
+            <th>Results</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="width:30%">1</td>
+            <td style="width:50%">Check1</td>
+            <td style="width:30%">In Progress</td>
+            <td><a href="#" style="font-size:12px;"><i class="fas fa-file fa-lg"></a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Check2</td>
+            <td>In Progress</td>
+            <td><a href="#" style="font-size:12px;"><i class="fas fa-file fa-lg"></a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Check3</td>
+            <td>In Progress</td>
+            <td><a href="#" style="font-size:12px;"><i class="fas fa-file fa-lg"></a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Check4</td>
+            <td>In Progress</td>
+            <td><a href="#" style="font-size:12px;"><i class="fas fa-file fa-lg"></a></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Check5</td>
+            <td>In Progress</td>
+            <td><a href="#" style="font-size:12px;"><i class="fas fa-file fa-lg"></a></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>iFAST</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+<!--    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif
+        }
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.8;
+        }
+
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("/w3images/mac.jpg");
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+ .table-title {
+     padding-bottom: 15px;
+     background: #435d7d;
+     color: #fff;
+     padding: 16px 30px;
+     min-width: 100%;
+     margin: -20px -25px 10px;
+     border-radius: 3px 3px 0 0;
+}
+ .table-title h2 {
+     margin: 5px 0 0;
+     font-size: 24px;
+}
+ .table-title .btn-group {
+     float: right;
+}
+ .table-title .btn {
+     color: #fff;
+     float: right;
+     font-size: 13px;
+     border: none;
+     min-width: 50px;
+     border-radius: 2px;
+     border: none;
+     outline: none !important;
+     margin-left: 10px;
+}
+ .table-title .btn i {
+     float: left;
+     font-size: 21px;
+     margin-right: 5px;
+}
+ .table-title .btn span {
+     float: left;
+     margin-top: 2px;
+}
+        #users td,
+        #users th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .form-group {
+            margin: 0 auto;
+            width: 210px;
+        }
+
+        .form-group label {
+            font-family: verdana;
+            font-size: 100%;
+            width: 35%;
+            float: left;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 35%;
+            margin-left: 10px;
+            float: left;
+        }
+
+        .form-group select {
+            width: 35%;
+            margin-left: 10px;
+            float: left;
+        }
+
+        .form-group textarea {
+            width: 35%;
+            margin-left: 10px;
+            float: left;
+        }
+
+        input.formInvalid::-webkit-input-placeholder {
+            color: red;
+        }
+
+        input.formInvalid::-webkit-input-placeholder {
+            color: red;
+        }
+
+        .star:after {
+            content: " *";
+            color: red;
+        }
+
+        .nohover {
+            pointer-events: none;
+        }
+
+        .hrefButton {
+            padding: 3px 10px;
+            text-decoration: none;
+        }
+        .custom-width {
+    width: 35%;
+}
+.samsung{
+    text-align:right;
+}
+    .custom-btn:hover {
+        background-color: #142f52; /* Samsung blue color */
+        color: #ffffff; /* Text color on hover */
+    }
+
+
+        .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+}
+    </style>
+    <script>
+       $(document).ready(function() {
+          $('.dropdown').hover(function(){
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(300).addClass('show');
+    }, function(){
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300).removeClass('show');
+    });
+
+       $('#issueTable').DataTable({
+
+       });
+                $('#saveissue').hide();
+            $('#editissue').click(function() {
+                // Remove readonly attribute from all input and textarea elements
+                $('input[type="text"], textarea').removeAttr('readonly');
+                $('#editissue').hide();
+                $('#saveissue').show();
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="col text-right">
+<div class="row">
+    <div class="col" style="margin-left: 20px;">
+        <p style="text-align:left;margin-left:10px"><a href="{{url_for('newpage')}}"><span><i class="fa fa-home" style="font-size: 1.2em;"></i><u>iFAST</u></span></a></p>
+    </div>
+    <div class="col d-flex justify-content-end text-end">
+        <div class="dropdown" id="dropdownWrapper">
+            <button class="btn  dropdown-toggle text-dark btn-transparent-on-hover" type="button"
+                    id="dropdownMenuButton" aria-expanded="false">
+                <i class="fa fa-user-circle-o" style="font-size:12px"></i>&nbsp;&nbsp;{{session['user_name']}}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item " href="{{url_for('logout')}}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+        </div>
+</div>
+
+<div class="jumbotron p-2">
+    <div class="well text-container" style="text-align:center;">
+        <h2 style="font-size:24px;font-family:arial"><b>Knowledge Base </b></h2>
+    </div>
+</div>
+
+    <div class="container-fluid">
+        {% if session['user_name'] %}
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{{url_for('kb_hit')}}" title="Input and Save Data here" class="btn btn-success btn-md text-white"><i class="bi bi-lightbulb-fill"></i>&nbsp; Create Single Issue</a>
+                <a class="btn btn-secondary btn-md text-white ml-3">Import Bulk Issues</a>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if users %}
+               <div class="table-class mt-5">
+                         <div class="table-wrapper">
+                                <div class="table-title  d-flex justify-content-center">
+                                   <div class="row">
+                                          <div class="header " id="">
+<!--                                                 <h2>Issue Details </h2>-->
+                                          </div>
+                                   </div>
+                                </div>
+                         </div>
+               </div>
+            <div class="header " style="">
+
+            </div>
+
+            <form  class="form">
+                            <table class="table table-bordered table-striped" id="issueTable">
+                                <thead>
+                                    <tr>
+                                        <th>Issue</th>
+                                        <th>SW</th>
+                                        <th>Status</th>
+                                        <th>Area</th>
+                                        <th>Technology</th>
+                                         <th>Visibility</th>
+                                         <th>Major KPI Degradation</th>
+                                        <th>Issue Category</th>
+                                        <th>Description</th>
+                                        <th>Impact</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for record in users %}
+                                    <tr>
+                                        <td>{{ record.issue }}</td>
+                                        <td>{{ record.SW }}</td>
+                                        <td>{{ record.Status }}</td>
+                                        <td>{{ record.Area }}</td>
+                                        <td>{{record.Technology}}</td>
+                                        <td>{{record.Visibility}}</td>
+                                        <td>{{record.Major_KPI_Degradation}}</td>
+                                        <td>{{record.Issue_Category}}</td>
+                                        <td>{{ record.Description }}</td>
+                                        <td>{{ record.Impact }}</td>
+                                        <td><a href="/kb/{{ record.issue }}">View More...</a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+            </form>
+
+            <br><br>
+        {% else %}
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <p>No records found.</p>
+            </div>
+        </div>
+        <hr>
+        {% endif %}
+    </div>
+
+    <!-- Include necessary scripts -->
+
+<!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>-->
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+</body>
+</html>
