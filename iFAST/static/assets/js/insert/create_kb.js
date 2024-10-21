@@ -68,6 +68,7 @@ function changeFunction(idx) {
   });
 
   var selval = selector.find(formId).find("#action_type").val();
+  
   if (selval === "PULL OM") {
     selector.find(formId).find("#scName").closest("div").hide();
     selector.find(formId).find("#ip").closest("div").hide();

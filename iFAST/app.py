@@ -1198,58 +1198,85 @@ def execute_selected():
 
 @app.route("/kb/<id>", methods=['POST', 'GET'])
 def kb_detail(id):
-    q1 = ("SELECT * FROM known_knowledge_base k WHERE k.issue = %s;")
-    exec_orders = db.execute_query("SELECT EXEC_ORDER FROM known_knowledge_base k WHERE k.issue = %s", id, fetch_all=False)
-    import pdb
-    pdb.set_trace()
-    om_action_id = grep_action_id = cli_action_id = 0
-    if exec_orders['EXEC_ORDER']:
-        orders = exec_orders['EXEC_ORDER'].split(',') # ['OM_23', 'CLI_43', 'GREP_54']
-        om_action_id = [i for i in orders if 'OM_' in i][0].split("_")[1]
-        grep_action_id = [i for i in orders if 'GREP_' in i][0].split("_")[1]
-        cli_action_id = [i for i in orders if 'CLI_' in i][0].split("_")[1]
+    # Fetch the EXEC_ORDER from the known_knowledge_base table
+    exec_orders = db.execute_query("SELECT EXEC_ORDER FROM known_knowledge_base k WHERE k.issue = %s", (id,), fetch_all=False)
 
-    script_query = "SELECT * FROM scripts s INNER JOIN known_knowledge_base k ON k.issue = %s AND  s.CLI_ACTION_ID=%s;"
-    exec_query = "SELECT * FROM om_exec o INNER JOIN known_knowledge_base k ON k.issue = %s AND o.OM_ACTION_ID=%s;"
-    grep_query = "SELECT * FROM grep g INNER JOIN known_knowledge_base k ON k.issue = %s AND  g.GREP_ACTION_ID=%s;"
+    # Initialize lists for action IDs
+    om_action_id = []
+    cli_action_id = []
+    grep_action_id = []
+
+    # Extract the action IDs from EXEC_ORDER
+    if exec_orders and exec_orders['EXEC_ORDER']:
+        orders = exec_orders['EXEC_ORDER'].split(',')
+        om_action_id = [order.split('_')[1] for order in orders if order.startswith('OM_')]
+        cli_action_id = [order.split('_')[1] for order in orders if order.startswith('CLI_')]
+        grep_action_id = [order.split('_')[1] for order in orders if order.startswith('GREP_')]
+
+    # Check if lists are not empty and prepare the SQL queries dynamically
+    execs = []
+    scripts = []
+    greps = []
+
+    if om_action_id:
+        exec_query = "SELECT * FROM om_exec o INNER JOIN known_knowledge_base k ON k.issue = %s WHERE o.OM_ACTION_ID IN %s"
+        execs_result = db.execute_query(exec_query, (id, tuple(om_action_id)), fetch_all=True)
+        execs = execs_result if execs_result else []  # Ensure execs is an empty list if no results
+
+    if cli_action_id:
+        script_query = "SELECT * FROM scripts s INNER JOIN known_knowledge_base k ON k.issue = %s WHERE s.CLI_ACTION_ID IN %s"
+        scripts_result = db.execute_query(script_query, (id, tuple(cli_action_id)), fetch_all=True)
+        scripts = scripts_result if scripts_result else []
+
+    if grep_action_id:
+        grep_query = "SELECT * FROM grep g INNER JOIN known_knowledge_base k ON k.issue = %s WHERE g.GREP_ACTION_ID IN %s"
+        gres_result = db.execute_query(grep_query, (id, tuple(grep_action_id)), fetch_all=True)
+        greps = gres_result if gres_result else []
 
 
+    # Additional static queries for UI data
+    softwares = db.execute_query("SELECT DISTINCT SW FROM known_knowledge_base;", fetch_all=True)
+    visibilities = db.execute_query("SELECT DISTINCT Visibility FROM known_knowledge_base;", fetch_all=True)
+    technologies = db.execute_query("SELECT DISTINCT Technology FROM known_knowledge_base;", fetch_all=True)
+    action_types = db.execute_query("SELECT DISTINCT action_type FROM actions;", fetch_all=True)
+    areas = db.execute_query("SELECT DISTINCT Area FROM known_knowledge_base;", fetch_all=True)
+    major_kpi_degradations = db.execute_query("SELECT DISTINCT Major_KPI_Degradation FROM known_knowledge_base;", fetch_all=True)
 
-    # script_query = "SELECT * FROM scripts s INNER JOIN known_knowledge_base k ON k.issue = %s AND k.issue = s.issue_id;"
-    # exec_query = "SELECT * FROM om_exec o INNER JOIN known_knowledge_base k ON k.issue = %s AND k.issue = o.issue_id;"
-    # grep_query = "SELECT * FROM grep g INNER JOIN known_knowledge_base k ON k.issue = %s AND k.issue = g.issue_id;"
+    # Combine the results from execs, scripts, and greps
+    exec_orders_data = scripts + execs + greps
 
-    q3 = "SELECT DISTINCT SW FROM known_Knowledge_base;"
-    q4 = "SELECT DISTINCT Visibility FROM known_knowledge_base;"
-    q5 = "SELECT DISTINCT Technology FROM known_knowledge_base;"
-    q6 = "SELECT DISTINCT action_type FROM actions;"
-    q7 = "SELECT DISTINCT Area FROM known_knowledge_base;"
-    q8 = "SELECT DISTINCT Major_KPI_Degradation FROM known_knowledge_base;"
-    res1 = db.execute_query(q1, (id,), fetch_all=True)
-    scripts = db.execute_query(script_query, (id,cli_action_id), fetch_all=True)
-    execs = db.execute_query(exec_query, (id,om_action_id), fetch_all=True)
-    greps = db.execute_query(grep_query, (id,grep_action_id), fetch_all=True)
-    res3 = db.execute_query(q3, fetch_all=True)
-    res4 = db.execute_query(q4, fetch_all=True)
-    res5 = db.execute_query(q5, fetch_all=True)
-    res6 = db.execute_query(q6, fetch_all=True)
-    res7 = db.execute_query(q7, fetch_all=True)
-    res8 = db.execute_query(q8, fetch_all=True)
+    # Sort the combined list by Sequence_num in ascending order
+    exec_orders_data_sorted = sorted(exec_orders_data, key=lambda x: int(x['Sequence_num']), reverse=False)
+    exec_orders_data_sorted = [rename_action_id(record) for record in exec_orders_data_sorted]
+
+    # Prepare the context for rendering
     context = {
-        "records": res1,
+        "records": db.execute_query("SELECT * FROM known_knowledge_base k WHERE k.issue = %s;", (id,), fetch_all=True),
         "scripts_data": scripts,
         "execs_data": execs,
         "greps_data": greps,
-        "software": [s['SW'] for s in res3],
-        "visibilities": [i['Visibility'] for i in res4],
-        "technologies": [i['Technology'] for i in res5],
-        "action_type": [i['action_type'] for i in res6],
-        "areas": [i['Area'] for i in res7],
-        "kpis": [i['Major_KPI_Degradation'] for i in res8],
-        "issue_id":id
+        "exec_orders_data": exec_orders_data_sorted,
+        "software": [s['SW'] for s in softwares],
+        "visibilities": [i['Visibility'] for i in visibilities],
+        "technologies": [i['Technology'] for i in technologies],
+        "action_type": [i['action_type'] for i in action_types],
+        "areas": [i['Area'] for i in areas],
+        "kpis": [i['Major_KPI_Degradation'] for i in major_kpi_degradations],
+        "issue_id": id
     }
 
-    return render_template('DetailKbPage.html',**context )
+    return render_template('ProxyDetailKbPage.html', **context)
+
+
+def rename_action_id(record):
+    # Check for the existence of CLI_ACTION_ID, GREP_ACTION_ID, or OM_ACTION_ID and rename accordingly
+    if 'CLI_ACTION_ID' in record:
+        record['ACTION_ID'] = f"CLI_{record.pop('CLI_ACTION_ID')}"
+    elif 'GREP_ACTION_ID' in record:
+        record['ACTION_ID'] = f"GREP_{record.pop('GREP_ACTION_ID')}"
+    elif 'OM_ACTION_ID' in record:
+        record['ACTION_ID'] = f"OM_{record.pop('OM_ACTION_ID')}"
+    return record
 
 @app.route('/execute-multi', methods=['POST'])
 def execute_multi():

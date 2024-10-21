@@ -19,9 +19,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="/static/assets/js/script.js"></script>
     {#
-    <script src="/static/assets/js/insert/create_kb.js"></script>
+    <script src="/static/assets/js/insert/edit_kb.js"></script>
     #}
-    <script src="{{ url_for('static', filename='assets/js/insert/create_kb.js') }} "></script>
+    <script src="{{ url_for('static', filename='assets/js/insert/edit_kb.js') }} "></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -420,6 +420,48 @@
     <style></style>
 
     <script>
+        $(document).ready(function () {
+            $("#saveissue").hide()
+            $('#nav-profile-tab').click(function () {
+                $('#nav-profile').show()
+                $('#nav-home').hide()
+                $('#nav-home-tab').removeClass('active')
+                $('#nav-profile-tab').addClass('active')
+                $("#editissue").hide()
+                $("#saveissue").hide()
+
+            })
+
+            $('#nav-home-tab').click(function () {
+                $('#nav-home').show()
+                $('#nav-profile').hide()
+                $('#nav-profile-tab').removeClass('active')
+                $('#nav-home-tab').addClass('active')
+                $("#editissue").show()
+            })
+
+            $('.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(300).addClass('show');
+            }, function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300).removeClass('show');
+            });
+            //   $('#saveissue').hide();
+            $('#saveissue').attr('disabled', true);
+
+            $("#proceed").click(function () {
+                let issue_id = $(this).attr("data-issue-id")
+                let sw_version = $(this).attr("data-sw-version")
+                // let len_script = $(this).attr("data-len-script")
+                $("#nav-profile-tab").click();
+                $(".edit_save_div").hide();
+
+                $("#issue_id").val(issue_id)
+                $("#sw_val").val(sw_version)
+
+
+            });
+
+        });
         document.addEventListener("DOMContentLoaded", function () {
             const dropdowns = document.querySelectorAll("[data-dropdown]");
 
@@ -556,13 +598,13 @@
             var form_selector = $(form_id)
             var current_select_val = $(form_selector).find('select[name="action_type"]').val()
             $(form_selector).find('select[name="action_type"]').attr('data-prev-val', current_select_val)
-            let excludedIds = ['issue_id', 'sequenceid', 'uid', 'pwd']
+            $(form_selector).find('select[name="action_type"]').prop('disabled', false)
+            let excludedIds = ['issue_id', 'uid', 'pwd']
             $(form_selector).find('input, textarea, select').each(function () {
                 if (!excludedIds.includes($(this).attr('id'))) {
                     $(this).prop('disabled', false);
                     $(this).prop('readonly', false);
                 }
-
             });
         }
 
@@ -607,7 +649,7 @@
                 sequenceid: $(form_selector).find('#sequenceid').val(),
                 prev_action_type: prev_detection_type,
                 action_type: detection_type,
-                scName: $(form_selector).find('#scName').val(),
+                scName: $(form_selector).find('#scName').val() ?? '',
                 uid: uid,
                 pwd: pwd,
                 ip: $(form_selector).find('#ip').val(),
@@ -703,116 +745,88 @@
 
         }
 
-
-        //   function checkFormValidity(formId) {
-        //       var errorMessages = []
-        //       var issueSequenceFormValid = validateForm(formId)
-        //       console.log("issue check")
-        //       var issueSequenceFormErrors = [];
-        //       let proceed_val = null
-        //       if (!issueSequenceFormValid) {
-        //           $('#' + formId + ' .error').each(function () {
-        //               proceed_val = $('input[name=proceed]').val()
-        //               if ($(this).closest('div').attr('style') !== "display: none;") {
-        //                   var fieldName = $(this).prev('label').text().replace('*', '').trim();
-        //                   fieldName = fieldName.split(':')
-        //                   errorMessages.push(fieldName[0]);
-        //                   issueSequenceFormErrors.push(fieldName[0]);
-        //               }
-        //           });
-        //           let errorMessagesUpdated = errorMessages.map(function (item) {
-        //               return item === 'Yes' ? 'Proceed On Failure' : item;
-        //           });
-        //           // Display error message if any field is missing in either form
-        //           if (errorMessagesUpdated.length > 0 && (!proceed_val && ["Yes", "No", "Proceed On Failure"].every(item => errorMessagesUpdated.includes(item)))) {
-        //               Swal.fire({
-        //                   icon: 'error',
-        //                   title: 'Required fields are missing',
-        //                   html: errorMessageText
-        //               });
-        //           } else {
-        //               issueSequenceFormValid = true
-        //           }
-
-        //       }
-        //       console.log(issueSequenceFormErrors)
-        //       console.log(errorMessages)
-        //       return issueSequenceFormValid;
-        //   }
-
-        // Combine error messages from both forms
-        //  var errorMessages = IssueSequenceFormError.concat(issueSequenceFormErrors);
-
         var issue_sequence_add_counter = 0;
         var issue_idx = 0;
+
         function addIssueSequence() {
-            var form_id = ''
-            cardCount = $('#nav-profile .card').length;
-            if (cardCount === 1) {
-                form_id = 'IssueSequenceForm'
+            var form_id = '';
+            // Count visible cards only
+            var cardCount = $('#nav-profile .card:visible').length;
+
+            // Set the form ID based on the number of visible cards
+            if (cardCount === 0) {
+                form_id = 'IssueSequenceForm';
+                issue_idx = 1; // Start from 1 if no cards are visible
             } else {
-                form_id = `IssueSequenceForm${cardCount}`
+                form_id = `IssueSequenceForm${cardCount}`;
+                issue_idx = cardCount + 1; // Incrementing for new card
             }
-            //   let state = checkFormValidity(form_id)
-            //   if (!state) {
-            //       return
-            //   }
 
-            //    saveIssue(form_id)
+            console.log('idx', issue_idx);
+            console.log('counter', cardCount);
 
-            //	const steps = parseInt($('#nav-profile-tab').attr("data-action-steps"))
-            //	if (issue_sequence_add_counter < (steps-1)) {
-            var sequence_clone = $('#issue_sequence_card_1').clone();
-            issue_sequence_add_counter += 1;
-            issue_idx = issue_sequence_add_counter + 1
-            console.log('idx', issue_idx)
-            console.log('counter', issue_sequence_add_counter)
-            sequence_clone.attr('id', `issue_sequence_card_${issue_idx}`)
-            sequence_clone.removeClass('d-none')
-            //	sequence_clone.find('.icon-container > .fa-plus').attr('id', `iconCard${issue_idx}Plus`);
-            //	sequence_clone.find('.icon-container > .fa-plus').attr('data-bs-target', `#collapseCard${issue_idx}`);
-            //	sequence_clone.find('.icon-container > .fa-plus').attr('aria-controls', `collapseCard${issue_idx}`);
+            // Clone the sequence card
+            var sequence_clone = $('#issue_sequence_card').clone();
+            issue_sequence_add_counter = cardCount; // This could be adjusted if you want a different behavior
+            // Use issue_idx to update the ID of the cloned card
+            sequence_clone.attr('id', `issue_sequence_card_${issue_idx}`);
+            sequence_clone.removeClass('d-none'); // Make the cloned card visible
+
+            // Update attributes for the minus icon and collapse
             sequence_clone.find('.icon-container >  .iconCardMinus').attr('id', `iconCard${issue_idx}Minus`);
             sequence_clone.find('.icon-container >  .iconCardMinus').attr('data-bs-target', `#collapseCard${issue_idx}`);
             sequence_clone.find('.icon-container >  .iconCardMinus').attr('aria-controls', `collapseCard${issue_idx}`);
-            // sequence_clone.find('.card-header > .div-header').html('');
+
+            // Remove certain elements and update IDs
             sequence_clone.find('.card-header > .icon-container').children().eq(1).remove();
-
-
-
             sequence_clone.find('.collapse').attr('id', `collapseCard${issue_idx}`);
             sequence_clone.find(`#collapseCard${issue_idx} > .card-body > #IssueSequenceForm`).attr('id', `IssueSequenceForm${issue_idx}`);
-            issue_id = sequence_clone.find(`#IssueSequenceForm${issue_idx} #issue_id`).val()
-            sequence_clone.find(`#IssueSequenceForm${issue_idx} input[type="text"], #IssueSequenceForm${issue_idx} input[type="password"], #IssueSequenceForm${issue_idx} textarea`).val('');
-            // Reset select fields to their first option
-            sequence_clone.find(`#IssueSequenceForm${issue_idx} select`).prop('selectedIndex', 0);
-            // Uncheck checkboxes and radio buttons
-            sequence_clone.find(`#IssueSequenceForm${issue_idx} input[type="checkbox"], #IssueSequenceForm${issue_idx} input[type="radio"]`).prop('checked', false);
-            sequence_clone.find('#issue_id').val(`${issue_id}`)
-            sequence_clone.find('#sequenceid').val(`${issue_idx}`)
-            current_editbtn_id = sequence_clone.find(`.edit_btn`).attr('id').split("_")[0]
-            current_savebtn_id = sequence_clone.find(`.save_btn`).attr('id').split("_")[0]
-            sequence_clone.find(`.edit_btn`).attr('id', `${current_editbtn_id}_${issue_idx}`)
-            sequence_clone.find(`.save_btn`).attr('id', `${current_savebtn_id}_${issue_idx}`)
-            sequence_clone.find(`#IssueSequenceForm${issue_idx} select`).attr('onchange', `changeFunction(${issue_idx})`)
 
-            let excludedIds = ['issue_id', 'sequenceid']
+            // Reset form fields
+            issue_id = sequence_clone.find(`#IssueSequenceForm${issue_idx} #issue_id`).val();
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} input[type="text"], #IssueSequenceForm${issue_idx} input[type="password"], #IssueSequenceForm${issue_idx} textarea`).val('');
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} select`).prop('selectedIndex', 0);
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} input[type="checkbox"], #IssueSequenceForm${issue_idx} input[type="radio"]`).prop('checked', false);
+            sequence_clone.find('#issue_id').val(`${issue_id}`);
+            sequence_clone.find('#sequenceid').val(`${issue_idx}`);
+
+            // Update buttons' IDs
+            current_editbtn_id = sequence_clone.find(`.edit_btn`).attr('id').split("_")[0];
+            current_savebtn_id = sequence_clone.find(`.save_btn`).attr('id').split("_")[0];
+            sequence_clone.find(`.edit_btn`).attr('id', `${current_editbtn_id}_${issue_idx}`);
+            sequence_clone.find(`.save_btn`).attr('id', `${current_savebtn_id}_${issue_idx}`);
+
+            // Set onchange handler for the select element
+            sequence_clone.find(`#IssueSequenceForm${issue_idx} #action_type`).attr('onchange', `changeFunction(${issue_idx})`);
+
+            // Enable all form fields except excluded IDs
+            let excludedIds = ['issue_id', 'sequenceid'];
             sequence_clone.find('input, textarea, select').each(function () {
                 if (!excludedIds.includes($(this).attr('id'))) {
                     $(this).prop('disabled', false);
                     $(this).prop('readonly', false);
                 }
-
             });
+
+            // Set the condition label text
             sequence_clone.find('#check_condition').prev('label').text('Check Condition:');
-            $(`#issue_sequence_card_${issue_sequence_add_counter}`).after(sequence_clone);
-            hideFunction(`issue_sequence_card_${issue_idx}`)
 
-            //	}else{
-            //	}
+            // Handling the first card (cardCount === 0)
+            if (cardCount === 0) {
+                // If there are no visible cards, make the original issue_sequence_card visible
+                $("#issue_sequence_card").removeClass('d-none');
+                $("#issue_sequence_card").after(sequence_clone);
+                $("#issue_sequence_card").addClass('d-none');
+            } else {
+                // Insert the cloned card after the last visible sequence card
+                $(`#issue_sequence_card_${cardCount}`).after(sequence_clone);
+            }
 
+            // Call function to handle additional logic (like hiding/showing elements)
+            hideFunction(`issue_sequence_card_${issue_idx}`);
         }
-        
+
+
         let allCollapsed = false;
 
         function toggleIconClass(icon, isCollapsed) {
@@ -1038,16 +1052,33 @@
 
     <div class="container">
         <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-                    aria-controls="nav-home" aria-selected="true">ISSUE DETAILS</a>
-                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" role="tab"
-                    aria-controls="nav-profile" aria-selected="false">ISSUE DETECTION STEPS</a>
-                {#
-                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-                    aria-controls="nav-profile" aria-selected="false">ISSUE DETECTION/MITIGATION STEPS</a>#}
-                <!--			<a class="btn btn-lg btn-secondary ml-auto" id="nav-IMPORT-tab" data-toggle="modal" data-target="#uploadModal" >IMPORT</a>-->
+            <div class="d-flex" style="justify-content: space-between;">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                        aria-controls="nav-home" aria-selected="true">ISSUE DETAILS</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" role="tab"
+                        aria-controls="nav-profile" aria-selected="false">ISSUE DETECTION STEPS</a>
+                    {#
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                        aria-controls="nav-profile" aria-selected="false">ISSUE DETECTION/MITIGATION STEPS</a>#}
+                </div>
+                <div style="right:-85px; float:right">
+                    <input type="button" class="btn btn-md btn-light generic_button" style="
+                    color: #283db4;
+                    border: 2px solid #283db4;
+                    border-radius: 5px;
+                    font-size: 1.2rem;
+                  " value="Edit" id="editissue">
+                    <input type="submit" class="btn btn-md btn-light generic_button" style="
+                    color: #283db4;
+                    border: 2px solid #283db4;
+                    border-radius: 5px;
+                    font-size: 1.2rem;
+                  " value="Save" id="saveissue">
+                </div>
+                <!--			<a class="btn btn-lg btn-secondarNy ml-auto" id="nav-IMPORT-tab" data-toggle="modal" data-target="#uploadModal" >IMPORT</a>-->
             </div>
+
         </nav>
         <div class="tab-content" id="nav-tabContent">
             <br />
@@ -1056,7 +1087,9 @@
                 <div>
                     <span id="update_ret"></span>
                 </div>
+
                 <form name="SearchForm" id="searchForm">
+                    {% for record in records %}
                     <fieldset class="the-fieldset">
                         <legend class="w-auto px-2" style="text-decoration: underline">
                             ISSUE DESCRIPTION SECTION
@@ -1064,24 +1097,27 @@
                         <div class="form-row mt-1">
                             <div class="form-group col-md-3">
                                 <label for="POC">POC</label>
-                                <input type="text" id="POC" class="form-control" name="POC" value="" />
+                                <input type="text" id="POC" value="{{record.PoC}}" class="form-control" name="POC"
+                                    value="" readonly />
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="email">EMAIL</label>
-                                <input type="text" id="email" class="form-control" name="email" value="" />
+                                <input type="text" id="email" value="{{record.email_to}}" class="form-control"
+                                    name="email" value="" readonly />
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="cell">CELL LEVEL/ SITE LEVEL</label>
-                                <input type="text" id="cell" class="form-control" name="cell" value="" />
+                                <input type="text" id="cell" value="{{record.Cell_or_Site_Level}}" class="form-control"
+                                    name="cell" value="" readonly />
                             </div>
                             <div class="form-group col-md-3">
                                 <!--	<label for="sw" class="form-label">SOFTWARE:</label>
 							<input type="text" id="sw" name="issue_sw" class="form-control" value=""> -->
-                                <label for="issue_sw">SOFTWARE<span class="text-danger">*</span></label>
+                                <label for="sw_val">SOFTWARE<span class="text-danger">*</span></label>
                                 <div class="dropdown" data-dropdown>
-                                    <input class="form-control" type="text" name="issue_sw" id="issue_sw" class="search"
-                                        placeholder="" data-search />
+                                    <input class="form-control" value="{{record.SW}}" type="text" name="issue_sw"
+                                        id="sw_val" class="search" placeholder="" data-search readonly />
                                     <ul data-options id="dropdown-options_sw">
                                         {% for sw in softwares %}
                                         <li data-value="{{sw}}">{{sw}}</li>
@@ -1093,18 +1129,18 @@
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="status" class="form-label">STATUS<span class="text-danger">*</span></label>
-                                <select class="form-control" name="status" id="status">
-                                    <option value="">--select--</option>
-                                    <option value="Open">Open</option>
-                                    <option value="Closed">Closed</option>
+                                <select class="form-control" name="status" id="status" readonly>
+                                    <option value="Open" {% if record.Status=='Open' %}selected{% endif %}>Open</option>
+                                    <option value="Closed" {% if record.Status=='Closed' %}selected{% endif %}>Closed
+                                    </option>
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="area_val">AREA<span class="text-danger">*</span></label>
                                 <!--			<input type="text" id="area_val" class="form-control" name="area_val" value=""> -->
                                 <div class="dropdown" data-dropdown>
-                                    <input class="form-control" type="text" id="area_val" name="area_val" class="search"
-                                        placeholder="" data-search />
+                                    <input class="form-control" type="text" value="{{record.Area}}" id="area_val"
+                                        name="area_val" class="search" placeholder="" data-search readonly />
                                     <ul data-options id="dropdown-options_area">
                                         {% for area in areas %}
                                         <li data-value="{{area}}">{{area}}</li>
@@ -1118,8 +1154,8 @@
 							<input type="text" id="tech" class="form-control" name="tech"> -->
                                 <label for="tech">TECHNOLOGY<span class="text-danger">*</span></label>
                                 <div class="dropdown" data-dropdown>
-                                    <input class="form-control" type="text" id="tech" name="tech" class="search"
-                                        placeholder="" data-search />
+                                    <input class="form-control" value="{{record.Technology}}" type="text" id="tech"
+                                        name="tech" class="search" placeholder="" data-search readonly />
                                     <ul data-options id="dropdown-options_tech">
                                         {% for tech in technologies %}
                                         <li data-value="{{tech}}">{{tech}}</li>
@@ -1128,13 +1164,14 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-3">
-                                <label for="Visibility">VISIBILITY<span class="text-danger">*</span></label>
-                                <select name="Visibility" id="Visibility" class="form-control">
-                                    <option value="">--select--</option>
-                                    <option value="External">External</option>
-                                    <option value="Internal">Internal</option>
+                                <label for="Visibility">VISIBILITY</label>
+                                <!--                                    <input type="text" id="Visibility" class="form-control" name="Visibility" value="{{ record.Visibility }}" readonly>-->
+                                <select class="form-control" name="Visibility" id="Visibility" readonly>
+                                    {% for visibility in visibilities %}
+                                    <option value="{{visibility}}" {% if record.Visibility==visibility %}selected{%
+                                        endif %}>{{visibility}}</option>
+                                    {% endfor %}
                                 </select>
-                                <!--							<input type="text" id="Visibility"  name="Visibility">-->
                             </div>
                         </div>
                         <div class="form-row">
@@ -1142,7 +1179,7 @@
                                 <label for="kpi">MAJOR KPI DEGRADATION<span class="text-danger">*</span></label>
                                 <div class="dropdown" data-dropdown style="width: 100% !important">
                                     <input class="form-control kpi_class" type="text" id="kpi" name="kpi" class="search"
-                                        placeholder="" data-search />
+                                        placeholder="" data-search value="{{record.Major_KPI_Degradation}}" readonly />
                                     <ul data-options id="dropdown-options_kpi">
                                         {% for kpi in kpis %}
                                         <li data-value="{{kpi}}">{{kpi}}</li>
@@ -1152,19 +1189,19 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label>ISSUE NAME</label>
-                                <textarea id="icat" class="form-control" name="icat" rows="2" cols="100"
-                                    style="width: 100%"></textarea>
+                                <textarea readonly id="icat" class="form-control" name="icat" rows="2" cols="100"
+                                    style="width: 100%">{{record.Issue_Name}}</textarea>
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label>DESCRIPTION</label>
-                                <textarea id="desc" class="form-control" name="desc" rows="2" cols="100"
-                                    style="width: 100%"></textarea>
+                                <textarea readonly id="desc" class="form-control" name="desc" rows="2" cols="100"
+                                    style="width: 100%">{{record.Description}}</textarea>
                             </div>
                             <div class="form-group col-md-3">
                                 <label>ROOT CAUSE<span class="text-danger">*</span></label>
-                                <textarea id="rca" class="form-control" name="rca" rows="2" cols="100" wrap="hard"
-                                    style="width: 100%"></textarea>
+                                <textarea readonly id="rca" class="form-control" name="rca" rows="2" cols="100"
+                                    wrap="hard" style="width: 100%">{{record.Root_Cause}}</textarea>
                             </div>
                         </div>
                         {##} {#
@@ -1189,24 +1226,25 @@
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label>IMPACT</label>
-                                <textarea id="impact" class="form-control" name="impact" rows="2" cols="100" wrap="hard"
-                                    style="width: 100%"></textarea>
+                                <textarea readonly id="impact" class="form-control" name="impact" rows="2" cols="100"
+                                    wrap="hard" style="width: 100%">{{record.Impact}}</textarea>
                             </div>
                             <div class="form-group col-md-3">
                                 <label>REMARKS NOTES</label>
-                                <textarea id="remarks" class="form-control" name="remarks" rows="2" cols="100"
-                                    wrap="hard" style="width: 100%"></textarea>
+                                <textarea readonly id="remarks" class="form-control" name="remarks" rows="2" cols="100"
+                                    wrap="hard" style="width: 100%">{{record.Remarks_Notes}}</textarea>
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label>REFERENCE LINKS</label>
-                                <textarea id="reference" class="form-control" name="reference" rows="2" cols="100"
-                                    wrap="hard" style="width: 100%"></textarea>
+                                <textarea readonly id="reference" class="form-control" name="reference" rows="2"
+                                    cols="100" wrap="hard" style="width: 100%">{{record.reference_link}}</textarea>
                             </div>
                             <div class="form-group col-md-3">
                                 <label>INTERIM SOLUTION WORKAROUND</label>
-                                <textarea id="Interim_Solution_Workaround" class="form-control" name="wa" rows="2"
-                                    cols="100" wrap="hard" style="width: 100%"></textarea>
+                                <textarea readonly id="Interim_Solution_Workaround" class="form-control" name="wa"
+                                    rows="2" cols="100" wrap="hard"
+                                    style="width: 100%">{{record.Interim_Solution_Workaround}}</textarea>
                             </div>
                         </div>
                         {##} {#
@@ -1230,20 +1268,27 @@
                         <div class="form-row mt-1">
                             <div class="form-group col-md-6">
                                 <label>PERMANENT_FIX</label>
-                                <textarea id="Permanent_Fix" class="form-control" name="pf" rows="2" cols="100"
-                                    wrap="hard" style="width: 100%"></textarea>
+                                <textarea readonly id="Permanent_Fix" class="form-control" name="pf" rows="2" cols="100"
+                                    wrap="hard" style="width: 100%">{{record.Permanent_Fix}}</textarea>
                             </div>
                         </div>
                     </fieldset>
-                    <div class="form-row mt-3 d-flex justify-content-center">
-                        <input type="button" class="btn btn-md btn-light generic_button" style="
-                  color: #283db4;
-                  border: 2px solid #283db4;
-                  border-radius: 5px;
-                  font-size: 1.2rem;
-                " value="Create" id="update_kb" />
+                    {# {% if record['Status'] == 'Open'%} #}
+                    <div class="form-row mx-auto mt-5 d-flex justify-content-center">
+                        <div class="button-container">
+                            <!--                                <input type="submit" class="w3-button w3-black save-button" value="Update" id="saveissue">-->
+                            <!--                                <input type="button" class="w3-button w3-black edit-button" value="Edit" id="editissue">-->
+                            <input type="button" class="btn btn-md btn-light generic_button" style="
+                            color: #283db4;
+                            border: 2px solid #283db4;
+                            border-radius: 5px;
+                            font-size: 1.2rem;
+                          " data-issue-id="{{record.issue}}" data-sw-version="{{record.SW}}" value="Next" id="proceed">
+                        </div>
                     </div>
-                    <br /><br />
+                    <br>
+                    {# {% endif %} #}
+                    {% endfor %}
                 </form>
                 <br />
             </div>
@@ -1271,12 +1316,136 @@
                     CREATE DETECTION STEP
                 </button>
 
-                <div class="card mb-1 text-white card-div" id="issue_sequence_card_1" style="width: 100% !important">
+                <!-- default form -->
+                <div class="card mb-1 text-white card-div d-none" id="issue_sequence_card"
+                    style="width: 100% !important">
                     <div class="card-header row" style="height: 30px !important; background: #283db4 !important">
-                        <div class="icon-container col-md-10" style="position: relative; bottom: 15px; left: -20px">
-                            <i class="fas fa-lg fa-minus icon iconCardMinus mt-4" id="iconCard1Minus"
-                                onclick="toggleClass(this)" data-bs-toggle="collapse" data-bs-target="#collapseCard1"
-                                aria-expanded="true" aria-controls="collapseCard1"></i>
+                        <div class="icon-container col-md-10" style="position: relative; bottom: 15px; left:-20px">
+                            <i class="fas fa-lg fa-minus icon iconCardMinus mt-4" id="iconCardMinus"
+                                onclick="toggleClass(this)" data-bs-toggle="collapse" data-bs-target="#collapseCard"
+                                aria-expanded="true" aria-controls="collapseCard"></i>
+                            <h5 class="text-white header ml-4" style="position: relative; bottom: 20px;">
+                                &nbsp; &nbsp; &nbsp;EXECUTION ORDER NUMBER &nbsp; &nbsp; &nbsp;DETECTION TYPE
+                            </h5>
+                        </div>
+                        <div class="div-header col-md-2"
+                            style="text-align: right; position: relative; bottom: 5px; right: -25px;">
+                            <button class="btn btn-outline-warning btn-sm edit_btn" id="editbtn"
+                                onclick="editIssue(this)">
+                                <i class="fas fa-lg fa-edit icon text-white"></i>
+                            </button>
+                            <button class="btn btn-outline-success btn-sm save_btn" id="savebtn"
+                                onclick="saveIssue(this)">
+                                <i class="fas fa-lg fa-save icon text-white"></i>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm delete_btn" id="deletebtn"
+                                onclick="deleteIssue(this)" disabled>
+                                <i class="fas fa-lg fa-trash icon text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="collapseCard" class="collapse show">
+                        <div class="card-body" style="color: black">
+                            <form name="IssueSequenceForm" id="IssueSequenceForm">
+                                <fieldset class="the-fieldset">
+                                    <legend class="w-auto px-2" style="text-decoration: underline">ISSUE SEQUENCE
+                                        SECTION</legend>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-3">
+                                            <label for="issue_id">ISSUE ID</label>
+                                            <input type="text" id="issue_id" class="form-control" name="issue_id"
+                                                readonly />
+                                            <input type="hidden" id="status_val" name="status_val" readonly />
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label for="sw_val">SOFTWARE</label>
+                                            <input type="text" id="sw_val" class="form-control" name="sw_val"
+                                                readonly />
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label for="sequenceid">EXECUTION ORDER NUMBER</label>
+                                            <input type="text" id="sequenceid" class="form-control" name="sequenceid"
+                                                readonly />
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label for="action_type">DETECTION TYPE</label>
+                                            <select class="form-control" id="action_type" name="action_type"
+                                                >
+                                                <option value="">Select--</option>
+                                                {% for action in action_type %}
+                                                <option class="{% if action == 'GET FILE' %}d-none {% endif %}">
+                                                    {{ action }}
+                                                </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: none">
+                                        <label for="action_id">Action ID</label>
+                                        <input type="text" id="action_id" name="action_id" readonly
+                                            class="form-control" />
+                                    </div>
+
+                                    <div class="form-row mt-2">
+                                        <div class="checkbox-group">
+                                            <div class="form-check">
+                                                <label class="form-check-label" for="proceed_yes"
+                                                    style="font-weight: bold">PROCEED ON FAILURE?</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="proceed_yes"
+                                                    name="proceed" value="Yes" />
+                                                <label class="form-check-label" for="proceed_yes">Yes</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="proceed_no"
+                                                    name="proceed" value="No" />
+                                                <label class="form-check-label" for="proceed_no">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row mt-3">
+                                        <div class="form-group col-5">
+                                            <label for="check_condition" class="form-label">CHECK CONDITIONS</label>
+                                            <textarea id="check_condition" name="check_condition" class="form-control"
+                                                rows="3" cols="2"></textarea>
+                                        </div>
+                                        <div class="form-group col-5" style="display: none">
+                                            <label for="om_counters" class="form-label">OM COUNTERS</label>
+                                            <textarea id="om_counters" name="om_counters" class="form-control" rows="3"
+                                                cols="2" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="OM FAMILY and OM Counters <om_family_name|counter1,counter2,etc.,> separated by new line"></textarea>
+                                        </div>
+                                        <div class="form-group col-5">
+                                            <label for="pattern_grep" class="form-label">GREP PATTERN</label>
+                                            <textarea id="pattern_grep" name="pattern_grep" class="form-control"
+                                                rows="3" cols="2"></textarea>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                {% for record in exec_orders_data %}
+                <div class="card mb-1 text-white card-div" id="issue_sequence_card_{{record.Sequence_num}}"
+                    style="width: 100% !important">
+                    <div class="card-header row" style="height: 30px !important; background: #283db4 !important">
+                        <div class="icon-container col-md-10" style="position: relative; bottom: 15px; left:-20px">
+
+                            <i class="fas fa-lg fa-minus icon iconCardMinus mt-4"
+                                id="iconCard{{ record.Sequence_num }}Minus" onclick="toggleClass(this)"
+                                data-bs-toggle="collapse" data-bs-target="#collapseCard{{record.Sequence_num }}"
+                                aria-expanded="true" aria-controls="collapseCard{{record.Sequence_num }}"></i>
+                            <h5 class="text-white header ml-4" style="position: relative; bottom: 20px;"> &nbsp; &nbsp;
+                                &nbsp;EXECUTION ORDER NUMBER {{ record.Sequence_num }} &nbsp; &nbsp; &nbsp; DETECTION
+                                TYPE {{ record.action_type }}</h5>
                         </div>
                         <div class="div-header col-md-2" style="
                   text-align: right;
@@ -1284,23 +1453,24 @@
                   bottom: 5px;
                   right: -25px;
                 ">
-                            <button class="btn btn-outline-warning btn-sm edit_btn" id="editbtn_1"
+                            <button class="btn btn-outline-warning btn-sm edit_btn" id="editbtn_{{record.Sequence_num}}"
                                 onclick="editIssue(this)">
                                 <i class="fas fa-lg fa-edit icon text-white"></i>
                             </button>
-                            <button class="btn btn-outline-success btn-sm save_btn" id="savebtn_1"
+                            <button class="btn btn-outline-success btn-sm save_btn" id="savebtn_{{record.Sequence_num}}"
                                 onclick="saveIssue(this)">
                                 <i class="fas fa-lg fa-save icon text-white"></i>
                             </button>
-                            <button class="btn btn-outline-danger btn-sm delete_btn" id="deletebtn_1"
-                                onclick="deleteIssue(this)" disabled>
+                            <button class="btn btn-outline-danger btn-sm delete_btn"
+                                id="deletebtn_{{record.Sequence_num}}" onclick="deleteIssue(this)" disabled>
                                 <i class="fas fa-lg fa-trash icon text-white"></i>
                             </button>
                         </div>
                     </div>
-                    <div id="collapseCard1" class="collapse show">
+                    <div id="collapseCard{{record.Sequence_num}}" class="collapse show">
                         <div class="card-body" style="color: black">
-                            <form name="IssueSequenceForm" id="IssueSequenceForm">
+                            <form name="IssueSequenceForm"
+                                id="IssueSequenceForm{{record.Sequence_num | int}}">
                                 <fieldset class="the-fieldset">
                                     <legend class="w-auto px-2" style="text-decoration: underline">
                                         ISSUE SEQUENCE SECTION
@@ -1314,38 +1484,42 @@
                                         <div class="form-group col-3">
                                             <label for="issue_id"> ISSUE ID</label>
                                             <input type="text" id="issue_id" class="form-control" name="issue_id"
-                                                readonly />
-                                            <input type="hidden" id="status_val" name="status_val" />
+                                                value="{{record.issue}}" readonly />
+                                            <input type="hidden" id="status_val" name="status_val" readonly />
                                         </div>
                                         <div class="form-group col-3">
                                             <label for="sw_val"> SOFTWARE</label>
-                                            <input type="text" id="sw_val" class="form-control" name="sw_val" />
+                                            <input type="text" value="{{record.SW}}" id="sw_val" class="form-control"
+                                                name="sw_val" readonly />
                                         </div>
                                         <div class="form-group col-3">
                                             <label for="sequenceid"> EXECUTION ORDER NUMBER</label>
-                                            <input type="text" id="sequenceid" class="form-control" name="sequenceid" />
+                                            <input value="{{record.Sequence_num}}" type="text" id="sequenceid"
+                                                class="form-control" name="sequenceid" readonly />
                                         </div>
                                         <div class="form-group col-3">
-                                            <label for="action_type"> DETECTION TYPE</label>
+                                            <label for="action_type">DETECTION TYPE</label>
                                             <select class="form-control" id="action_type" name="action_type"
-                                                onchange="changeFunction()">
-                                                <option value="" selected style="font-size: 14px; font-weight: bold">
-                                                    --select--
+                                                onchange="changeFunction({{record.Sequence_num}})" disabled>
+                                                <option value="" style="font-size: 14px; font-weight: bold">--select--
                                                 </option>
                                                 {% for action in action_type %}
                                                 <option class="{% if action == 'GET FILE' %}d-none {% endif %}"
-                                                    value="{{ action }}">
-                                                    {{action}}
+                                                    value="{{ action }}" {% if action==record.action_type %}selected{%
+                                                    endif %}>
+                                                    {{ action }}
                                                 </option>
                                                 {% endfor %}
                                             </select>
                                         </div>
+
                                     </div>
 
-                                    <div class="form-row">
+                                    <!-- <div class="form-row">
                                         <div class="form-group col-3">
                                             <label for="scName" class="form-label">SCRIPT NAME</label>
-                                            <input type="text" id="scName" class="form-control" name="scName" />
+                                            <input type="text" id="scName" value="{{record.script_name}}"
+                                                class="form-control" name="scName" />
                                         </div>
                                         {#
                                         <div class="form-group col-3">
@@ -1380,14 +1554,13 @@
                                             <label for="scPath" class="form-label">SCRIPT PATH</label>
                                             <input type="text" id="scPath" class="form-control" name="scPath" />
                                         </div>
-                                    </div>
+                                    </div> -->
                                     `
                                     <div style="display: none">
                                         <label for="action_id">Action ID</label>
-                                        <input type="text" id="action_id" name="action_id" readonly
-                                            class="form-control" />
+                                        <input type="text" id="action_id" value="{{record.ACTION_ID}}" name="action_id"
+                                            readonly class="form-control" />
                                     </div>
-
                                     <div class="form-row mt-2">
                                         <div class="checkbox-group">
                                             <!--						<div class="form-check">-->
@@ -1407,39 +1580,45 @@
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" id="proceed_yes"
-                                                    name="proceed" value="Yes" />
+                                                    name="proceed" value="Yes" {% if record.proceed=='Yes' %}checked{%
+                                                    endif %} />
                                                 <label class="form-check-label" for="proceed_yes">Yes</label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" id="proceed_no"
-                                                    name="proceed" value="No" />
+                                                    name="proceed" value="No" {% if record.proceed=='No' %}checked{%
+                                                    endif %} />
                                                 <label class="form-check-label" for="proceed_no">No</label>
                                             </div>
+
                                         </div>
                                     </div>
-
                                     <div class="form-row mt-3">
                                         <div class="form-group col-5">
                                             <label for="check_condition" class="form-label">CHECK CONDITIONS</label>
-                                            <textarea id="check_condition" name="check_condition" class="form-control"
-                                                rows="3" cols="2"></textarea>
+                                            <textarea readonly id="check_condition" name="check_condition"
+                                                class="form-control" rows="3"
+                                                cols="2">{{record.check_condition}}</textarea>
                                         </div>
-                                        <div class="form-group col-5">
+                                        <!-- <div class="form-group col-5">
                                             <label for="regex" class="form-label">NE IDS:</label>
                                             <textarea id="regex" name="regex" class="form-control" rows="3"
-                                                cols="2"></textarea>
-                                        </div>
+                                                cols="2">{{record.expected_output_regex}}</textarea>
+                                        </div> -->
                                         <div class="form-group col-5" style="display: none">
                                             <label for="om_counters" class="form-label">OM COUNTERS:</label>
-                                            <textarea id="om_counters" name="om_counters" class="form-control" rows="3"
-                                                cols="2" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="OM FAMILY and OM Counters <om_family_name|counter1,counter2,etc.,> seperated by new line"></textarea>
+                                            <textarea readonly id="om_counters" name="om_counters" class="form-control"
+                                                rows="3" cols="2" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="OM FAMILY and OM Counters <om_family_name|counter1,counter2,etc.,> seperated by new line">{{record.om_counters}}</textarea>
                                         </div>
                                         <div class="form-group col-5">
                                             <label for="pattern_grep" class="form-label">GREP PATTERN</label>
-                                            <textarea id="pattern_grep" name="pattern_grep" class="form-control"
-                                                rows="3" cols="2"></textarea>
+                                            <textarea readonly id="pattern_grep" name="pattern_grep"
+                                                class="form-control" rows="3"
+                                                cols="2">{{ record.grep_target }}</textarea>
                                         </div>
+
+
                                     </div>
                                     <div class="form-row mt-3 mx-5 d-flex justify-content-center"
                                         style="margin-top: 30px">
@@ -1453,6 +1632,7 @@
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>

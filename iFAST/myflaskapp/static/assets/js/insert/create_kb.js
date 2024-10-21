@@ -1,5 +1,6 @@
 $(document).ready(function () {
   $("#nav-profile-tab").attr("disabled", true);
+  console.log("RENDERED Form")
   $("#action_type").on("change", function () {
     var selval = $(this).val();
     if (selval === "RUN OM SCRIPT") {

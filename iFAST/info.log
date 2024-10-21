@@ -4742,3 +4742,295 @@
 2024-10-19 16:03:03,230 Inserting issue sequence
 2024-10-19 16:03:29,981 Inserting issue sequence
 2024-10-19 16:03:52,314 Inserting issue sequence
+2024-10-19 16:09:04,000 Request to /newpage
+2024-10-19 16:34:34,159 Inserting issue sequence
+2024-10-19 16:35:09,980 INFODODO
+2024-10-19 16:35:17,733 Inserting issue sequence
+2024-10-19 16:35:34,126 Inserting issue sequence
+2024-10-19 16:35:55,722 Request to /newpage
+2024-10-19 16:36:18,221 Inserting issue sequence
+2024-10-19 16:36:29,161 Inserting issue sequence
+2024-10-19 16:36:49,998 Inserting issue sequence
+2024-10-19 16:37:11,413 Inserting issue sequence
+2024-10-19 16:37:27,674 Request to /newpage
+2024-10-19 16:38:17,270 Inserting issue sequence
+2024-10-19 16:38:43,635 Inserting issue sequence
+2024-10-19 16:38:50,345 Request to /newpage
+2024-10-19 16:40:36,331 Inserting issue sequence
+2024-10-19 16:40:52,209 Request to /newpage
+2024-10-19 16:49:22,879 Request to /newpage
+2024-10-19 16:50:47,481 Inserting issue sequence
+2024-10-19 16:51:37,297 Inserting issue sequence
+2024-10-19 16:52:12,437 INFODODO
+2024-10-19 16:52:17,244 Inserting issue sequence
+2024-10-19 16:52:27,096 Inserting issue sequence
+2024-10-19 16:52:42,156 Inserting issue sequence
+2024-10-19 16:53:11,191 Request to /newpage
+2024-10-19 17:01:00,390 Inserting issue sequence
+2024-10-19 17:01:42,274 Request to /newpage
+2024-10-19 17:01:50,569 Request to /newpage
+2024-10-19 17:22:40,486 Inserting issue sequence
+2024-10-19 17:22:48,153 Inserting issue sequence
+2024-10-19 19:23:24,009 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-19 19:23:24,010 Account details found redirecting
+2024-10-19 19:23:24,010 Redirecting to http://localhost:5004/newpage
+2024-10-19 19:23:24,010 Response status code: 302
+2024-10-19 19:23:24,015 Request to /newpage
+2024-10-20 13:02:05,273 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-20 13:02:05,273 Account details found redirecting
+2024-10-20 13:02:05,274 Redirecting to http://localhost:5004/newpage
+2024-10-20 13:02:05,274 Response status code: 302
+2024-10-20 13:02:05,280 Request to /newpage
+2024-10-20 13:26:42,837 Inserting issue sequence
+2024-10-20 13:27:48,826 Inserting issue sequence
+2024-10-20 13:28:21,294 Inserting issue sequence
+2024-10-20 13:28:33,180 Inserting issue sequence
+2024-10-20 13:28:34,105 Inserting issue sequence
+2024-10-20 13:32:56,248 Inserting issue sequence
+2024-10-20 13:34:47,801 Inserting issue sequence
+2024-10-20 13:35:33,190 Request to /newpage
+2024-10-20 13:35:55,041 INFODODO
+2024-10-20 13:36:40,420 Inserting issue sequence
+2024-10-20 13:39:18,801 Inserting issue sequence
+2024-10-20 13:40:09,181 Request to /newpage
+2024-10-20 13:40:41,800 Inserting issue sequence
+2024-10-20 13:53:21,730 Inserting issue sequence
+2024-10-20 13:53:59,401 Inserting issue sequence
+2024-10-20 13:54:09,865 Inserting issue sequence
+2024-10-20 14:00:41,067 Inserting issue sequence
+2024-10-20 14:01:14,356 Inserting issue sequence
+2024-10-20 14:02:19,567 Inserting issue sequence
+2024-10-20 14:06:52,072 Inserting issue sequence
+2024-10-20 14:08:44,729 Inserting issue sequence
+2024-10-20 14:09:26,626 Inserting issue sequence
+2024-10-20 14:09:27,660 Inserting issue sequence
+2024-10-20 14:09:56,647 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-20 14:09:56,648 Account details found redirecting
+2024-10-20 14:09:56,648 Redirecting to http://localhost:5004/newpage
+2024-10-20 14:09:56,648 Response status code: 302
+2024-10-20 14:09:56,659 Request to /newpage
+2024-10-20 14:28:00,443 Inserting issue sequence
+2024-10-20 14:28:50,772 Inserting issue sequence
+2024-10-20 14:32:53,234 Request to /newpage
+2024-10-20 14:33:16,405 INFODODO
+2024-10-20 14:33:24,398 Inserting issue sequence
+2024-10-20 14:33:39,680 Inserting issue sequence
+2024-10-20 14:34:20,078 Request to /newpage
+2024-10-20 14:34:32,149 Inserting issue sequence
+2024-10-20 14:34:52,803 Inserting issue sequence
+2024-10-20 14:36:36,141 Inserting issue sequence
+2024-10-20 14:36:56,426 Inserting issue sequence
+2024-10-20 14:37:06,860 Inserting issue sequence
+2024-10-20 14:37:39,233 Inserting issue sequence
+2024-10-20 14:38:28,229 Request to /newpage
+2024-10-20 14:39:46,809 Inserting issue sequence
+2024-10-20 14:39:49,209 Inserting issue sequence
+2024-10-20 14:39:59,235 Inserting issue sequence
+2024-10-20 14:45:21,044 Request to /newpage
+2024-10-20 15:56:37,039 Request to /newpage
+2024-10-20 19:45:59,265 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-20 19:45:59,267 Account details found redirecting
+2024-10-20 19:45:59,268 Redirecting to http://localhost:5004/newpage
+2024-10-20 19:45:59,268 Response status code: 302
+2024-10-20 19:45:59,289 Request to /newpage
+2024-10-20 19:56:38,564 Inserting issue sequence
+2024-10-20 20:02:09,150 Inserting issue sequence
+2024-10-20 20:12:10,648 Inserting issue sequence
+2024-10-20 20:12:12,773 Inserting issue sequence
+2024-10-20 20:13:26,734 Request to /newpage
+2024-10-20 20:21:39,294 Request to /newpage
+2024-10-20 20:22:02,827 INFODODO
+2024-10-20 20:22:14,356 Inserting issue sequence
+2024-10-20 20:22:27,424 Inserting issue sequence
+2024-10-20 20:22:39,442 Inserting issue sequence
+2024-10-20 20:22:58,786 Inserting issue sequence
+2024-10-20 20:23:58,796 Request to /newpage
+2024-10-20 20:25:01,184 Inserting issue sequence
+2024-10-20 20:25:16,307 Inserting issue sequence
+2024-10-20 20:25:27,188 Inserting issue sequence
+2024-10-20 20:25:54,359 Request to /newpage
+2024-10-20 20:27:28,646 Inserting issue sequence
+2024-10-20 20:30:35,987 Request to /newpage
+2024-10-20 20:31:03,830 INFODODO
+2024-10-20 20:31:14,980 Inserting issue sequence
+2024-10-20 20:32:00,096 Request to /newpage
+2024-10-20 20:45:44,444 Request to /newpage
+2024-10-20 21:13:17,234 Request to /newpage
+2024-10-20 21:14:14,624 INFODODO
+2024-10-20 21:14:14,626 Redirection failed: list indices must be integers or slices, not str
+2024-10-20 21:14:23,965 INFODODO
+2024-10-20 21:14:31,724 Inserting issue sequence
+2024-10-20 21:14:43,014 Inserting issue sequence
+2024-10-20 21:14:49,905 Request to /newpage
+2024-10-20 21:43:13,194 Inserting issue sequence
+2024-10-20 21:56:03,396 Inserting issue sequence
+2024-10-20 21:56:09,240 Inserting issue sequence
+2024-10-20 21:57:51,347 Inserting issue sequence
+2024-10-20 21:58:46,266 Inserting issue sequence
+2024-10-20 21:59:35,565 Inserting issue sequence
+2024-10-20 22:06:33,215 Inserting issue sequence
+2024-10-20 22:07:31,580 Inserting issue sequence
+2024-10-20 22:08:00,834 Inserting issue sequence
+2024-10-20 22:10:27,044 Inserting issue sequence
+2024-10-20 22:10:52,417 Inserting issue sequence
+2024-10-20 22:11:38,934 Inserting issue sequence
+2024-10-20 22:12:26,918 Inserting issue sequence
+2024-10-20 22:12:48,967 Request to /newpage
+2024-10-20 22:12:56,725 Request to /newpage
+2024-10-20 22:16:06,005 Inserting issue sequence
+2024-10-20 22:16:36,738 Inserting issue sequence
+2024-10-20 22:16:39,012 Inserting issue sequence
+2024-10-20 22:48:22,531 Inserting issue sequence
+2024-10-20 23:26:28,358 Inserting issue sequence
+2024-10-20 23:27:07,139 Request to /newpage
+2024-10-20 23:35:15,188 Inserting issue sequence
+2024-10-20 23:41:24,980 Inserting issue sequence
+2024-10-20 23:44:17,901 Inserting issue sequence
+2024-10-20 23:45:38,012 Inserting issue sequence
+2024-10-20 23:45:47,581 Request to /newpage
+2024-10-21 00:06:34,585 Inserting issue sequence
+2024-10-21 00:07:57,792 Inserting issue sequence
+2024-10-21 00:08:34,448 Inserting issue sequence
+2024-10-21 00:10:34,608 Inserting issue sequence
+2024-10-21 00:11:22,530 Inserting issue sequence
+2024-10-21 00:11:51,716 Inserting issue sequence
+2024-10-21 00:12:47,345 Inserting issue sequence
+2024-10-21 00:12:59,795 Inserting issue sequence
+2024-10-21 00:16:06,603 Inserting issue sequence
+2024-10-21 00:22:29,019 Inserting issue sequence
+2024-10-21 00:44:37,970 Request to /newpage
+2024-10-21 01:01:33,844 Inserting issue sequence
+2024-10-21 01:02:01,945 Inserting issue sequence
+2024-10-21 01:02:13,822 Inserting issue sequence
+2024-10-21 01:06:28,114 Inserting issue sequence
+2024-10-21 01:06:39,246 Inserting issue sequence
+2024-10-21 01:12:19,885 Inserting issue sequence
+2024-10-21 01:12:22,184 Inserting issue sequence
+2024-10-21 01:13:03,081 Inserting issue sequence
+2024-10-21 01:23:09,326 Request to /newpage
+2024-10-21 01:23:30,420 INFODODO
+2024-10-21 01:23:45,174 Inserting issue sequence
+2024-10-21 01:24:13,629 Inserting issue sequence
+2024-10-21 01:24:34,275 Request to /newpage
+2024-10-21 01:25:07,154 Inserting issue sequence
+2024-10-21 01:26:28,745 Request to /newpage
+2024-10-21 01:26:46,899 INFODODO
+2024-10-21 01:26:52,611 Inserting issue sequence
+2024-10-21 01:27:05,883 Inserting issue sequence
+2024-10-21 01:27:37,184 Request to /newpage
+2024-10-21 01:28:01,038 Inserting issue sequence
+2024-10-21 01:28:34,123 Inserting issue sequence
+2024-10-21 01:29:07,124 Inserting issue sequence
+2024-10-21 01:29:48,828 Inserting issue sequence
+2024-10-21 01:30:36,056 Inserting issue sequence
+2024-10-21 01:31:04,258 Request to /newpage
+2024-10-21 01:31:23,901 Inserting issue sequence
+2024-10-21 01:33:42,082 Request to /newpage
+2024-10-21 01:33:56,417 INFODODO
+2024-10-21 01:34:04,697 Inserting issue sequence
+2024-10-21 01:34:18,907 Inserting issue sequence
+2024-10-21 01:34:39,931 Inserting issue sequence
+2024-10-21 01:34:49,210 Inserting issue sequence
+2024-10-21 01:37:09,057 Request to /newpage
+2024-10-21 01:37:27,345 INFODODO
+2024-10-21 01:37:36,045 Inserting issue sequence
+2024-10-21 01:37:49,078 Inserting issue sequence
+2024-10-21 01:38:02,876 Inserting issue sequence
+2024-10-21 01:38:41,594 Inserting issue sequence
+2024-10-21 01:39:21,445 Inserting issue sequence
+2024-10-21 01:39:49,322 Inserting issue sequence
+2024-10-21 01:40:29,979 Inserting issue sequence
+2024-10-21 01:41:04,445 Inserting issue sequence
+2024-10-21 01:45:09,016 Request to /newpage
+2024-10-21 01:45:45,606 Inserting issue sequence
+2024-10-21 01:46:31,632 Inserting issue sequence
+2024-10-21 02:01:57,803 Inserting issue sequence
+2024-10-21 02:03:12,814 Request to /newpage
+2024-10-21 02:03:57,565 Inserting issue sequence
+2024-10-21 02:08:57,615 Inserting issue sequence
+2024-10-21 02:12:13,883 Inserting issue sequence
+2024-10-21 02:13:38,354 Inserting issue sequence
+2024-10-21 02:14:14,220 Inserting issue sequence
+2024-10-21 02:15:35,349 Inserting issue sequence
+2024-10-21 02:16:58,206 Inserting issue sequence
+2024-10-21 02:17:37,372 Inserting issue sequence
+2024-10-21 02:19:30,312 Inserting issue sequence
+2024-10-21 02:19:48,887 Inserting issue sequence
+2024-10-21 02:20:33,976 Inserting issue sequence
+2024-10-21 02:20:57,613 Inserting issue sequence
+2024-10-21 02:22:07,685 Inserting issue sequence
+2024-10-21 02:22:51,755 Inserting issue sequence
+2024-10-21 02:23:56,200 Inserting issue sequence
+2024-10-21 02:24:55,861 Inserting issue sequence
+2024-10-21 02:27:51,613 Inserting issue sequence
+2024-10-21 02:28:22,427 Inserting issue sequence
+2024-10-21 02:29:09,139 Inserting issue sequence
+2024-10-21 02:30:03,312 Inserting issue sequence
+2024-10-21 02:30:22,726 Inserting issue sequence
+2024-10-21 02:30:42,506 Inserting issue sequence
+2024-10-21 02:31:42,772 Request to /newpage
+2024-10-21 02:32:00,776 INFODODO
+2024-10-21 02:32:08,784 Inserting issue sequence
+2024-10-21 02:32:21,329 Inserting issue sequence
+2024-10-21 02:32:37,083 Inserting issue sequence
+2024-10-21 02:33:15,628 Inserting issue sequence
+2024-10-21 02:33:42,952 Request to /newpage
+2024-10-21 02:34:09,850 Inserting issue sequence
+2024-10-21 02:34:12,971 Inserting issue sequence
+2024-10-21 02:37:31,029 Inserting issue sequence
+2024-10-21 02:37:58,083 Inserting issue sequence
+2024-10-21 12:12:40,657 Account details: {'user_id': 22, 'knox_id': 'a9.pandey', 'password': '3d801aa532c1cec3ee82d87a99fdf63f', 'fullname': 'Anju Pandey', 'email': 'a9.pandey@samsung.com', 'role': 'user', 'team': 'SEA', 'status': 'active', 'mode': 'edit'}
+2024-10-21 12:12:40,658 Account details found redirecting
+2024-10-21 12:12:40,659 Redirecting to http://localhost:5004/newpage
+2024-10-21 12:12:40,659 Response status code: 302
+2024-10-21 12:12:40,682 Request to /newpage
+2024-10-21 12:14:32,552 Request to /newpage
+2024-10-21 12:42:41,810 Request to /newpage
+2024-10-21 12:42:55,045 Request to /newpage
+2024-10-21 12:43:07,244 Request to /newpage
+2024-10-21 12:46:12,666 Request to /newpage
+2024-10-21 12:50:03,648 Request to /newpage
+2024-10-21 12:50:26,879 INFODODO
+2024-10-21 12:50:32,156 Request to /newpage
+2024-10-21 13:31:29,412 Request to /newpage
+2024-10-21 13:31:56,677 INFODODO
+2024-10-21 13:31:56,690 Redirection failed: list indices must be integers or slices, not str
+2024-10-21 13:32:01,858 INFODODO
+2024-10-21 13:32:01,863 Redirection failed: list indices must be integers or slices, not str
+2024-10-21 13:32:06,702 INFODODO
+2024-10-21 13:32:23,954 Inserting issue sequence
+2024-10-21 13:32:26,932 Request to /newpage
+2024-10-21 13:35:54,830 Request to /newpage
+2024-10-21 14:11:41,403 Inserting issue sequence
+2024-10-21 14:12:38,452 Inserting issue sequence
+2024-10-21 14:12:51,162 Inserting issue sequence
+2024-10-21 14:12:59,886 Request to /newpage
+2024-10-21 14:13:13,719 Inserting issue sequence
+2024-10-21 14:13:17,983 Inserting issue sequence
+2024-10-21 14:13:41,310 Inserting issue sequence
+2024-10-21 14:17:14,407 Inserting issue sequence
+2024-10-21 14:17:22,881 Inserting issue sequence
+2024-10-21 14:17:50,129 Request to /newpage
+2024-10-21 14:17:52,595 Request to /newpage
+2024-10-21 14:18:10,401 INFODODO
+2024-10-21 14:18:10,411 Redirection failed: list indices must be integers or slices, not str
+2024-10-21 14:18:16,961 INFODODO
+2024-10-21 14:18:16,969 Insertion error: (1406, "Data too long for column 'SW' at row 1")
+2024-10-21 14:18:22,311 INFODODO
+2024-10-21 14:18:22,318 Insertion error: (1406, "Data too long for column 'SW' at row 1")
+2024-10-21 14:18:45,401 INFODODO
+2024-10-21 14:19:05,576 Inserting issue sequence
+2024-10-21 14:19:22,231 Inserting issue sequence
+2024-10-21 14:19:25,329 Request to /newpage
+2024-10-21 14:19:41,432 Inserting issue sequence
+2024-10-21 14:28:47,801 Inserting issue sequence
+2024-10-21 14:29:26,143 Inserting issue sequence
+2024-10-21 14:31:13,764 Inserting issue sequence
+2024-10-21 14:31:23,636 Request to /newpage
+2024-10-21 14:31:39,875 Request to /newpage
+2024-10-21 14:32:03,851 INFODODO
+2024-10-21 14:32:05,675 Request to /newpage
+2024-10-21 14:32:24,791 Inserting issue sequence
+2024-10-21 14:32:43,317 Inserting issue sequence
+2024-10-21 14:32:57,093 Inserting issue sequence
+2024-10-21 14:33:07,100 Inserting issue sequence

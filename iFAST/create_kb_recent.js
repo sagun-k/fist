@@ -429,7 +429,6 @@ $('#save_btn').on('click',function(){
                 console.log('fieldName1',fieldName1)
                 console.log('fieldName2', fieldName2)
                 console.log('fieldName3', fieldName3)
-                debugger
                fieldName = $(this).text();
                 console.log('field_name', fieldName)
                 var errorMessage = $(this).text();
